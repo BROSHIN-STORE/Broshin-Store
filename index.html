@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,6 @@
 <style>
 :root{
   --black:#171717;
-  --champagne:#E8D3B9;
   --gold:#D4AF37;
   --rose:#D8B7AE;
   --ivory:#F8F4EC;
@@ -18,8 +18,15 @@
   --muted:#756d66;
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   font-family:Arial,Helvetica,sans-serif;
@@ -41,11 +48,16 @@ body{
 
 .cursor{
   position:fixed;
-  width:280px;height:280px;
+  width:280px;
+  height:280px;
   border-radius:50%;
   pointer-events:none;
   transform:translate(-50%,-50%);
-  background:radial-gradient(circle,rgba(212,175,55,.13),transparent 70%);
+  background:radial-gradient(
+    circle,
+    rgba(212,175,55,.13),
+    transparent 70%
+  );
   z-index:0;
 }
 
@@ -59,12 +71,19 @@ body{
   font-weight:bold;
   letter-spacing:3px;
   text-align:center;
-  background:linear-gradient(90deg,#171717,#4a4038,#171717);
+  background:linear-gradient(
+    90deg,
+    #171717,
+    #4a4038,
+    #171717
+  );
   background-size:200% 100%;
   animation:bar 6s linear infinite;
 }
 
-@keyframes bar{to{background-position:200% 0}}
+@keyframes bar{
+  to{background-position:200% 0}
+}
 
 .nav{
   width:92%;
@@ -91,7 +110,9 @@ body{
   letter-spacing:7px;
 }
 
-.logo span{color:var(--gold)}
+.logo span{
+  color:var(--gold);
+}
 
 .nav-tag{
   font-size:11px;
@@ -100,10 +121,16 @@ body{
   color:var(--muted);
 }
 
-/* HOME */
 
-#homePage{display:block}
-#productPage{display:none}
+/* ================= HOME ================= */
+
+#homePage{
+  display:block;
+}
+
+#productPage{
+  display:none;
+}
 
 .hero{
   width:92%;
@@ -124,28 +151,47 @@ body{
 }
 
 .orb.one{
-  width:420px;height:420px;
-  left:0;top:80px;
-  background:radial-gradient(circle,rgba(216,183,174,.55),transparent 68%);
+  width:420px;
+  height:420px;
+  left:0;
+  top:80px;
+  background:radial-gradient(
+    circle,
+    rgba(216,183,174,.55),
+    transparent 68%
+  );
   animation:floatOrb1 9s ease-in-out infinite;
 }
 
 .orb.two{
-  width:380px;height:380px;
-  right:0;bottom:20px;
-  background:radial-gradient(circle,rgba(212,175,55,.22),transparent 68%);
+  width:380px;
+  height:380px;
+  right:0;
+  bottom:20px;
+  background:radial-gradient(
+    circle,
+    rgba(212,175,55,.22),
+    transparent 68%
+  );
   animation:floatOrb2 11s ease-in-out infinite;
 }
 
 @keyframes floatOrb1{
-  50%{transform:translate(100px,50px) scale(1.12)}
+  50%{
+    transform:translate(100px,50px) scale(1.12);
+  }
 }
 
 @keyframes floatOrb2{
-  50%{transform:translate(-100px,-50px) scale(1.15)}
+  50%{
+    transform:translate(-100px,-50px) scale(1.15);
+  }
 }
 
-.hero-content{position:relative;z-index:2}
+.hero-content{
+  position:relative;
+  z-index:2;
+}
 
 .small-title{
   display:inline-block;
@@ -154,7 +200,11 @@ body{
   font-size:11px;
   letter-spacing:4px;
   font-weight:900;
-  background:linear-gradient(100deg,rgba(232,211,185,.7),rgba(216,183,174,.55));
+  background:linear-gradient(
+    100deg,
+    rgba(232,211,185,.7),
+    rgba(216,183,174,.55)
+  );
   border:1px solid rgba(212,175,55,.35);
 }
 
@@ -164,7 +214,14 @@ body{
   line-height:.82;
   font-weight:1000;
   letter-spacing:clamp(6px,1.7vw,18px);
-  background:linear-gradient(100deg,#171717,#6a594c,#D4AF37,#9b7921,#171717);
+  background:linear-gradient(
+    100deg,
+    #171717,
+    #6a594c,
+    #D4AF37,
+    #9b7921,
+    #171717
+  );
   background-size:300% auto;
   -webkit-background-clip:text;
   background-clip:text;
@@ -172,7 +229,11 @@ body{
   animation:gold 7s linear infinite;
 }
 
-@keyframes gold{to{background-position:300% center}}
+@keyframes gold{
+  to{
+    background-position:300% center;
+  }
+}
 
 .hero-description{
   max-width:650px;
@@ -195,8 +256,12 @@ body{
   font-weight:900;
   letter-spacing:1px;
   cursor:pointer;
-  background:linear-gradient(100deg,#171717,#4b4037,#171717);
-  background-size:200% auto;
+  background:linear-gradient(
+    100deg,
+    #171717,
+    #4b4037,
+    #171717
+  );
   box-shadow:0 18px 40px rgba(23,23,23,.18);
   transition:.3s;
 }
@@ -206,13 +271,19 @@ body{
   transform:translateY(-5px);
 }
 
+
+/* ================= TRENDING ================= */
+
 .trending{
   width:92%;
   max-width:1250px;
   margin:80px auto 120px;
 }
 
-.heading{text-align:center;margin-bottom:50px}
+.heading{
+  text-align:center;
+  margin-bottom:50px;
+}
 
 .heading-label{
   font-size:11px;
@@ -227,9 +298,16 @@ body{
   line-height:.9;
   font-weight:1000;
   letter-spacing:-4px;
-  background:linear-gradient(90deg,#171717,#D4AF37,#D8B7AE,#171717);
+  background:linear-gradient(
+    90deg,
+    #171717,
+    #D4AF37,
+    #D8B7AE,
+    #171717
+  );
   background-size:250% auto;
   -webkit-background-clip:text;
+  background-clip:text;
   color:transparent;
 }
 
@@ -247,12 +325,16 @@ body{
 }
 
 .card{
-  min-height:420px;
+  min-height:430px;
   padding:25px;
   border-radius:32px;
   position:relative;
   overflow:hidden;
-  background:linear-gradient(145deg,rgba(255,255,255,.76),rgba(255,255,255,.27));
+  background:linear-gradient(
+    145deg,
+    rgba(255,255,255,.76),
+    rgba(255,255,255,.27)
+  );
   border:1px solid rgba(255,255,255,.6);
   backdrop-filter:blur(18px);
   box-shadow:0 25px 65px rgba(23,23,23,.1);
@@ -291,13 +373,50 @@ body{
   color:#9b8c7d;
 }
 
-.card h3{font-size:20px;margin:10px 0}
-.card p{font-size:13px;color:var(--muted);line-height:1.6}
+.card h3{
+  font-size:20px;
+  margin:10px 0;
+}
+
+.card p{
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.price-box{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:12px 0;
+}
+
+.reference-price{
+  font-size:15px;
+  color:#8a817a;
+  text-decoration:line-through;
+}
 
 .product-price{
   font-size:24px;
   font-weight:1000;
-  margin:12px 0;
+}
+
+.discount-badge{
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:20px;
+  background:#171717;
+  color:white;
+  font-size:10px;
+  font-weight:900;
+}
+
+.save-text{
+  font-size:12px;
+  color:#96751e;
+  font-weight:900;
 }
 
 .view-btn{
@@ -314,7 +433,25 @@ body{
   z-index:2;
 }
 
-/* PRODUCT LANDING PAGE */
+.out-stock{
+  opacity:.65;
+}
+
+.status-badge{
+  position:absolute;
+  top:20px;
+  right:20px;
+  padding:7px 11px;
+  border-radius:30px;
+  background:rgba(23,23,23,.9);
+  color:#fff;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+
+/* ================= PRODUCT PAGE ================= */
 
 .product-wrap{
   width:92%;
@@ -351,8 +488,13 @@ body{
   align-items:center;
   justify-content:center;
   border-radius:30px;
-  background:linear-gradient(135deg,rgba(216,183,174,.35),rgba(232,211,185,.7));
+  background:linear-gradient(
+    135deg,
+    rgba(216,183,174,.35),
+    rgba(232,211,185,.7)
+  );
   overflow:hidden;
+  position:relative;
 }
 
 .detail-image{
@@ -365,6 +507,27 @@ body{
   font-size:140px;
 }
 
+.image-gallery{
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+  overflow-x:auto;
+}
+
+.thumb{
+  width:65px;
+  height:65px;
+  object-fit:cover;
+  border-radius:12px;
+  cursor:pointer;
+  background:white;
+  border:2px solid transparent;
+}
+
+.thumb:hover{
+  border-color:var(--gold);
+}
+
 .detail-info h1{
   font-size:clamp(42px,6vw,75px);
   line-height:.95;
@@ -372,11 +535,38 @@ body{
   letter-spacing:-3px;
 }
 
-.detail-price{
+.detail-price-box{
   margin:25px 0;
+}
+
+.detail-reference{
+  color:#8a817a;
+  text-decoration:line-through;
+  font-size:18px;
+}
+
+.detail-price{
+  margin-top:5px;
   font-size:38px;
   font-weight:1000;
   color:#96751e;
+}
+
+.detail-discount{
+  display:inline-block;
+  margin-top:10px;
+  padding:7px 12px;
+  border-radius:30px;
+  background:#171717;
+  color:#fff;
+  font-size:11px;
+  font-weight:900;
+}
+
+.detail-save{
+  margin-top:10px;
+  color:#96751e;
+  font-weight:900;
 }
 
 .detail-description{
@@ -390,6 +580,17 @@ body{
   font-size:13px;
   font-weight:900;
   color:#756d66;
+}
+
+.video-box{
+  margin-top:25px;
+  display:none;
+}
+
+.video-box video{
+  width:100%;
+  border-radius:20px;
+  max-height:350px;
 }
 
 .buy-now{
@@ -407,9 +608,18 @@ body{
   transition:.3s;
 }
 
-.buy-now:hover{transform:translateY(-5px)}
+.buy-now:hover{
+  transform:translateY(-5px);
+}
 
-/* CHECKOUT */
+.buy-now:disabled{
+  opacity:.5;
+  cursor:not-allowed;
+  transform:none;
+}
+
+
+/* ================= CHECKOUT ================= */
 
 .checkout{
   width:92%;
@@ -470,7 +680,8 @@ body{
   margin-top:18px;
 }
 
-/* FOOTER */
+
+/* ================= FOOTER ================= */
 
 footer{
   width:92%;
@@ -493,22 +704,56 @@ footer p{
   font-size:12px;
 }
 
+
+/* ================= RESPONSIVE ================= */
+
 @media(max-width:900px){
-  .cards{grid-template-columns:repeat(2,1fr)}
-  .product-detail{grid-template-columns:1fr}
-  .nav-tag{display:none}
+
+  .cards{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .product-detail{
+    grid-template-columns:1fr;
+  }
+
+  .nav-tag{
+    display:none;
+  }
+
 }
 
 @media(max-width:600px){
-  .cards{grid-template-columns:1fr}
-  .product-detail{padding:25px}
-  .detail-image-box{min-height:330px}
-  .detail-image{height:330px}
-  .checkout{padding:25px}
-  .logo{font-size:22px;letter-spacing:4px}
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .product-detail{
+    padding:25px;
+  }
+
+  .detail-image-box{
+    min-height:330px;
+  }
+
+  .detail-image{
+    height:330px;
+  }
+
+  .checkout{
+    padding:25px;
+  }
+
+  .logo{
+    font-size:22px;
+    letter-spacing:4px;
+  }
+
 }
 </style>
 </head>
+
 
 <body>
 
@@ -518,12 +763,17 @@ footer p{
   ✦ BROSHIN • TRENDING PRODUCTS • SMART FINDS • EVERYDAY ESSENTIALS ✦
 </div>
 
+
 <header class="nav">
-  <a href="./" class="logo">BROSHIN<span>.</span></a>
+
+  <a href="./" class="logo">
+    BROSHIN<span>.</span>
+  </a>
 
   <div class="nav-tag">
     DISCOVER. SHOP. ENJOY.
   </div>
+
 </header>
 
 
@@ -579,9 +829,19 @@ footer p{
     <div class="cards" id="productCards">
 
       <div class="card">
-        <div class="placeholder">🛍️</div>
-        <h3>Loading Products...</h3>
-        <p>Please wait...</p>
+
+        <div class="placeholder">
+          🛍️
+        </div>
+
+        <h3>
+          Loading Products...
+        </h3>
+
+        <p>
+          Please wait...
+        </p>
+
       </div>
 
     </div>
@@ -603,9 +863,23 @@ footer p{
 
     <div class="product-detail">
 
-      <div class="detail-image-box" id="detailImageBox">
-        <div class="detail-placeholder">🛍️</div>
+      <div>
+
+        <div class="detail-image-box" id="detailImageBox">
+
+          <div class="detail-placeholder">
+            🛍️
+          </div>
+
+        </div>
+
+        <div
+          class="image-gallery"
+          id="imageGallery"
+        ></div>
+
       </div>
+
 
       <div class="detail-info">
 
@@ -617,17 +891,65 @@ footer p{
           Loading...
         </h1>
 
-        <div class="detail-price" id="detailPrice">
-          ₹0
+
+        <div class="detail-price-box">
+
+          <div
+            class="detail-reference"
+            id="detailReference"
+          ></div>
+
+          <div
+            class="detail-price"
+            id="detailPrice"
+          >
+            ₹0
+          </div>
+
+          <div
+            class="detail-discount"
+            id="detailDiscount"
+          ></div>
+
+          <div
+            class="detail-save"
+            id="detailSave"
+          ></div>
+
         </div>
 
-        <p class="detail-description" id="detailDescription">
-        </p>
 
-        <div class="stock" id="detailStock">
+        <p
+          class="detail-description"
+          id="detailDescription"
+        ></p>
+
+
+        <div
+          class="stock"
+          id="detailStock"
+        ></div>
+
+
+        <div
+          class="video-box"
+          id="videoBox"
+        >
+
+          <video
+            id="productVideo"
+            controls
+            playsinline
+          ></video>
+
         </div>
 
-        <button class="buy-now" onclick="showCheckout()">
+
+        <button
+          class="buy-now"
+          id="buyNowButton"
+          onclick="showCheckout()"
+        >
           BUY NOW
         </button>
 
@@ -638,17 +960,26 @@ footer p{
   </section>
 
 
-  <!-- CHECKOUT -->
+  <!-- ================= CHECKOUT ================= -->
 
-  <section class="checkout" id="checkoutSection">
+  <section
+    class="checkout"
+    id="checkoutSection"
+  >
 
-    <h2>Checkout</h2>
+    <h2>
+      Checkout
+    </h2>
 
     <p id="checkoutProduct">
       Complete your order below.
     </p>
 
-    <form class="checkout-form" id="checkoutForm">
+
+    <form
+      class="checkout-form"
+      id="checkoutForm"
+    >
 
       <input
         type="text"
@@ -657,6 +988,7 @@ footer p{
         required
       >
 
+
       <input
         type="tel"
         id="customerPhone"
@@ -664,11 +996,13 @@ footer p{
         required
       >
 
+
       <textarea
         id="customerAddress"
         placeholder="Full Delivery Address"
         required
       ></textarea>
+
 
       <input
         type="number"
@@ -678,11 +1012,13 @@ footer p{
         required
       >
 
+
       <button type="submit">
         PLACE ORDER
       </button>
 
     </form>
+
 
     <div id="checkoutMessage"></div>
 
@@ -711,23 +1047,34 @@ footer p{
 ========================= */
 
 const API_URL =
-"https://script.google.com/macros/s/AKfycbwkG1MFEvHLKRl3AiRtOwxLkMroU7sv1dnCofJdzHVkTTO89Irz_z2oqkCBx9tq_H9Bzg/exec";
+"https://script.google.com/macros/s/AKfycbzGkYFgYr2ZBa8bw8K9ca7A4byIPBJpIFv0uay579HTz6u1NHTr0DBr7PQySJsMQcNhcA/exec";
 
 
 let allProducts = [];
+
 let currentProduct = null;
 
 
-/* CURSOR */
+/* =========================
+   CURSOR
+========================= */
 
-const cursor = document.getElementById("cursor");
+const cursor =
+  document.getElementById("cursor");
 
-document.addEventListener("mousemove",function(e){
 
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
+document.addEventListener(
+  "mousemove",
+  function(e){
 
-});
+    cursor.style.left =
+      e.clientX + "px";
+
+    cursor.style.top =
+      e.clientY + "px";
+
+  }
+);
 
 
 /* =========================
@@ -737,103 +1084,275 @@ document.addEventListener("mousemove",function(e){
 async function loadProducts(){
 
   const productCards =
-    document.getElementById("productCards");
+    document.getElementById(
+      "productCards"
+    );
+
 
   try{
 
     const response =
       await fetch(API_URL);
 
+
     const data =
       await response.json();
 
+
     if(!Array.isArray(data)){
-      throw new Error("Products not found");
+
+      throw new Error(
+        "Products not found"
+      );
+
     }
+
 
     allProducts = data;
 
+
     productCards.innerHTML = "";
 
-    if(data.length === 0){
+
+    const activeProducts =
+      data.filter(function(product){
+
+        return String(
+          product.status || "active"
+        ).toLowerCase() === "active";
+
+      });
+
+
+    if(activeProducts.length === 0){
 
       productCards.innerHTML = `
+
         <div class="card">
-          <div class="placeholder">🛍️</div>
-          <h3>No Products Yet</h3>
-          <p>New products coming soon.</p>
+
+          <div class="placeholder">
+            🛍️
+          </div>
+
+          <h3>
+            No Products Yet
+          </h3>
+
+          <p>
+            New products coming soon.
+          </p>
+
         </div>
+
       `;
 
       return;
+
     }
 
 
-    data.forEach(function(product){
+    activeProducts.forEach(
+      function(product){
 
-      const card =
-        document.createElement("article");
-
-      card.className = "card";
-
-
-      const image =
-        String(product.image || "").trim();
+        const card =
+          document.createElement(
+            "article"
+          );
 
 
-      card.innerHTML = `
+        card.className = "card";
 
-        <div class="number">
-          PRODUCT ${product.id}
-        </div>
 
-        ${
-          image
-          ?
-          `<img
-            class="product-image"
-            src="${escapeHTML(image)}"
-            alt="${escapeHTML(product.name)}"
-          >`
-          :
-          `<div class="placeholder">🛍️</div>`
+        const image =
+          String(
+            product.image1 || ""
+          ).trim();
+
+
+        const referencePrice =
+          Number(
+            product.reference_price
+          ) || 0;
+
+
+        const sellingPrice =
+          Number(
+            product.selling_price
+          ) || 0;
+
+
+        const discount =
+          Number(
+            product.discount
+          ) || 0;
+
+
+        const saveAmount =
+          Number(
+            product.save_amount
+          ) || 0;
+
+
+        const stock =
+          Number(
+            product.stock
+          ) || 0;
+
+
+        card.innerHTML = `
+
+          ${
+            stock <= 0
+            ?
+            `<div class="status-badge">
+              OUT OF STOCK
+            </div>`
+            :
+            ``
+          }
+
+
+          <div class="number">
+            PRODUCT ${escapeHTML(
+              product.id
+            )}
+          </div>
+
+
+          ${
+            image
+            ?
+
+            `<img
+              class="product-image"
+              src="${escapeHTML(image)}"
+              alt="${escapeHTML(
+                product.name
+              )}"
+              loading="lazy"
+            >`
+
+            :
+
+            `<div class="placeholder">
+              🛍️
+            </div>`
+          }
+
+
+          <h3>
+            ${escapeHTML(
+              product.name
+            )}
+          </h3>
+
+
+          <div class="price-box">
+
+            ${
+              referencePrice > sellingPrice
+              ?
+
+              `<span class="reference-price">
+                ₹${referencePrice}
+              </span>`
+
+              :
+
+              ``
+            }
+
+
+            <span class="product-price">
+              ₹${sellingPrice}
+            </span>
+
+
+            ${
+              discount > 0
+              ?
+
+              `<span class="discount-badge">
+                ${discount}% OFF
+              </span>`
+
+              :
+
+              ``
+            }
+
+          </div>
+
+
+          ${
+            saveAmount > 0
+            ?
+
+            `<div class="save-text">
+              Save ₹${saveAmount}
+            </div>`
+
+            :
+
+            ``
+          }
+
+
+          <p>
+            ${escapeHTML(
+              product.description || ""
+            )}
+          </p>
+
+
+          <button
+            class="view-btn"
+            onclick="openProduct('${escapeJS(
+              product.id
+            )}')"
+            ${stock <= 0 ? "disabled" : ""}
+          >
+            ${
+              stock <= 0
+              ?
+              "OUT OF STOCK"
+              :
+              "VIEW PRODUCT"
+            }
+          </button>
+
+        `;
+
+
+        if(stock <= 0){
+
+          card.classList.add(
+            "out-stock"
+          );
+
         }
 
-        <h3>
-          ${escapeHTML(product.name)}
-        </h3>
 
-        <div class="product-price">
-          ₹${Number(product.price) || 0}
-        </div>
+        productCards.appendChild(
+          card
+        );
 
-        <p>
-          ${escapeHTML(product.description || "")}
-        </p>
-
-        <button
-          class="view-btn"
-          onclick="openProduct('${product.id}')"
-        >
-          VIEW PRODUCT
-        </button>
-
-      `;
-
-      productCards.appendChild(card);
-
-    });
+      }
+    );
 
 
   }catch(error){
 
     console.error(error);
 
+
     productCards.innerHTML = `
 
       <div class="card">
 
-        <div class="placeholder">⚠️</div>
+        <div class="placeholder">
+          ⚠️
+        </div>
 
         <h3>
           Products Couldn't Load
@@ -867,7 +1386,7 @@ function openProduct(id){
 
 
 /* =========================
-   SHOW PRODUCT PAGE
+   CHECK PRODUCT PAGE
 ========================= */
 
 function checkProductPage(){
@@ -877,33 +1396,44 @@ function checkProductPage(){
       window.location.search
     );
 
+
   const productId =
     params.get("product");
 
 
   if(!productId){
 
-    document.getElementById("homePage")
-      .style.display = "block";
+    document.getElementById(
+      "homePage"
+    ).style.display = "block";
 
-    document.getElementById("productPage")
-      .style.display = "none";
+
+    document.getElementById(
+      "productPage"
+    ).style.display = "none";
+
 
     loadProducts();
+
 
     return;
 
   }
 
 
-  document.getElementById("homePage")
-    .style.display = "none";
-
-  document.getElementById("productPage")
-    .style.display = "block";
+  document.getElementById(
+    "homePage"
+  ).style.display = "none";
 
 
-  loadSingleProduct(productId);
+  document.getElementById(
+    "productPage"
+  ).style.display = "block";
+
+
+  loadSingleProduct(
+    productId
+  );
 
 }
 
@@ -912,29 +1442,48 @@ function checkProductPage(){
    LOAD SINGLE PRODUCT
 ========================= */
 
-async function loadSingleProduct(productId){
+async function loadSingleProduct(
+  productId
+){
 
   try{
 
     const response =
       await fetch(API_URL);
 
+
     const products =
       await response.json();
 
 
+    if(!Array.isArray(products)){
+
+      throw new Error(
+        "Products not found"
+      );
+
+    }
+
+
     currentProduct =
       products.find(
-        product =>
-          String(product.id) ===
-          String(productId)
+        function(product){
+
+          return String(
+            product.id
+          ) === String(
+            productId
+          );
+
+        }
       );
 
 
     if(!currentProduct){
 
-      document.getElementById("detailName")
-        .textContent =
+      document.getElementById(
+        "detailName"
+      ).textContent =
         "Product Not Found";
 
       return;
@@ -942,48 +1491,285 @@ async function loadSingleProduct(productId){
     }
 
 
-    document.getElementById("detailName")
-      .textContent =
-      currentProduct.name;
+    const sellingPrice =
+      Number(
+        currentProduct.selling_price
+      ) || 0;
 
 
-    document.getElementById("detailPrice")
-      .textContent =
-      "₹" +
-      (Number(currentProduct.price) || 0);
+    const referencePrice =
+      Number(
+        currentProduct.reference_price
+      ) || 0;
 
 
-    document.getElementById("detailDescription")
-      .textContent =
+    const discount =
+      Number(
+        currentProduct.discount
+      ) || 0;
+
+
+    const saveAmount =
+      Number(
+        currentProduct.save_amount
+      ) || 0;
+
+
+    const stock =
+      Number(
+        currentProduct.stock
+      ) || 0;
+
+
+    document.getElementById(
+      "detailName"
+    ).textContent =
+      currentProduct.name || "Product";
+
+
+    document.getElementById(
+      "detailPrice"
+    ).textContent =
+      "₹" + sellingPrice;
+
+
+    const referenceElement =
+      document.getElementById(
+        "detailReference"
+      );
+
+
+    if(
+      referencePrice > sellingPrice
+    ){
+
+      referenceElement.textContent =
+        "₹" + referencePrice;
+
+    }else{
+
+      referenceElement.textContent =
+        "";
+
+    }
+
+
+    const discountElement =
+      document.getElementById(
+        "detailDiscount"
+      );
+
+
+    if(discount > 0){
+
+      discountElement.textContent =
+        discount + "% OFF";
+
+    }else{
+
+      discountElement.textContent =
+        "";
+
+    }
+
+
+    const saveElement =
+      document.getElementById(
+        "detailSave"
+      );
+
+
+    if(saveAmount > 0){
+
+      saveElement.textContent =
+        "You save ₹" +
+        saveAmount;
+
+    }else{
+
+      saveElement.textContent =
+        "";
+
+    }
+
+
+    document.getElementById(
+      "detailDescription"
+    ).textContent =
       currentProduct.description ||
       "Discover this amazing product on BROSHIN.";
 
 
-    document.getElementById("detailStock")
-      .textContent =
-      "Available Stock: " +
-      (Number(currentProduct.stock) || 0);
+    document.getElementById(
+      "detailStock"
+    ).textContent =
+      stock > 0
+      ?
+      "Available Stock: " + stock
+      :
+      "Currently Out of Stock";
 
 
-    const image =
+    const buyButton =
+      document.getElementById(
+        "buyNowButton"
+      );
+
+
+    if(stock <= 0){
+
+      buyButton.disabled = true;
+
+      buyButton.textContent =
+        "OUT OF STOCK";
+
+    }else{
+
+      buyButton.disabled = false;
+
+      buyButton.textContent =
+        "BUY NOW";
+
+    }
+
+
+    /* MAIN IMAGE */
+
+    const imageList = [
+
+      currentProduct.image1,
+
+      currentProduct.image2,
+
+      currentProduct.image3,
+
+      currentProduct.image4,
+
+      currentProduct.image5,
+
+      currentProduct.image6
+
+    ]
+    .map(function(image){
+
+      return String(
+        image || ""
+      ).trim();
+
+    })
+    .filter(function(image){
+
+      return image !== "";
+
+    });
+
+
+    const imageBox =
+      document.getElementById(
+        "detailImageBox"
+      );
+
+
+    const gallery =
+      document.getElementById(
+        "imageGallery"
+      );
+
+
+    gallery.innerHTML = "";
+
+
+    if(imageList.length > 0){
+
+      setMainImage(
+        imageList[0]
+      );
+
+
+      imageList.forEach(
+        function(image){
+
+          const img =
+            document.createElement(
+              "img"
+            );
+
+
+          img.src = image;
+
+          img.className =
+            "thumb";
+
+          img.alt =
+            currentProduct.name || "Product";
+
+
+          img.onclick =
+            function(){
+
+              setMainImage(
+                image
+              );
+
+            };
+
+
+          gallery.appendChild(
+            img
+          );
+
+        }
+      );
+
+    }else{
+
+      imageBox.innerHTML = `
+
+        <div class="detail-placeholder">
+          🛍️
+        </div>
+
+      `;
+
+    }
+
+
+    /* VIDEO */
+
+    const video =
       String(
-        currentProduct.image || ""
+        currentProduct.video || ""
       ).trim();
 
 
-    if(image){
-
+    const videoBox =
       document.getElementById(
-        "detailImageBox"
-      ).innerHTML = `
+        "videoBox"
+      );
 
-        <img
-          src="${escapeHTML(image)}"
-          class="detail-image"
-          alt="${escapeHTML(currentProduct.name)}"
-        >
 
-      `;
+    const videoElement =
+      document.getElementById(
+        "productVideo"
+      );
+
+
+    if(video){
+
+      videoElement.src =
+        video;
+
+      videoBox.style.display =
+        "block";
+
+    }else{
+
+      videoElement.removeAttribute(
+        "src"
+      );
+
+      videoBox.style.display =
+        "none";
 
     }
 
@@ -993,18 +1779,47 @@ async function loadSingleProduct(productId){
     ).textContent =
       currentProduct.name +
       " — ₹" +
-      (Number(currentProduct.price) || 0);
+      sellingPrice;
 
 
   }catch(error){
 
     console.error(error);
 
-    document.getElementById("detailName")
-      .textContent =
+
+    document.getElementById(
+      "detailName"
+    ).textContent =
       "Something went wrong";
 
   }
+
+}
+
+
+/* =========================
+   MAIN IMAGE
+========================= */
+
+function setMainImage(
+  image
+){
+
+  const imageBox =
+    document.getElementById(
+      "detailImageBox"
+    );
+
+
+  imageBox.innerHTML = `
+
+    <img
+      src="${escapeHTML(image)}"
+      class="detail-image"
+      alt="BROSHIN Product"
+    >
+
+  `;
 
 }
 
@@ -1014,6 +1829,24 @@ async function loadSingleProduct(productId){
 ========================= */
 
 function showCheckout(){
+
+  if(!currentProduct){
+
+    return;
+
+  }
+
+
+  if(
+    Number(
+      currentProduct.stock
+    ) <= 0
+  ){
+
+    return;
+
+  }
+
 
   document.getElementById(
     "checkoutSection"
@@ -1064,9 +1897,34 @@ document.getElementById(
       );
 
 
+    if(quantity < 1){
+
+      return;
+
+    }
+
+
+    const stock =
+      Number(
+        currentProduct.stock
+      ) || 0;
+
+
+    if(quantity > stock){
+
+      document.getElementById(
+        "checkoutMessage"
+      ).textContent =
+        "❌ Not enough stock available.";
+
+      return;
+
+    }
+
+
     const price =
       Number(
-        currentProduct.price
+        currentProduct.selling_price
       ) || 0;
 
 
@@ -1120,7 +1978,9 @@ document.getElementById(
           method:"POST",
           mode:"no-cors",
           body:
-            JSON.stringify(orderData)
+            JSON.stringify(
+              orderData
+            )
         }
       );
 
@@ -1138,6 +1998,7 @@ document.getElementById(
 
       console.error(error);
 
+
       message.textContent =
         "❌ Order failed. Please try again.";
 
@@ -1148,27 +2009,70 @@ document.getElementById(
 
 
 /* =========================
-   SECURITY / DISPLAY
+   SECURITY
 ========================= */
 
-function escapeHTML(value){
+function escapeHTML(
+  value
+){
 
   return String(value)
 
-    .replace(/&/g,"&amp;")
+    .replace(
+      /&/g,
+      "&amp;"
+    )
 
-    .replace(/</g,"&lt;")
+    .replace(
+      /</g,
+      "&lt;"
+    )
 
-    .replace(/>/g,"&gt;")
+    .replace(
+      />/g,
+      "&gt;"
+    )
 
-    .replace(/"/g,"&quot;")
+    .replace(
+      /"/g,
+      "&quot;"
+    )
 
-    .replace(/'/g,"&#039;");
+    .replace(
+      /'/g,
+      "&#039;"
+    );
 
 }
 
 
-/* START */
+function escapeJS(
+  value
+){
+
+  return String(value)
+
+    .replace(
+      /\\/g,
+      "\\\\"
+    )
+
+    .replace(
+      /'/g,
+      "\\'"
+    )
+
+    .replace(
+      /"/g,
+      '\\"'
+    );
+
+}
+
+
+/* =========================
+   START
+========================= */
 
 checkProductPage();
 
@@ -1176,3 +2080,4 @@ checkProductPage();
 
 </body>
 </html>
+```
