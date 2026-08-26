@@ -1,13 +1,17 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>BROSHIN — Discover. Shop. Enjoy.</title>
 
 <style>
+
 :root{
   --black:#171717;
   --gold:#D4AF37;
@@ -29,85 +33,174 @@ html{
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   color:var(--text);
+
   overflow-x:hidden;
+
   min-height:100vh;
+
   background:
-    radial-gradient(circle at 10% 15%,rgba(216,183,174,.65),transparent 28%),
-    radial-gradient(circle at 90% 10%,rgba(232,211,185,.8),transparent 30%),
-    linear-gradient(125deg,var(--ivory),var(--cream),#fffaf4,var(--rose),var(--ivory));
+
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(216,183,174,.65),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(232,211,185,.8),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      125deg,
+      var(--ivory),
+      var(--cream),
+      #fffaf4,
+      var(--rose),
+      var(--ivory)
+    );
+
   background-size:400% 400%;
+
   animation:bgMove 18s ease infinite;
+
 }
 
 @keyframes bgMove{
-  0%,100%{background-position:0% 50%}
-  50%{background-position:100% 50%}
+
+  0%,100%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
 }
 
 .cursor{
+
   position:fixed;
+
   width:280px;
   height:280px;
+
   border-radius:50%;
+
   pointer-events:none;
-  transform:translate(-50%,-50%);
-  background:radial-gradient(
-    circle,
-    rgba(212,175,55,.13),
-    transparent 70%
-  );
+
+  transform:
+    translate(-50%,-50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(212,175,55,.13),
+      transparent 70%
+    );
+
   z-index:0;
+
 }
 
 .topbar{
+
   height:38px;
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
   color:#fff;
+
   font-size:11px;
+
   font-weight:bold;
+
   letter-spacing:3px;
+
   text-align:center;
-  background:linear-gradient(
-    90deg,
-    #171717,
-    #4a4038,
-    #171717
-  );
+
+  background:
+    linear-gradient(
+      90deg,
+      #171717,
+      #4a4038,
+      #171717
+    );
+
   background-size:200% 100%;
+
   animation:bar 6s linear infinite;
+
 }
 
 @keyframes bar{
-  to{background-position:200% 0}
+
+  to{
+    background-position:200% 0;
+  }
+
 }
 
 .nav{
+
   width:92%;
   max-width:1250px;
+
   margin:20px auto;
+
   padding:17px 25px;
+
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
-  border:1px solid rgba(255,255,255,.55);
+
+  border:
+    1px solid
+    rgba(255,255,255,.55);
+
   border-radius:24px;
-  background:rgba(255,255,255,.42);
+
+  background:
+    rgba(255,255,255,.42);
+
   backdrop-filter:blur(20px);
-  box-shadow:0 20px 50px rgba(23,23,23,.08);
+
+  box-shadow:
+    0 20px 50px
+    rgba(23,23,23,.08);
+
   position:relative;
+
   z-index:10;
+
 }
 
 .logo{
+
   color:var(--black);
+
   text-decoration:none;
+
   font-size:30px;
+
   font-weight:1000;
+
   letter-spacing:7px;
+
 }
 
 .logo span{
@@ -115,10 +208,15 @@ body{
 }
 
 .nav-tag{
+
   font-size:11px;
+
   letter-spacing:3px;
+
   font-weight:bold;
+
   color:var(--muted);
+
 }
 
 
@@ -133,304 +231,532 @@ body{
 }
 
 .hero{
+
   width:92%;
+
   max-width:1250px;
+
   min-height:620px;
+
   margin:auto;
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
   text-align:center;
+
   position:relative;
+
 }
 
 .orb{
+
   position:absolute;
+
   border-radius:50%;
+
   pointer-events:none;
+
 }
 
 .orb.one{
+
   width:420px;
   height:420px;
+
   left:0;
   top:80px;
-  background:radial-gradient(
-    circle,
-    rgba(216,183,174,.55),
-    transparent 68%
-  );
-  animation:floatOrb1 9s ease-in-out infinite;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(216,183,174,.55),
+      transparent 68%
+    );
+
+  animation:
+    floatOrb1 9s ease-in-out infinite;
+
 }
 
 .orb.two{
+
   width:380px;
   height:380px;
+
   right:0;
   bottom:20px;
-  background:radial-gradient(
-    circle,
-    rgba(212,175,55,.22),
-    transparent 68%
-  );
-  animation:floatOrb2 11s ease-in-out infinite;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(212,175,55,.22),
+      transparent 68%
+    );
+
+  animation:
+    floatOrb2 11s ease-in-out infinite;
+
 }
 
 @keyframes floatOrb1{
+
   50%{
-    transform:translate(100px,50px) scale(1.12);
+    transform:
+      translate(100px,50px)
+      scale(1.12);
   }
+
 }
 
 @keyframes floatOrb2{
+
   50%{
-    transform:translate(-100px,-50px) scale(1.15);
+    transform:
+      translate(-100px,-50px)
+      scale(1.15);
   }
+
 }
 
 .hero-content{
+
   position:relative;
+
   z-index:2;
+
 }
 
 .small-title{
+
   display:inline-block;
+
   padding:9px 18px;
+
   border-radius:50px;
+
   font-size:11px;
+
   letter-spacing:4px;
+
   font-weight:900;
-  background:linear-gradient(
-    100deg,
-    rgba(232,211,185,.7),
-    rgba(216,183,174,.55)
-  );
-  border:1px solid rgba(212,175,55,.35);
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(232,211,185,.7),
+      rgba(216,183,174,.55)
+    );
+
+  border:
+    1px solid
+    rgba(212,175,55,.35);
+
 }
 
 .hero h1{
+
   margin-top:25px;
-  font-size:clamp(75px,15vw,175px);
+
+  font-size:
+    clamp(75px,15vw,175px);
+
   line-height:.82;
+
   font-weight:1000;
-  letter-spacing:clamp(6px,1.7vw,18px);
-  background:linear-gradient(
-    100deg,
-    #171717,
-    #6a594c,
-    #D4AF37,
-    #9b7921,
-    #171717
-  );
+
+  letter-spacing:
+    clamp(6px,1.7vw,18px);
+
+  background:
+    linear-gradient(
+      100deg,
+      #171717,
+      #6a594c,
+      #D4AF37,
+      #9b7921,
+      #171717
+    );
+
   background-size:300% auto;
+
   -webkit-background-clip:text;
+
   background-clip:text;
+
   color:transparent;
-  animation:gold 7s linear infinite;
+
+  animation:
+    gold 7s linear infinite;
+
 }
 
 @keyframes gold{
+
   to{
     background-position:300% center;
   }
+
 }
 
 .hero-description{
+
   max-width:650px;
+
   margin:35px auto 0;
+
   color:var(--muted);
+
   font-size:17px;
+
   line-height:1.8;
+
 }
 
 .hero-button,
 .primary-btn{
+
   display:inline-block;
+
   margin-top:32px;
+
   padding:16px 30px;
+
   border:0;
+
   border-radius:50px;
+
   color:white;
+
   text-decoration:none;
+
   font-size:13px;
+
   font-weight:900;
+
   letter-spacing:1px;
+
   cursor:pointer;
-  background:linear-gradient(
-    100deg,
-    #171717,
-    #4b4037,
-    #171717
-  );
-  box-shadow:0 18px 40px rgba(23,23,23,.18);
+
+  background:
+    linear-gradient(
+      100deg,
+      #171717,
+      #4b4037,
+      #171717
+    );
+
+  box-shadow:
+    0 18px 40px
+    rgba(23,23,23,.18);
+
   transition:.3s;
+
 }
 
 .hero-button:hover,
 .primary-btn:hover{
-  transform:translateY(-5px);
+
+  transform:
+    translateY(-5px);
+
 }
 
 
 /* ================= TRENDING ================= */
 
 .trending{
+
   width:92%;
+
   max-width:1250px;
+
   margin:80px auto 120px;
+
 }
 
 .heading{
+
   text-align:center;
+
   margin-bottom:50px;
+
 }
 
 .heading-label{
+
   font-size:11px;
+
   font-weight:900;
+
   letter-spacing:4px;
+
   color:#96751e;
+
 }
 
 .heading h2{
+
   margin-top:12px;
-  font-size:clamp(50px,8vw,95px);
+
+  font-size:
+    clamp(50px,8vw,95px);
+
   line-height:.9;
+
   font-weight:1000;
+
   letter-spacing:-4px;
-  background:linear-gradient(
-    90deg,
-    #171717,
-    #D4AF37,
-    #D8B7AE,
-    #171717
-  );
+
+  background:
+    linear-gradient(
+      90deg,
+      #171717,
+      #D4AF37,
+      #D8B7AE,
+      #171717
+    );
+
   background-size:250% auto;
+
   -webkit-background-clip:text;
+
   background-clip:text;
+
   color:transparent;
+
 }
 
 .heading p{
+
   margin:22px auto 0;
+
   max-width:600px;
+
   color:var(--muted);
+
   line-height:1.7;
+
 }
 
 .cards{
+
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+
+  grid-template-columns:
+    repeat(4,1fr);
+
   gap:22px;
+
 }
 
 .card{
+
   min-height:430px;
+
   padding:25px;
+
   border-radius:32px;
+
   position:relative;
+
   overflow:hidden;
-  background:linear-gradient(
-    145deg,
-    rgba(255,255,255,.76),
-    rgba(255,255,255,.27)
-  );
-  border:1px solid rgba(255,255,255,.6);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.76),
+      rgba(255,255,255,.27)
+    );
+
+  border:
+    1px solid
+    rgba(255,255,255,.6);
+
   backdrop-filter:blur(18px);
-  box-shadow:0 25px 65px rgba(23,23,23,.1);
+
+  box-shadow:
+    0 25px 65px
+    rgba(23,23,23,.1);
+
   transition:.35s;
+
 }
 
 .card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 35px 80px rgba(23,23,23,.18);
+
+  transform:
+    translateY(-10px);
+
+  box-shadow:
+    0 35px 80px
+    rgba(23,23,23,.18);
+
 }
 
 .product-image{
+
   width:100%;
+
   height:210px;
+
   object-fit:contain;
+
   border-radius:22px;
-  background:rgba(255,255,255,.5);
+
+  background:
+    rgba(255,255,255,.5);
+
   margin:15px 0;
+
 }
 
 .placeholder{
+
   height:210px;
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
   font-size:70px;
+
   margin:15px 0;
+
   border-radius:22px;
-  background:rgba(255,255,255,.5);
+
+  background:
+    rgba(255,255,255,.5);
+
 }
 
 .number{
+
   font-size:10px;
+
   letter-spacing:3px;
+
   font-weight:900;
+
   color:#9b8c7d;
+
 }
 
 .card h3{
+
   font-size:20px;
+
   margin:10px 0;
+
 }
 
 .card p{
+
   font-size:13px;
+
   color:var(--muted);
+
   line-height:1.6;
+
 }
 
 .price-box{
+
   display:flex;
+
   align-items:center;
+
   gap:10px;
+
   flex-wrap:wrap;
+
   margin:12px 0;
+
 }
 
 .reference-price{
+
   font-size:15px;
+
   color:#8a817a;
+
   text-decoration:line-through;
+
 }
 
 .product-price{
+
   font-size:24px;
+
   font-weight:1000;
+
 }
 
 .discount-badge{
+
   display:inline-block;
+
   padding:5px 9px;
+
   border-radius:20px;
+
   background:#171717;
+
   color:white;
+
   font-size:10px;
+
   font-weight:900;
+
 }
 
 .save-text{
+
   font-size:12px;
+
   color:#96751e;
+
   font-weight:900;
+
 }
 
 .view-btn{
+
   width:100%;
+
   padding:14px;
+
   margin-top:18px;
+
   border:0;
+
   border-radius:50px;
+
   background:var(--black);
+
   color:#fff;
+
   font-weight:900;
+
   cursor:pointer;
+
   position:relative;
+
   z-index:2;
+
+}
+
+.view-btn:disabled{
+
+  opacity:.5;
+
+  cursor:not-allowed;
+
 }
 
 .out-stock{
@@ -438,270 +764,590 @@ body{
 }
 
 .status-badge{
+
   position:absolute;
+
   top:20px;
+
   right:20px;
+
   padding:7px 11px;
+
   border-radius:30px;
-  background:rgba(23,23,23,.9);
+
+  background:
+    rgba(23,23,23,.9);
+
   color:#fff;
+
   font-size:9px;
+
   font-weight:900;
+
   letter-spacing:1px;
+
 }
 
 
 /* ================= PRODUCT PAGE ================= */
 
 .product-wrap{
+
   width:92%;
+
   max-width:1150px;
+
   margin:70px auto 100px;
+
 }
 
 .back-btn{
+
   border:0;
+
   background:none;
+
   cursor:pointer;
+
   font-weight:900;
+
   color:var(--muted);
+
   margin-bottom:30px;
+
   font-size:14px;
+
 }
 
 .product-detail{
+
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap:55px;
+
   align-items:center;
+
   padding:50px;
+
   border-radius:40px;
-  background:rgba(255,255,255,.45);
+
+  background:
+    rgba(255,255,255,.45);
+
   backdrop-filter:blur(20px);
-  border:1px solid rgba(255,255,255,.7);
-  box-shadow:0 30px 80px rgba(23,23,23,.1);
+
+  border:
+    1px solid
+    rgba(255,255,255,.7);
+
+  box-shadow:
+    0 30px 80px
+    rgba(23,23,23,.1);
+
 }
 
 .detail-image-box{
+
   min-height:450px;
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
   border-radius:30px;
-  background:linear-gradient(
-    135deg,
-    rgba(216,183,174,.35),
-    rgba(232,211,185,.7)
-  );
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(216,183,174,.35),
+      rgba(232,211,185,.7)
+    );
+
   overflow:hidden;
+
   position:relative;
+
 }
 
 .detail-image{
+
   width:100%;
+
   height:450px;
+
   object-fit:contain;
+
 }
 
 .detail-placeholder{
+
   font-size:140px;
+
 }
 
 .image-gallery{
+
   display:flex;
+
   gap:10px;
+
   margin-top:15px;
+
   overflow-x:auto;
+
 }
 
 .thumb{
+
   width:65px;
+
   height:65px;
+
   object-fit:cover;
+
   border-radius:12px;
+
   cursor:pointer;
+
   background:white;
+
   border:2px solid transparent;
+
 }
 
 .thumb:hover{
-  border-color:var(--gold);
+
+  border-color:
+    var(--gold);
+
 }
 
 .detail-info h1{
-  font-size:clamp(42px,6vw,75px);
+
+  font-size:
+    clamp(42px,6vw,75px);
+
   line-height:.95;
+
   font-weight:1000;
+
   letter-spacing:-3px;
+
 }
 
 .detail-price-box{
+
   margin:25px 0;
+
 }
 
 .detail-reference{
+
   color:#8a817a;
+
   text-decoration:line-through;
+
   font-size:18px;
+
 }
 
 .detail-price{
+
   margin-top:5px;
+
   font-size:38px;
+
   font-weight:1000;
+
   color:#96751e;
+
 }
 
 .detail-discount{
+
   display:inline-block;
+
   margin-top:10px;
+
   padding:7px 12px;
+
   border-radius:30px;
+
   background:#171717;
+
   color:#fff;
+
   font-size:11px;
+
   font-weight:900;
+
 }
 
 .detail-save{
+
   margin-top:10px;
+
   color:#96751e;
+
   font-weight:900;
+
 }
 
 .detail-description{
+
   color:var(--muted);
+
   line-height:1.9;
+
   font-size:16px;
+
 }
 
 .stock{
+
   margin-top:20px;
+
   font-size:13px;
+
   font-weight:900;
+
   color:#756d66;
+
 }
 
 .video-box{
+
   margin-top:25px;
+
   display:none;
+
 }
 
 .video-box video{
+
   width:100%;
+
   border-radius:20px;
+
   max-height:350px;
+
 }
 
 .buy-now{
+
   width:100%;
+
   margin-top:30px;
+
   padding:18px;
+
   border:0;
+
   border-radius:50px;
+
   background:var(--black);
+
   color:white;
+
   font-size:14px;
+
   font-weight:900;
+
   letter-spacing:2px;
+
   cursor:pointer;
+
   transition:.3s;
+
 }
 
 .buy-now:hover{
-  transform:translateY(-5px);
+
+  transform:
+    translateY(-5px);
+
 }
 
 .buy-now:disabled{
+
   opacity:.5;
+
   cursor:not-allowed;
+
   transform:none;
+
 }
 
 
 /* ================= CHECKOUT ================= */
 
 .checkout{
+
   width:92%;
+
   max-width:700px;
+
   margin:0 auto 100px;
+
   padding:40px;
+
   border-radius:35px;
-  background:rgba(255,255,255,.75);
-  box-shadow:0 30px 80px rgba(23,23,23,.12);
+
+  background:
+    rgba(255,255,255,.75);
+
+  box-shadow:
+    0 30px 80px
+    rgba(23,23,23,.12);
+
 }
 
 .checkout h2{
+
   font-size:38px;
+
   margin-bottom:10px;
+
 }
 
 .checkout p{
+
   color:var(--muted);
+
   margin-bottom:25px;
+
 }
 
 .checkout-form{
+
   display:flex;
+
   flex-direction:column;
+
   gap:14px;
+
 }
 
 .checkout-form input,
 .checkout-form textarea{
+
   width:100%;
+
   padding:15px;
-  border:1px solid rgba(23,23,23,.12);
+
+  border:
+    1px solid
+    rgba(23,23,23,.12);
+
   border-radius:16px;
+
   font-family:inherit;
+
   font-size:14px;
+
   outline:none;
+
 }
 
 .checkout-form textarea{
+
   min-height:120px;
+
   resize:vertical;
+
 }
 
 .checkout-form button{
+
   padding:17px;
+
   border:0;
+
   border-radius:50px;
+
   background:var(--black);
+
   color:white;
+
   font-weight:900;
+
   letter-spacing:1px;
+
   cursor:pointer;
+
+}
+
+.checkout-form button:disabled{
+
+  opacity:.6;
+
+  cursor:not-allowed;
+
 }
 
 #checkoutMessage{
+
   text-align:center;
+
   font-weight:900;
+
   margin-top:18px;
+
+}
+
+
+/* ================= TRACK ORDER ================= */
+
+.track-box{
+
+  width:92%;
+
+  max-width:700px;
+
+  margin:0 auto 100px;
+
+  padding:40px;
+
+  border-radius:35px;
+
+  background:
+    rgba(255,255,255,.75);
+
+  box-shadow:
+    0 30px 80px
+    rgba(23,23,23,.12);
+
+  text-align:center;
+
+}
+
+.track-box h2{
+
+  font-size:35px;
+
+  margin-bottom:10px;
+
+}
+
+.track-box p{
+
+  color:var(--muted);
+
+  margin-bottom:20px;
+
+}
+
+.track-input{
+
+  width:100%;
+
+  padding:16px;
+
+  border:
+    1px solid
+    rgba(23,23,23,.15);
+
+  border-radius:50px;
+
+  outline:none;
+
+  margin-bottom:12px;
+
+}
+
+.track-button{
+
+  width:100%;
+
+  padding:16px;
+
+  border:0;
+
+  border-radius:50px;
+
+  background:var(--black);
+
+  color:white;
+
+  font-weight:900;
+
+  cursor:pointer;
+
+}
+
+.track-result{
+
+  margin-top:25px;
+
+  padding:20px;
+
+  border-radius:20px;
+
+  background:
+    rgba(248,244,236,.8);
+
+  text-align:left;
+
+  display:none;
+
+}
+
+.track-status{
+
+  font-size:22px;
+
+  font-weight:1000;
+
+  color:#96751e;
+
+  margin-bottom:10px;
+
 }
 
 
 /* ================= FOOTER ================= */
 
 footer{
+
   width:92%;
+
   max-width:1250px;
+
   margin:auto;
+
   padding:40px 0 30px;
-  border-top:1px solid rgba(23,23,23,.12);
+
+  border-top:
+    1px solid
+    rgba(23,23,23,.12);
+
   text-align:center;
+
 }
 
 .footer-logo{
+
   font-size:27px;
+
   font-weight:1000;
+
   letter-spacing:6px;
+
 }
 
 footer p{
+
   margin-top:12px;
+
   color:var(--muted);
+
   font-size:12px;
+
 }
 
 
@@ -710,15 +1356,22 @@ footer p{
 @media(max-width:900px){
 
   .cards{
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+      repeat(2,1fr);
+
   }
 
   .product-detail{
+
     grid-template-columns:1fr;
+
   }
 
   .nav-tag{
+
     display:none;
+
   }
 
 }
@@ -726,127 +1379,239 @@ footer p{
 @media(max-width:600px){
 
   .cards{
+
     grid-template-columns:1fr;
+
   }
 
   .product-detail{
+
     padding:25px;
+
   }
 
   .detail-image-box{
+
     min-height:330px;
+
   }
 
   .detail-image{
+
     height:330px;
+
   }
 
-  .checkout{
+  .checkout,
+  .track-box{
+
     padding:25px;
+
   }
 
   .logo{
+
     font-size:22px;
+
     letter-spacing:4px;
+
   }
 
 }
+
 </style>
+
 </head>
 
 
 <body>
 
+
 <div class="cursor" id="cursor"></div>
 
+
 <div class="topbar">
+
   ✦ BROSHIN • TRENDING PRODUCTS • SMART FINDS • EVERYDAY ESSENTIALS ✦
+
 </div>
 
 
 <header class="nav">
 
   <a href="./" class="logo">
+
     BROSHIN<span>.</span>
+
   </a>
 
   <div class="nav-tag">
+
     DISCOVER. SHOP. ENJOY.
+
   </div>
 
 </header>
 
 
-<!-- ================= HOME PAGE ================= -->
+<!-- ================= HOME ================= -->
 
 <main id="homePage">
 
-  <section class="hero">
 
-    <div class="orb one"></div>
-    <div class="orb two"></div>
+<section class="hero">
 
-    <div class="hero-content">
+  <div class="orb one"></div>
 
-      <div class="small-title">
-        WELCOME TO BROSHIN
-      </div>
+  <div class="orb two"></div>
 
-      <h1>BROSHIN</h1>
 
-      <p class="hero-description">
-        Discover what's trending.
-        Find something new.
-        Shop the products worth talking about.
-      </p>
+  <div class="hero-content">
 
-      <a href="#trending" class="hero-button">
-        EXPLORE TRENDING ↓
-      </a>
+    <div class="small-title">
+
+      WELCOME TO BROSHIN
 
     </div>
 
-  </section>
+
+    <h1>
+
+      BROSHIN
+
+    </h1>
 
 
-  <section class="trending" id="trending">
+    <p class="hero-description">
 
-    <div class="heading">
+      Discover what's trending.
+      Find something new.
+      Shop the products worth talking about.
 
-      <div class="heading-label">
-        BROSHIN'S HOT LIST
+    </p>
+
+
+    <a
+      href="#trending"
+      class="hero-button"
+    >
+
+      EXPLORE TRENDING ↓
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<section
+  class="trending"
+  id="trending"
+>
+
+
+  <div class="heading">
+
+    <div class="heading-label">
+
+      BROSHIN'S HOT LIST
+
+    </div>
+
+
+    <h2>
+
+      TRENDING
+
+    </h2>
+
+
+    <p>
+
+      The latest products and smart finds
+      making waves right now.
+
+    </p>
+
+  </div>
+
+
+  <div
+    class="cards"
+    id="productCards"
+  >
+
+    <div class="card">
+
+      <div class="placeholder">
+
+        🛍️
+
       </div>
 
-      <h2>TRENDING</h2>
+      <h3>
+
+        Loading Products...
+
+      </h3>
 
       <p>
-        The latest products and smart finds
-        making waves right now.
+
+        Please wait...
+
       </p>
 
     </div>
 
-    <div class="cards" id="productCards">
+  </div>
 
-      <div class="card">
 
-        <div class="placeholder">
-          🛍️
-        </div>
+</section>
 
-        <h3>
-          Loading Products...
-        </h3>
 
-        <p>
-          Please wait...
-        </p>
+<!-- ================= TRACK ORDER ================= -->
 
-      </div>
+<section class="track-box">
 
-    </div>
+  <h2>
 
-  </section>
+    Track Your Order
+
+  </h2>
+
+  <p>
+
+    Enter your BROSHIN Order ID.
+
+  </p>
+
+
+  <input
+    type="text"
+    id="trackOrderId"
+    class="track-input"
+    placeholder="Example: BR123456789"
+  >
+
+
+  <button
+    class="track-button"
+    onclick="trackOrder()"
+  >
+
+    TRACK ORDER
+
+  </button>
+
+
+  <div
+    class="track-result"
+    id="trackResult"
+  ></div>
+
+</section>
+
 
 </main>
 
@@ -855,192 +1620,252 @@ footer p{
 
 <main id="productPage">
 
-  <section class="product-wrap">
 
-    <button class="back-btn" onclick="goHome()">
-      ← BACK TO PRODUCTS
-    </button>
-
-    <div class="product-detail">
-
-      <div>
-
-        <div class="detail-image-box" id="detailImageBox">
-
-          <div class="detail-placeholder">
-            🛍️
-          </div>
-
-        </div>
-
-        <div
-          class="image-gallery"
-          id="imageGallery"
-        ></div>
-
-      </div>
+<section class="product-wrap">
 
 
-      <div class="detail-info">
+<button
+  class="back-btn"
+  onclick="goHome()"
+>
 
-        <div class="small-title">
-          BROSHIN PRODUCT
-        </div>
+  ← BACK TO PRODUCTS
 
-        <h1 id="detailName">
-          Loading...
-        </h1>
-
-
-        <div class="detail-price-box">
-
-          <div
-            class="detail-reference"
-            id="detailReference"
-          ></div>
-
-          <div
-            class="detail-price"
-            id="detailPrice"
-          >
-            ₹0
-          </div>
-
-          <div
-            class="detail-discount"
-            id="detailDiscount"
-          ></div>
-
-          <div
-            class="detail-save"
-            id="detailSave"
-          ></div>
-
-        </div>
+</button>
 
 
-        <p
-          class="detail-description"
-          id="detailDescription"
-        ></p>
+<div class="product-detail">
 
 
-        <div
-          class="stock"
-          id="detailStock"
-        ></div>
+<div>
 
 
-        <div
-          class="video-box"
-          id="videoBox"
-        >
+  <div
+    class="detail-image-box"
+    id="detailImageBox"
+  >
 
-          <video
-            id="productVideo"
-            controls
-            playsinline
-          ></video>
+    <div class="detail-placeholder">
 
-        </div>
-
-
-        <button
-          class="buy-now"
-          id="buyNowButton"
-          onclick="showCheckout()"
-        >
-          BUY NOW
-        </button>
-
-      </div>
+      🛍️
 
     </div>
 
-  </section>
+  </div>
 
 
-  <!-- ================= CHECKOUT ================= -->
-
-  <section
-    class="checkout"
-    id="checkoutSection"
-  >
-
-    <h2>
-      Checkout
-    </h2>
-
-    <p id="checkoutProduct">
-      Complete your order below.
-    </p>
+  <div
+    class="image-gallery"
+    id="imageGallery"
+  ></div>
 
 
-    <form
-      class="checkout-form"
-      id="checkoutForm"
+</div>
+
+
+<div class="detail-info">
+
+
+  <div class="small-title">
+
+    BROSHIN PRODUCT
+
+  </div>
+
+
+  <h1 id="detailName">
+
+    Loading...
+
+  </h1>
+
+
+  <div class="detail-price-box">
+
+
+    <div
+      class="detail-reference"
+      id="detailReference"
+    ></div>
+
+
+    <div
+      class="detail-price"
+      id="detailPrice"
     >
 
-      <input
-        type="text"
-        id="customerName"
-        placeholder="Your Full Name"
-        required
-      >
+      ₹0
+
+    </div>
 
 
-      <input
-        type="tel"
-        id="customerPhone"
-        placeholder="Phone Number"
-        required
-      >
+    <div
+      class="detail-discount"
+      id="detailDiscount"
+    ></div>
 
 
-      <textarea
-        id="customerAddress"
-        placeholder="Full Delivery Address"
-        required
-      ></textarea>
+    <div
+      class="detail-save"
+      id="detailSave"
+    ></div>
 
 
-      <input
-        type="number"
-        id="customerQuantity"
-        min="1"
-        value="1"
-        required
-      >
+  </div>
 
 
-      <button type="submit">
-        PLACE ORDER
-      </button>
+  <p
+    class="detail-description"
+    id="detailDescription"
+  ></p>
 
-    </form>
+
+  <div
+    class="stock"
+    id="detailStock"
+  ></div>
 
 
-    <div id="checkoutMessage"></div>
+  <div
+    class="video-box"
+    id="videoBox"
+  >
 
-  </section>
+    <video
+      id="productVideo"
+      controls
+      playsinline
+    ></video>
+
+  </div>
+
+
+  <button
+    class="buy-now"
+    id="buyNowButton"
+    onclick="showCheckout()"
+  >
+
+    BUY NOW
+
+  </button>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- ================= CHECKOUT ================= -->
+
+<section
+  class="checkout"
+  id="checkoutSection"
+>
+
+
+<h2>
+
+  Checkout
+
+</h2>
+
+
+<p id="checkoutProduct">
+
+  Complete your order below.
+
+</p>
+
+
+<form
+  class="checkout-form"
+  id="checkoutForm"
+>
+
+
+<input
+  type="text"
+  id="customerName"
+  placeholder="Your Full Name"
+  required
+>
+
+
+<input
+  type="tel"
+  id="customerPhone"
+  placeholder="Phone Number"
+  required
+>
+
+
+<textarea
+  id="customerAddress"
+  placeholder="Full Delivery Address"
+  required
+></textarea>
+
+
+<input
+  type="number"
+  id="customerQuantity"
+  min="1"
+  value="1"
+  required
+>
+
+
+<button
+  type="submit"
+  id="placeOrderButton"
+>
+
+  PLACE ORDER
+
+</button>
+
+
+</form>
+
+
+<div
+  id="checkoutMessage"
+></div>
+
+
+</section>
+
 
 </main>
 
 
 <footer>
 
-  <div class="footer-logo">
-    BROSHIN
-  </div>
 
-  <p>
-    © 2026 BROSHIN — Discover. Shop. Enjoy.
-  </p>
+<div class="footer-logo">
+
+  BROSHIN
+
+</div>
+
+
+<p>
+
+  © 2026 BROSHIN — Discover. Shop. Enjoy.
+
+</p>
+
 
 </footer>
 
 
 <script>
+
 
 /* =========================
    API
@@ -1119,7 +1944,8 @@ async function loadProducts(){
 
         return String(
           product.status || "active"
-        ).toLowerCase() === "active";
+        ).trim().toLowerCase() ===
+        "active";
 
       });
 
@@ -1131,15 +1957,21 @@ async function loadProducts(){
         <div class="card">
 
           <div class="placeholder">
+
             🛍️
+
           </div>
 
           <h3>
+
             No Products Yet
+
           </h3>
 
           <p>
+
             New products coming soon.
+
           </p>
 
         </div>
@@ -1160,7 +1992,8 @@ async function loadProducts(){
           );
 
 
-        card.className = "card";
+        card.className =
+          "card";
 
 
         const image =
@@ -1203,24 +2036,34 @@ async function loadProducts(){
 
           ${
             stock <= 0
+
             ?
+
             `<div class="status-badge">
+
               OUT OF STOCK
+
             </div>`
+
             :
+
             ``
+
           }
 
 
           <div class="number">
+
             PRODUCT ${escapeHTML(
               product.id
             )}
+
           </div>
 
 
           ${
             image
+
             ?
 
             `<img
@@ -1235,90 +2078,120 @@ async function loadProducts(){
             :
 
             `<div class="placeholder">
+
               🛍️
+
             </div>`
+
           }
 
 
           <h3>
+
             ${escapeHTML(
               product.name
             )}
+
           </h3>
 
 
           <div class="price-box">
 
+
             ${
-              referencePrice > sellingPrice
+              referencePrice >
+              sellingPrice
+
               ?
 
               `<span class="reference-price">
+
                 ₹${referencePrice}
+
               </span>`
 
               :
 
               ``
+
             }
 
 
             <span class="product-price">
+
               ₹${sellingPrice}
+
             </span>
 
 
             ${
               discount > 0
+
               ?
 
               `<span class="discount-badge">
+
                 ${discount}% OFF
+
               </span>`
 
               :
 
               ``
+
             }
+
 
           </div>
 
 
           ${
             saveAmount > 0
+
             ?
 
             `<div class="save-text">
+
               Save ₹${saveAmount}
+
             </div>`
 
             :
 
             ``
+
           }
 
 
           <p>
+
             ${escapeHTML(
               product.description || ""
             )}
+
           </p>
 
 
           <button
+
             class="view-btn"
+
             onclick="openProduct('${escapeJS(
               product.id
             )}')"
-            ${stock <= 0 ? "disabled" : ""}
+
+            ${stock <= 0
+              ? "disabled"
+              : ""}
+
           >
+
             ${
               stock <= 0
-              ?
-              "OUT OF STOCK"
-              :
-              "VIEW PRODUCT"
+              ? "OUT OF STOCK"
+              : "VIEW PRODUCT"
             }
+
           </button>
 
         `;
@@ -1351,15 +2224,21 @@ async function loadProducts(){
       <div class="card">
 
         <div class="placeholder">
+
           ⚠️
+
         </div>
 
         <h3>
+
           Products Couldn't Load
+
         </h3>
 
         <p>
+
           Please refresh and try again.
+
         </p>
 
       </div>
@@ -1405,12 +2284,14 @@ function checkProductPage(){
 
     document.getElementById(
       "homePage"
-    ).style.display = "block";
+    ).style.display =
+      "block";
 
 
     document.getElementById(
       "productPage"
-    ).style.display = "none";
+    ).style.display =
+      "none";
 
 
     loadProducts();
@@ -1423,12 +2304,14 @@ function checkProductPage(){
 
   document.getElementById(
     "homePage"
-  ).style.display = "none";
+  ).style.display =
+    "none";
 
 
   document.getElementById(
     "productPage"
-  ).style.display = "block";
+  ).style.display =
+    "block";
 
 
   loadSingleProduct(
@@ -1471,9 +2354,8 @@ async function loadSingleProduct(
 
           return String(
             product.id
-          ) === String(
-            productId
-          );
+          ) ===
+          String(productId);
 
         }
       );
@@ -1524,7 +2406,8 @@ async function loadSingleProduct(
     document.getElementById(
       "detailName"
     ).textContent =
-      currentProduct.name || "Product";
+      currentProduct.name ||
+      "Product";
 
 
     document.getElementById(
@@ -1539,19 +2422,17 @@ async function loadSingleProduct(
       );
 
 
-    if(
-      referencePrice > sellingPrice
-    ){
+    referenceElement.textContent =
+      referencePrice >
+      sellingPrice
 
-      referenceElement.textContent =
-        "₹" + referencePrice;
+      ?
 
-    }else{
+      "₹" + referencePrice
 
-      referenceElement.textContent =
-        "";
+      :
 
-    }
+      "";
 
 
     const discountElement =
@@ -1560,17 +2441,12 @@ async function loadSingleProduct(
       );
 
 
-    if(discount > 0){
-
-      discountElement.textContent =
-        discount + "% OFF";
-
-    }else{
-
-      discountElement.textContent =
-        "";
-
-    }
+    discountElement.textContent =
+      discount > 0
+      ?
+      discount + "% OFF"
+      :
+      "";
 
 
     const saveElement =
@@ -1579,18 +2455,13 @@ async function loadSingleProduct(
       );
 
 
-    if(saveAmount > 0){
-
-      saveElement.textContent =
-        "You save ₹" +
-        saveAmount;
-
-    }else{
-
-      saveElement.textContent =
-        "";
-
-    }
+    saveElement.textContent =
+      saveAmount > 0
+      ?
+      "You save ₹" +
+      saveAmount
+      :
+      "";
 
 
     document.getElementById(
@@ -1605,7 +2476,8 @@ async function loadSingleProduct(
     ).textContent =
       stock > 0
       ?
-      "Available Stock: " + stock
+      "Available Stock: " +
+      stock
       :
       "Currently Out of Stock";
 
@@ -1618,14 +2490,16 @@ async function loadSingleProduct(
 
     if(stock <= 0){
 
-      buyButton.disabled = true;
+      buyButton.disabled =
+        true;
 
       buyButton.textContent =
         "OUT OF STOCK";
 
     }else{
 
-      buyButton.disabled = false;
+      buyButton.disabled =
+        false;
 
       buyButton.textContent =
         "BUY NOW";
@@ -1633,7 +2507,9 @@ async function loadSingleProduct(
     }
 
 
-    /* MAIN IMAGE */
+    /* =========================
+       IMAGES
+    ========================= */
 
     const imageList = [
 
@@ -1650,6 +2526,7 @@ async function loadSingleProduct(
       currentProduct.image6
 
     ]
+
     .map(function(image){
 
       return String(
@@ -1657,6 +2534,7 @@ async function loadSingleProduct(
       ).trim();
 
     })
+
     .filter(function(image){
 
       return image !== "";
@@ -1695,13 +2573,17 @@ async function loadSingleProduct(
             );
 
 
-          img.src = image;
+          img.src =
+            image;
+
 
           img.className =
             "thumb";
 
+
           img.alt =
-            currentProduct.name || "Product";
+            currentProduct.name ||
+            "Product";
 
 
           img.onclick =
@@ -1726,7 +2608,9 @@ async function loadSingleProduct(
       imageBox.innerHTML = `
 
         <div class="detail-placeholder">
+
           🛍️
+
         </div>
 
       `;
@@ -1734,7 +2618,9 @@ async function loadSingleProduct(
     }
 
 
-    /* VIDEO */
+    /* =========================
+       VIDEO
+    ========================= */
 
     const video =
       String(
@@ -1814,9 +2700,13 @@ function setMainImage(
   imageBox.innerHTML = `
 
     <img
+
       src="${escapeHTML(image)}"
+
       class="detail-image"
+
       alt="BROSHIN Product"
+
     >
 
   `;
@@ -1851,7 +2741,9 @@ function showCheckout(){
   document.getElementById(
     "checkoutSection"
   ).scrollIntoView({
+
     behavior:"smooth"
+
   });
 
 }
@@ -1922,40 +2814,72 @@ document.getElementById(
     }
 
 
-    const price =
+    const sellingPrice =
       Number(
         currentProduct.selling_price
       ) || 0;
 
+
+    const costPrice =
+      Number(
+        currentProduct.cost_price
+      ) || 0;
+
+
+    const total =
+      sellingPrice * quantity;
+
+
+    /* =========================
+       ORDER DATA
+    ========================= */
 
     const orderData = {
 
       orderId:
         "BR" + Date.now(),
 
+
       name:
         document.getElementById(
           "customerName"
         ).value.trim(),
+
 
       phone:
         document.getElementById(
           "customerPhone"
         ).value.trim(),
 
+
       address:
         document.getElementById(
           "customerAddress"
         ).value.trim(),
 
+
+      productId:
+        currentProduct.id,
+
+
       product:
         currentProduct.name,
+
 
       quantity:
         quantity,
 
+
+      sellingPrice:
+        sellingPrice,
+
+
       total:
-        price * quantity
+        total,
+
+
+      costPrice:
+        costPrice
 
     };
 
@@ -1966,27 +2890,50 @@ document.getElementById(
       );
 
 
+    const button =
+      document.getElementById(
+        "placeOrderButton"
+      );
+
+
     message.textContent =
       "Placing your order...";
+
+
+    button.disabled =
+      true;
 
 
     try{
 
       await fetch(
+
         API_URL,
+
         {
+
           method:"POST",
+
           mode:"no-cors",
+
+          headers:{
+            "Content-Type":
+              "text/plain;charset=utf-8"
+          },
+
           body:
             JSON.stringify(
               orderData
             )
+
         }
+
       );
 
 
       message.textContent =
-        "🎉 Order placed successfully!";
+        "🎉 Order placed successfully! Order ID: " +
+        orderData.orderId;
 
 
       document.getElementById(
@@ -2004,8 +2951,174 @@ document.getElementById(
 
     }
 
+
+    button.disabled =
+      false;
+
   }
 );
+
+
+/* =========================
+   TRACK ORDER
+========================= */
+
+async function trackOrder(){
+
+  const orderId =
+    document.getElementById(
+      "trackOrderId"
+    ).value.trim();
+
+
+  const result =
+    document.getElementById(
+      "trackResult"
+    );
+
+
+  if(!orderId){
+
+    result.style.display =
+      "block";
+
+    result.innerHTML =
+      "❌ Please enter your Order ID.";
+
+    return;
+
+  }
+
+
+  result.style.display =
+    "block";
+
+  result.innerHTML =
+    "🔍 Checking your order...";
+
+
+  try{
+
+    const response =
+      await fetch(
+        API_URL +
+        "?order=" +
+        encodeURIComponent(
+          orderId
+        )
+      );
+
+
+    const data =
+      await response.json();
+
+
+    if(
+      !data ||
+      data.success === false ||
+      !data.order
+    ){
+
+      result.innerHTML =
+        "❌ Order not found.";
+
+      return;
+
+    }
+
+
+    const order =
+      data.order;
+
+
+    result.innerHTML = `
+
+      <div class="track-status">
+
+        📦 ${escapeHTML(
+          order.status || "Pending"
+        )}
+
+      </div>
+
+
+      <p>
+
+        <strong>Order ID:</strong>
+
+        ${escapeHTML(
+          order.order_id || orderId
+        )}
+
+      </p>
+
+
+      <p>
+
+        <strong>Product:</strong>
+
+        ${escapeHTML(
+          order.product || ""
+        )}
+
+      </p>
+
+
+      <p>
+
+        <strong>Quantity:</strong>
+
+        ${escapeHTML(
+          order.quantity || ""
+        )}
+
+      </p>
+
+
+      <p>
+
+        <strong>Total:</strong>
+
+        ₹${escapeHTML(
+          order.total || "0"
+        )}
+
+      </p>
+
+
+      <p>
+
+        <strong>Tracking:</strong>
+
+        ${
+          order.tracking_number
+          ?
+
+          escapeHTML(
+            order.tracking_number
+          )
+
+          :
+
+          "Not available yet"
+        }
+
+      </p>
+
+    `;
+
+
+  }catch(error){
+
+    console.error(error);
+
+
+    result.innerHTML =
+      "❌ Unable to check order right now.";
+
+  }
+
+}
 
 
 /* =========================
@@ -2078,6 +3191,7 @@ checkProductPage();
 
 </script>
 
+
 </body>
+
 </html>
-```
