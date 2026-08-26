@@ -15,38 +15,20 @@ content="#171717">
 
 <style>
 
-/* =========================================================
-   ROOT
-========================================================= */
-
 :root{
-
   --black:#171717;
   --black2:#29231f;
-
   --gold:#D4AF37;
   --gold2:#9b7921;
-
   --rose:#D8B7AE;
   --rose2:#ead5ce;
-
   --ivory:#F8F4EC;
   --cream:#EDE3D2;
-
   --white:#ffffff;
-
   --text:#211e1c;
   --muted:#756d66;
-
-  --shadow:
-    0 25px 70px rgba(23,23,23,.10);
-
+  --shadow:0 25px 70px rgba(23,23,23,.10);
 }
-
-
-/* =========================================================
-   RESET
-========================================================= */
 
 *{
   margin:0;
@@ -59,32 +41,22 @@ html{
 }
 
 body{
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
+  font-family:Arial,Helvetica,sans-serif;
   color:var(--text);
-
   overflow-x:hidden;
-
   min-height:100vh;
 
   background:
-
     radial-gradient(
       circle at 5% 10%,
       rgba(216,183,174,.55),
       transparent 28%
     ),
-
     radial-gradient(
       circle at 95% 5%,
       rgba(212,175,55,.16),
       transparent 30%
     ),
-
     linear-gradient(
       125deg,
       var(--ivory),
@@ -95,78 +67,40 @@ body{
     );
 
   background-size:400% 400%;
-
   animation:bgMove 18s ease infinite;
-
 }
 
 @keyframes bgMove{
-
-  0%,100%{
-    background-position:0% 50%;
-  }
-
-  50%{
-    background-position:100% 50%;
-  }
-
+  0%,100%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
 }
 
-
-/* =========================================================
-   CURSOR
-========================================================= */
-
 .cursor{
-
   position:fixed;
-
   width:280px;
   height:280px;
-
   border-radius:50%;
-
   pointer-events:none;
-
-  transform:
-    translate(-50%,-50%);
-
+  transform:translate(-50%,-50%);
   background:
     radial-gradient(
       circle,
       rgba(212,175,55,.12),
       transparent 70%
     );
-
   z-index:0;
-
 }
 
-
-/* =========================================================
-   TOP BAR
-========================================================= */
-
 .topbar{
-
   height:38px;
-
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   padding:0 15px;
-
   color:white;
-
   font-size:10px;
-
   font-weight:900;
-
   letter-spacing:3px;
-
   text-align:center;
 
   background:
@@ -178,72 +112,42 @@ body{
     );
 
   background-size:200% 100%;
-
   animation:barMove 6s linear infinite;
-
 }
 
 @keyframes barMove{
-
-  to{
-    background-position:200% 0;
-  }
-
+  to{background-position:200% 0;}
 }
 
-
-/* =========================================================
-   NAV
-========================================================= */
-
 .nav{
-
   width:92%;
   max-width:1250px;
-
   margin:20px auto;
-
   padding:16px 25px;
-
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
   position:relative;
-
   z-index:20;
 
-  border:
-    1px solid
-    rgba(255,255,255,.65);
-
+  border:1px solid rgba(255,255,255,.65);
   border-radius:24px;
 
-  background:
-    rgba(255,255,255,.48);
+  background:rgba(255,255,255,.48);
 
   backdrop-filter:blur(20px);
 
   box-shadow:
     0 20px 50px
     rgba(23,23,23,.08);
-
 }
 
 .logo{
-
   color:var(--black);
-
   text-decoration:none;
-
   font-size:30px;
-
   font-weight:1000;
-
   letter-spacing:7px;
-
 }
 
 .logo span{
@@ -251,21 +155,11 @@ body{
 }
 
 .nav-tag{
-
   color:var(--muted);
-
   font-size:10px;
-
   font-weight:900;
-
   letter-spacing:3px;
-
 }
-
-
-/* =========================================================
-   PAGES
-========================================================= */
 
 #homePage{
   display:block;
@@ -275,55 +169,32 @@ body{
   display:none;
 }
 
-
-/* =========================================================
-   HERO
-========================================================= */
-
 .hero{
-
   width:92%;
   max-width:1250px;
-
   min-height:620px;
-
   margin:auto;
-
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   text-align:center;
-
   position:relative;
-
 }
 
 .hero-content{
-
   position:relative;
-
   z-index:3;
-
 }
 
 .orb{
-
   position:absolute;
-
   border-radius:50%;
-
   pointer-events:none;
-
 }
 
 .orb.one{
-
   width:430px;
   height:430px;
-
   left:0;
   top:60px;
 
@@ -334,16 +205,12 @@ body{
       transparent 68%
     );
 
-  animation:
-    float1 9s ease-in-out infinite;
-
+  animation:float1 9s ease-in-out infinite;
 }
 
 .orb.two{
-
   width:390px;
   height:390px;
-
   right:0;
   bottom:20px;
 
@@ -354,43 +221,31 @@ body{
       transparent 68%
     );
 
-  animation:
-    float2 11s ease-in-out infinite;
-
+  animation:float2 11s ease-in-out infinite;
 }
 
 @keyframes float1{
-
   50%{
     transform:
       translate(100px,50px)
       scale(1.12);
   }
-
 }
 
 @keyframes float2{
-
   50%{
     transform:
       translate(-100px,-50px)
       scale(1.15);
   }
-
 }
 
 .small-title{
-
   display:inline-block;
-
   padding:9px 18px;
-
   border-radius:50px;
-
   font-size:10px;
-
   letter-spacing:4px;
-
   font-weight:900;
 
   background:
@@ -400,25 +255,15 @@ body{
       rgba(216,183,174,.55)
     );
 
-  border:
-    1px solid
-    rgba(212,175,55,.35);
-
+  border:1px solid rgba(212,175,55,.35);
 }
 
 .hero h1{
-
   margin-top:25px;
-
-  font-size:
-    clamp(65px,15vw,175px);
-
+  font-size:clamp(65px,15vw,175px);
   line-height:.82;
-
   font-weight:1000;
-
-  letter-spacing:
-    clamp(5px,1.7vw,18px);
+  letter-spacing:clamp(5px,1.7vw,18px);
 
   background:
     linear-gradient(
@@ -433,57 +278,35 @@ body{
   background-size:300% auto;
 
   -webkit-background-clip:text;
-
   background-clip:text;
-
   color:transparent;
 
-  animation:
-    goldMove 7s linear infinite;
-
+  animation:goldMove 7s linear infinite;
 }
 
 @keyframes goldMove{
-
   to{
-    background-position:
-      300% center;
+    background-position:300% center;
   }
-
 }
 
 .hero-description{
-
   max-width:650px;
-
   margin:35px auto 0;
-
   color:var(--muted);
-
   font-size:17px;
-
   line-height:1.8;
-
 }
 
 .hero-button{
-
   display:inline-block;
-
   margin-top:32px;
-
   padding:16px 30px;
-
   border-radius:50px;
-
   color:white;
-
   text-decoration:none;
-
   font-size:12px;
-
   font-weight:900;
-
   letter-spacing:1px;
 
   background:
@@ -499,49 +322,29 @@ body{
     rgba(23,23,23,.18);
 
   transition:.3s;
-
 }
 
 .hero-button:hover{
   transform:translateY(-5px);
 }
 
-
-/* =========================================================
-   HEADINGS
-========================================================= */
-
 .heading{
-
   text-align:center;
-
   margin-bottom:50px;
-
 }
 
 .heading-label{
-
   font-size:10px;
-
   font-weight:900;
-
   letter-spacing:4px;
-
   color:#96751e;
-
 }
 
 .heading h2{
-
   margin-top:12px;
-
-  font-size:
-    clamp(48px,8vw,95px);
-
+  font-size:clamp(48px,8vw,95px);
   line-height:.9;
-
   font-weight:1000;
-
   letter-spacing:-4px;
 
   background:
@@ -556,61 +359,34 @@ body{
   background-size:250% auto;
 
   -webkit-background-clip:text;
-
   background-clip:text;
-
   color:transparent;
-
 }
 
 .heading p{
-
   margin:22px auto 0;
-
   max-width:600px;
-
   color:var(--muted);
-
   line-height:1.7;
-
 }
 
-
-/* =========================================================
-   PRODUCTS
-========================================================= */
-
 .trending{
-
   width:92%;
-
   max-width:1250px;
-
   margin:70px auto 110px;
-
 }
 
 .cards{
-
   display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
+  grid-template-columns:repeat(4,1fr);
   gap:22px;
-
 }
 
 .card{
-
   min-height:430px;
-
   padding:22px;
-
   border-radius:32px;
-
   position:relative;
-
   overflow:hidden;
 
   background:
@@ -620,9 +396,7 @@ body{
       rgba(255,255,255,.30)
     );
 
-  border:
-    1px solid
-    rgba(255,255,255,.65);
+  border:1px solid rgba(255,255,255,.65);
 
   backdrop-filter:blur(18px);
 
@@ -631,174 +405,102 @@ body{
   transition:
     transform .35s,
     box-shadow .35s;
-
 }
 
 .card:hover{
-
-  transform:
-    translateY(-10px);
-
+  transform:translateY(-10px);
   box-shadow:
     0 35px 85px
     rgba(23,23,23,.17);
-
 }
 
 .product-image{
-
   width:100%;
-
   height:210px;
-
   object-fit:contain;
-
   border-radius:22px;
-
-  background:
-    rgba(255,255,255,.55);
-
+  background:rgba(255,255,255,.55);
   margin:15px 0;
-
 }
 
 .placeholder{
-
   height:210px;
-
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   font-size:70px;
-
   margin:15px 0;
-
   border-radius:22px;
-
-  background:
-    rgba(255,255,255,.55);
-
+  background:rgba(255,255,255,.55);
 }
 
 .number{
-
   font-size:9px;
-
   letter-spacing:3px;
-
   font-weight:900;
-
   color:#9b8c7d;
-
 }
 
 .card h3{
-
   font-size:19px;
-
   margin:10px 0;
-
 }
 
 .card p{
-
   font-size:13px;
-
   color:var(--muted);
-
   line-height:1.6;
-
 }
 
 .price-box{
-
   display:flex;
-
   align-items:center;
-
   gap:9px;
-
   flex-wrap:wrap;
-
   margin:12px 0;
-
 }
 
 .reference-price{
-
   font-size:14px;
-
   color:#8a817a;
-
   text-decoration:line-through;
-
 }
 
 .product-price{
-
   font-size:23px;
-
   font-weight:1000;
-
 }
 
 .discount-badge{
-
   padding:5px 9px;
-
   border-radius:20px;
-
   background:#171717;
-
   color:white;
-
   font-size:9px;
-
   font-weight:900;
-
 }
 
 .save-text{
-
   font-size:11px;
-
   color:#96751e;
-
   font-weight:900;
-
 }
 
 .view-btn{
-
   width:100%;
-
   padding:14px;
-
   margin-top:17px;
-
   border:0;
-
   border-radius:50px;
-
   background:var(--black);
-
   color:white;
-
   font-weight:900;
-
   cursor:pointer;
-
 }
 
 .view-btn:disabled{
-
   opacity:.5;
-
   cursor:not-allowed;
-
 }
 
 .out-stock{
@@ -806,102 +508,58 @@ body{
 }
 
 .status-badge{
-
   position:absolute;
-
   top:18px;
   right:18px;
-
   padding:7px 11px;
-
   border-radius:30px;
-
-  background:
-    rgba(23,23,23,.9);
-
+  background:rgba(23,23,23,.9);
   color:white;
-
   font-size:8px;
-
   font-weight:900;
-
   letter-spacing:1px;
-
 }
 
-
-/* =========================================================
-   PRODUCT DETAIL
-========================================================= */
-
 .product-wrap{
-
   width:92%;
-
   max-width:1150px;
-
   margin:60px auto 70px;
-
 }
 
 .back-btn{
-
   border:0;
-
   background:none;
-
   cursor:pointer;
-
   font-weight:900;
-
   color:var(--muted);
-
   margin-bottom:25px;
-
   font-size:13px;
-
 }
 
 .product-detail{
-
   display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns:1fr 1fr;
   gap:55px;
-
   align-items:center;
-
   padding:45px;
-
   border-radius:40px;
 
-  background:
-    rgba(255,255,255,.50);
+  background:rgba(255,255,255,.50);
 
   backdrop-filter:blur(20px);
 
-  border:
-    1px solid
-    rgba(255,255,255,.75);
+  border:1px solid rgba(255,255,255,.75);
 
   box-shadow:
     0 30px 80px
     rgba(23,23,23,.10);
-
 }
 
 .detail-image-box{
-
   min-height:450px;
-
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   border-radius:30px;
 
   background:
@@ -912,1038 +570,550 @@ body{
     );
 
   overflow:hidden;
-
 }
 
 .detail-image{
-
   width:100%;
-
   height:450px;
-
   object-fit:contain;
-
 }
 
 .detail-placeholder{
-
   font-size:140px;
-
 }
 
 .image-gallery{
-
   display:flex;
-
   gap:10px;
-
   margin-top:15px;
-
   overflow-x:auto;
-
 }
 
 .thumb{
-
   width:65px;
-
   height:65px;
-
   object-fit:cover;
-
   border-radius:12px;
-
   cursor:pointer;
-
   background:white;
-
-  border:
-    2px solid
-    transparent;
-
+  border:2px solid transparent;
 }
 
 .thumb:hover{
-
-  border-color:
-    var(--gold);
-
+  border-color:var(--gold);
 }
 
 .detail-info h1{
-
-  font-size:
-    clamp(42px,6vw,75px);
-
+  font-size:clamp(42px,6vw,75px);
   line-height:.95;
-
   font-weight:1000;
-
   letter-spacing:-3px;
-
 }
 
 .detail-price-box{
-
   margin:25px 0;
-
 }
 
 .detail-reference{
-
   color:#8a817a;
-
   text-decoration:line-through;
-
   font-size:18px;
-
 }
 
 .detail-price{
-
   margin-top:5px;
-
   font-size:38px;
-
   font-weight:1000;
-
   color:#96751e;
-
 }
 
 .detail-discount{
-
   display:inline-block;
-
   margin-top:10px;
-
   padding:7px 12px;
-
   border-radius:30px;
-
   background:#171717;
-
   color:white;
-
   font-size:10px;
-
   font-weight:900;
-
 }
 
 .detail-save{
-
   margin-top:10px;
-
   color:#96751e;
-
   font-weight:900;
-
 }
 
 .detail-description{
-
   color:var(--muted);
-
   line-height:1.9;
-
   font-size:15px;
-
 }
 
 .stock{
-
   margin-top:20px;
-
   font-size:12px;
-
   font-weight:900;
-
   color:var(--muted);
-
 }
 
 .buy-now{
-
   width:100%;
-
   margin-top:30px;
-
   padding:18px;
-
   border:0;
-
   border-radius:50px;
-
   background:var(--black);
-
   color:white;
-
   font-size:13px;
-
   font-weight:900;
-
   letter-spacing:2px;
-
   cursor:pointer;
-
   transition:.3s;
-
 }
 
 .buy-now:hover{
-
-  transform:
-    translateY(-5px);
-
+  transform:translateY(-5px);
 }
 
 .buy-now:disabled{
-
   opacity:.5;
-
   cursor:not-allowed;
-
 }
 
-
-/* =========================================================
-   VIDEO
-========================================================= */
-
 .video-box{
-
   margin-top:25px;
-
   display:none;
-
 }
 
 .video-box video{
-
   width:100%;
-
   border-radius:20px;
-
   max-height:350px;
-
 }
 
-
-/* =========================================================
-   CHECKOUT
-========================================================= */
-
 .checkout{
-
   width:92%;
-
   max-width:700px;
-
   margin:0 auto 80px;
-
   padding:40px;
-
   border-radius:35px;
-
-  background:
-    rgba(255,255,255,.76);
-
+  background:rgba(255,255,255,.76);
   box-shadow:
     0 30px 80px
     rgba(23,23,23,.12);
-
 }
 
 .checkout h2{
-
   font-size:38px;
-
   margin-bottom:10px;
-
 }
 
 .checkout p{
-
   color:var(--muted);
-
   margin-bottom:25px;
-
 }
 
 .checkout-form{
-
   display:flex;
-
   flex-direction:column;
-
   gap:14px;
-
 }
 
 .checkout-form input,
 .checkout-form textarea{
-
   width:100%;
-
   padding:15px;
-
-  border:
-    1px solid
-    rgba(23,23,23,.12);
-
+  border:1px solid rgba(23,23,23,.12);
   border-radius:16px;
-
   font-family:inherit;
-
   font-size:14px;
-
   outline:none;
-
   background:#fff;
-
 }
 
 .checkout-form textarea{
-
   min-height:120px;
-
   resize:vertical;
-
 }
 
 .checkout-form button{
-
   padding:17px;
-
   border:0;
-
   border-radius:50px;
-
   background:var(--black);
-
   color:white;
-
   font-weight:900;
-
   cursor:pointer;
-
 }
 
 .checkout-form button:disabled{
-
   opacity:.6;
-
 }
 
 #checkoutMessage{
-
   text-align:center;
-
   font-weight:900;
-
   margin-top:18px;
-
 }
 
-
-/* =========================================================
-   REVIEWS SECTION
-========================================================= */
-
 .reviews-section{
-
   width:92%;
-
   max-width:1150px;
-
   margin:0 auto 90px;
-
   padding:45px;
-
   border-radius:40px;
-
-  background:
-    rgba(255,255,255,.55);
-
+  background:rgba(255,255,255,.55);
   backdrop-filter:blur(20px);
-
-  border:
-    1px solid
-    rgba(255,255,255,.75);
-
+  border:1px solid rgba(255,255,255,.75);
   box-shadow:
     0 30px 80px
     rgba(23,23,23,.10);
-
 }
 
 .reviews-heading{
-
   text-align:center;
-
   margin-bottom:25px;
-
 }
 
 .reviews-label{
-
   font-size:10px;
-
   font-weight:900;
-
   letter-spacing:4px;
-
   color:#96751e;
-
 }
 
 .reviews-heading h2{
-
   margin-top:10px;
-
-  font-size:
-    clamp(38px,6vw,65px);
-
+  font-size:clamp(38px,6vw,65px);
   line-height:1;
-
   font-weight:1000;
-
 }
 
-
-/* =========================================================
-   RATING SUMMARY
-========================================================= */
-
 .rating-summary{
-
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   gap:18px;
-
   margin:25px 0 35px;
-
   flex-wrap:wrap;
-
 }
 
 .big-rating{
-
   font-size:45px;
-
   font-weight:1000;
-
 }
 
 .stars-display{
-
   color:#D4AF37;
-
   font-size:25px;
-
   letter-spacing:3px;
-
 }
 
 .review-count{
-
   color:var(--muted);
-
   font-size:13px;
-
 }
 
-
-/* =========================================================
-   REVIEW FORM
-========================================================= */
-
 .review-form{
-
   max-width:700px;
-
   margin:0 auto 45px;
-
   padding:25px;
-
   border-radius:25px;
-
-  background:
-    rgba(255,255,255,.68);
-
+  background:rgba(255,255,255,.68);
 }
 
 .review-form h3{
-
   margin-bottom:18px;
-
   font-size:22px;
-
 }
 
-
-/* =========================================================
-   STAR SELECTOR
-========================================================= */
-
 .star-selector{
-
   display:flex;
-
   gap:5px;
-
   margin-bottom:15px;
-
 }
 
 .star-selector span{
-
   font-size:32px;
-
   color:#c9c0b7;
-
   cursor:pointer;
-
   transition:.2s;
-
 }
 
 .star-selector span.active,
 .star-selector span:hover{
-
   color:var(--gold);
-
   transform:scale(1.1);
-
 }
-
-
-/* =========================================================
-   REVIEW INPUTS
-========================================================= */
 
 .review-form input,
 .review-form textarea{
-
   width:100%;
-
   padding:14px 16px;
-
   margin-bottom:12px;
-
-  border:
-    1px solid
-    rgba(23,23,23,.12);
-
+  border:1px solid rgba(23,23,23,.12);
   border-radius:15px;
-
   outline:none;
-
   font-family:inherit;
-
   font-size:14px;
-
 }
 
 .review-form textarea{
-
   min-height:110px;
-
   resize:vertical;
-
 }
 
-
-/* =========================================================
-   PHOTO UPLOAD
-========================================================= */
-
 .photo-label{
-
   display:block;
-
   margin-top:4px;
-
   margin-bottom:8px;
-
   font-size:12px;
-
   font-weight:900;
-
   color:var(--muted);
-
 }
 
 .photo-upload{
-
   width:100%;
-
   padding:16px;
-
-  border:
-    1px dashed
-    rgba(23,23,23,.25);
-
+  border:1px dashed rgba(23,23,23,.25);
   border-radius:16px;
-
-  background:
-    rgba(255,255,255,.70);
-
+  background:rgba(255,255,255,.70);
   cursor:pointer;
-
   font-size:13px;
-
   margin-bottom:12px;
-
 }
 
 .photo-upload:hover{
-
-  border-color:
-    var(--gold);
-
-  background:
-    rgba(255,255,255,.9);
-
+  border-color:var(--gold);
+  background:rgba(255,255,255,.9);
 }
 
 #reviewPhoto{
-
   display:none;
-
 }
 
 .photo-preview{
-
   display:none;
-
   position:relative;
-
   width:140px;
-
   height:140px;
-
   margin:5px auto 15px;
-
   border-radius:20px;
-
   overflow:hidden;
-
   background:#fff;
-
   box-shadow:
     0 10px 30px
     rgba(23,23,23,.12);
-
 }
 
 .photo-preview img{
-
   width:100%;
-
   height:100%;
-
   object-fit:cover;
-
 }
 
 .remove-photo{
-
   position:absolute;
-
   top:7px;
-
   right:7px;
-
   width:28px;
-
   height:28px;
-
   border:0;
-
   border-radius:50%;
-
-  background:
-    rgba(23,23,23,.85);
-
+  background:rgba(23,23,23,.85);
   color:white;
-
   cursor:pointer;
-
   font-weight:900;
-
 }
 
-
-/* =========================================================
-   REVIEW SUBMIT
-========================================================= */
-
 .review-submit{
-
   width:100%;
-
   padding:15px;
-
   border:0;
-
   border-radius:50px;
-
   background:var(--black);
-
   color:white;
-
   font-weight:900;
-
   cursor:pointer;
-
 }
 
 .review-submit:disabled{
-
   opacity:.5;
-
 }
 
 #reviewMessage{
-
   text-align:center;
-
   margin-top:12px;
-
   font-size:13px;
-
   font-weight:900;
-
 }
 
-
-/* =========================================================
-   REVIEW LIST
-========================================================= */
-
 .reviews-list{
-
   display:grid;
-
-  grid-template-columns:
-    repeat(2,1fr);
-
+  grid-template-columns:repeat(2,1fr);
   gap:18px;
-
 }
 
 .review-card{
-
   padding:22px;
-
   border-radius:22px;
-
-  background:
-    rgba(255,255,255,.72);
-
-  border:
-    1px solid
-    rgba(255,255,255,.85);
-
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(255,255,255,.85);
 }
 
 .review-top{
-
   display:flex;
-
   justify-content:space-between;
-
   align-items:flex-start;
-
   gap:10px;
-
   margin-bottom:12px;
-
 }
 
 .reviewer-name{
-
   font-weight:1000;
-
 }
 
 .review-stars{
-
   color:#D4AF37;
-
   letter-spacing:2px;
-
   font-size:15px;
-
 }
 
 .review-date{
-
   color:#999;
-
   font-size:10px;
-
   margin-top:3px;
-
 }
 
 .review-text{
-
   color:var(--muted);
-
   line-height:1.7;
-
   font-size:14px;
-
 }
 
-
-/* =========================================================
-   REVIEW PHOTO DISPLAY
-========================================================= */
-
 .review-photo{
-
   width:100%;
-
   max-height:320px;
-
   object-fit:cover;
-
   border-radius:18px;
-
   margin-top:16px;
-
   display:block;
-
   cursor:pointer;
-
   transition:.3s;
-
 }
 
 .review-photo:hover{
-
   transform:scale(1.01);
-
 }
-
-
-/* =========================================================
-   NO REVIEWS
-========================================================= */
 
 .no-reviews{
-
   grid-column:1/-1;
-
   text-align:center;
-
   padding:30px;
-
   color:var(--muted);
-
 }
 
-
-/* =========================================================
-   TRACKING
-========================================================= */
-
 .track-box{
-
   width:92%;
-
   max-width:700px;
-
   margin:0 auto 100px;
-
   padding:40px;
-
   border-radius:35px;
-
-  background:
-    rgba(255,255,255,.76);
-
+  background:rgba(255,255,255,.76);
   box-shadow:
     0 30px 80px
     rgba(23,23,23,.12);
-
   text-align:center;
-
 }
 
 .track-box h2{
-
   font-size:35px;
-
   margin-bottom:10px;
-
 }
 
 .track-box p{
-
   color:var(--muted);
-
   margin-bottom:20px;
-
 }
 
 .track-input{
-
   width:100%;
-
   padding:16px;
-
-  border:
-    1px solid
-    rgba(23,23,23,.15);
-
+  border:1px solid rgba(23,23,23,.15);
   border-radius:50px;
-
   outline:none;
-
   margin-bottom:12px;
-
 }
 
 .track-button{
-
   width:100%;
-
   padding:16px;
-
   border:0;
-
   border-radius:50px;
-
   background:var(--black);
-
   color:white;
-
   font-weight:900;
-
   cursor:pointer;
-
 }
 
 .track-result{
-
   margin-top:25px;
-
   padding:20px;
-
   border-radius:20px;
-
-  background:
-    rgba(248,244,236,.8);
-
+  background:rgba(248,244,236,.8);
   text-align:left;
-
   display:none;
-
 }
 
 .track-status{
-
   font-size:22px;
-
   font-weight:1000;
-
   color:#96751e;
-
   margin-bottom:12px;
-
 }
 
 .tracking-awb{
-
   margin-top:15px;
-
   padding:15px;
-
   border-radius:15px;
-
-  background:
-    rgba(255,255,255,.8);
-
+  background:rgba(255,255,255,.8);
 }
 
 .tracking-awb strong{
-
   display:block;
-
   margin-bottom:5px;
-
 }
 
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
 footer{
-
   width:92%;
-
   max-width:1250px;
-
   margin:auto;
-
   padding:40px 0 30px;
-
-  border-top:
-    1px solid
-    rgba(23,23,23,.12);
-
+  border-top:1px solid rgba(23,23,23,.12);
   text-align:center;
-
 }
 
 .footer-logo{
-
   font-size:27px;
-
   font-weight:1000;
-
   letter-spacing:6px;
-
 }
 
 footer p{
-
   margin-top:12px;
-
   color:var(--muted);
-
   font-size:11px;
-
 }
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
 
 @media(max-width:900px){
 
   .cards{
-
-    grid-template-columns:
-      repeat(2,1fr);
-
+    grid-template-columns:repeat(2,1fr);
   }
 
   .product-detail{
-
     grid-template-columns:1fr;
-
   }
 
   .nav-tag{
@@ -1955,11 +1125,8 @@ footer p{
 @media(max-width:600px){
 
   .topbar{
-
     font-size:8px;
-
     letter-spacing:1.5px;
-
   }
 
   .cards{
@@ -1985,11 +1152,8 @@ footer p{
   }
 
   .logo{
-
     font-size:22px;
-
     letter-spacing:4px;
-
   }
 
   .reviews-list{
@@ -2002,102 +1166,52 @@ footer p{
 
 }
 
-
-/* =========================================================
-   IMAGE LIGHTBOX
-========================================================= */
-
 .image-lightbox{
-
   position:fixed;
-
   inset:0;
-
   z-index:9999;
-
   display:none;
-
   align-items:center;
-
   justify-content:center;
-
   padding:20px;
-
-  background:
-    rgba(0,0,0,.85);
-
+  background:rgba(0,0,0,.85);
 }
 
 .image-lightbox img{
-
   max-width:95%;
-
   max-height:90vh;
-
   border-radius:20px;
-
   object-fit:contain;
-
 }
 
 .close-lightbox{
-
   position:absolute;
-
   top:20px;
-
   right:25px;
-
   width:45px;
-
   height:45px;
-
   border:0;
-
   border-radius:50%;
-
   background:white;
-
   color:#171717;
-
   font-size:25px;
-
   cursor:pointer;
-
 }
 
 </style>
 
 </head>
 
-
 <body>
-
-
-<!-- =======================================================
-     CURSOR
-======================================================= -->
 
 <div
   class="cursor"
   id="cursor">
 </div>
 
-
-<!-- =======================================================
-     TOP BAR
-======================================================= -->
-
 <div class="topbar">
-
   ✦ BROSHIN • TRENDING PRODUCTS • SMART FINDS • EVERYDAY ESSENTIALS ✦
-
 </div>
-
-
-<!-- =======================================================
-     NAV
-======================================================= -->
 
 <header class="nav">
 
@@ -2110,43 +1224,30 @@ footer p{
   </a>
 
   <div class="nav-tag">
-
     DISCOVER. SHOP. ENJOY.
-
   </div>
 
 </header>
 
-
-<!-- =======================================================
-     HOME PAGE
-======================================================= -->
-
 <main id="homePage">
-
 
 <section class="hero">
 
   <div class="orb one"></div>
-
   <div class="orb two"></div>
 
   <div class="hero-content">
 
     <div class="small-title">
-
       WELCOME TO BROSHIN
-
     </div>
 
     <h1>BROSHIN</h1>
 
     <p class="hero-description">
-
       Discover what's trending.
       Find something new.
       Shop products worth talking about.
-
     </p>
 
     <a
@@ -2161,11 +1262,6 @@ footer p{
 
 </section>
 
-
-<!-- =======================================================
-     PRODUCTS
-======================================================= -->
-
 <section
   class="trending"
   id="trending">
@@ -2173,22 +1269,17 @@ footer p{
   <div class="heading">
 
     <div class="heading-label">
-
       BROSHIN'S HOT LIST
-
     </div>
 
     <h2>TRENDING</h2>
 
     <p>
-
       The latest products and smart finds
       making waves right now.
-
     </p>
 
   </div>
-
 
   <div
     class="cards"
@@ -2214,11 +1305,6 @@ footer p{
 
 </section>
 
-
-<!-- =======================================================
-     TRACK ORDER
-======================================================= -->
-
 <section class="track-box">
 
   <h2>
@@ -2226,10 +1312,8 @@ footer p{
   </h2>
 
   <p>
-
     Enter your BROSHIN Order ID
     to see your latest order status.
-
   </p>
 
   <input
@@ -2250,23 +1334,15 @@ footer p{
   <div
     class="track-result"
     id="trackResult">
-
   </div>
 
 </section>
 
 </main>
 
-
-<!-- =======================================================
-     PRODUCT PAGE
-======================================================= -->
-
 <main id="productPage">
 
-
 <section class="product-wrap">
-
 
 <button
   class="back-btn"
@@ -2276,12 +1352,9 @@ footer p{
 
 </button>
 
-
 <div class="product-detail">
 
-
 <div>
-
 
   <div
     class="detail-image-box"
@@ -2293,43 +1366,29 @@ footer p{
 
   </div>
 
-
   <div
     class="image-gallery"
     id="imageGallery">
-
   </div>
-
 
 </div>
 
-
 <div class="detail-info">
 
-
   <div class="small-title">
-
     BROSHIN PRODUCT
-
   </div>
 
-
   <h1 id="detailName">
-
     Loading...
-
   </h1>
 
-
   <div class="detail-price-box">
-
 
     <div
       class="detail-reference"
       id="detailReference">
-
     </div>
-
 
     <div
       class="detail-price"
@@ -2339,37 +1398,27 @@ footer p{
 
     </div>
 
-
     <div
       class="detail-discount"
       id="detailDiscount">
-
     </div>
-
 
     <div
       class="detail-save"
       id="detailSave">
-
     </div>
 
-
   </div>
-
 
   <p
     class="detail-description"
     id="detailDescription">
-
   </p>
-
 
   <div
     class="stock"
     id="detailStock">
-
   </div>
-
 
   <div
     class="video-box"
@@ -2379,11 +1428,9 @@ footer p{
       id="productVideo"
       controls
       playsinline>
-
     </video>
 
   </div>
-
 
   <button
     class="buy-now"
@@ -2394,18 +1441,11 @@ footer p{
 
   </button>
 
-
 </div>
-
 
 </div>
 
 </section>
-
-
-<!-- =======================================================
-     CHECKOUT
-======================================================= -->
 
 <section
   class="checkout"
@@ -2416,16 +1456,12 @@ footer p{
 </h2>
 
 <p id="checkoutProduct">
-
   Complete your order below.
-
 </p>
-
 
 <form
   class="checkout-form"
   id="checkoutForm">
-
 
 <input
   type="text"
@@ -2434,7 +1470,6 @@ footer p{
   required
 >
 
-
 <input
   type="tel"
   id="customerPhone"
@@ -2442,12 +1477,10 @@ footer p{
   required
 >
 
-
 <textarea
   id="customerAddress"
   placeholder="Full Delivery Address"
   required></textarea>
-
 
 <input
   type="number"
@@ -2457,7 +1490,6 @@ footer p{
   required
 >
 
-
 <button
   type="submit"
   id="placeOrderButton">
@@ -2466,50 +1498,29 @@ footer p{
 
 </button>
 
-
 </form>
-
 
 <div
   id="checkoutMessage">
-
 </div>
-
 
 </section>
 
-
-<!-- =======================================================
-     REVIEWS
-======================================================= -->
-
 <section class="reviews-section">
-
 
 <div class="reviews-heading">
 
-
   <div class="reviews-label">
-
     REAL CUSTOMER FEEDBACK
-
   </div>
 
-
   <h2>
-
     Customer Reviews
-
   </h2>
-
 
 </div>
 
-
-<!-- RATING -->
-
 <div class="rating-summary">
-
 
   <div
     class="big-rating"
@@ -2519,9 +1530,7 @@ footer p{
 
   </div>
 
-
   <div>
-
 
     <div
       class="stars-display"
@@ -2531,7 +1540,6 @@ footer p{
 
     </div>
 
-
     <div
       class="review-count"
       id="reviewCount">
@@ -2540,24 +1548,15 @@ footer p{
 
     </div>
 
-
   </div>
-
 
 </div>
 
-
-<!-- REVIEW FORM -->
-
 <div class="review-form">
 
-
 <h3>
-
   Leave a Review
-
 </h3>
-
 
 <div
   class="star-selector"
@@ -2571,7 +1570,6 @@ footer p{
 
 </div>
 
-
 <input
   type="text"
   id="reviewName"
@@ -2579,14 +1577,10 @@ footer p{
   maxlength="50"
 >
 
-
 <textarea
   id="reviewText"
   placeholder="Write your review..."
   maxlength="500"></textarea>
-
-
-<!-- PHOTO -->
 
 <label
   class="photo-label">
@@ -2594,7 +1588,6 @@ footer p{
   📸 Add a photo of your product
 
 </label>
-
 
 <label
   class="photo-upload"
@@ -2604,25 +1597,21 @@ footer p{
 
 </label>
 
-
 <input
   type="file"
   id="reviewPhoto"
   accept="image/jpeg,image/png,image/webp"
 >
 
-
 <div
   class="photo-preview"
   id="photoPreview">
-
 
   <img
     id="photoPreviewImage"
     src=""
     alt="Review photo preview"
   >
-
 
   <button
     type="button"
@@ -2633,9 +1622,7 @@ footer p{
 
   </button>
 
-
 </div>
-
 
 <button
   class="review-submit"
@@ -2646,46 +1633,30 @@ footer p{
 
 </button>
 
-
 <div
   id="reviewMessage">
-
 </div>
 
-
 </div>
-
-
-<!-- REVIEW LIST -->
 
 <div
   class="reviews-list"
   id="reviewsList">
 
   <div class="no-reviews">
-
     Loading reviews...
-
   </div>
 
 </div>
 
-
 </section>
 
-
 </main>
-
-
-<!-- =======================================================
-     IMAGE LIGHTBOX
-======================================================= -->
 
 <div
   class="image-lightbox"
   id="imageLightbox"
   onclick="closeLightbox()">
-
 
   <button
     class="close-lightbox"
@@ -2695,7 +1666,6 @@ footer p{
 
   </button>
 
-
   <img
     id="lightboxImage"
     src=""
@@ -2704,38 +1674,26 @@ footer p{
 
 </div>
 
-
-<!-- =======================================================
-     FOOTER
-======================================================= -->
-
 <footer>
 
 <div class="footer-logo">
-
   BROSHIN
-
 </div>
 
-
 <p>
-
   © 2026 BROSHIN — Discover. Shop. Enjoy.
-
 </p>
 
 </footer>
 
-
 <script>
 
-
 /* =========================================================
-   API
+   API — UPDATED TO VERSION 14
 ========================================================= */
 
 const API_URL =
-"https://script.google.com/macros/s/AKfycbzvnvMChqDcOGrQyyAIiFJCNYykM-wbe32XNbY5u0_5BMKazI2OKgdVd8Y8JicQKHk9aQ/exec";
+"https://script.google.com/macros/s/AKfycbxbudEvfIdlKCs0bic5qrCCYuS8RRKTjByT6DjrgJB3MIMVWWaC1DLxI1zEH0crirD0YQ/exec";
 
 
 /* =========================================================
@@ -2762,7 +1720,6 @@ let selectedPhotoMimeType = "";
 const cursor =
 document.getElementById("cursor");
 
-
 document.addEventListener(
   "mousemove",
   function(e){
@@ -2788,16 +1745,13 @@ async function loadProducts(){
       "productCards"
     );
 
-
   try{
 
     const response =
       await fetch(API_URL);
 
-
     const data =
       await response.json();
-
 
     if(!Array.isArray(data)){
 
@@ -2807,14 +1761,11 @@ async function loadProducts(){
 
     }
 
-
     allProducts =
       data;
 
-
     productCards.innerHTML =
       "";
-
 
     const activeProducts =
       data.filter(function(product){
@@ -2827,7 +1778,6 @@ async function loadProducts(){
         "active";
 
       });
-
 
     if(
       activeProducts.length ===
@@ -2858,7 +1808,6 @@ async function loadProducts(){
 
     }
 
-
     activeProducts.forEach(
       function(product){
 
@@ -2867,46 +1816,38 @@ async function loadProducts(){
             "article"
           );
 
-
         card.className =
           "card";
-
 
         const image =
           String(
             product.image1 || ""
           ).trim();
 
-
         const referencePrice =
           Number(
             product.reference_price
           ) || 0;
-
 
         const sellingPrice =
           Number(
             product.selling_price
           ) || 0;
 
-
         const discount =
           Number(
             product.discount
           ) || 0;
-
 
         const saveAmount =
           Number(
             product.save_amount
           ) || 0;
 
-
         const stock =
           Number(
             product.stock
           ) || 0;
-
 
         card.innerHTML = `
 
@@ -2920,14 +1861,12 @@ async function loadProducts(){
             ``
           }
 
-
           <div class="number">
 
             PRODUCT
             ${escapeHTML(product.id)}
 
           </div>
-
 
           ${
             image
@@ -2944,7 +1883,6 @@ async function loadProducts(){
             </div>`
           }
 
-
           <h3>
 
             ${escapeHTML(
@@ -2953,9 +1891,7 @@ async function loadProducts(){
 
           </h3>
 
-
           <div class="price-box">
-
 
             ${
               referencePrice >
@@ -2968,13 +1904,11 @@ async function loadProducts(){
               ``
             }
 
-
             <span class="product-price">
 
               ₹${sellingPrice}
 
             </span>
-
 
             ${
               discount > 0
@@ -2986,9 +1920,7 @@ async function loadProducts(){
               ``
             }
 
-
           </div>
-
 
           ${
             saveAmount > 0
@@ -3000,7 +1932,6 @@ async function loadProducts(){
             ``
           }
 
-
           <p>
 
             ${escapeHTML(
@@ -3009,12 +1940,10 @@ async function loadProducts(){
 
           </p>
 
-
           <button
             class="view-btn"
             onclick="openProduct('${escapeJS(product.id)}')"
             ${stock <= 0 ? "disabled" : ""}>
-
 
             ${
               stock <= 0
@@ -3024,11 +1953,9 @@ async function loadProducts(){
               "VIEW PRODUCT"
             }
 
-
           </button>
 
         `;
-
 
         if(stock <= 0){
 
@@ -3038,7 +1965,6 @@ async function loadProducts(){
 
         }
 
-
         productCards.appendChild(
           card
         );
@@ -3046,14 +1972,12 @@ async function loadProducts(){
       }
     );
 
-
   }catch(error){
 
     console.error(
       "Products error:",
       error
     );
-
 
     productCards.innerHTML = `
 
@@ -3105,10 +2029,8 @@ function checkProductPage(){
       window.location.search
     );
 
-
   const productId =
     params.get("product");
-
 
   if(!productId){
 
@@ -3117,32 +2039,26 @@ function checkProductPage(){
     ).style.display =
       "block";
 
-
     document.getElementById(
       "productPage"
     ).style.display =
       "none";
 
-
     loadProducts();
-
 
     return;
 
   }
-
 
   document.getElementById(
     "homePage"
   ).style.display =
     "none";
 
-
   document.getElementById(
     "productPage"
   ).style.display =
     "block";
-
 
   loadSingleProduct(
     productId
@@ -3164,10 +2080,8 @@ async function loadSingleProduct(
     const response =
       await fetch(API_URL);
 
-
     const products =
       await response.json();
-
 
     if(!Array.isArray(products)){
 
@@ -3177,10 +2091,8 @@ async function loadSingleProduct(
 
     }
 
-
     allProducts =
       products;
-
 
     currentProduct =
       products.find(
@@ -3194,7 +2106,6 @@ async function loadSingleProduct(
         }
       );
 
-
     if(!currentProduct){
 
       document.getElementById(
@@ -3206,36 +2117,30 @@ async function loadSingleProduct(
 
     }
 
-
     const sellingPrice =
       Number(
         currentProduct.selling_price
       ) || 0;
-
 
     const referencePrice =
       Number(
         currentProduct.reference_price
       ) || 0;
 
-
     const discount =
       Number(
         currentProduct.discount
       ) || 0;
-
 
     const saveAmount =
       Number(
         currentProduct.save_amount
       ) || 0;
 
-
     const stock =
       Number(
         currentProduct.stock
       ) || 0;
-
 
     document.getElementById(
       "detailName"
@@ -3243,13 +2148,11 @@ async function loadSingleProduct(
       currentProduct.name ||
       "Product";
 
-
     document.getElementById(
       "detailPrice"
     ).textContent =
       "₹" +
       sellingPrice;
-
 
     document.getElementById(
       "detailReference"
@@ -3262,7 +2165,6 @@ async function loadSingleProduct(
       :
       "";
 
-
     document.getElementById(
       "detailDiscount"
     ).textContent =
@@ -3272,7 +2174,6 @@ async function loadSingleProduct(
       "% OFF"
       :
       "";
-
 
     document.getElementById(
       "detailSave"
@@ -3284,13 +2185,11 @@ async function loadSingleProduct(
       :
       "";
 
-
     document.getElementById(
       "detailDescription"
     ).textContent =
       currentProduct.description ||
       "Discover this amazing product on BROSHIN.";
-
 
     document.getElementById(
       "detailStock"
@@ -3302,12 +2201,10 @@ async function loadSingleProduct(
       :
       "Currently Out of Stock";
 
-
     const buyButton =
       document.getElementById(
         "buyNowButton"
       );
-
 
     if(stock <= 0){
 
@@ -3328,9 +2225,7 @@ async function loadSingleProduct(
     }
 
 
-    /* -----------------------------------------
-       PRODUCT IMAGES
-    ----------------------------------------- */
+    /* PRODUCT IMAGES */
 
     const imageList = [
 
@@ -3355,22 +2250,18 @@ async function loadSingleProduct(
 
     });
 
-
     const imageBox =
       document.getElementById(
         "detailImageBox"
       );
-
 
     const gallery =
       document.getElementById(
         "imageGallery"
       );
 
-
     gallery.innerHTML =
       "";
-
 
     if(
       imageList.length > 0
@@ -3380,7 +2271,6 @@ async function loadSingleProduct(
         imageList[0]
       );
 
-
       imageList.forEach(
         function(image){
 
@@ -3389,19 +2279,15 @@ async function loadSingleProduct(
               "img"
             );
 
-
           img.src =
             image;
-
 
           img.className =
             "thumb";
 
-
           img.alt =
             currentProduct.name ||
             "Product";
-
 
           img.onclick =
             function(){
@@ -3412,14 +2298,12 @@ async function loadSingleProduct(
 
             };
 
-
           gallery.appendChild(
             img
           );
 
         }
       );
-
 
     }else{
 
@@ -3434,27 +2318,22 @@ async function loadSingleProduct(
     }
 
 
-    /* -----------------------------------------
-       PRODUCT VIDEO
-    ----------------------------------------- */
+    /* PRODUCT VIDEO */
 
     const video =
       String(
         currentProduct.video || ""
       ).trim();
 
-
     const videoBox =
       document.getElementById(
         "videoBox"
       );
 
-
     const videoElement =
       document.getElementById(
         "productVideo"
       );
-
 
     if(video){
 
@@ -3475,7 +2354,6 @@ async function loadSingleProduct(
 
     }
 
-
     document.getElementById(
       "checkoutProduct"
     ).textContent =
@@ -3483,13 +2361,7 @@ async function loadSingleProduct(
       " — ₹" +
       sellingPrice;
 
-
-    /* -----------------------------------------
-       LOAD REVIEWS
-    ----------------------------------------- */
-
     loadReviews();
-
 
   }catch(error){
 
@@ -3497,7 +2369,6 @@ async function loadSingleProduct(
       "Product error:",
       error
     );
-
 
     document.getElementById(
       "detailName"
@@ -3519,7 +2390,6 @@ function setMainImage(image){
     document.getElementById(
       "detailImageBox"
     );
-
 
   imageBox.innerHTML = `
 
@@ -3545,7 +2415,6 @@ function showCheckout(){
 
   }
 
-
   if(
     Number(
       currentProduct.stock
@@ -3555,7 +2424,6 @@ function showCheckout(){
     return;
 
   }
-
 
   document.getElementById(
     "checkoutSection"
@@ -3592,13 +2460,11 @@ document.getElementById(
 
     e.preventDefault();
 
-
     if(!currentProduct){
 
       return;
 
     }
-
 
     const quantity =
       Number(
@@ -3607,19 +2473,16 @@ document.getElementById(
         ).value
       );
 
-
     if(quantity < 1){
 
       return;
 
     }
 
-
     const stock =
       Number(
         currentProduct.stock
       ) || 0;
-
 
     if(quantity > stock){
 
@@ -3632,23 +2495,19 @@ document.getElementById(
 
     }
 
-
     const sellingPrice =
       Number(
         currentProduct.selling_price
       ) || 0;
-
 
     const costPrice =
       Number(
         currentProduct.cost_price
       ) || 0;
 
-
     const total =
       sellingPrice *
       quantity;
-
 
     const orderData = {
 
@@ -3691,26 +2550,21 @@ document.getElementById(
 
     };
 
-
     const message =
       document.getElementById(
         "checkoutMessage"
       );
-
 
     const button =
       document.getElementById(
         "placeOrderButton"
       );
 
-
     message.textContent =
       "Placing your order...";
 
-
     button.disabled =
       true;
-
 
     try{
 
@@ -3740,27 +2594,22 @@ document.getElementById(
 
       );
 
-
       message.textContent =
         "🎉 Order placed successfully! Order ID: " +
         orderData.orderId;
-
 
       document.getElementById(
         "checkoutForm"
       ).reset();
 
-
     }catch(error){
 
       console.error(error);
-
 
       message.textContent =
         "❌ Order failed. Please try again.";
 
     }
-
 
     button.disabled =
       false;
@@ -3780,12 +2629,10 @@ async function trackOrder(){
       "trackOrderId"
     ).value.trim();
 
-
   const result =
     document.getElementById(
       "trackResult"
     );
-
 
   if(!orderId){
 
@@ -3799,14 +2646,11 @@ async function trackOrder(){
 
   }
 
-
   result.style.display =
     "block";
 
-
   result.innerHTML =
     "🔍 Checking your order...";
-
 
   try{
 
@@ -3821,10 +2665,8 @@ async function trackOrder(){
 
       );
 
-
     const data =
       await response.json();
-
 
     if(
       !data ||
@@ -3839,10 +2681,8 @@ async function trackOrder(){
 
     }
 
-
     const order =
       data.order;
-
 
     result.innerHTML = `
 
@@ -3855,7 +2695,6 @@ async function trackOrder(){
 
       </div>
 
-
       <p>
 
         <strong>Order ID:</strong>
@@ -3866,7 +2705,6 @@ async function trackOrder(){
         )}
 
       </p>
-
 
       <p>
 
@@ -3879,7 +2717,6 @@ async function trackOrder(){
 
       </p>
 
-
       <p>
 
         <strong>Quantity:</strong>
@@ -3890,7 +2727,6 @@ async function trackOrder(){
         )}
 
       </p>
-
 
       <p>
 
@@ -3903,13 +2739,11 @@ async function trackOrder(){
 
       </p>
 
-
       <div class="tracking-awb">
 
         <strong>
           📦 Tracking / AWB
         </strong>
-
 
         ${
           order.tracking_number
@@ -3921,16 +2755,13 @@ async function trackOrder(){
           "Not available yet"
         }
 
-
       </div>
 
     `;
 
-
   }catch(error){
 
     console.error(error);
-
 
     result.innerHTML =
       "❌ Unable to check order right now.";
@@ -3959,7 +2790,6 @@ document
           this.dataset.rating
         );
 
-
       updateStars();
 
     }
@@ -3980,7 +2810,6 @@ function updateStars(){
       Number(
         star.dataset.rating
       );
-
 
     if(
       rating <= selectedRating
@@ -4028,22 +2857,15 @@ function handleReviewPhoto(){
       "reviewPhoto"
     );
 
-
   const file =
     input.files &&
     input.files[0];
-
 
   if(!file){
 
     return;
 
   }
-
-
-  /* -----------------------------------------
-     CHECK FILE TYPE
-  ----------------------------------------- */
 
   const allowedTypes = [
 
@@ -4052,7 +2874,6 @@ function handleReviewPhoto(){
     "image/webp"
 
   ];
-
 
   if(
     !allowedTypes.includes(
@@ -4064,19 +2885,12 @@ function handleReviewPhoto(){
       "Please select a JPG, PNG or WEBP image."
     );
 
-
     input.value =
       "";
-
 
     return;
 
   }
-
-
-  /* -----------------------------------------
-     CHECK SIZE
-  ----------------------------------------- */
 
   if(
     file.size >
@@ -4087,19 +2901,15 @@ function handleReviewPhoto(){
       "Photo must be smaller than 4 MB."
     );
 
-
     input.value =
       "";
-
 
     return;
 
   }
 
-
   const reader =
     new FileReader();
-
 
   reader.onload =
     function(event){
@@ -4107,20 +2917,16 @@ function handleReviewPhoto(){
       selectedPhotoData =
         event.target.result;
 
-
       selectedPhotoName =
         file.name;
 
-
       selectedPhotoMimeType =
         file.type;
-
 
       document.getElementById(
         "photoPreviewImage"
       ).src =
         selectedPhotoData;
-
 
       document.getElementById(
         "photoPreview"
@@ -4128,7 +2934,6 @@ function handleReviewPhoto(){
         "block";
 
     };
-
 
   reader.onerror =
     function(){
@@ -4138,7 +2943,6 @@ function handleReviewPhoto(){
       );
 
     };
-
 
   reader.readAsDataURL(
     file
@@ -4156,26 +2960,21 @@ function removeReviewPhoto(){
   selectedPhotoData =
     "";
 
-
   selectedPhotoName =
     "";
 
-
   selectedPhotoMimeType =
     "";
-
 
   document.getElementById(
     "reviewPhoto"
   ).value =
     "";
 
-
   document.getElementById(
     "photoPreview"
   ).style.display =
     "none";
-
 
   document.getElementById(
     "photoPreviewImage"
@@ -4197,12 +2996,10 @@ async function loadReviews(){
 
   }
 
-
   const reviewsList =
     document.getElementById(
       "reviewsList"
     );
-
 
   reviewsList.innerHTML = `
 
@@ -4213,7 +3010,6 @@ async function loadReviews(){
     </div>
 
   `;
-
 
   try{
 
@@ -4228,10 +3024,8 @@ async function loadReviews(){
 
       );
 
-
     const data =
       await response.json();
-
 
     if(
       !data ||
@@ -4244,7 +3038,6 @@ async function loadReviews(){
 
     }
 
-
     const reviews =
       Array.isArray(
         data.reviews
@@ -4253,7 +3046,6 @@ async function loadReviews(){
       data.reviews
       :
       [];
-
 
     displayReviews(
 
@@ -4270,14 +3062,12 @@ async function loadReviews(){
 
     );
 
-
   }catch(error){
 
     console.error(
       "Reviews error:",
       error
     );
-
 
     reviewsList.innerHTML = `
 
@@ -4311,30 +3101,25 @@ function displayReviews(
       "reviewsList"
     );
 
-
   const averageElement =
     document.getElementById(
       "averageRating"
     );
-
 
   const starsElement =
     document.getElementById(
       "averageStars"
     );
 
-
   const countElement =
     document.getElementById(
       "reviewCount"
     );
 
-
   averageElement.textContent =
     Number(
       averageRating || 0
     ).toFixed(1);
-
 
   starsElement.textContent =
     getStars(
@@ -4342,7 +3127,6 @@ function displayReviews(
         averageRating || 0
       )
     );
-
 
   countElement.textContent =
     totalReviews +
@@ -4353,7 +3137,6 @@ function displayReviews(
       :
       " Reviews"
     );
-
 
   if(!reviews.length){
 
@@ -4372,10 +3155,8 @@ function displayReviews(
 
   }
 
-
   list.innerHTML =
     "";
-
 
   reviews.forEach(
     function(review){
@@ -4385,33 +3166,27 @@ function displayReviews(
           "div"
         );
 
-
       card.className =
         "review-card";
-
 
       const customerName =
         review.customer_name ||
         review.name ||
         "Customer";
 
-
       const reviewText =
         review.review ||
         review.text ||
         "";
 
-
       const reviewDate =
         review.date ||
         "";
-
 
       const rating =
         Number(
           review.rating
         ) || 0;
-
 
       const photoUrl =
         String(
@@ -4419,14 +3194,11 @@ function displayReviews(
           ""
         ).trim();
 
-
       card.innerHTML = `
 
         <div class="review-top">
 
-
           <div>
-
 
             <div class="reviewer-name">
 
@@ -4436,7 +3208,6 @@ function displayReviews(
 
             </div>
 
-
             <div class="review-date">
 
               ${escapeHTML(
@@ -4445,9 +3216,7 @@ function displayReviews(
 
             </div>
 
-
           </div>
-
 
           <div class="review-stars">
 
@@ -4457,9 +3226,7 @@ function displayReviews(
 
           </div>
 
-
         </div>
-
 
         <div class="review-text">
 
@@ -4468,7 +3235,6 @@ function displayReviews(
           )}
 
         </div>
-
 
         ${
           photoUrl
@@ -4485,7 +3251,6 @@ function displayReviews(
         }
 
       `;
-
 
       list.appendChild(
         card
@@ -4512,10 +3277,8 @@ function getStars(rating){
       )
     );
 
-
   let stars =
     "";
-
 
   for(
     let i = 1;
@@ -4531,7 +3294,6 @@ function getStars(rating){
       "☆";
 
   }
-
 
   return stars;
 
@@ -4550,30 +3312,25 @@ async function submitReview(){
 
   }
 
-
   const name =
     document.getElementById(
       "reviewName"
     ).value.trim();
-
 
   const review =
     document.getElementById(
       "reviewText"
     ).value.trim();
 
-
   const message =
     document.getElementById(
       "reviewMessage"
     );
 
-
   const button =
     document.getElementById(
       "reviewSubmit"
     );
-
 
   if(!name){
 
@@ -4584,7 +3341,6 @@ async function submitReview(){
 
   }
 
-
   if(!selectedRating){
 
     message.textContent =
@@ -4594,7 +3350,6 @@ async function submitReview(){
 
   }
 
-
   if(!review){
 
     message.textContent =
@@ -4603,11 +3358,6 @@ async function submitReview(){
     return;
 
   }
-
-
-  /* -----------------------------------------
-     REVIEW DATA
-  ----------------------------------------- */
 
   const reviewData = {
 
@@ -4629,11 +3379,6 @@ async function submitReview(){
     review:
       review,
 
-    /*
-      PHOTO DATA
-      Sent as Base64.
-    */
-
     photoData:
       selectedPhotoData,
 
@@ -4645,7 +3390,6 @@ async function submitReview(){
 
   };
 
-
   message.textContent =
     selectedPhotoData
     ?
@@ -4653,10 +3397,8 @@ async function submitReview(){
     :
     "Submitting review...";
 
-
   button.disabled =
     true;
-
 
   try{
 
@@ -4686,49 +3428,25 @@ async function submitReview(){
 
     );
 
-
-    /*
-      Because no-cors is used,
-      browser cannot read the response.
-
-      The Apps Script request is sent.
-    */
-
-
     message.textContent =
       "🎉 Thank you! Your review has been submitted.";
-
-
-    /* -----------------------------------------
-       CLEAR FORM
-    ----------------------------------------- */
 
     document.getElementById(
       "reviewName"
     ).value =
       "";
 
-
     document.getElementById(
       "reviewText"
     ).value =
       "";
 
-
     selectedRating =
       0;
 
-
     updateStars();
 
-
     removeReviewPhoto();
-
-
-    /*
-      Give Apps Script time
-      to save the review/photo.
-    */
 
     setTimeout(
 
@@ -4742,7 +3460,6 @@ async function submitReview(){
 
     );
 
-
   }catch(error){
 
     console.error(
@@ -4750,12 +3467,10 @@ async function submitReview(){
       error
     );
 
-
     message.textContent =
       "❌ Review couldn't be submitted. Please try again.";
 
   }
-
 
   button.disabled =
     false;
@@ -4776,16 +3491,13 @@ function openLightbox(
       "imageLightbox"
     );
 
-
   const image =
     document.getElementById(
       "lightboxImage"
     );
 
-
   image.src =
     imageUrl;
-
 
   lightbox.style.display =
     "flex";
@@ -4803,12 +3515,10 @@ function closeLightbox(
 
   }
 
-
   document.getElementById(
     "imageLightbox"
   ).style.display =
     "none";
-
 
   document.getElementById(
     "lightboxImage"
