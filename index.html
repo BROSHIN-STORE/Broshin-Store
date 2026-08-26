@@ -1,29 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#171717">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<meta name="theme-color"
+content="#171717">
 
 <title>BROSHIN — Discover. Shop. Enjoy.</title>
 
 <style>
 
+/* =========================================================
+   ROOT
+========================================================= */
+
 :root{
+
   --black:#171717;
   --black2:#29231f;
+
   --gold:#D4AF37;
   --gold2:#9b7921;
+
   --rose:#D8B7AE;
   --rose2:#ead5ce;
+
   --ivory:#F8F4EC;
   --cream:#EDE3D2;
-  --white:#fff;
+
+  --white:#ffffff;
+
   --text:#211e1c;
   --muted:#756d66;
-  --shadow:0 25px 70px rgba(23,23,23,.10);
+
+  --shadow:
+    0 25px 70px rgba(23,23,23,.10);
+
 }
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
   margin:0;
@@ -36,84 +59,191 @@ html{
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   color:var(--text);
+
   overflow-x:hidden;
+
   min-height:100vh;
 
   background:
-    radial-gradient(circle at 5% 10%,rgba(216,183,174,.55),transparent 28%),
-    radial-gradient(circle at 95% 5%,rgba(212,175,55,.16),transparent 30%),
-    linear-gradient(125deg,var(--ivory),var(--cream),#fffaf4,var(--rose2),var(--ivory));
+
+    radial-gradient(
+      circle at 5% 10%,
+      rgba(216,183,174,.55),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 95% 5%,
+      rgba(212,175,55,.16),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      125deg,
+      var(--ivory),
+      var(--cream),
+      #fffaf4,
+      var(--rose2),
+      var(--ivory)
+    );
 
   background-size:400% 400%;
+
   animation:bgMove 18s ease infinite;
+
 }
 
 @keyframes bgMove{
-  0%,100%{background-position:0% 50%}
-  50%{background-position:100% 50%}
+
+  0%,100%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
 }
+
+
+/* =========================================================
+   CURSOR
+========================================================= */
 
 .cursor{
+
   position:fixed;
+
   width:280px;
   height:280px;
+
   border-radius:50%;
+
   pointer-events:none;
-  transform:translate(-50%,-50%);
-  background:radial-gradient(circle,rgba(212,175,55,.12),transparent 70%);
+
+  transform:
+    translate(-50%,-50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(212,175,55,.12),
+      transparent 70%
+    );
+
   z-index:0;
+
 }
 
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
 .topbar{
+
   height:38px;
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
   padding:0 15px;
+
   color:white;
+
   font-size:10px;
+
   font-weight:900;
+
   letter-spacing:3px;
+
   text-align:center;
 
-  background:linear-gradient(90deg,#171717,#51453b,#171717);
+  background:
+    linear-gradient(
+      90deg,
+      #171717,
+      #51453b,
+      #171717
+    );
+
   background-size:200% 100%;
+
   animation:barMove 6s linear infinite;
+
 }
 
 @keyframes barMove{
-  to{background-position:200% 0}
+
+  to{
+    background-position:200% 0;
+  }
+
 }
 
+
+/* =========================================================
+   NAV
+========================================================= */
+
 .nav{
+
   width:92%;
   max-width:1250px;
+
   margin:20px auto;
+
   padding:16px 25px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
 
   position:relative;
+
   z-index:20;
 
-  border:1px solid rgba(255,255,255,.65);
+  border:
+    1px solid
+    rgba(255,255,255,.65);
+
   border-radius:24px;
-  background:rgba(255,255,255,.48);
+
+  background:
+    rgba(255,255,255,.48);
+
   backdrop-filter:blur(20px);
 
-  box-shadow:0 20px 50px rgba(23,23,23,.08);
+  box-shadow:
+    0 20px 50px
+    rgba(23,23,23,.08);
+
 }
 
 .logo{
+
   color:var(--black);
+
   text-decoration:none;
+
   font-size:30px;
+
   font-weight:1000;
+
   letter-spacing:7px;
+
 }
 
 .logo span{
@@ -121,11 +251,21 @@ body{
 }
 
 .nav-tag{
+
   color:var(--muted);
+
   font-size:10px;
+
   font-weight:900;
+
   letter-spacing:3px;
+
 }
+
+
+/* =========================================================
+   PAGES
+========================================================= */
 
 #homePage{
   display:block;
@@ -135,317 +275,530 @@ body{
   display:none;
 }
 
+
+/* =========================================================
+   HERO
+========================================================= */
+
 .hero{
+
   width:92%;
   max-width:1250px;
+
   min-height:620px;
+
   margin:auto;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
   text-align:center;
 
   position:relative;
+
 }
 
 .hero-content{
+
   position:relative;
+
   z-index:3;
+
 }
 
 .orb{
+
   position:absolute;
+
   border-radius:50%;
+
   pointer-events:none;
+
 }
 
 .orb.one{
+
   width:430px;
   height:430px;
+
   left:0;
   top:60px;
 
-  background:radial-gradient(
-    circle,
-    rgba(216,183,174,.55),
-    transparent 68%
-  );
+  background:
+    radial-gradient(
+      circle,
+      rgba(216,183,174,.55),
+      transparent 68%
+    );
 
-  animation:float1 9s ease-in-out infinite;
+  animation:
+    float1 9s ease-in-out infinite;
+
 }
 
 .orb.two{
+
   width:390px;
   height:390px;
+
   right:0;
   bottom:20px;
 
-  background:radial-gradient(
-    circle,
-    rgba(212,175,55,.20),
-    transparent 68%
-  );
+  background:
+    radial-gradient(
+      circle,
+      rgba(212,175,55,.20),
+      transparent 68%
+    );
 
-  animation:float2 11s ease-in-out infinite;
+  animation:
+    float2 11s ease-in-out infinite;
+
 }
 
 @keyframes float1{
+
   50%{
-    transform:translate(100px,50px) scale(1.12);
+    transform:
+      translate(100px,50px)
+      scale(1.12);
   }
+
 }
 
 @keyframes float2{
+
   50%{
-    transform:translate(-100px,-50px) scale(1.15);
+    transform:
+      translate(-100px,-50px)
+      scale(1.15);
   }
+
 }
 
 .small-title{
+
   display:inline-block;
+
   padding:9px 18px;
+
   border-radius:50px;
+
   font-size:10px;
+
   letter-spacing:4px;
+
   font-weight:900;
 
-  background:linear-gradient(
-    100deg,
-    rgba(232,211,185,.75),
-    rgba(216,183,174,.55)
-  );
+  background:
+    linear-gradient(
+      100deg,
+      rgba(232,211,185,.75),
+      rgba(216,183,174,.55)
+    );
 
-  border:1px solid rgba(212,175,55,.35);
+  border:
+    1px solid
+    rgba(212,175,55,.35);
+
 }
 
 .hero h1{
+
   margin-top:25px;
 
-  font-size:clamp(65px,15vw,175px);
-  line-height:.82;
-  font-weight:1000;
-  letter-spacing:clamp(5px,1.7vw,18px);
+  font-size:
+    clamp(65px,15vw,175px);
 
-  background:linear-gradient(
-    100deg,
-    #171717,
-    #6a594c,
-    #D4AF37,
-    #9b7921,
-    #171717
-  );
+  line-height:.82;
+
+  font-weight:1000;
+
+  letter-spacing:
+    clamp(5px,1.7vw,18px);
+
+  background:
+    linear-gradient(
+      100deg,
+      #171717,
+      #6a594c,
+      #D4AF37,
+      #9b7921,
+      #171717
+    );
 
   background-size:300% auto;
+
   -webkit-background-clip:text;
+
   background-clip:text;
+
   color:transparent;
 
-  animation:goldMove 7s linear infinite;
+  animation:
+    goldMove 7s linear infinite;
+
 }
 
 @keyframes goldMove{
-  to{background-position:300% center}
+
+  to{
+    background-position:
+      300% center;
+  }
+
 }
 
 .hero-description{
+
   max-width:650px;
+
   margin:35px auto 0;
+
   color:var(--muted);
+
   font-size:17px;
+
   line-height:1.8;
+
 }
 
 .hero-button{
+
   display:inline-block;
+
   margin-top:32px;
+
   padding:16px 30px;
+
   border-radius:50px;
 
   color:white;
+
   text-decoration:none;
+
   font-size:12px;
+
   font-weight:900;
+
   letter-spacing:1px;
 
-  background:linear-gradient(
-    100deg,
-    #171717,
-    #51443a,
-    #171717
-  );
+  background:
+    linear-gradient(
+      100deg,
+      #171717,
+      #51443a,
+      #171717
+    );
 
-  box-shadow:0 18px 40px rgba(23,23,23,.18);
+  box-shadow:
+    0 18px 40px
+    rgba(23,23,23,.18);
+
   transition:.3s;
+
 }
 
 .hero-button:hover{
   transform:translateY(-5px);
 }
 
+
+/* =========================================================
+   HEADINGS
+========================================================= */
+
 .heading{
+
   text-align:center;
+
   margin-bottom:50px;
+
 }
 
 .heading-label{
+
   font-size:10px;
+
   font-weight:900;
+
   letter-spacing:4px;
+
   color:#96751e;
+
 }
 
 .heading h2{
+
   margin-top:12px;
-  font-size:clamp(48px,8vw,95px);
+
+  font-size:
+    clamp(48px,8vw,95px);
+
   line-height:.9;
+
   font-weight:1000;
+
   letter-spacing:-4px;
 
-  background:linear-gradient(
-    90deg,
-    #171717,
-    #D4AF37,
-    #D8B7AE,
-    #171717
-  );
+  background:
+    linear-gradient(
+      90deg,
+      #171717,
+      #D4AF37,
+      #D8B7AE,
+      #171717
+    );
+
+  background-size:250% auto;
 
   -webkit-background-clip:text;
+
   background-clip:text;
+
   color:transparent;
+
 }
 
 .heading p{
+
   margin:22px auto 0;
+
   max-width:600px;
+
   color:var(--muted);
+
   line-height:1.7;
+
 }
 
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
 .trending{
+
   width:92%;
+
   max-width:1250px;
+
   margin:70px auto 110px;
+
 }
 
 .cards{
+
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+
+  grid-template-columns:
+    repeat(4,1fr);
+
   gap:22px;
+
 }
 
 .card{
+
   min-height:430px;
+
   padding:22px;
+
   border-radius:32px;
+
   position:relative;
+
   overflow:hidden;
 
-  background:linear-gradient(
-    145deg,
-    rgba(255,255,255,.78),
-    rgba(255,255,255,.30)
-  );
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.78),
+      rgba(255,255,255,.30)
+    );
 
-  border:1px solid rgba(255,255,255,.65);
+  border:
+    1px solid
+    rgba(255,255,255,.65);
+
   backdrop-filter:blur(18px);
+
   box-shadow:var(--shadow);
 
-  transition:transform .35s,box-shadow .35s;
+  transition:
+    transform .35s,
+    box-shadow .35s;
+
 }
 
 .card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 35px 85px rgba(23,23,23,.17);
+
+  transform:
+    translateY(-10px);
+
+  box-shadow:
+    0 35px 85px
+    rgba(23,23,23,.17);
+
 }
 
 .product-image{
+
   width:100%;
+
   height:210px;
+
   object-fit:contain;
+
   border-radius:22px;
-  background:rgba(255,255,255,.55);
+
+  background:
+    rgba(255,255,255,.55);
+
   margin:15px 0;
+
 }
 
 .placeholder{
+
   height:210px;
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
   font-size:70px;
+
   margin:15px 0;
+
   border-radius:22px;
-  background:rgba(255,255,255,.55);
+
+  background:
+    rgba(255,255,255,.55);
+
 }
 
 .number{
+
   font-size:9px;
+
   letter-spacing:3px;
+
   font-weight:900;
+
   color:#9b8c7d;
+
 }
 
 .card h3{
+
   font-size:19px;
+
   margin:10px 0;
+
 }
 
 .card p{
+
   font-size:13px;
+
   color:var(--muted);
+
   line-height:1.6;
+
 }
 
 .price-box{
+
   display:flex;
+
   align-items:center;
+
   gap:9px;
+
   flex-wrap:wrap;
+
   margin:12px 0;
+
 }
 
 .reference-price{
+
   font-size:14px;
+
   color:#8a817a;
+
   text-decoration:line-through;
+
 }
 
 .product-price{
+
   font-size:23px;
+
   font-weight:1000;
+
 }
 
 .discount-badge{
+
   padding:5px 9px;
+
   border-radius:20px;
+
   background:#171717;
+
   color:white;
+
   font-size:9px;
+
   font-weight:900;
+
 }
 
 .save-text{
+
   font-size:11px;
+
   color:#96751e;
+
   font-weight:900;
+
 }
 
 .view-btn{
+
   width:100%;
+
   padding:14px;
+
   margin-top:17px;
+
   border:0;
+
   border-radius:50px;
+
   background:var(--black);
+
   color:white;
+
   font-weight:900;
+
   cursor:pointer;
+
 }
 
 .view-btn:disabled{
+
   opacity:.5;
+
   cursor:not-allowed;
+
 }
 
 .out-stock{
@@ -453,607 +806,1144 @@ body{
 }
 
 .status-badge{
+
   position:absolute;
+
   top:18px;
   right:18px;
+
   padding:7px 11px;
+
   border-radius:30px;
-  background:rgba(23,23,23,.9);
+
+  background:
+    rgba(23,23,23,.9);
+
   color:white;
+
   font-size:8px;
+
   font-weight:900;
+
   letter-spacing:1px;
+
 }
 
+
+/* =========================================================
+   PRODUCT DETAIL
+========================================================= */
+
 .product-wrap{
+
   width:92%;
+
   max-width:1150px;
+
   margin:60px auto 70px;
+
 }
 
 .back-btn{
+
   border:0;
+
   background:none;
+
   cursor:pointer;
+
   font-weight:900;
+
   color:var(--muted);
+
   margin-bottom:25px;
+
   font-size:13px;
+
 }
 
 .product-detail{
+
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap:55px;
+
   align-items:center;
 
   padding:45px;
+
   border-radius:40px;
 
-  background:rgba(255,255,255,.50);
+  background:
+    rgba(255,255,255,.50);
+
   backdrop-filter:blur(20px);
 
-  border:1px solid rgba(255,255,255,.75);
+  border:
+    1px solid
+    rgba(255,255,255,.75);
 
-  box-shadow:0 30px 80px rgba(23,23,23,.10);
+  box-shadow:
+    0 30px 80px
+    rgba(23,23,23,.10);
+
 }
 
 .detail-image-box{
+
   min-height:450px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   border-radius:30px;
 
-  background:linear-gradient(
-    135deg,
-    rgba(216,183,174,.35),
-    rgba(232,211,185,.70)
-  );
+  background:
+    linear-gradient(
+      135deg,
+      rgba(216,183,174,.35),
+      rgba(232,211,185,.70)
+    );
 
   overflow:hidden;
+
 }
 
 .detail-image{
+
   width:100%;
+
   height:450px;
+
   object-fit:contain;
+
 }
 
 .detail-placeholder{
+
   font-size:140px;
+
 }
 
 .image-gallery{
+
   display:flex;
+
   gap:10px;
+
   margin-top:15px;
+
   overflow-x:auto;
+
 }
 
 .thumb{
+
   width:65px;
+
   height:65px;
+
   object-fit:cover;
+
   border-radius:12px;
+
   cursor:pointer;
+
   background:white;
-  border:2px solid transparent;
+
+  border:
+    2px solid
+    transparent;
+
 }
 
 .thumb:hover{
-  border-color:var(--gold);
+
+  border-color:
+    var(--gold);
+
 }
 
 .detail-info h1{
-  font-size:clamp(42px,6vw,75px);
+
+  font-size:
+    clamp(42px,6vw,75px);
+
   line-height:.95;
+
   font-weight:1000;
+
   letter-spacing:-3px;
+
 }
 
 .detail-price-box{
+
   margin:25px 0;
+
 }
 
 .detail-reference{
+
   color:#8a817a;
+
   text-decoration:line-through;
+
   font-size:18px;
+
 }
 
 .detail-price{
+
   margin-top:5px;
+
   font-size:38px;
+
   font-weight:1000;
+
   color:#96751e;
+
 }
 
 .detail-discount{
+
   display:inline-block;
+
   margin-top:10px;
+
   padding:7px 12px;
+
   border-radius:30px;
+
   background:#171717;
+
   color:white;
+
   font-size:10px;
+
   font-weight:900;
+
 }
 
 .detail-save{
+
   margin-top:10px;
+
   color:#96751e;
+
   font-weight:900;
+
 }
 
 .detail-description{
+
   color:var(--muted);
+
   line-height:1.9;
+
   font-size:15px;
+
 }
 
 .stock{
+
   margin-top:20px;
+
   font-size:12px;
+
   font-weight:900;
+
   color:var(--muted);
+
 }
 
 .buy-now{
+
   width:100%;
+
   margin-top:30px;
+
   padding:18px;
+
   border:0;
+
   border-radius:50px;
+
   background:var(--black);
+
   color:white;
+
   font-size:13px;
+
   font-weight:900;
+
   letter-spacing:2px;
+
   cursor:pointer;
+
   transition:.3s;
+
 }
 
 .buy-now:hover{
-  transform:translateY(-5px);
+
+  transform:
+    translateY(-5px);
+
 }
 
 .buy-now:disabled{
+
   opacity:.5;
+
   cursor:not-allowed;
+
 }
 
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
 .video-box{
+
   margin-top:25px;
+
   display:none;
+
 }
 
 .video-box video{
+
   width:100%;
+
   border-radius:20px;
+
   max-height:350px;
+
 }
 
+
+/* =========================================================
+   CHECKOUT
+========================================================= */
+
 .checkout{
+
   width:92%;
+
   max-width:700px;
+
   margin:0 auto 80px;
+
   padding:40px;
+
   border-radius:35px;
-  background:rgba(255,255,255,.76);
-  box-shadow:0 30px 80px rgba(23,23,23,.12);
+
+  background:
+    rgba(255,255,255,.76);
+
+  box-shadow:
+    0 30px 80px
+    rgba(23,23,23,.12);
+
 }
 
 .checkout h2{
+
   font-size:38px;
+
   margin-bottom:10px;
+
 }
 
 .checkout p{
+
   color:var(--muted);
+
   margin-bottom:25px;
+
 }
 
 .checkout-form{
+
   display:flex;
+
   flex-direction:column;
+
   gap:14px;
+
 }
 
 .checkout-form input,
 .checkout-form textarea{
+
   width:100%;
+
   padding:15px;
-  border:1px solid rgba(23,23,23,.12);
+
+  border:
+    1px solid
+    rgba(23,23,23,.12);
+
   border-radius:16px;
+
   font-family:inherit;
+
   font-size:14px;
+
   outline:none;
+
   background:#fff;
+
 }
 
 .checkout-form textarea{
+
   min-height:120px;
+
   resize:vertical;
+
 }
 
 .checkout-form button{
+
   padding:17px;
+
   border:0;
+
   border-radius:50px;
+
   background:var(--black);
+
   color:white;
+
   font-weight:900;
+
   cursor:pointer;
+
 }
 
 .checkout-form button:disabled{
+
   opacity:.6;
+
 }
 
 #checkoutMessage{
+
   text-align:center;
+
   font-weight:900;
+
   margin-top:18px;
+
 }
 
+
+/* =========================================================
+   REVIEWS SECTION
+========================================================= */
+
 .reviews-section{
+
   width:92%;
+
   max-width:1150px;
+
   margin:0 auto 90px;
+
   padding:45px;
+
   border-radius:40px;
 
-  background:rgba(255,255,255,.55);
+  background:
+    rgba(255,255,255,.55);
+
   backdrop-filter:blur(20px);
 
-  border:1px solid rgba(255,255,255,.75);
+  border:
+    1px solid
+    rgba(255,255,255,.75);
 
-  box-shadow:0 30px 80px rgba(23,23,23,.10);
+  box-shadow:
+    0 30px 80px
+    rgba(23,23,23,.10);
+
 }
 
 .reviews-heading{
+
   text-align:center;
+
   margin-bottom:25px;
+
 }
 
 .reviews-label{
+
   font-size:10px;
+
   font-weight:900;
+
   letter-spacing:4px;
+
   color:#96751e;
+
 }
 
 .reviews-heading h2{
+
   margin-top:10px;
-  font-size:clamp(38px,6vw,65px);
+
+  font-size:
+    clamp(38px,6vw,65px);
+
   line-height:1;
+
   font-weight:1000;
+
 }
 
+
+/* =========================================================
+   RATING SUMMARY
+========================================================= */
+
 .rating-summary{
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
   gap:18px;
+
   margin:25px 0 35px;
+
   flex-wrap:wrap;
+
 }
 
 .big-rating{
+
   font-size:45px;
+
   font-weight:1000;
+
 }
 
 .stars-display{
+
   color:#D4AF37;
+
   font-size:25px;
+
   letter-spacing:3px;
+
 }
 
 .review-count{
+
   color:var(--muted);
+
   font-size:13px;
+
 }
 
+
+/* =========================================================
+   REVIEW FORM
+========================================================= */
+
 .review-form{
+
   max-width:700px;
+
   margin:0 auto 45px;
+
   padding:25px;
+
   border-radius:25px;
-  background:rgba(255,255,255,.68);
+
+  background:
+    rgba(255,255,255,.68);
+
 }
 
 .review-form h3{
+
   margin-bottom:18px;
+
   font-size:22px;
+
 }
 
+
+/* =========================================================
+   STAR SELECTOR
+========================================================= */
+
 .star-selector{
+
   display:flex;
+
   gap:5px;
+
   margin-bottom:15px;
+
 }
 
 .star-selector span{
+
   font-size:32px;
+
   color:#c9c0b7;
+
   cursor:pointer;
+
   transition:.2s;
+
 }
 
 .star-selector span.active,
 .star-selector span:hover{
+
   color:var(--gold);
+
   transform:scale(1.1);
+
 }
+
+
+/* =========================================================
+   REVIEW INPUTS
+========================================================= */
 
 .review-form input,
 .review-form textarea{
+
   width:100%;
+
   padding:14px 16px;
+
   margin-bottom:12px;
-  border:1px solid rgba(23,23,23,.12);
+
+  border:
+    1px solid
+    rgba(23,23,23,.12);
+
   border-radius:15px;
+
   outline:none;
+
   font-family:inherit;
+
   font-size:14px;
+
 }
 
 .review-form textarea{
+
   min-height:110px;
+
   resize:vertical;
+
 }
 
-/* PHOTO UPLOAD */
+
+/* =========================================================
+   PHOTO UPLOAD
+========================================================= */
 
 .photo-label{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
+
+  display:block;
+
+  margin-top:4px;
+
+  margin-bottom:8px;
+
+  font-size:12px;
+
+  font-weight:900;
+
+  color:var(--muted);
+
+}
+
+.photo-upload{
 
   width:100%;
-  padding:14px;
+
+  padding:16px;
+
+  border:
+    1px dashed
+    rgba(23,23,23,.25);
+
+  border-radius:16px;
+
+  background:
+    rgba(255,255,255,.70);
+
+  cursor:pointer;
+
+  font-size:13px;
 
   margin-bottom:12px;
 
-  border:2px dashed rgba(212,175,55,.45);
-  border-radius:15px;
-
-  background:rgba(248,244,236,.7);
-
-  color:#7d6727;
-
-  font-size:13px;
-  font-weight:900;
-
-  cursor:pointer;
-  transition:.2s;
 }
 
-.photo-label:hover{
-  border-color:var(--gold);
-  background:rgba(212,175,55,.08);
+.photo-upload:hover{
+
+  border-color:
+    var(--gold);
+
+  background:
+    rgba(255,255,255,.9);
+
 }
 
 #reviewPhoto{
+
   display:none;
+
 }
 
 .photo-preview{
+
   display:none;
-  margin-bottom:15px;
-  text-align:center;
+
+  position:relative;
+
+  width:140px;
+
+  height:140px;
+
+  margin:5px auto 15px;
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  background:#fff;
+
+  box-shadow:
+    0 10px 30px
+    rgba(23,23,23,.12);
+
 }
 
 .photo-preview img{
-  width:140px;
-  height:140px;
+
+  width:100%;
+
+  height:100%;
+
   object-fit:cover;
-  border-radius:18px;
-  border:2px solid rgba(212,175,55,.4);
+
 }
 
 .remove-photo{
-  display:block;
-  margin:8px auto 0;
+
+  position:absolute;
+
+  top:7px;
+
+  right:7px;
+
+  width:28px;
+
+  height:28px;
 
   border:0;
-  background:none;
 
-  color:#9b2929;
+  border-radius:50%;
 
-  font-size:11px;
-  font-weight:900;
+  background:
+    rgba(23,23,23,.85);
+
+  color:white;
 
   cursor:pointer;
+
+  font-weight:900;
+
 }
 
+
+/* =========================================================
+   REVIEW SUBMIT
+========================================================= */
+
 .review-submit{
+
   width:100%;
+
   padding:15px;
+
   border:0;
+
   border-radius:50px;
+
   background:var(--black);
+
   color:white;
+
   font-weight:900;
+
   cursor:pointer;
+
 }
 
 .review-submit:disabled{
+
   opacity:.5;
+
 }
 
 #reviewMessage{
+
   text-align:center;
+
   margin-top:12px;
+
   font-size:13px;
+
   font-weight:900;
+
 }
 
+
+/* =========================================================
+   REVIEW LIST
+========================================================= */
+
 .reviews-list{
+
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+
+  grid-template-columns:
+    repeat(2,1fr);
+
   gap:18px;
+
 }
 
 .review-card{
+
   padding:22px;
+
   border-radius:22px;
 
-  background:rgba(255,255,255,.72);
+  background:
+    rgba(255,255,255,.72);
 
-  border:1px solid rgba(255,255,255,.85);
+  border:
+    1px solid
+    rgba(255,255,255,.85);
+
 }
 
 .review-top{
+
   display:flex;
+
   justify-content:space-between;
+
   align-items:flex-start;
+
   gap:10px;
-  margin-bottom:10px;
+
+  margin-bottom:12px;
+
 }
 
 .reviewer-name{
+
   font-weight:1000;
+
 }
 
 .review-stars{
+
   color:#D4AF37;
+
   letter-spacing:2px;
+
   font-size:15px;
+
 }
 
 .review-date{
+
   color:#999;
+
   font-size:10px;
+
   margin-top:3px;
+
 }
 
 .review-text{
+
   color:var(--muted);
+
   line-height:1.7;
+
   font-size:14px;
+
 }
+
+
+/* =========================================================
+   REVIEW PHOTO DISPLAY
+========================================================= */
 
 .review-photo{
+
   width:100%;
-  max-height:300px;
+
+  max-height:320px;
+
   object-fit:cover;
+
   border-radius:18px;
-  margin-top:15px;
+
+  margin-top:16px;
+
   display:block;
+
   cursor:pointer;
+
+  transition:.3s;
+
 }
+
+.review-photo:hover{
+
+  transform:scale(1.01);
+
+}
+
+
+/* =========================================================
+   NO REVIEWS
+========================================================= */
 
 .no-reviews{
+
   grid-column:1/-1;
+
   text-align:center;
+
   padding:30px;
+
   color:var(--muted);
+
 }
 
+
+/* =========================================================
+   TRACKING
+========================================================= */
+
 .track-box{
+
   width:92%;
+
   max-width:700px;
+
   margin:0 auto 100px;
+
   padding:40px;
+
   border-radius:35px;
-  background:rgba(255,255,255,.76);
-  box-shadow:0 30px 80px rgba(23,23,23,.12);
+
+  background:
+    rgba(255,255,255,.76);
+
+  box-shadow:
+    0 30px 80px
+    rgba(23,23,23,.12);
+
   text-align:center;
+
 }
 
 .track-box h2{
+
   font-size:35px;
+
   margin-bottom:10px;
+
 }
 
 .track-box p{
+
   color:var(--muted);
+
   margin-bottom:20px;
+
 }
 
 .track-input{
+
   width:100%;
+
   padding:16px;
-  border:1px solid rgba(23,23,23,.15);
+
+  border:
+    1px solid
+    rgba(23,23,23,.15);
+
   border-radius:50px;
+
   outline:none;
+
   margin-bottom:12px;
+
 }
 
 .track-button{
+
   width:100%;
+
   padding:16px;
+
   border:0;
+
   border-radius:50px;
+
   background:var(--black);
+
   color:white;
+
   font-weight:900;
+
   cursor:pointer;
+
 }
 
 .track-result{
+
   margin-top:25px;
+
   padding:20px;
+
   border-radius:20px;
-  background:rgba(248,244,236,.8);
+
+  background:
+    rgba(248,244,236,.8);
+
   text-align:left;
+
   display:none;
+
 }
 
 .track-status{
+
   font-size:22px;
+
   font-weight:1000;
+
   color:#96751e;
+
   margin-bottom:12px;
+
 }
 
 .tracking-awb{
+
   margin-top:15px;
+
   padding:15px;
+
   border-radius:15px;
-  background:rgba(255,255,255,.8);
+
+  background:
+    rgba(255,255,255,.8);
+
 }
 
 .tracking-awb strong{
+
   display:block;
+
   margin-bottom:5px;
+
 }
 
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
 footer{
+
   width:92%;
+
   max-width:1250px;
+
   margin:auto;
+
   padding:40px 0 30px;
-  border-top:1px solid rgba(23,23,23,.12);
+
+  border-top:
+    1px solid
+    rgba(23,23,23,.12);
+
   text-align:center;
+
 }
 
 .footer-logo{
+
   font-size:27px;
+
   font-weight:1000;
+
   letter-spacing:6px;
+
 }
 
 footer p{
+
   margin-top:12px;
+
   color:var(--muted);
+
   font-size:11px;
+
 }
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media(max-width:900px){
 
   .cards{
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+      repeat(2,1fr);
+
   }
 
   .product-detail{
+
     grid-template-columns:1fr;
+
   }
 
   .nav-tag{
@@ -1065,8 +1955,11 @@ footer p{
 @media(max-width:600px){
 
   .topbar{
+
     font-size:8px;
+
     letter-spacing:1.5px;
+
   }
 
   .cards{
@@ -1092,8 +1985,11 @@ footer p{
   }
 
   .logo{
+
     font-size:22px;
+
     letter-spacing:4px;
+
   }
 
   .reviews-list{
@@ -1106,56 +2002,159 @@ footer p{
 
 }
 
+
+/* =========================================================
+   IMAGE LIGHTBOX
+========================================================= */
+
+.image-lightbox{
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:9999;
+
+  display:none;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:20px;
+
+  background:
+    rgba(0,0,0,.85);
+
+}
+
+.image-lightbox img{
+
+  max-width:95%;
+
+  max-height:90vh;
+
+  border-radius:20px;
+
+  object-fit:contain;
+
+}
+
+.close-lightbox{
+
+  position:absolute;
+
+  top:20px;
+
+  right:25px;
+
+  width:45px;
+
+  height:45px;
+
+  border:0;
+
+  border-radius:50%;
+
+  background:white;
+
+  color:#171717;
+
+  font-size:25px;
+
+  cursor:pointer;
+
+}
+
 </style>
 
 </head>
 
+
 <body>
 
-<div class="cursor" id="cursor"></div>
+
+<!-- =======================================================
+     CURSOR
+======================================================= -->
+
+<div
+  class="cursor"
+  id="cursor">
+</div>
+
+
+<!-- =======================================================
+     TOP BAR
+======================================================= -->
 
 <div class="topbar">
+
   ✦ BROSHIN • TRENDING PRODUCTS • SMART FINDS • EVERYDAY ESSENTIALS ✦
+
 </div>
+
+
+<!-- =======================================================
+     NAV
+======================================================= -->
 
 <header class="nav">
 
-  <a href="./" class="logo">
+  <a
+    href="./"
+    class="logo">
+
     BROSHIN<span>.</span>
+
   </a>
 
   <div class="nav-tag">
+
     DISCOVER. SHOP. ENJOY.
+
   </div>
 
 </header>
 
 
-<!-- ================= HOME ================= -->
+<!-- =======================================================
+     HOME PAGE
+======================================================= -->
 
 <main id="homePage">
+
 
 <section class="hero">
 
   <div class="orb one"></div>
+
   <div class="orb two"></div>
 
   <div class="hero-content">
 
     <div class="small-title">
+
       WELCOME TO BROSHIN
+
     </div>
 
     <h1>BROSHIN</h1>
 
     <p class="hero-description">
+
       Discover what's trending.
       Find something new.
       Shop products worth talking about.
+
     </p>
 
-    <a href="#trending" class="hero-button">
+    <a
+      href="#trending"
+      class="hero-button">
+
       EXPLORE TRENDING ↓
+
     </a>
 
   </div>
@@ -1163,24 +2162,37 @@ footer p{
 </section>
 
 
-<section class="trending" id="trending">
+<!-- =======================================================
+     PRODUCTS
+======================================================= -->
+
+<section
+  class="trending"
+  id="trending">
 
   <div class="heading">
 
     <div class="heading-label">
+
       BROSHIN'S HOT LIST
+
     </div>
 
     <h2>TRENDING</h2>
 
     <p>
+
       The latest products and smart finds
       making waves right now.
+
     </p>
 
   </div>
 
-  <div class="cards" id="productCards">
+
+  <div
+    class="cards"
+    id="productCards">
 
     <div class="card">
 
@@ -1203,7 +2215,9 @@ footer p{
 </section>
 
 
-<!-- ================= TRACK ORDER ================= -->
+<!-- =======================================================
+     TRACK ORDER
+======================================================= -->
 
 <section class="track-box">
 
@@ -1212,7 +2226,10 @@ footer p{
   </h2>
 
   <p>
-    Enter your BROSHIN Order ID to see your latest order status.
+
+    Enter your BROSHIN Order ID
+    to see your latest order status.
+
   </p>
 
   <input
@@ -1233,6 +2250,7 @@ footer p{
   <div
     class="track-result"
     id="trackResult">
+
   </div>
 
 </section>
@@ -1240,11 +2258,15 @@ footer p{
 </main>
 
 
-<!-- ================= PRODUCT PAGE ================= -->
+<!-- =======================================================
+     PRODUCT PAGE
+======================================================= -->
 
 <main id="productPage">
 
+
 <section class="product-wrap">
+
 
 <button
   class="back-btn"
@@ -1257,7 +2279,9 @@ footer p{
 
 <div class="product-detail">
 
+
 <div>
+
 
   <div
     class="detail-image-box"
@@ -1269,58 +2293,83 @@ footer p{
 
   </div>
 
+
   <div
     class="image-gallery"
     id="imageGallery">
+
   </div>
+
 
 </div>
 
 
 <div class="detail-info">
 
+
   <div class="small-title">
+
     BROSHIN PRODUCT
+
   </div>
 
+
   <h1 id="detailName">
+
     Loading...
+
   </h1>
 
+
   <div class="detail-price-box">
+
 
     <div
       class="detail-reference"
       id="detailReference">
+
     </div>
+
 
     <div
       class="detail-price"
       id="detailPrice">
+
       ₹0
+
     </div>
+
 
     <div
       class="detail-discount"
       id="detailDiscount">
+
     </div>
+
 
     <div
       class="detail-save"
       id="detailSave">
+
     </div>
 
+
   </div>
+
 
   <p
     class="detail-description"
     id="detailDescription">
+
   </p>
+
 
   <div
     class="stock"
     id="detailStock">
+
   </div>
+
 
   <div
     class="video-box"
@@ -1330,9 +2379,11 @@ footer p{
       id="productVideo"
       controls
       playsinline>
+
     </video>
 
   </div>
+
 
   <button
     class="buy-now"
@@ -1343,14 +2394,18 @@ footer p{
 
   </button>
 
+
 </div>
+
 
 </div>
 
 </section>
 
 
-<!-- ================= CHECKOUT ================= -->
+<!-- =======================================================
+     CHECKOUT
+======================================================= -->
 
 <section
   class="checkout"
@@ -1361,12 +2416,16 @@ footer p{
 </h2>
 
 <p id="checkoutProduct">
+
   Complete your order below.
+
 </p>
+
 
 <form
   class="checkout-form"
   id="checkoutForm">
+
 
 <input
   type="text"
@@ -1375,6 +2434,7 @@ footer p{
   required
 >
 
+
 <input
   type="tel"
   id="customerPhone"
@@ -1382,10 +2442,12 @@ footer p{
   required
 >
 
+
 <textarea
   id="customerAddress"
   placeholder="Full Delivery Address"
   required></textarea>
+
 
 <input
   type="number"
@@ -1395,6 +2457,7 @@ footer p{
   required
 >
 
+
 <button
   type="submit"
   id="placeOrderButton">
@@ -1403,65 +2466,98 @@ footer p{
 
 </button>
 
+
 </form>
 
-<div id="checkoutMessage"></div>
+
+<div
+  id="checkoutMessage">
+
+</div>
+
 
 </section>
 
 
-<!-- ================= REVIEWS ================= -->
+<!-- =======================================================
+     REVIEWS
+======================================================= -->
 
 <section class="reviews-section">
 
+
 <div class="reviews-heading">
 
+
   <div class="reviews-label">
+
     REAL CUSTOMER FEEDBACK
+
   </div>
 
+
   <h2>
+
     Customer Reviews
+
   </h2>
+
 
 </div>
 
 
+<!-- RATING -->
+
 <div class="rating-summary">
+
 
   <div
     class="big-rating"
     id="averageRating">
+
     0.0
+
   </div>
 
+
   <div>
+
 
     <div
       class="stars-display"
       id="averageStars">
+
       ☆☆☆☆☆
+
     </div>
+
 
     <div
       class="review-count"
       id="reviewCount">
+
       0 Reviews
+
     </div>
 
+
   </div>
+
 
 </div>
 
 
+<!-- REVIEW FORM -->
+
 <div class="review-form">
 
+
 <h3>
+
   Leave a Review
+
 </h3>
 
-
-<!-- STARS -->
 
 <div
   class="star-selector"
@@ -1476,8 +2572,6 @@ footer p{
 </div>
 
 
-<!-- NAME -->
-
 <input
   type="text"
   id="reviewName"
@@ -1485,8 +2579,6 @@ footer p{
   maxlength="50"
 >
 
-
-<!-- REVIEW -->
 
 <textarea
   id="reviewText"
@@ -1497,12 +2589,21 @@ footer p{
 <!-- PHOTO -->
 
 <label
-  class="photo-label"
-  for="reviewPhoto">
+  class="photo-label">
 
-  📸 ADD PHOTO WITH YOUR REVIEW
+  📸 Add a photo of your product
 
 </label>
+
+
+<label
+  class="photo-upload"
+  for="reviewPhoto">
+
+  📷 Choose Photo
+
+</label>
+
 
 <input
   type="file"
@@ -1511,25 +2612,27 @@ footer p{
 >
 
 
-<!-- PREVIEW -->
-
 <div
   class="photo-preview"
   id="photoPreview">
 
+
   <img
-    id="previewImage"
+    id="photoPreviewImage"
+    src=""
     alt="Review photo preview"
   >
+
 
   <button
     type="button"
     class="remove-photo"
     onclick="removeReviewPhoto()">
 
-    ✕ REMOVE PHOTO
+    ×
 
   </button>
+
 
 </div>
 
@@ -1546,34 +2649,79 @@ footer p{
 
 <div
   id="reviewMessage">
-</div>
 
 </div>
 
+
+</div>
+
+
+<!-- REVIEW LIST -->
 
 <div
   class="reviews-list"
   id="reviewsList">
 
   <div class="no-reviews">
+
     Loading reviews...
+
   </div>
 
 </div>
 
+
 </section>
+
 
 </main>
 
 
+<!-- =======================================================
+     IMAGE LIGHTBOX
+======================================================= -->
+
+<div
+  class="image-lightbox"
+  id="imageLightbox"
+  onclick="closeLightbox()">
+
+
+  <button
+    class="close-lightbox"
+    onclick="closeLightbox(event)">
+
+    ×
+
+  </button>
+
+
+  <img
+    id="lightboxImage"
+    src=""
+    alt="Customer review photo"
+  >
+
+</div>
+
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
 <footer>
 
 <div class="footer-logo">
+
   BROSHIN
+
 </div>
 
+
 <p>
+
   © 2026 BROSHIN — Discover. Shop. Enjoy.
+
 </p>
 
 </footer>
@@ -1581,13 +2729,18 @@ footer p{
 
 <script>
 
+
 /* =========================================================
-   BROSHIN GOOGLE APPS SCRIPT API
+   API
 ========================================================= */
 
 const API_URL =
 "https://script.google.com/macros/s/AKfycbzvnvMChqDcOGrQyyAIiFJCNYykM-wbe32XNbY5u0_5BMKazI2OKgdVd8Y8JicQKHk9aQ/exec";
 
+
+/* =========================================================
+   GLOBAL VARIABLES
+========================================================= */
 
 let allProducts = [];
 
@@ -1595,7 +2748,11 @@ let currentProduct = null;
 
 let selectedRating = 0;
 
-let reviewPhotoBase64 = "";
+let selectedPhotoData = "";
+
+let selectedPhotoName = "";
+
+let selectedPhotoMimeType = "";
 
 
 /* =========================================================
@@ -1604,6 +2761,7 @@ let reviewPhotoBase64 = "";
 
 const cursor =
 document.getElementById("cursor");
+
 
 document.addEventListener(
   "mousemove",
@@ -1626,15 +2784,20 @@ document.addEventListener(
 async function loadProducts(){
 
   const productCards =
-    document.getElementById("productCards");
+    document.getElementById(
+      "productCards"
+    );
+
 
   try{
 
     const response =
       await fetch(API_URL);
 
+
     const data =
       await response.json();
+
 
     if(!Array.isArray(data)){
 
@@ -1644,9 +2807,14 @@ async function loadProducts(){
 
     }
 
-    allProducts = data;
 
-    productCards.innerHTML = "";
+    allProducts =
+      data;
+
+
+    productCards.innerHTML =
+      "";
+
 
     const activeProducts =
       data.filter(function(product){
@@ -1655,12 +2823,16 @@ async function loadProducts(){
           product.status || "active"
         )
         .trim()
-        .toLowerCase() === "active";
+        .toLowerCase() ===
+        "active";
 
       });
 
 
-    if(activeProducts.length === 0){
+    if(
+      activeProducts.length ===
+      0
+    ){
 
       productCards.innerHTML = `
 
@@ -1670,7 +2842,9 @@ async function loadProducts(){
             🛍️
           </div>
 
-          <h3>No Products Yet</h3>
+          <h3>
+            No Products Yet
+          </h3>
 
           <p>
             New products coming soon.
@@ -1685,141 +2859,192 @@ async function loadProducts(){
     }
 
 
-    activeProducts.forEach(function(product){
+    activeProducts.forEach(
+      function(product){
 
-      const card =
-        document.createElement("article");
-
-      card.className = "card";
-
-
-      const image =
-        String(product.image1 || "").trim();
+        const card =
+          document.createElement(
+            "article"
+          );
 
 
-      const referencePrice =
-        Number(product.reference_price) || 0;
+        card.className =
+          "card";
 
 
-      const sellingPrice =
-        Number(product.selling_price) || 0;
+        const image =
+          String(
+            product.image1 || ""
+          ).trim();
 
 
-      const discount =
-        Number(product.discount) || 0;
+        const referencePrice =
+          Number(
+            product.reference_price
+          ) || 0;
 
 
-      const saveAmount =
-        Number(product.save_amount) || 0;
+        const sellingPrice =
+          Number(
+            product.selling_price
+          ) || 0;
 
 
-      const stock =
-        Number(product.stock) || 0;
+        const discount =
+          Number(
+            product.discount
+          ) || 0;
 
 
-      card.innerHTML = `
+        const saveAmount =
+          Number(
+            product.save_amount
+          ) || 0;
 
-        ${
-          stock <= 0
-          ?
-          `<div class="status-badge">
-            OUT OF STOCK
-          </div>`
-          :
-          ""
-        }
 
-        <div class="number">
-          PRODUCT ${escapeHTML(product.id)}
-        </div>
+        const stock =
+          Number(
+            product.stock
+          ) || 0;
 
-        ${
-          image
-          ?
-          `<img
-            class="product-image"
-            src="${escapeHTML(image)}"
-            alt="${escapeHTML(product.name)}"
-            loading="lazy"
-          >`
-          :
-          `<div class="placeholder">
-            🛍️
-          </div>`
-        }
 
-        <h3>
-          ${escapeHTML(product.name)}
-        </h3>
-
-        <div class="price-box">
-
-          ${
-            referencePrice > sellingPrice
-            ?
-            `<span class="reference-price">
-              ₹${referencePrice}
-            </span>`
-            :
-            ""
-          }
-
-          <span class="product-price">
-            ₹${sellingPrice}
-          </span>
-
-          ${
-            discount > 0
-            ?
-            `<span class="discount-badge">
-              ${discount}% OFF
-            </span>`
-            :
-            ""
-          }
-
-        </div>
-
-        ${
-          saveAmount > 0
-          ?
-          `<div class="save-text">
-            Save ₹${saveAmount}
-          </div>`
-          :
-          ""
-        }
-
-        <p>
-          ${escapeHTML(product.description || "")}
-        </p>
-
-        <button
-          class="view-btn"
-          onclick="openProduct('${escapeJS(product.id)}')"
-          ${stock <= 0 ? "disabled" : ""}>
+        card.innerHTML = `
 
           ${
             stock <= 0
             ?
-            "OUT OF STOCK"
+            `<div class="status-badge">
+              OUT OF STOCK
+            </div>`
             :
-            "VIEW PRODUCT"
+            ``
           }
 
-        </button>
 
-      `;
+          <div class="number">
+
+            PRODUCT
+            ${escapeHTML(product.id)}
+
+          </div>
 
 
-      if(stock <= 0){
-        card.classList.add("out-stock");
+          ${
+            image
+            ?
+            `<img
+              class="product-image"
+              src="${escapeHTML(image)}"
+              alt="${escapeHTML(product.name)}"
+              loading="lazy"
+            >`
+            :
+            `<div class="placeholder">
+              🛍️
+            </div>`
+          }
+
+
+          <h3>
+
+            ${escapeHTML(
+              product.name
+            )}
+
+          </h3>
+
+
+          <div class="price-box">
+
+
+            ${
+              referencePrice >
+              sellingPrice
+              ?
+              `<span class="reference-price">
+                ₹${referencePrice}
+              </span>`
+              :
+              ``
+            }
+
+
+            <span class="product-price">
+
+              ₹${sellingPrice}
+
+            </span>
+
+
+            ${
+              discount > 0
+              ?
+              `<span class="discount-badge">
+                ${discount}% OFF
+              </span>`
+              :
+              ``
+            }
+
+
+          </div>
+
+
+          ${
+            saveAmount > 0
+            ?
+            `<div class="save-text">
+              Save ₹${saveAmount}
+            </div>`
+            :
+            ``
+          }
+
+
+          <p>
+
+            ${escapeHTML(
+              product.description || ""
+            )}
+
+          </p>
+
+
+          <button
+            class="view-btn"
+            onclick="openProduct('${escapeJS(product.id)}')"
+            ${stock <= 0 ? "disabled" : ""}>
+
+
+            ${
+              stock <= 0
+              ?
+              "OUT OF STOCK"
+              :
+              "VIEW PRODUCT"
+            }
+
+
+          </button>
+
+        `;
+
+
+        if(stock <= 0){
+
+          card.classList.add(
+            "out-stock"
+          );
+
+        }
+
+
+        productCards.appendChild(
+          card
+        );
+
       }
-
-
-      productCards.appendChild(card);
-
-    });
+    );
 
 
   }catch(error){
@@ -1828,6 +3053,7 @@ async function loadProducts(){
       "Products error:",
       error
     );
+
 
     productCards.innerHTML = `
 
@@ -1869,7 +3095,7 @@ function openProduct(id){
 
 
 /* =========================================================
-   CHECK PRODUCT PAGE
+   CHECK PAGE
 ========================================================= */
 
 function checkProductPage(){
@@ -1888,13 +3114,18 @@ function checkProductPage(){
 
     document.getElementById(
       "homePage"
-    ).style.display = "block";
+    ).style.display =
+      "block";
+
 
     document.getElementById(
       "productPage"
-    ).style.display = "none";
+    ).style.display =
+      "none";
+
 
     loadProducts();
+
 
     return;
 
@@ -1903,15 +3134,19 @@ function checkProductPage(){
 
   document.getElementById(
     "homePage"
-  ).style.display = "none";
+  ).style.display =
+    "none";
 
 
   document.getElementById(
     "productPage"
-  ).style.display = "block";
+  ).style.display =
+    "block";
 
 
-  loadSingleProduct(productId);
+  loadSingleProduct(
+    productId
+  );
 
 }
 
@@ -1920,12 +3155,15 @@ function checkProductPage(){
    LOAD SINGLE PRODUCT
 ========================================================= */
 
-async function loadSingleProduct(productId){
+async function loadSingleProduct(
+  productId
+){
 
   try{
 
     const response =
       await fetch(API_URL);
+
 
     const products =
       await response.json();
@@ -1940,16 +3178,21 @@ async function loadSingleProduct(productId){
     }
 
 
-    allProducts = products;
+    allProducts =
+      products;
 
 
     currentProduct =
-      products.find(function(product){
+      products.find(
+        function(product){
 
-        return String(product.id) ===
+          return String(
+            product.id
+          ) ===
           String(productId);
 
-      });
+        }
+      );
 
 
     if(!currentProduct){
@@ -1997,21 +3240,25 @@ async function loadSingleProduct(productId){
     document.getElementById(
       "detailName"
     ).textContent =
-      currentProduct.name || "Product";
+      currentProduct.name ||
+      "Product";
 
 
     document.getElementById(
       "detailPrice"
     ).textContent =
-      "₹" + sellingPrice;
+      "₹" +
+      sellingPrice;
 
 
     document.getElementById(
       "detailReference"
     ).textContent =
-      referencePrice > sellingPrice
+      referencePrice >
+      sellingPrice
       ?
-      "₹" + referencePrice
+      "₹" +
+      referencePrice
       :
       "";
 
@@ -2021,7 +3268,8 @@ async function loadSingleProduct(productId){
     ).textContent =
       discount > 0
       ?
-      discount + "% OFF"
+      discount +
+      "% OFF"
       :
       "";
 
@@ -2031,7 +3279,8 @@ async function loadSingleProduct(productId){
     ).textContent =
       saveAmount > 0
       ?
-      "You save ₹" + saveAmount
+      "You save ₹" +
+      saveAmount
       :
       "";
 
@@ -2048,7 +3297,8 @@ async function loadSingleProduct(productId){
     ).textContent =
       stock > 0
       ?
-      "Available Stock: " + stock
+      "Available Stock: " +
+      stock
       :
       "Currently Out of Stock";
 
@@ -2061,14 +3311,16 @@ async function loadSingleProduct(productId){
 
     if(stock <= 0){
 
-      buyButton.disabled = true;
+      buyButton.disabled =
+        true;
 
       buyButton.textContent =
         "OUT OF STOCK";
 
     }else{
 
-      buyButton.disabled = false;
+      buyButton.disabled =
+        false;
 
       buyButton.textContent =
         "BUY NOW";
@@ -2076,7 +3328,9 @@ async function loadSingleProduct(productId){
     }
 
 
-    /* IMAGES */
+    /* -----------------------------------------
+       PRODUCT IMAGES
+    ----------------------------------------- */
 
     const imageList = [
 
@@ -2090,7 +3344,9 @@ async function loadSingleProduct(productId){
     ]
     .map(function(image){
 
-      return String(image || "").trim();
+      return String(
+        image || ""
+      ).trim();
 
     })
     .filter(function(image){
@@ -2112,38 +3368,57 @@ async function loadSingleProduct(productId){
       );
 
 
-    gallery.innerHTML = "";
+    gallery.innerHTML =
+      "";
 
 
-    if(imageList.length > 0){
+    if(
+      imageList.length > 0
+    ){
 
-      setMainImage(imageList[0]);
-
-
-      imageList.forEach(function(image){
-
-        const img =
-          document.createElement("img");
+      setMainImage(
+        imageList[0]
+      );
 
 
-        img.src = image;
+      imageList.forEach(
+        function(image){
 
-        img.className = "thumb";
-
-        img.alt =
-          currentProduct.name || "Product";
-
-
-        img.onclick = function(){
-
-          setMainImage(image);
-
-        };
+          const img =
+            document.createElement(
+              "img"
+            );
 
 
-        gallery.appendChild(img);
+          img.src =
+            image;
 
-      });
+
+          img.className =
+            "thumb";
+
+
+          img.alt =
+            currentProduct.name ||
+            "Product";
+
+
+          img.onclick =
+            function(){
+
+              setMainImage(
+                image
+              );
+
+            };
+
+
+          gallery.appendChild(
+            img
+          );
+
+        }
+      );
 
 
     }else{
@@ -2159,7 +3434,9 @@ async function loadSingleProduct(productId){
     }
 
 
-    /* VIDEO */
+    /* -----------------------------------------
+       PRODUCT VIDEO
+    ----------------------------------------- */
 
     const video =
       String(
@@ -2181,7 +3458,8 @@ async function loadSingleProduct(productId){
 
     if(video){
 
-      videoElement.src = video;
+      videoElement.src =
+        video;
 
       videoBox.style.display =
         "block";
@@ -2205,6 +3483,10 @@ async function loadSingleProduct(productId){
       " — ₹" +
       sellingPrice;
 
+
+    /* -----------------------------------------
+       LOAD REVIEWS
+    ----------------------------------------- */
 
     loadReviews();
 
@@ -2258,21 +3540,29 @@ function setMainImage(image){
 function showCheckout(){
 
   if(!currentProduct){
+
     return;
+
   }
 
 
   if(
-    Number(currentProduct.stock) <= 0
+    Number(
+      currentProduct.stock
+    ) <= 0
   ){
+
     return;
+
   }
 
 
   document.getElementById(
     "checkoutSection"
   ).scrollIntoView({
+
     behavior:"smooth"
+
   });
 
 }
@@ -2304,7 +3594,9 @@ document.getElementById(
 
 
     if(!currentProduct){
+
       return;
+
     }
 
 
@@ -2317,7 +3609,9 @@ document.getElementById(
 
 
     if(quantity < 1){
+
       return;
+
     }
 
 
@@ -2352,13 +3646,15 @@ document.getElementById(
 
 
     const total =
-      sellingPrice * quantity;
+      sellingPrice *
+      quantity;
 
 
     const orderData = {
 
       orderId:
-        "BR" + Date.now(),
+        "BR" +
+        Date.now(),
 
       name:
         document.getElementById(
@@ -2411,7 +3707,9 @@ document.getElementById(
     message.textContent =
       "Placing your order...";
 
-    button.disabled = true;
+
+    button.disabled =
+      true;
 
 
     try{
@@ -2427,12 +3725,16 @@ document.getElementById(
           mode:"no-cors",
 
           headers:{
+
             "Content-Type":
               "text/plain;charset=utf-8"
+
           },
 
           body:
-            JSON.stringify(orderData)
+            JSON.stringify(
+              orderData
+            )
 
         }
 
@@ -2453,13 +3755,15 @@ document.getElementById(
 
       console.error(error);
 
+
       message.textContent =
         "❌ Order failed. Please try again.";
 
     }
 
 
-    button.disabled = false;
+    button.disabled =
+      false;
 
   }
 );
@@ -2485,7 +3789,8 @@ async function trackOrder(){
 
   if(!orderId){
 
-    result.style.display = "block";
+    result.style.display =
+      "block";
 
     result.innerHTML =
       "❌ Please enter your Order ID.";
@@ -2495,7 +3800,9 @@ async function trackOrder(){
   }
 
 
-  result.style.display = "block";
+  result.style.display =
+    "block";
+
 
   result.innerHTML =
     "🔍 Checking your order...";
@@ -2508,7 +3815,9 @@ async function trackOrder(){
 
         API_URL +
         "?order=" +
-        encodeURIComponent(orderId)
+        encodeURIComponent(
+          orderId
+        )
 
       );
 
@@ -2538,44 +3847,69 @@ async function trackOrder(){
     result.innerHTML = `
 
       <div class="track-status">
+
         📦 ${escapeHTML(
-          order.status || "Pending"
+          order.status ||
+          "Pending"
         )}
+
       </div>
 
+
       <p>
+
         <strong>Order ID:</strong>
+
         ${escapeHTML(
-          order.order_id || orderId
+          order.order_id ||
+          orderId
         )}
+
       </p>
 
+
       <p>
+
         <strong>Product:</strong>
+
         ${escapeHTML(
-          order.product || ""
+          order.product ||
+          ""
         )}
+
       </p>
 
+
       <p>
+
         <strong>Quantity:</strong>
+
         ${escapeHTML(
-          order.quantity || ""
+          order.quantity ||
+          ""
         )}
+
       </p>
 
+
       <p>
+
         <strong>Total:</strong>
+
         ₹${escapeHTML(
-          order.total || "0"
+          order.total ||
+          "0"
         )}
+
       </p>
+
 
       <div class="tracking-awb">
 
         <strong>
           📦 Tracking / AWB
         </strong>
+
 
         ${
           order.tracking_number
@@ -2587,6 +3921,7 @@ async function trackOrder(){
           "Not available yet"
         }
 
+
       </div>
 
     `;
@@ -2595,6 +3930,7 @@ async function trackOrder(){
   }catch(error){
 
     console.error(error);
+
 
     result.innerHTML =
       "❌ Unable to check order right now.";
@@ -2623,6 +3959,7 @@ document
           this.dataset.rating
         );
 
+
       updateStars();
 
     }
@@ -2645,13 +3982,19 @@ function updateStars(){
       );
 
 
-    if(rating <= selectedRating){
+    if(
+      rating <= selectedRating
+    ){
 
-      star.classList.add("active");
+      star.classList.add(
+        "active"
+      );
 
     }else{
 
-      star.classList.remove("active");
+      star.classList.remove(
+        "active"
+      );
 
     }
 
@@ -2664,65 +4007,119 @@ function updateStars(){
    PHOTO SELECT
 ========================================================= */
 
-document.getElementById(
+document
+.getElementById(
   "reviewPhoto"
-).addEventListener(
+)
+.addEventListener(
   "change",
-  function(){
-
-    const file =
-      this.files[0];
+  handleReviewPhoto
+);
 
 
-    if(!file){
-      return;
-    }
+/* =========================================================
+   HANDLE PHOTO
+========================================================= */
+
+function handleReviewPhoto(){
+
+  const input =
+    document.getElementById(
+      "reviewPhoto"
+    );
 
 
-    if(
-      !file.type.startsWith("image/")
-    ){
-
-      alert(
-        "Please select an image."
-      );
-
-      this.value = "";
-
-      return;
-
-    }
+  const file =
+    input.files &&
+    input.files[0];
 
 
-    /* Maximum 5 MB */
+  if(!file){
 
-    if(file.size > 5 * 1024 * 1024){
+    return;
 
-      alert(
-        "Photo must be smaller than 5 MB."
-      );
-
-      this.value = "";
-
-      return;
-
-    }
+  }
 
 
-    const reader =
-      new FileReader();
+  /* -----------------------------------------
+     CHECK FILE TYPE
+  ----------------------------------------- */
+
+  const allowedTypes = [
+
+    "image/jpeg",
+    "image/png",
+    "image/webp"
+
+  ];
 
 
-    reader.onload = function(event){
+  if(
+    !allowedTypes.includes(
+      file.type
+    )
+  ){
 
-      reviewPhotoBase64 =
+    alert(
+      "Please select a JPG, PNG or WEBP image."
+    );
+
+
+    input.value =
+      "";
+
+
+    return;
+
+  }
+
+
+  /* -----------------------------------------
+     CHECK SIZE
+  ----------------------------------------- */
+
+  if(
+    file.size >
+    4 * 1024 * 1024
+  ){
+
+    alert(
+      "Photo must be smaller than 4 MB."
+    );
+
+
+    input.value =
+      "";
+
+
+    return;
+
+  }
+
+
+  const reader =
+    new FileReader();
+
+
+  reader.onload =
+    function(event){
+
+      selectedPhotoData =
         event.target.result;
 
 
+      selectedPhotoName =
+        file.name;
+
+
+      selectedPhotoMimeType =
+        file.type;
+
+
       document.getElementById(
-        "previewImage"
+        "photoPreviewImage"
       ).src =
-        reviewPhotoBase64;
+        selectedPhotoData;
 
 
       document.getElementById(
@@ -2733,10 +4130,21 @@ document.getElementById(
     };
 
 
-    reader.readAsDataURL(file);
+  reader.onerror =
+    function(){
 
-  }
-);
+      alert(
+        "Unable to read this photo."
+      );
+
+    };
+
+
+  reader.readAsDataURL(
+    file
+  );
+
+}
 
 
 /* =========================================================
@@ -2745,20 +4153,34 @@ document.getElementById(
 
 function removeReviewPhoto(){
 
-  reviewPhotoBase64 = "";
+  selectedPhotoData =
+    "";
+
+
+  selectedPhotoName =
+    "";
+
+
+  selectedPhotoMimeType =
+    "";
+
 
   document.getElementById(
     "reviewPhoto"
-  ).value = "";
+  ).value =
+    "";
 
-  document.getElementById(
-    "previewImage"
-  ).src = "";
 
   document.getElementById(
     "photoPreview"
   ).style.display =
     "none";
+
+
+  document.getElementById(
+    "photoPreviewImage"
+  ).src =
+    "";
 
 }
 
@@ -2770,7 +4192,9 @@ function removeReviewPhoto(){
 async function loadReviews(){
 
   if(!currentProduct){
+
     return;
+
   }
 
 
@@ -2783,7 +4207,9 @@ async function loadReviews(){
   reviewsList.innerHTML = `
 
     <div class="no-reviews">
+
       Loading reviews...
+
     </div>
 
   `;
@@ -2820,7 +4246,9 @@ async function loadReviews(){
 
 
     const reviews =
-      Array.isArray(data.reviews)
+      Array.isArray(
+        data.reviews
+      )
       ?
       data.reviews
       :
@@ -2837,7 +4265,8 @@ async function loadReviews(){
 
       Number(
         data.totalReviews
-      ) || reviews.length
+      ) ||
+      reviews.length
 
     );
 
@@ -2853,7 +4282,9 @@ async function loadReviews(){
     reviewsList.innerHTML = `
 
       <div class="no-reviews">
+
         Reviews couldn't load right now.
+
       </div>
 
     `;
@@ -2868,9 +4299,11 @@ async function loadReviews(){
 ========================================================= */
 
 function displayReviews(
+
   reviews,
   averageRating,
   totalReviews
+
 ){
 
   const list =
@@ -2879,17 +4312,31 @@ function displayReviews(
     );
 
 
-  document.getElementById(
-    "averageRating"
-  ).textContent =
+  const averageElement =
+    document.getElementById(
+      "averageRating"
+    );
+
+
+  const starsElement =
+    document.getElementById(
+      "averageStars"
+    );
+
+
+  const countElement =
+    document.getElementById(
+      "reviewCount"
+    );
+
+
+  averageElement.textContent =
     Number(
       averageRating || 0
     ).toFixed(1);
 
 
-  document.getElementById(
-    "averageStars"
-  ).textContent =
+  starsElement.textContent =
     getStars(
       Math.round(
         averageRating || 0
@@ -2897,9 +4344,7 @@ function displayReviews(
     );
 
 
-  document.getElementById(
-    "reviewCount"
-  ).textContent =
+  countElement.textContent =
     totalReviews +
     (
       totalReviews === 1
@@ -2916,7 +4361,8 @@ function displayReviews(
 
       <div class="no-reviews">
 
-        ⭐ Be the first customer to review this product!
+        ⭐ Be the first customer
+        to review this product!
 
       </div>
 
@@ -2927,100 +4373,126 @@ function displayReviews(
   }
 
 
-  list.innerHTML = "";
+  list.innerHTML =
+    "";
 
 
-  reviews.forEach(function(review){
+  reviews.forEach(
+    function(review){
 
-    const card =
-      document.createElement("div");
-
-
-    card.className =
-      "review-card";
-
-
-    const customerName =
-      review.customer_name ||
-      review.name ||
-      "Customer";
+      const card =
+        document.createElement(
+          "div"
+        );
 
 
-    const reviewText =
-      review.review ||
-      review.text ||
-      "";
+      card.className =
+        "review-card";
 
 
-    const reviewDate =
-      review.date ||
-      "";
+      const customerName =
+        review.customer_name ||
+        review.name ||
+        "Customer";
 
 
-    const rating =
-      Number(
-        review.rating
-      ) || 0;
+      const reviewText =
+        review.review ||
+        review.text ||
+        "";
 
 
-    card.innerHTML = `
+      const reviewDate =
+        review.date ||
+        "";
 
-      <div class="review-top">
 
-        <div>
+      const rating =
+        Number(
+          review.rating
+        ) || 0;
 
-          <div class="reviewer-name">
 
-            ${escapeHTML(
-              customerName
+      const photoUrl =
+        String(
+          review.photo_url ||
+          ""
+        ).trim();
+
+
+      card.innerHTML = `
+
+        <div class="review-top">
+
+
+          <div>
+
+
+            <div class="reviewer-name">
+
+              ${escapeHTML(
+                customerName
+              )}
+
+            </div>
+
+
+            <div class="review-date">
+
+              ${escapeHTML(
+                reviewDate
+              )}
+
+            </div>
+
+
+          </div>
+
+
+          <div class="review-stars">
+
+            ${getStars(
+              rating
             )}
 
           </div>
 
-          <div class="review-date">
-
-            ${escapeHTML(
-              reviewDate
-            )}
-
-          </div>
 
         </div>
 
-        <div class="review-stars">
 
-          ${getStars(rating)}
+        <div class="review-text">
+
+          ${escapeHTML(
+            reviewText
+          )}
 
         </div>
 
-      </div>
+
+        ${
+          photoUrl
+          ?
+          `<img
+            class="review-photo"
+            src="${escapeHTML(photoUrl)}"
+            alt="Customer review photo"
+            loading="lazy"
+            onclick="openLightbox('${escapeJS(photoUrl)}')"
+          >`
+          :
+          ``
+        }
+
+      `;
 
 
-      <div class="review-text">
+      list.appendChild(
+        card
+      );
 
-        ${escapeHTML(reviewText)}
-
-      </div>
-
-      ${
-        review.photo_url
-        ?
-        `<img
-          class="review-photo"
-          src="${escapeHTML(review.photo_url)}"
-          alt="Customer review photo"
-          onclick="window.open(this.src,'_blank')"
-        >`
-        :
-        ""
-      }
-
-    `;
-
-
-    list.appendChild(card);
-
-  });
+    }
+  );
 
 }
 
@@ -3041,7 +4513,8 @@ function getStars(rating){
     );
 
 
-  let stars = "";
+  let stars =
+    "";
 
 
   for(
@@ -3072,7 +4545,9 @@ function getStars(rating){
 async function submitReview(){
 
   if(!currentProduct){
+
     return;
+
   }
 
 
@@ -3130,20 +4605,14 @@ async function submitReview(){
   }
 
 
-  /*
-    IMAGE IS OPTIONAL.
-
-    If user selected a photo,
-    reviewPhotoBase64 contains the image.
-
-    Apps Script will receive it as:
-
-    photo
-  */
+  /* -----------------------------------------
+     REVIEW DATA
+  ----------------------------------------- */
 
   const reviewData = {
 
-    action:"review",
+    action:
+      "review",
 
     productId:
       currentProduct.id,
@@ -3160,17 +4629,33 @@ async function submitReview(){
     review:
       review,
 
-    photo:
-      reviewPhotoBase64
+    /*
+      PHOTO DATA
+      Sent as Base64.
+    */
+
+    photoData:
+      selectedPhotoData,
+
+    photoName:
+      selectedPhotoName,
+
+    photoMimeType:
+      selectedPhotoMimeType
 
   };
 
 
   message.textContent =
+    selectedPhotoData
+    ?
+    "Uploading photo & submitting review..."
+    :
     "Submitting review...";
 
 
-  button.disabled = true;
+  button.disabled =
+    true;
 
 
   try{
@@ -3202,39 +4687,59 @@ async function submitReview(){
     );
 
 
+    /*
+      Because no-cors is used,
+      browser cannot read the response.
+
+      The Apps Script request is sent.
+    */
+
+
     message.textContent =
       "🎉 Thank you! Your review has been submitted.";
 
 
+    /* -----------------------------------------
+       CLEAR FORM
+    ----------------------------------------- */
+
     document.getElementById(
       "reviewName"
-    ).value = "";
+    ).value =
+      "";
 
 
     document.getElementById(
       "reviewText"
-    ).value = "";
+    ).value =
+      "";
 
 
-    selectedRating = 0;
+    selectedRating =
+      0;
+
 
     updateStars();
+
 
     removeReviewPhoto();
 
 
     /*
-      Wait for Apps Script
-      to save image + review.
+      Give Apps Script time
+      to save the review/photo.
     */
 
     setTimeout(
+
       function(){
 
         loadReviews();
 
       },
+
       2000
+
     );
 
 
@@ -3252,7 +4757,63 @@ async function submitReview(){
   }
 
 
-  button.disabled = false;
+  button.disabled =
+    false;
+
+}
+
+
+/* =========================================================
+   IMAGE LIGHTBOX
+========================================================= */
+
+function openLightbox(
+  imageUrl
+){
+
+  const lightbox =
+    document.getElementById(
+      "imageLightbox"
+    );
+
+
+  const image =
+    document.getElementById(
+      "lightboxImage"
+    );
+
+
+  image.src =
+    imageUrl;
+
+
+  lightbox.style.display =
+    "flex";
+
+}
+
+
+function closeLightbox(
+  event
+){
+
+  if(event){
+
+    event.stopPropagation();
+
+  }
+
+
+  document.getElementById(
+    "imageLightbox"
+  ).style.display =
+    "none";
+
+
+  document.getElementById(
+    "lightboxImage"
+  ).src =
+    "";
 
 }
 
@@ -3265,15 +4826,30 @@ function escapeHTML(value){
 
   return String(value)
 
-    .replace(/&/g,"&amp;")
+    .replace(
+      /&/g,
+      "&amp;"
+    )
 
-    .replace(/</g,"&lt;")
+    .replace(
+      /</g,
+      "&lt;"
+    )
 
-    .replace(/>/g,"&gt;")
+    .replace(
+      />/g,
+      "&gt;"
+    )
 
-    .replace(/"/g,"&quot;")
+    .replace(
+      /"/g,
+      "&quot;"
+    )
 
-    .replace(/'/g,"&#039;");
+    .replace(
+      /'/g,
+      "&#039;"
+    );
 
 }
 
@@ -3282,17 +4858,26 @@ function escapeJS(value){
 
   return String(value)
 
-    .replace(/\\/g,"\\\\")
+    .replace(
+      /\\/g,
+      "\\\\"
+    )
 
-    .replace(/'/g,"\\'")
+    .replace(
+      /'/g,
+      "\\'"
+    )
 
-    .replace(/"/g,'\\"');
+    .replace(
+      /"/g,
+      '\\"'
+    );
 
 }
 
 
 /* =========================================================
-   START WEBSITE
+   START
 ========================================================= */
 
 checkProductPage();
@@ -3300,4 +4885,5 @@ checkProductPage();
 </script>
 
 </body>
+
 </html>
