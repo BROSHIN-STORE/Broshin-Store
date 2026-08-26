@@ -657,6 +657,69 @@ body{
   color:var(--muted);
 }
 
+/* =========================================================
+   VIDEO SECTION
+========================================================= */
+
+.video-box{
+  margin-top:30px;
+  display:none;
+}
+
+.video-title{
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:3px;
+  color:#96751e;
+  margin-bottom:15px;
+}
+
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.social-video{
+  width:100%;
+  border-radius:20px;
+  overflow:hidden;
+  background:#171717;
+  min-height:240px;
+  position:relative;
+}
+
+.social-video iframe{
+  width:100%;
+  height:360px;
+  border:0;
+  display:block;
+  background:#171717;
+}
+
+.social-video video{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  display:block;
+  background:#171717;
+}
+
+.video-label{
+  position:absolute;
+  left:10px;
+  top:10px;
+  z-index:5;
+  padding:7px 10px;
+  border-radius:20px;
+  background:rgba(0,0,0,.75);
+  color:white;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1px;
+  pointer-events:none;
+}
+
 .buy-now{
   width:100%;
   margin-top:30px;
@@ -679,17 +742,6 @@ body{
 .buy-now:disabled{
   opacity:.5;
   cursor:not-allowed;
-}
-
-.video-box{
-  margin-top:25px;
-  display:none;
-}
-
-.video-box video{
-  width:100%;
-  border-radius:20px;
-  max-height:350px;
 }
 
 .checkout{
@@ -1120,6 +1172,10 @@ footer p{
     display:none;
   }
 
+  .video-grid{
+    grid-template-columns:1fr;
+  }
+
 }
 
 @media(max-width:600px){
@@ -1162,6 +1218,11 @@ footer p{
 
   .hero{
     min-height:540px;
+  }
+
+  .social-video iframe,
+  .social-video video{
+    height:430px;
   }
 
 }
@@ -1420,15 +1481,22 @@ footer p{
     id="detailStock">
   </div>
 
+  <!-- =====================================================
+       VIDEO SYSTEM
+  ====================================================== -->
+
   <div
     class="video-box"
     id="videoBox">
 
-    <video
-      id="productVideo"
-      controls
-      playsinline>
-    </video>
+    <div class="video-title">
+      WATCH PRODUCT VIDEOS
+    </div>
+
+    <div
+      class="video-grid"
+      id="videoGrid">
+    </div>
 
   </div>
 
@@ -1689,7 +1757,7 @@ footer p{
 <script>
 
 /* =========================================================
-   API — UPDATED TO VERSION 14
+   API — SAME AS YOUR OLD CODE
 ========================================================= */
 
 const API_URL =
@@ -2225,7 +2293,9 @@ async function loadSingleProduct(
     }
 
 
-    /* PRODUCT IMAGES */
+    /* =====================================================
+       PRODUCT IMAGES
+    ====================================================== */
 
     const imageList = [
 
@@ -2318,41 +2388,14 @@ async function loadSingleProduct(
     }
 
 
-    /* PRODUCT VIDEO */
+    /* =====================================================
+       NEW VIDEO SYSTEM
+    ====================================================== */
 
-    const video =
-      String(
-        currentProduct.video || ""
-      ).trim();
+    loadProductVideos(
+      currentProduct
+    );
 
-    const videoBox =
-      document.getElementById(
-        "videoBox"
-      );
-
-    const videoElement =
-      document.getElementById(
-        "productVideo"
-      );
-
-    if(video){
-
-      videoElement.src =
-        video;
-
-      videoBox.style.display =
-        "block";
-
-    }else{
-
-      videoElement.removeAttribute(
-        "src"
-      );
-
-      videoBox.style.display =
-        "none";
-
-    }
 
     document.getElementById(
       "checkoutProduct"
@@ -2374,6 +2417,483 @@ async function loadSingleProduct(
       "detailName"
     ).textContent =
       "Something went wrong";
+
+  }
+
+}
+
+
+/* =========================================================
+   VIDEO SYSTEM
+========================================================= */
+
+function loadProductVideos(product){
+
+  const videoBox =
+    document.getElementById(
+      "videoBox"
+    );
+
+  const videoGrid =
+    document.getElementById(
+      "videoGrid"
+    );
+
+  videoGrid.innerHTML =
+    "";
+
+  videoBox.style.display =
+    "none";
+
+
+  /*
+     GOOGLE SHEET COLUMNS:
+
+     youtube
+     instagram
+     pinterest
+  */
+
+  const youtube =
+    String(
+      product.youtube ||
+      product.youtube_link ||
+      product.youtube_url ||
+      ""
+    ).trim();
+
+  const instagram =
+    String(
+      product.instagram ||
+      product.instagram_link ||
+      product.instagram_url ||
+      ""
+    ).trim();
+
+  const pinterest =
+    String(
+      product.pinterest ||
+      product.pinterest_link ||
+      product.pinterest_url ||
+      ""
+    ).trim();
+
+
+  let videoCount =
+    0;
+
+
+  /* =====================================================
+     YOUTUBE
+  ====================================================== */
+
+  if(youtube){
+
+    const youtubeId =
+      getYouTubeId(
+        youtube
+      );
+
+    if(youtubeId){
+
+      const wrapper =
+        document.createElement(
+          "div"
+        );
+
+      wrapper.className =
+        "social-video";
+
+      wrapper.innerHTML = `
+
+        <div class="video-label">
+          ▶ YOUTUBE
+        </div>
+
+        <iframe
+          src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1&loop=1&playlist=${youtubeId}&controls=1&rel=0"
+          title="BROSHIN YouTube Product Video"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+
+      `;
+
+      videoGrid.appendChild(
+        wrapper
+      );
+
+      videoCount++;
+
+    }
+
+  }
+
+
+  /* =====================================================
+     INSTAGRAM
+  ====================================================== */
+
+  if(instagram){
+
+    const instagramUrl =
+      getInstagramEmbedUrl(
+        instagram
+      );
+
+    if(instagramUrl){
+
+      const wrapper =
+        document.createElement(
+          "div"
+        );
+
+      wrapper.className =
+        "social-video";
+
+      wrapper.innerHTML = `
+
+        <div class="video-label">
+          ◎ INSTAGRAM
+        </div>
+
+        <iframe
+          src="${escapeHTML(instagramUrl)}"
+          title="BROSHIN Instagram Product Video"
+          scrolling="no"
+          allowtransparency="true"
+          allow="autoplay; encrypted-media; picture-in-picture">
+        </iframe>
+
+      `;
+
+      videoGrid.appendChild(
+        wrapper
+      );
+
+      videoCount++;
+
+    }
+
+  }
+
+
+  /* =====================================================
+     PINTEREST
+  ====================================================== */
+
+  if(pinterest){
+
+    const pinterestUrl =
+      getPinterestEmbedUrl(
+        pinterest
+      );
+
+    if(pinterestUrl){
+
+      const wrapper =
+        document.createElement(
+          "div"
+        );
+
+      wrapper.className =
+        "social-video";
+
+      wrapper.innerHTML = `
+
+        <div class="video-label">
+          📌 PINTEREST
+        </div>
+
+        <iframe
+          src="${escapeHTML(pinterestUrl)}"
+          title="BROSHIN Pinterest Product Video"
+          scrolling="no"
+          allow="autoplay; encrypted-media; picture-in-picture">
+        </iframe>
+
+      `;
+
+      videoGrid.appendChild(
+        wrapper
+      );
+
+      videoCount++;
+
+    }
+
+  }
+
+
+  if(videoCount > 0){
+
+    videoBox.style.display =
+      "block";
+
+  }
+
+}
+
+
+/* =========================================================
+   GET YOUTUBE ID
+========================================================= */
+
+function getYouTubeId(url){
+
+  try{
+
+    const value =
+      String(url || "").trim();
+
+    if(!value){
+
+      return "";
+
+    }
+
+    /*
+      Normal:
+
+      https://www.youtube.com/watch?v=ABC123
+
+      Short:
+
+      https://youtu.be/ABC123
+
+      Shorts:
+
+      https://www.youtube.com/shorts/ABC123
+    */
+
+    const watchMatch =
+      value.match(
+        /[?&]v=([^&#]+)/i
+      );
+
+    if(
+      watchMatch &&
+      watchMatch[1]
+    ){
+
+      return watchMatch[1];
+
+    }
+
+    const shortMatch =
+      value.match(
+        /youtu\.be\/([^?&#/]+)/i
+      );
+
+    if(
+      shortMatch &&
+      shortMatch[1]
+    ){
+
+      return shortMatch[1];
+
+    }
+
+    const shortsMatch =
+      value.match(
+        /youtube\.com\/shorts\/([^?&#/]+)/i
+      );
+
+    if(
+      shortsMatch &&
+      shortsMatch[1]
+    ){
+
+      return shortsMatch[1];
+
+    }
+
+    const embedMatch =
+      value.match(
+        /youtube\.com\/embed\/([^?&#/]+)/i
+      );
+
+    if(
+      embedMatch &&
+      embedMatch[1]
+    ){
+
+      return embedMatch[1];
+
+    }
+
+    return "";
+
+  }catch(error){
+
+    return "";
+
+  }
+
+}
+
+
+/* =========================================================
+   INSTAGRAM EMBED URL
+========================================================= */
+
+function getInstagramEmbedUrl(url){
+
+  try{
+
+    let value =
+      String(
+        url || ""
+      ).trim();
+
+    if(!value){
+
+      return "";
+
+    }
+
+    /*
+      Convert:
+
+      https://www.instagram.com/reel/ABC123/
+
+      to:
+
+      https://www.instagram.com/reel/ABC123/embed/
+    */
+
+    value =
+      value.split("?")[0];
+
+    value =
+      value.replace(
+        /\/+$/,
+        ""
+      );
+
+    if(
+      !value.includes(
+        "instagram.com"
+      )
+    ){
+
+      return "";
+
+    }
+
+    if(
+      !value.includes(
+        "/reel/"
+      ) &&
+      !value.includes(
+        "/p/"
+      ) &&
+      !value.includes(
+        "/tv/"
+      )
+    ){
+
+      return "";
+
+    }
+
+    return (
+      value +
+      "/embed/"
+    );
+
+  }catch(error){
+
+    return "";
+
+  }
+
+}
+
+
+/* =========================================================
+   PINTEREST EMBED URL
+========================================================= */
+
+function getPinterestEmbedUrl(url){
+
+  try{
+
+    let value =
+      String(
+        url || ""
+      ).trim();
+
+    if(!value){
+
+      return "";
+
+    }
+
+    /*
+      Pinterest uses its embed endpoint.
+
+      The original pin URL is passed
+      into the Pinterest embed page.
+    */
+
+    if(
+      !value.includes(
+        "pinterest."
+      )
+    ){
+
+      return "";
+
+    }
+
+    return (
+      "https://www.pinterest.com/pin/" +
+      getPinterestPinId(value) +
+      "/"
+    );
+
+  }catch(error){
+
+    return "";
+
+  }
+
+}
+
+
+/* =========================================================
+   PINTEREST PIN ID
+========================================================= */
+
+function getPinterestPinId(url){
+
+  try{
+
+    const value =
+      String(
+        url || ""
+      ).trim();
+
+    const match =
+      value.match(
+        /\/pin\/(\d+)/i
+      );
+
+    if(
+      match &&
+      match[1]
+    ){
+
+      return match[1];
+
+    }
+
+    return "";
+
+  }catch(error){
+
+    return "";
 
   }
 
