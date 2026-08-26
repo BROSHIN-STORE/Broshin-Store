@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,30 +7,63 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+content="width=device-width,initial-scale=1.0">
+
+<meta name="theme-color"
+content="#171717">
 
 <title>BROSHIN — Discover. Shop. Enjoy.</title>
 
 <style>
 
+/* =========================================================
+   BROSHIN — PREMIUM E-COMMERCE DESIGN
+========================================================= */
+
 :root{
+
   --black:#171717;
+  --black2:#29231f;
+
   --gold:#D4AF37;
+  --gold2:#9b7921;
+
   --rose:#D8B7AE;
+  --rose2:#ead5ce;
+
   --ivory:#F8F4EC;
   --cream:#EDE3D2;
+
+  --white:#ffffff;
+
   --text:#211e1c;
   --muted:#756d66;
+
+  --glass:rgba(255,255,255,.58);
+
+  --shadow:
+    0 25px 70px rgba(23,23,23,.10);
+
 }
 
+
+/* =========================================================
+   RESET
+========================================================= */
+
 *{
+
   margin:0;
   padding:0;
+
   box-sizing:border-box;
+
 }
 
 html{
+
   scroll-behavior:smooth;
+
 }
 
 body{
@@ -48,14 +82,14 @@ body{
   background:
 
     radial-gradient(
-      circle at 10% 15%,
-      rgba(216,183,174,.65),
+      circle at 5% 10%,
+      rgba(216,183,174,.55),
       transparent 28%
     ),
 
     radial-gradient(
-      circle at 90% 10%,
-      rgba(232,211,185,.8),
+      circle at 95% 5%,
+      rgba(212,175,55,.16),
       transparent 30%
     ),
 
@@ -64,7 +98,7 @@ body{
       var(--ivory),
       var(--cream),
       #fffaf4,
-      var(--rose),
+      var(--rose2),
       var(--ivory)
     );
 
@@ -74,17 +108,27 @@ body{
 
 }
 
+
 @keyframes bgMove{
 
   0%,100%{
+
     background-position:0% 50%;
+
   }
 
   50%{
+
     background-position:100% 50%;
+
   }
 
 }
+
+
+/* =========================================================
+   CURSOR GLOW
+========================================================= */
 
 .cursor{
 
@@ -103,13 +147,18 @@ body{
   background:
     radial-gradient(
       circle,
-      rgba(212,175,55,.13),
+      rgba(212,175,55,.12),
       transparent 70%
     );
 
   z-index:0;
 
 }
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
 
 .topbar{
 
@@ -121,11 +170,13 @@ body{
 
   justify-content:center;
 
-  color:#fff;
+  padding:0 15px;
 
-  font-size:11px;
+  color:white;
 
-  font-weight:bold;
+  font-size:10px;
+
+  font-weight:900;
 
   letter-spacing:3px;
 
@@ -135,23 +186,31 @@ body{
     linear-gradient(
       90deg,
       #171717,
-      #4a4038,
+      #51453b,
       #171717
     );
 
   background-size:200% 100%;
 
-  animation:bar 6s linear infinite;
+  animation:barMove 6s linear infinite;
 
 }
 
-@keyframes bar{
+
+@keyframes barMove{
 
   to{
+
     background-position:200% 0;
+
   }
 
 }
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
 
 .nav{
 
@@ -160,22 +219,26 @@ body{
 
   margin:20px auto;
 
-  padding:17px 25px;
+  padding:16px 25px;
 
   display:flex;
 
+  align-items:center;
+
   justify-content:space-between;
 
-  align-items:center;
+  position:relative;
+
+  z-index:20;
 
   border:
     1px solid
-    rgba(255,255,255,.55);
+    rgba(255,255,255,.65);
 
   border-radius:24px;
 
   background:
-    rgba(255,255,255,.42);
+    rgba(255,255,255,.48);
 
   backdrop-filter:blur(20px);
 
@@ -183,11 +246,8 @@ body{
     0 20px 50px
     rgba(23,23,23,.08);
 
-  position:relative;
-
-  z-index:10;
-
 }
+
 
 .logo{
 
@@ -204,36 +264,49 @@ body{
 }
 
 .logo span{
+
   color:var(--gold);
+
 }
+
 
 .nav-tag{
 
-  font-size:11px;
+  color:var(--muted);
+
+  font-size:10px;
+
+  font-weight:900;
 
   letter-spacing:3px;
 
-  font-weight:bold;
-
-  color:var(--muted);
-
 }
 
 
-/* ================= HOME ================= */
+/* =========================================================
+   PAGE SYSTEM
+========================================================= */
 
 #homePage{
+
   display:block;
+
 }
 
 #productPage{
+
   display:none;
+
 }
+
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
 
   width:92%;
-
   max-width:1250px;
 
   min-height:620px;
@@ -252,6 +325,16 @@ body{
 
 }
 
+
+.hero-content{
+
+  position:relative;
+
+  z-index:3;
+
+}
+
+
 .orb{
 
   position:absolute;
@@ -262,13 +345,14 @@ body{
 
 }
 
+
 .orb.one{
 
-  width:420px;
-  height:420px;
+  width:430px;
+  height:430px;
 
   left:0;
-  top:80px;
+  top:60px;
 
   background:
     radial-gradient(
@@ -278,14 +362,15 @@ body{
     );
 
   animation:
-    floatOrb1 9s ease-in-out infinite;
+    float1 9s ease-in-out infinite;
 
 }
 
+
 .orb.two{
 
-  width:380px;
-  height:380px;
+  width:390px;
+  height:390px;
 
   right:0;
   bottom:20px;
@@ -293,42 +378,41 @@ body{
   background:
     radial-gradient(
       circle,
-      rgba(212,175,55,.22),
+      rgba(212,175,55,.20),
       transparent 68%
     );
 
   animation:
-    floatOrb2 11s ease-in-out infinite;
+    float2 11s ease-in-out infinite;
 
 }
 
-@keyframes floatOrb1{
+
+@keyframes float1{
 
   50%{
+
     transform:
       translate(100px,50px)
       scale(1.12);
+
   }
 
 }
 
-@keyframes floatOrb2{
+
+@keyframes float2{
 
   50%{
+
     transform:
       translate(-100px,-50px)
       scale(1.15);
+
   }
 
 }
 
-.hero-content{
-
-  position:relative;
-
-  z-index:2;
-
-}
 
 .small-title{
 
@@ -338,7 +422,7 @@ body{
 
   border-radius:50px;
 
-  font-size:11px;
+  font-size:10px;
 
   letter-spacing:4px;
 
@@ -347,7 +431,7 @@ body{
   background:
     linear-gradient(
       100deg,
-      rgba(232,211,185,.7),
+      rgba(232,211,185,.75),
       rgba(216,183,174,.55)
     );
 
@@ -357,19 +441,20 @@ body{
 
 }
 
+
 .hero h1{
 
   margin-top:25px;
 
   font-size:
-    clamp(75px,15vw,175px);
+    clamp(65px,15vw,175px);
 
   line-height:.82;
 
   font-weight:1000;
 
   letter-spacing:
-    clamp(6px,1.7vw,18px);
+    clamp(5px,1.7vw,18px);
 
   background:
     linear-gradient(
@@ -390,17 +475,22 @@ body{
   color:transparent;
 
   animation:
-    gold 7s linear infinite;
+    goldMove 7s linear infinite;
 
 }
 
-@keyframes gold{
+
+@keyframes goldMove{
 
   to{
-    background-position:300% center;
+
+    background-position:
+      300% center;
+
   }
 
 }
+
 
 .hero-description{
 
@@ -416,8 +506,8 @@ body{
 
 }
 
-.hero-button,
-.primary-btn{
+
+.hero-button{
 
   display:inline-block;
 
@@ -425,27 +515,23 @@ body{
 
   padding:16px 30px;
 
-  border:0;
-
   border-radius:50px;
 
   color:white;
 
   text-decoration:none;
 
-  font-size:13px;
+  font-size:12px;
 
   font-weight:900;
 
   letter-spacing:1px;
 
-  cursor:pointer;
-
   background:
     linear-gradient(
       100deg,
       #171717,
-      #4b4037,
+      #51443a,
       #171717
     );
 
@@ -457,8 +543,8 @@ body{
 
 }
 
-.hero-button:hover,
-.primary-btn:hover{
+
+.hero-button:hover{
 
   transform:
     translateY(-5px);
@@ -466,17 +552,9 @@ body{
 }
 
 
-/* ================= TRENDING ================= */
-
-.trending{
-
-  width:92%;
-
-  max-width:1250px;
-
-  margin:80px auto 120px;
-
-}
+/* =========================================================
+   SECTION HEADING
+========================================================= */
 
 .heading{
 
@@ -486,9 +564,10 @@ body{
 
 }
 
+
 .heading-label{
 
-  font-size:11px;
+  font-size:10px;
 
   font-weight:900;
 
@@ -498,12 +577,13 @@ body{
 
 }
 
+
 .heading h2{
 
   margin-top:12px;
 
   font-size:
-    clamp(50px,8vw,95px);
+    clamp(48px,8vw,95px);
 
   line-height:.9;
 
@@ -530,6 +610,7 @@ body{
 
 }
 
+
 .heading p{
 
   margin:22px auto 0;
@@ -542,6 +623,22 @@ body{
 
 }
 
+
+/* =========================================================
+   TRENDING
+========================================================= */
+
+.trending{
+
+  width:92%;
+
+  max-width:1250px;
+
+  margin:70px auto 110px;
+
+}
+
+
 .cards{
 
   display:grid;
@@ -553,11 +650,12 @@ body{
 
 }
 
+
 .card{
 
   min-height:430px;
 
-  padding:25px;
+  padding:22px;
 
   border-radius:32px;
 
@@ -568,23 +666,24 @@ body{
   background:
     linear-gradient(
       145deg,
-      rgba(255,255,255,.76),
-      rgba(255,255,255,.27)
+      rgba(255,255,255,.78),
+      rgba(255,255,255,.30)
     );
 
   border:
     1px solid
-    rgba(255,255,255,.6);
+    rgba(255,255,255,.65);
 
   backdrop-filter:blur(18px);
 
-  box-shadow:
-    0 25px 65px
-    rgba(23,23,23,.1);
+  box-shadow:var(--shadow);
 
-  transition:.35s;
+  transition:
+    transform .35s,
+    box-shadow .35s;
 
 }
+
 
 .card:hover{
 
@@ -592,10 +691,11 @@ body{
     translateY(-10px);
 
   box-shadow:
-    0 35px 80px
-    rgba(23,23,23,.18);
+    0 35px 85px
+    rgba(23,23,23,.17);
 
 }
+
 
 .product-image{
 
@@ -608,11 +708,12 @@ body{
   border-radius:22px;
 
   background:
-    rgba(255,255,255,.5);
+    rgba(255,255,255,.55);
 
   margin:15px 0;
 
 }
+
 
 .placeholder{
 
@@ -631,13 +732,14 @@ body{
   border-radius:22px;
 
   background:
-    rgba(255,255,255,.5);
+    rgba(255,255,255,.55);
 
 }
 
+
 .number{
 
-  font-size:10px;
+  font-size:9px;
 
   letter-spacing:3px;
 
@@ -647,13 +749,15 @@ body{
 
 }
 
+
 .card h3{
 
-  font-size:20px;
+  font-size:19px;
 
   margin:10px 0;
 
 }
+
 
 .card p{
 
@@ -665,13 +769,14 @@ body{
 
 }
 
+
 .price-box{
 
   display:flex;
 
   align-items:center;
 
-  gap:10px;
+  gap:9px;
 
   flex-wrap:wrap;
 
@@ -679,9 +784,10 @@ body{
 
 }
 
+
 .reference-price{
 
-  font-size:15px;
+  font-size:14px;
 
   color:#8a817a;
 
@@ -689,17 +795,17 @@ body{
 
 }
 
+
 .product-price{
 
-  font-size:24px;
+  font-size:23px;
 
   font-weight:1000;
 
 }
 
-.discount-badge{
 
-  display:inline-block;
+.discount-badge{
 
   padding:5px 9px;
 
@@ -709,15 +815,16 @@ body{
 
   color:white;
 
-  font-size:10px;
+  font-size:9px;
 
   font-weight:900;
 
 }
 
+
 .save-text{
 
-  font-size:12px;
+  font-size:11px;
 
   color:#96751e;
 
@@ -725,13 +832,14 @@ body{
 
 }
 
+
 .view-btn{
 
   width:100%;
 
   padding:14px;
 
-  margin-top:18px;
+  margin-top:17px;
 
   border:0;
 
@@ -739,17 +847,14 @@ body{
 
   background:var(--black);
 
-  color:#fff;
+  color:white;
 
   font-weight:900;
 
   cursor:pointer;
 
-  position:relative;
-
-  z-index:2;
-
 }
+
 
 .view-btn:disabled{
 
@@ -759,17 +864,21 @@ body{
 
 }
 
+
 .out-stock{
+
   opacity:.65;
+
 }
+
 
 .status-badge{
 
   position:absolute;
 
-  top:20px;
+  top:18px;
 
-  right:20px;
+  right:18px;
 
   padding:7px 11px;
 
@@ -778,9 +887,9 @@ body{
   background:
     rgba(23,23,23,.9);
 
-  color:#fff;
+  color:white;
 
-  font-size:9px;
+  font-size:8px;
 
   font-weight:900;
 
@@ -789,7 +898,9 @@ body{
 }
 
 
-/* ================= PRODUCT PAGE ================= */
+/* =========================================================
+   PRODUCT PAGE
+========================================================= */
 
 .product-wrap{
 
@@ -797,9 +908,10 @@ body{
 
   max-width:1150px;
 
-  margin:70px auto 100px;
+  margin:60px auto 70px;
 
 }
+
 
 .back-btn{
 
@@ -813,11 +925,12 @@ body{
 
   color:var(--muted);
 
-  margin-bottom:30px;
+  margin-bottom:25px;
 
-  font-size:14px;
+  font-size:13px;
 
 }
+
 
 .product-detail{
 
@@ -830,24 +943,25 @@ body{
 
   align-items:center;
 
-  padding:50px;
+  padding:45px;
 
   border-radius:40px;
 
   background:
-    rgba(255,255,255,.45);
+    rgba(255,255,255,.50);
 
   backdrop-filter:blur(20px);
 
   border:
     1px solid
-    rgba(255,255,255,.7);
+    rgba(255,255,255,.75);
 
   box-shadow:
     0 30px 80px
-    rgba(23,23,23,.1);
+    rgba(23,23,23,.10);
 
 }
+
 
 .detail-image-box{
 
@@ -865,14 +979,13 @@ body{
     linear-gradient(
       135deg,
       rgba(216,183,174,.35),
-      rgba(232,211,185,.7)
+      rgba(232,211,185,.70)
     );
 
   overflow:hidden;
 
-  position:relative;
-
 }
+
 
 .detail-image{
 
@@ -884,11 +997,13 @@ body{
 
 }
 
+
 .detail-placeholder{
 
   font-size:140px;
 
 }
+
 
 .image-gallery{
 
@@ -901,6 +1016,7 @@ body{
   overflow-x:auto;
 
 }
+
 
 .thumb{
 
@@ -916,9 +1032,12 @@ body{
 
   background:white;
 
-  border:2px solid transparent;
+  border:
+    2px solid
+    transparent;
 
 }
+
 
 .thumb:hover{
 
@@ -926,6 +1045,7 @@ body{
     var(--gold);
 
 }
+
 
 .detail-info h1{
 
@@ -940,11 +1060,13 @@ body{
 
 }
 
+
 .detail-price-box{
 
   margin:25px 0;
 
 }
+
 
 .detail-reference{
 
@@ -955,6 +1077,7 @@ body{
   font-size:18px;
 
 }
+
 
 .detail-price{
 
@@ -968,6 +1091,7 @@ body{
 
 }
 
+
 .detail-discount{
 
   display:inline-block;
@@ -980,13 +1104,14 @@ body{
 
   background:#171717;
 
-  color:#fff;
+  color:white;
 
-  font-size:11px;
+  font-size:10px;
 
   font-weight:900;
 
 }
+
 
 .detail-save{
 
@@ -998,45 +1123,30 @@ body{
 
 }
 
+
 .detail-description{
 
   color:var(--muted);
 
   line-height:1.9;
 
-  font-size:16px;
+  font-size:15px;
 
 }
+
 
 .stock{
 
   margin-top:20px;
 
-  font-size:13px;
+  font-size:12px;
 
   font-weight:900;
 
-  color:#756d66;
+  color:var(--muted);
 
 }
 
-.video-box{
-
-  margin-top:25px;
-
-  display:none;
-
-}
-
-.video-box video{
-
-  width:100%;
-
-  border-radius:20px;
-
-  max-height:350px;
-
-}
 
 .buy-now{
 
@@ -1054,7 +1164,7 @@ body{
 
   color:white;
 
-  font-size:14px;
+  font-size:13px;
 
   font-weight:900;
 
@@ -1066,6 +1176,7 @@ body{
 
 }
 
+
 .buy-now:hover{
 
   transform:
@@ -1073,18 +1184,43 @@ body{
 
 }
 
+
 .buy-now:disabled{
 
   opacity:.5;
 
   cursor:not-allowed;
 
-  transform:none;
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.video-box{
+
+  margin-top:25px;
+
+  display:none;
 
 }
 
 
-/* ================= CHECKOUT ================= */
+.video-box video{
+
+  width:100%;
+
+  border-radius:20px;
+
+  max-height:350px;
+
+}
+
+
+/* =========================================================
+   CHECKOUT
+========================================================= */
 
 .checkout{
 
@@ -1092,20 +1228,21 @@ body{
 
   max-width:700px;
 
-  margin:0 auto 100px;
+  margin:0 auto 80px;
 
   padding:40px;
 
   border-radius:35px;
 
   background:
-    rgba(255,255,255,.75);
+    rgba(255,255,255,.76);
 
   box-shadow:
     0 30px 80px
     rgba(23,23,23,.12);
 
 }
+
 
 .checkout h2{
 
@@ -1115,6 +1252,7 @@ body{
 
 }
 
+
 .checkout p{
 
   color:var(--muted);
@@ -1122,6 +1260,7 @@ body{
   margin-bottom:25px;
 
 }
+
 
 .checkout-form{
 
@@ -1132,6 +1271,7 @@ body{
   gap:14px;
 
 }
+
 
 .checkout-form input,
 .checkout-form textarea{
@@ -1152,7 +1292,10 @@ body{
 
   outline:none;
 
+  background:#fff;
+
 }
+
 
 .checkout-form textarea{
 
@@ -1161,6 +1304,7 @@ body{
   resize:vertical;
 
 }
+
 
 .checkout-form button{
 
@@ -1176,19 +1320,17 @@ body{
 
   font-weight:900;
 
-  letter-spacing:1px;
-
   cursor:pointer;
 
 }
+
 
 .checkout-form button:disabled{
 
   opacity:.6;
 
-  cursor:not-allowed;
-
 }
+
 
 #checkoutMessage{
 
@@ -1201,7 +1343,352 @@ body{
 }
 
 
-/* ================= TRACK ORDER ================= */
+/* =========================================================
+   REVIEWS
+========================================================= */
+
+.reviews-section{
+
+  width:92%;
+
+  max-width:1150px;
+
+  margin:0 auto 90px;
+
+  padding:45px;
+
+  border-radius:40px;
+
+  background:
+    rgba(255,255,255,.55);
+
+  backdrop-filter:blur(20px);
+
+  border:
+    1px solid
+    rgba(255,255,255,.75);
+
+  box-shadow:
+    0 30px 80px
+    rgba(23,23,23,.10);
+
+}
+
+
+.reviews-heading{
+
+  text-align:center;
+
+  margin-bottom:25px;
+
+}
+
+
+.reviews-label{
+
+  font-size:10px;
+
+  font-weight:900;
+
+  letter-spacing:4px;
+
+  color:#96751e;
+
+}
+
+
+.reviews-heading h2{
+
+  margin-top:10px;
+
+  font-size:
+    clamp(38px,6vw,65px);
+
+  line-height:1;
+
+  font-weight:1000;
+
+}
+
+
+.rating-summary{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:18px;
+
+  margin:25px 0 35px;
+
+  flex-wrap:wrap;
+
+}
+
+
+.big-rating{
+
+  font-size:45px;
+
+  font-weight:1000;
+
+}
+
+
+.stars-display{
+
+  color:#D4AF37;
+
+  font-size:25px;
+
+  letter-spacing:3px;
+
+}
+
+
+.review-count{
+
+  color:var(--muted);
+
+  font-size:13px;
+
+}
+
+
+.review-form{
+
+  max-width:700px;
+
+  margin:0 auto 45px;
+
+  padding:25px;
+
+  border-radius:25px;
+
+  background:
+    rgba(255,255,255,.68);
+
+}
+
+
+.review-form h3{
+
+  margin-bottom:18px;
+
+  font-size:22px;
+
+}
+
+
+.star-selector{
+
+  display:flex;
+
+  gap:5px;
+
+  margin-bottom:15px;
+
+}
+
+
+.star-selector span{
+
+  font-size:32px;
+
+  color:#c9c0b7;
+
+  cursor:pointer;
+
+  transition:.2s;
+
+}
+
+
+.star-selector span.active,
+.star-selector span:hover{
+
+  color:var(--gold);
+
+  transform:scale(1.1);
+
+}
+
+
+.review-form input,
+.review-form textarea{
+
+  width:100%;
+
+  padding:14px 16px;
+
+  margin-bottom:12px;
+
+  border:
+    1px solid
+    rgba(23,23,23,.12);
+
+  border-radius:15px;
+
+  outline:none;
+
+  font-family:inherit;
+
+  font-size:14px;
+
+}
+
+
+.review-form textarea{
+
+  min-height:110px;
+
+  resize:vertical;
+
+}
+
+
+.review-submit{
+
+  width:100%;
+
+  padding:15px;
+
+  border:0;
+
+  border-radius:50px;
+
+  background:var(--black);
+
+  color:white;
+
+  font-weight:900;
+
+  cursor:pointer;
+
+}
+
+
+.review-submit:disabled{
+
+  opacity:.5;
+
+}
+
+
+#reviewMessage{
+
+  text-align:center;
+
+  margin-top:12px;
+
+  font-size:13px;
+
+  font-weight:900;
+
+}
+
+
+.reviews-list{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:18px;
+
+}
+
+
+.review-card{
+
+  padding:22px;
+
+  border-radius:22px;
+
+  background:
+    rgba(255,255,255,.72);
+
+  border:
+    1px solid
+    rgba(255,255,255,.85);
+
+}
+
+
+.review-top{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-start;
+
+  gap:10px;
+
+  margin-bottom:10px;
+
+}
+
+
+.reviewer-name{
+
+  font-weight:1000;
+
+}
+
+
+.review-stars{
+
+  color:#D4AF37;
+
+  letter-spacing:2px;
+
+  font-size:15px;
+
+}
+
+
+.review-date{
+
+  color:#999;
+
+  font-size:10px;
+
+  margin-top:3px;
+
+}
+
+
+.review-text{
+
+  color:var(--muted);
+
+  line-height:1.7;
+
+  font-size:14px;
+
+}
+
+
+.no-reviews{
+
+  grid-column:1/-1;
+
+  text-align:center;
+
+  padding:30px;
+
+  color:var(--muted);
+
+}
+
+
+/* =========================================================
+   TRACKING
+========================================================= */
 
 .track-box{
 
@@ -1216,7 +1703,7 @@ body{
   border-radius:35px;
 
   background:
-    rgba(255,255,255,.75);
+    rgba(255,255,255,.76);
 
   box-shadow:
     0 30px 80px
@@ -1226,6 +1713,7 @@ body{
 
 }
 
+
 .track-box h2{
 
   font-size:35px;
@@ -1234,6 +1722,7 @@ body{
 
 }
 
+
 .track-box p{
 
   color:var(--muted);
@@ -1241,6 +1730,7 @@ body{
   margin-bottom:20px;
 
 }
+
 
 .track-input{
 
@@ -1259,6 +1749,7 @@ body{
   margin-bottom:12px;
 
 }
+
 
 .track-button{
 
@@ -1280,6 +1771,7 @@ body{
 
 }
 
+
 .track-result{
 
   margin-top:25px;
@@ -1297,6 +1789,7 @@ body{
 
 }
 
+
 .track-status{
 
   font-size:22px;
@@ -1305,12 +1798,37 @@ body{
 
   color:#96751e;
 
-  margin-bottom:10px;
+  margin-bottom:12px;
 
 }
 
 
-/* ================= FOOTER ================= */
+.tracking-awb{
+
+  margin-top:15px;
+
+  padding:15px;
+
+  border-radius:15px;
+
+  background:
+    rgba(255,255,255,.8);
+
+}
+
+
+.tracking-awb strong{
+
+  display:block;
+
+  margin-bottom:5px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
 
@@ -1330,6 +1848,7 @@ footer{
 
 }
 
+
 .footer-logo{
 
   font-size:27px;
@@ -1340,18 +1859,21 @@ footer{
 
 }
 
+
 footer p{
 
   margin-top:12px;
 
   color:var(--muted);
 
-  font-size:12px;
+  font-size:11px;
 
 }
 
 
-/* ================= RESPONSIVE ================= */
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media(max-width:900px){
 
@@ -1362,11 +1884,13 @@ footer p{
 
   }
 
+
   .product-detail{
 
     grid-template-columns:1fr;
 
   }
+
 
   .nav-tag{
 
@@ -1376,7 +1900,17 @@ footer p{
 
 }
 
+
 @media(max-width:600px){
+
+  .topbar{
+
+    font-size:8px;
+
+    letter-spacing:1.5px;
+
+  }
+
 
   .cards{
 
@@ -1384,11 +1918,13 @@ footer p{
 
   }
 
+
   .product-detail{
 
     padding:25px;
 
   }
+
 
   .detail-image-box{
 
@@ -1396,24 +1932,42 @@ footer p{
 
   }
 
+
   .detail-image{
 
     height:330px;
 
   }
 
+
   .checkout,
-  .track-box{
+  .track-box,
+  .reviews-section{
 
     padding:25px;
 
   }
+
 
   .logo{
 
     font-size:22px;
 
     letter-spacing:4px;
+
+  }
+
+
+  .reviews-list{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  .hero{
+
+    min-height:540px;
 
   }
 
@@ -1427,7 +1981,10 @@ footer p{
 <body>
 
 
-<div class="cursor" id="cursor"></div>
+<div
+  class="cursor"
+  id="cursor">
+</div>
 
 
 <div class="topbar">
@@ -1439,7 +1996,9 @@ footer p{
 
 <header class="nav">
 
-  <a href="./" class="logo">
+  <a
+    href="./"
+    class="logo">
 
     BROSHIN<span>.</span>
 
@@ -1454,7 +2013,9 @@ footer p{
 </header>
 
 
-<!-- ================= HOME ================= -->
+<!-- =========================================================
+     HOME PAGE
+========================================================= -->
 
 <main id="homePage">
 
@@ -1486,15 +2047,14 @@ footer p{
 
       Discover what's trending.
       Find something new.
-      Shop the products worth talking about.
+      Shop products worth talking about.
 
     </p>
 
 
     <a
       href="#trending"
-      class="hero-button"
-    >
+      class="hero-button">
 
       EXPLORE TRENDING ↓
 
@@ -1507,8 +2067,7 @@ footer p{
 
 <section
   class="trending"
-  id="trending"
->
+  id="trending">
 
 
   <div class="heading">
@@ -1539,8 +2098,8 @@ footer p{
 
   <div
     class="cards"
-    id="productCards"
-  >
+    id="productCards">
+
 
     <div class="card">
 
@@ -1564,13 +2123,15 @@ footer p{
 
     </div>
 
-  </div>
 
+  </div>
 
 </section>
 
 
-<!-- ================= TRACK ORDER ================= -->
+<!-- =========================================================
+     TRACK ORDER
+========================================================= -->
 
 <section class="track-box">
 
@@ -1580,9 +2141,10 @@ footer p{
 
   </h2>
 
+
   <p>
 
-    Enter your BROSHIN Order ID.
+    Enter your BROSHIN Order ID to see your latest order status.
 
   </p>
 
@@ -1597,8 +2159,7 @@ footer p{
 
   <button
     class="track-button"
-    onclick="trackOrder()"
-  >
+    onclick="trackOrder()">
 
     TRACK ORDER
 
@@ -1607,8 +2168,9 @@ footer p{
 
   <div
     class="track-result"
-    id="trackResult"
-  ></div>
+    id="trackResult">
+  </div>
+
 
 </section>
 
@@ -1616,7 +2178,9 @@ footer p{
 </main>
 
 
-<!-- ================= PRODUCT PAGE ================= -->
+<!-- =========================================================
+     PRODUCT PAGE
+========================================================= -->
 
 <main id="productPage">
 
@@ -1626,8 +2190,7 @@ footer p{
 
 <button
   class="back-btn"
-  onclick="goHome()"
->
+  onclick="goHome()">
 
   ← BACK TO PRODUCTS
 
@@ -1642,8 +2205,7 @@ footer p{
 
   <div
     class="detail-image-box"
-    id="detailImageBox"
-  >
+    id="detailImageBox">
 
     <div class="detail-placeholder">
 
@@ -1656,8 +2218,8 @@ footer p{
 
   <div
     class="image-gallery"
-    id="imageGallery"
-  ></div>
+    id="imageGallery">
+  </div>
 
 
 </div>
@@ -1673,7 +2235,8 @@ footer p{
   </div>
 
 
-  <h1 id="detailName">
+  <h1
+    id="detailName">
 
     Loading...
 
@@ -1685,14 +2248,13 @@ footer p{
 
     <div
       class="detail-reference"
-      id="detailReference"
-    ></div>
+      id="detailReference">
+    </div>
 
 
     <div
       class="detail-price"
-      id="detailPrice"
-    >
+      id="detailPrice">
 
       ₹0
 
@@ -1701,14 +2263,14 @@ footer p{
 
     <div
       class="detail-discount"
-      id="detailDiscount"
-    ></div>
+      id="detailDiscount">
+    </div>
 
 
     <div
       class="detail-save"
-      id="detailSave"
-    ></div>
+      id="detailSave">
+    </div>
 
 
   </div>
@@ -1716,26 +2278,27 @@ footer p{
 
   <p
     class="detail-description"
-    id="detailDescription"
-  ></p>
+    id="detailDescription">
+  </p>
 
 
   <div
     class="stock"
-    id="detailStock"
-  ></div>
+    id="detailStock">
+  </div>
 
 
   <div
     class="video-box"
-    id="videoBox"
-  >
+    id="videoBox">
+
 
     <video
       id="productVideo"
       controls
-      playsinline
-    ></video>
+      playsinline>
+    </video>
+
 
   </div>
 
@@ -1743,8 +2306,7 @@ footer p{
   <button
     class="buy-now"
     id="buyNowButton"
-    onclick="showCheckout()"
-  >
+    onclick="showCheckout()">
 
     BUY NOW
 
@@ -1760,12 +2322,13 @@ footer p{
 </section>
 
 
-<!-- ================= CHECKOUT ================= -->
+<!-- =========================================================
+     CHECKOUT
+========================================================= -->
 
 <section
   class="checkout"
-  id="checkoutSection"
->
+  id="checkoutSection">
 
 
 <h2>
@@ -1784,8 +2347,7 @@ footer p{
 
 <form
   class="checkout-form"
-  id="checkoutForm"
->
+  id="checkoutForm">
 
 
 <input
@@ -1807,8 +2369,7 @@ footer p{
 <textarea
   id="customerAddress"
   placeholder="Full Delivery Address"
-  required
-></textarea>
+  required></textarea>
 
 
 <input
@@ -1822,8 +2383,7 @@ footer p{
 
 <button
   type="submit"
-  id="placeOrderButton"
->
+  id="placeOrderButton">
 
   PLACE ORDER
 
@@ -1834,8 +2394,177 @@ footer p{
 
 
 <div
-  id="checkoutMessage"
-></div>
+  id="checkoutMessage">
+</div>
+
+
+</section>
+
+
+<!-- =========================================================
+     REVIEWS
+========================================================= -->
+
+<section class="reviews-section">
+
+
+<div class="reviews-heading">
+
+
+  <div class="reviews-label">
+
+    REAL CUSTOMER FEEDBACK
+
+  </div>
+
+
+  <h2>
+
+    Customer Reviews
+
+  </h2>
+
+
+</div>
+
+
+<div class="rating-summary">
+
+
+  <div
+    class="big-rating"
+    id="averageRating">
+
+    0.0
+
+  </div>
+
+
+  <div>
+
+
+    <div
+      class="stars-display"
+      id="averageStars">
+
+      ☆☆☆☆☆
+
+    </div>
+
+
+    <div
+      class="review-count"
+      id="reviewCount">
+
+      0 Reviews
+
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+<div class="review-form">
+
+
+  <h3>
+
+    Leave a Review
+
+  </h3>
+
+
+  <div
+    class="star-selector"
+    id="starSelector">
+
+
+    <span data-rating="1">
+
+      ★
+
+    </span>
+
+
+    <span data-rating="2">
+
+      ★
+
+    </span>
+
+
+    <span data-rating="3">
+
+      ★
+
+    </span>
+
+
+    <span data-rating="4">
+
+      ★
+
+    </span>
+
+
+    <span data-rating="5">
+
+      ★
+
+    </span>
+
+
+  </div>
+
+
+  <input
+    type="text"
+    id="reviewName"
+    placeholder="Your Name"
+    maxlength="50"
+  >
+
+
+  <textarea
+    id="reviewText"
+    placeholder="Write your review..."
+    maxlength="500"></textarea>
+
+
+  <button
+    class="review-submit"
+    id="reviewSubmit"
+    onclick="submitReview()">
+
+    SUBMIT REVIEW
+
+  </button>
+
+
+  <div
+    id="reviewMessage">
+  </div>
+
+
+</div>
+
+
+<div
+  class="reviews-list"
+  id="reviewsList">
+
+
+  <div class="no-reviews">
+
+    Loading reviews...
+
+  </div>
+
+
+</div>
 
 
 </section>
@@ -1843,6 +2572,10 @@ footer p{
 
 </main>
 
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
@@ -1866,10 +2599,9 @@ footer p{
 
 <script>
 
-
-/* =========================
+/* =========================================================
    API
-========================= */
+========================================================= */
 
 const API_URL =
 "https://script.google.com/macros/s/AKfycbzGkYFgYr2ZBa8bw8K9ca7A4byIPBJpIFv0uay579HTz6u1NHTr0DBr7PQySJsMQcNhcA/exec";
@@ -1879,13 +2611,15 @@ let allProducts = [];
 
 let currentProduct = null;
 
+let selectedRating = 0;
 
-/* =========================
+
+/* =========================================================
    CURSOR
-========================= */
+========================================================= */
 
 const cursor =
-  document.getElementById("cursor");
+document.getElementById("cursor");
 
 
 document.addEventListener(
@@ -1902,9 +2636,9 @@ document.addEventListener(
 );
 
 
-/* =========================
+/* =========================================================
    LOAD PRODUCTS
-========================= */
+========================================================= */
 
 async function loadProducts(){
 
@@ -1944,7 +2678,9 @@ async function loadProducts(){
 
         return String(
           product.status || "active"
-        ).trim().toLowerCase() ===
+        )
+        .trim()
+        .toLowerCase() ===
         "active";
 
       });
@@ -2036,19 +2772,14 @@ async function loadProducts(){
 
           ${
             stock <= 0
-
             ?
-
             `<div class="status-badge">
 
               OUT OF STOCK
 
             </div>`
-
             :
-
             ``
-
           }
 
 
@@ -2063,9 +2794,7 @@ async function loadProducts(){
 
           ${
             image
-
             ?
-
             `<img
               class="product-image"
               src="${escapeHTML(image)}"
@@ -2074,15 +2803,12 @@ async function loadProducts(){
               )}"
               loading="lazy"
             >`
-
             :
-
             `<div class="placeholder">
 
               🛍️
 
             </div>`
-
           }
 
 
@@ -2101,19 +2827,14 @@ async function loadProducts(){
             ${
               referencePrice >
               sellingPrice
-
               ?
-
               `<span class="reference-price">
 
                 ₹${referencePrice}
 
               </span>`
-
               :
-
               ``
-
             }
 
 
@@ -2126,19 +2847,14 @@ async function loadProducts(){
 
             ${
               discount > 0
-
               ?
-
               `<span class="discount-badge">
 
                 ${discount}% OFF
 
               </span>`
-
               :
-
               ``
-
             }
 
 
@@ -2147,19 +2863,14 @@ async function loadProducts(){
 
           ${
             saveAmount > 0
-
             ?
-
             `<div class="save-text">
 
               Save ₹${saveAmount}
 
             </div>`
-
             :
-
             ``
-
           }
 
 
@@ -2173,23 +2884,20 @@ async function loadProducts(){
 
 
           <button
-
             class="view-btn"
-
             onclick="openProduct('${escapeJS(
               product.id
             )}')"
-
             ${stock <= 0
               ? "disabled"
-              : ""}
-
-          >
+              : ""}>
 
             ${
               stock <= 0
-              ? "OUT OF STOCK"
-              : "VIEW PRODUCT"
+              ?
+              "OUT OF STOCK"
+              :
+              "VIEW PRODUCT"
             }
 
           </button>
@@ -2250,9 +2958,9 @@ async function loadProducts(){
 }
 
 
-/* =========================
+/* =========================================================
    OPEN PRODUCT
-========================= */
+========================================================= */
 
 function openProduct(id){
 
@@ -2264,9 +2972,9 @@ function openProduct(id){
 }
 
 
-/* =========================
-   CHECK PRODUCT PAGE
-========================= */
+/* =========================================================
+   CHECK PAGE
+========================================================= */
 
 function checkProductPage(){
 
@@ -2321,9 +3029,9 @@ function checkProductPage(){
 }
 
 
-/* =========================
+/* =========================================================
    LOAD SINGLE PRODUCT
-========================= */
+========================================================= */
 
 async function loadSingleProduct(
   productId
@@ -2416,32 +3124,20 @@ async function loadSingleProduct(
       "₹" + sellingPrice;
 
 
-    const referenceElement =
-      document.getElementById(
-        "detailReference"
-      );
-
-
-    referenceElement.textContent =
+    document.getElementById(
+      "detailReference"
+    ).textContent =
       referencePrice >
       sellingPrice
-
       ?
-
       "₹" + referencePrice
-
       :
-
       "";
 
 
-    const discountElement =
-      document.getElementById(
-        "detailDiscount"
-      );
-
-
-    discountElement.textContent =
+    document.getElementById(
+      "detailDiscount"
+    ).textContent =
       discount > 0
       ?
       discount + "% OFF"
@@ -2449,13 +3145,9 @@ async function loadSingleProduct(
       "";
 
 
-    const saveElement =
-      document.getElementById(
-        "detailSave"
-      );
-
-
-    saveElement.textContent =
+    document.getElementById(
+      "detailSave"
+    ).textContent =
       saveAmount > 0
       ?
       "You save ₹" +
@@ -2507,26 +3199,20 @@ async function loadSingleProduct(
     }
 
 
-    /* =========================
+    /* =====================================================
        IMAGES
-    ========================= */
+    ===================================================== */
 
     const imageList = [
 
       currentProduct.image1,
-
       currentProduct.image2,
-
       currentProduct.image3,
-
       currentProduct.image4,
-
       currentProduct.image5,
-
       currentProduct.image6
 
     ]
-
     .map(function(image){
 
       return String(
@@ -2534,7 +3220,6 @@ async function loadSingleProduct(
       ).trim();
 
     })
-
     .filter(function(image){
 
       return image !== "";
@@ -2603,6 +3288,7 @@ async function loadSingleProduct(
         }
       );
 
+
     }else{
 
       imageBox.innerHTML = `
@@ -2618,9 +3304,9 @@ async function loadSingleProduct(
     }
 
 
-    /* =========================
+    /* =====================================================
        VIDEO
-    ========================= */
+    ===================================================== */
 
     const video =
       String(
@@ -2668,6 +3354,11 @@ async function loadSingleProduct(
       sellingPrice;
 
 
+    /* LOAD PRODUCT REVIEWS */
+
+    loadReviews();
+
+
   }catch(error){
 
     console.error(error);
@@ -2683,13 +3374,11 @@ async function loadSingleProduct(
 }
 
 
-/* =========================
+/* =========================================================
    MAIN IMAGE
-========================= */
+========================================================= */
 
-function setMainImage(
-  image
-){
+function setMainImage(image){
 
   const imageBox =
     document.getElementById(
@@ -2700,23 +3389,18 @@ function setMainImage(
   imageBox.innerHTML = `
 
     <img
-
       src="${escapeHTML(image)}"
-
       class="detail-image"
-
-      alt="BROSHIN Product"
-
-    >
+      alt="BROSHIN Product">
 
   `;
 
 }
 
 
-/* =========================
+/* =========================================================
    BUY NOW
-========================= */
+========================================================= */
 
 function showCheckout(){
 
@@ -2749,9 +3433,9 @@ function showCheckout(){
 }
 
 
-/* =========================
+/* =========================================================
    GO HOME
-========================= */
+========================================================= */
 
 function goHome(){
 
@@ -2761,9 +3445,9 @@ function goHome(){
 }
 
 
-/* =========================
+/* =========================================================
    PLACE ORDER
-========================= */
+========================================================= */
 
 document.getElementById(
   "checkoutForm"
@@ -2827,56 +3511,45 @@ document.getElementById(
 
 
     const total =
-      sellingPrice * quantity;
+      sellingPrice *
+      quantity;
 
-
-    /* =========================
-       ORDER DATA
-    ========================= */
 
     const orderData = {
 
       orderId:
-        "BR" + Date.now(),
-
+        "BR" +
+        Date.now(),
 
       name:
         document.getElementById(
           "customerName"
         ).value.trim(),
 
-
       phone:
         document.getElementById(
           "customerPhone"
         ).value.trim(),
-
 
       address:
         document.getElementById(
           "customerAddress"
         ).value.trim(),
 
-
       productId:
         currentProduct.id,
-
 
       product:
         currentProduct.name,
 
-
       quantity:
         quantity,
-
 
       sellingPrice:
         sellingPrice,
 
-
       total:
         total,
-
 
       costPrice:
         costPrice
@@ -2917,8 +3590,10 @@ document.getElementById(
           mode:"no-cors",
 
           headers:{
+
             "Content-Type":
               "text/plain;charset=utf-8"
+
           },
 
           body:
@@ -2959,9 +3634,9 @@ document.getElementById(
 );
 
 
-/* =========================
+/* =========================================================
    TRACK ORDER
-========================= */
+========================================================= */
 
 async function trackOrder(){
 
@@ -2993,6 +3668,7 @@ async function trackOrder(){
   result.style.display =
     "block";
 
+
   result.innerHTML =
     "🔍 Checking your order...";
 
@@ -3001,11 +3677,13 @@ async function trackOrder(){
 
     const response =
       await fetch(
+
         API_URL +
         "?order=" +
         encodeURIComponent(
           orderId
         )
+
       );
 
 
@@ -3036,7 +3714,8 @@ async function trackOrder(){
       <div class="track-status">
 
         📦 ${escapeHTML(
-          order.status || "Pending"
+          order.status ||
+          "Pending"
         )}
 
       </div>
@@ -3047,7 +3726,8 @@ async function trackOrder(){
         <strong>Order ID:</strong>
 
         ${escapeHTML(
-          order.order_id || orderId
+          order.order_id ||
+          orderId
         )}
 
       </p>
@@ -3058,7 +3738,8 @@ async function trackOrder(){
         <strong>Product:</strong>
 
         ${escapeHTML(
-          order.product || ""
+          order.product ||
+          ""
         )}
 
       </p>
@@ -3069,7 +3750,8 @@ async function trackOrder(){
         <strong>Quantity:</strong>
 
         ${escapeHTML(
-          order.quantity || ""
+          order.quantity ||
+          ""
         )}
 
       </p>
@@ -3080,30 +3762,30 @@ async function trackOrder(){
         <strong>Total:</strong>
 
         ₹${escapeHTML(
-          order.total || "0"
+          order.total ||
+          "0"
         )}
 
       </p>
 
 
-      <p>
+      <div class="tracking-awb">
 
-        <strong>Tracking:</strong>
+        <strong>
+          📦 Tracking / AWB
+        </strong>
 
         ${
           order.tracking_number
           ?
-
           escapeHTML(
             order.tracking_number
           )
-
           :
-
           "Not available yet"
         }
 
-      </p>
+      </div>
 
     `;
 
@@ -3121,13 +3803,565 @@ async function trackOrder(){
 }
 
 
-/* =========================
-   SECURITY
-========================= */
+/* =========================================================
+   REVIEWS — STAR SELECTOR
+========================================================= */
 
-function escapeHTML(
-  value
+document
+.querySelectorAll(
+  "#starSelector span"
+)
+.forEach(function(star){
+
+  star.addEventListener(
+    "click",
+    function(){
+
+      selectedRating =
+        Number(
+          this.dataset.rating
+        );
+
+      updateStars();
+
+    }
+  );
+
+});
+
+
+function updateStars(){
+
+  document
+  .querySelectorAll(
+    "#starSelector span"
+  )
+  .forEach(function(star){
+
+    const rating =
+      Number(
+        star.dataset.rating
+      );
+
+
+    if(
+      rating <= selectedRating
+    ){
+
+      star.classList.add(
+        "active"
+      );
+
+    }else{
+
+      star.classList.remove(
+        "active"
+      );
+
+    }
+
+  });
+
+}
+
+
+/* =========================================================
+   LOAD REVIEWS
+========================================================= */
+
+async function loadReviews(){
+
+  if(!currentProduct){
+
+    return;
+
+  }
+
+
+  const reviewsList =
+    document.getElementById(
+      "reviewsList"
+    );
+
+
+  reviewsList.innerHTML = `
+
+    <div class="no-reviews">
+
+      Loading reviews...
+
+    </div>
+
+  `;
+
+
+  try{
+
+    const response =
+      await fetch(
+
+        API_URL +
+        "?reviews=" +
+        encodeURIComponent(
+          currentProduct.id
+        )
+
+      );
+
+
+    const data =
+      await response.json();
+
+
+    const reviews =
+      Array.isArray(data)
+      ?
+      data
+      :
+      (
+        Array.isArray(
+          data.reviews
+        )
+        ?
+        data.reviews
+        :
+        []
+      );
+
+
+    displayReviews(
+      reviews
+    );
+
+
+  }catch(error){
+
+    console.error(error);
+
+
+    reviewsList.innerHTML = `
+
+      <div class="no-reviews">
+
+        Reviews couldn't load right now.
+
+      </div>
+
+    `;
+
+  }
+
+}
+
+
+/* =========================================================
+   DISPLAY REVIEWS
+========================================================= */
+
+function displayReviews(
+  reviews
 ){
+
+  const list =
+    document.getElementById(
+      "reviewsList"
+    );
+
+
+  const averageElement =
+    document.getElementById(
+      "averageRating"
+    );
+
+
+  const starsElement =
+    document.getElementById(
+      "averageStars"
+    );
+
+
+  const countElement =
+    document.getElementById(
+      "reviewCount"
+    );
+
+
+  if(!reviews.length){
+
+    averageElement.textContent =
+      "0.0";
+
+
+    starsElement.textContent =
+      "☆☆☆☆☆";
+
+
+    countElement.textContent =
+      "0 Reviews";
+
+
+    list.innerHTML = `
+
+      <div class="no-reviews">
+
+        ⭐ Be the first customer to review this product!
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  let totalRating = 0;
+
+
+  reviews.forEach(
+    function(review){
+
+      totalRating +=
+        Number(
+          review.rating
+        ) || 0;
+
+    }
+  );
+
+
+  const average =
+    totalRating /
+    reviews.length;
+
+
+  averageElement.textContent =
+    average.toFixed(1);
+
+
+  starsElement.textContent =
+    getStars(
+      Math.round(
+        average
+      )
+    );
+
+
+  countElement.textContent =
+    reviews.length +
+    (
+      reviews.length === 1
+      ?
+      " Review"
+      :
+      " Reviews"
+    );
+
+
+  list.innerHTML = "";
+
+
+  reviews.forEach(
+    function(review){
+
+      const card =
+        document.createElement(
+          "div"
+        );
+
+
+      card.className =
+        "review-card";
+
+
+      card.innerHTML = `
+
+        <div class="review-top">
+
+          <div>
+
+            <div class="reviewer-name">
+
+              ${escapeHTML(
+                review.name ||
+                "Customer"
+              )}
+
+            </div>
+
+            <div class="review-date">
+
+              ${escapeHTML(
+                review.date ||
+                ""
+              )}
+
+            </div>
+
+          </div>
+
+
+          <div class="review-stars">
+
+            ${getStars(
+              Number(
+                review.rating
+              ) || 0
+            )}
+
+          </div>
+
+        </div>
+
+
+        <div class="review-text">
+
+          ${escapeHTML(
+            review.review ||
+            review.text ||
+            ""
+          )}
+
+        </div>
+
+      `;
+
+
+      list.appendChild(
+        card
+      );
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   STAR DISPLAY
+========================================================= */
+
+function getStars(
+  rating
+){
+
+  rating =
+    Math.max(
+      0,
+      Math.min(
+        5,
+        Number(rating) || 0
+      )
+    );
+
+
+  let stars = "";
+
+
+  for(
+    let i = 1;
+    i <= 5;
+    i++
+  ){
+
+    stars +=
+      i <= rating
+      ?
+      "★"
+      :
+      "☆";
+
+  }
+
+
+  return stars;
+
+}
+
+
+/* =========================================================
+   SUBMIT REVIEW
+========================================================= */
+
+async function submitReview(){
+
+  if(!currentProduct){
+
+    return;
+
+  }
+
+
+  const name =
+    document.getElementById(
+      "reviewName"
+    ).value.trim();
+
+
+  const review =
+    document.getElementById(
+      "reviewText"
+    ).value.trim();
+
+
+  const message =
+    document.getElementById(
+      "reviewMessage"
+    );
+
+
+  const button =
+    document.getElementById(
+      "reviewSubmit"
+    );
+
+
+  if(!name){
+
+    message.textContent =
+      "❌ Please enter your name.";
+
+    return;
+
+  }
+
+
+  if(!selectedRating){
+
+    message.textContent =
+      "❌ Please select a star rating.";
+
+    return;
+
+  }
+
+
+  if(!review){
+
+    message.textContent =
+      "❌ Please write your review.";
+
+    return;
+
+  }
+
+
+  const reviewData = {
+
+    action:
+      "addReview",
+
+    reviewId:
+      "RV" +
+      Date.now(),
+
+    productId:
+      currentProduct.id,
+
+    product:
+      currentProduct.name,
+
+    name:
+      name,
+
+    rating:
+      selectedRating,
+
+    review:
+      review,
+
+    date:
+      new Date()
+      .toLocaleDateString()
+
+  };
+
+
+  message.textContent =
+    "Submitting review...";
+
+
+  button.disabled =
+    true;
+
+
+  try{
+
+    await fetch(
+
+      API_URL,
+
+      {
+
+        method:"POST",
+
+        mode:"no-cors",
+
+        headers:{
+
+          "Content-Type":
+            "text/plain;charset=utf-8"
+
+        },
+
+        body:
+          JSON.stringify(
+            reviewData
+          )
+
+      }
+
+    );
+
+
+    message.textContent =
+      "🎉 Thank you! Your review has been submitted.";
+
+
+    document.getElementById(
+      "reviewName"
+    ).value = "";
+
+
+    document.getElementById(
+      "reviewText"
+    ).value = "";
+
+
+    selectedRating = 0;
+
+
+    updateStars();
+
+
+    setTimeout(
+      loadReviews,
+      1000
+    );
+
+
+  }catch(error){
+
+    console.error(error);
+
+
+    message.textContent =
+      "❌ Review couldn't be submitted. Please try again.";
+
+  }
+
+
+  button.disabled =
+    false;
+
+}
+
+
+/* =========================================================
+   SECURITY
+========================================================= */
+
+function escapeHTML(value){
 
   return String(value)
 
@@ -3159,9 +4393,7 @@ function escapeHTML(
 }
 
 
-function escapeJS(
-  value
-){
+function escapeJS(value){
 
   return String(value)
 
@@ -3183,9 +4415,9 @@ function escapeJS(
 }
 
 
-/* =========================
-   START
-========================= */
+/* =========================================================
+   START WEBSITE
+========================================================= */
 
 checkProductPage();
 
@@ -3195,3 +4427,4 @@ checkProductPage();
 </body>
 
 </html>
+```
