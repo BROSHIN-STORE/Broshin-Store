@@ -657,12 +657,13 @@ body{
   color:var(--muted);
 }
 
+
 /* =========================================================
-   VIDEO SECTION
+   VIDEO SECTION — UPDATED
 ========================================================= */
 
 .video-box{
-  margin-top:30px;
+  margin-top:35px;
   display:none;
 }
 
@@ -677,30 +678,31 @@ body{
 .video-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:15px;
+  gap:18px;
 }
 
 .social-video{
   width:100%;
-  border-radius:20px;
+  border-radius:22px;
   overflow:hidden;
   background:#171717;
-  min-height:240px;
   position:relative;
-}
-
-.social-video iframe{
-  width:100%;
-  height:360px;
-  border:0;
-  display:block;
-  background:#171717;
+  box-shadow:
+    0 18px 45px rgba(23,23,23,.16);
 }
 
 .social-video video{
   width:100%;
   height:360px;
   object-fit:cover;
+  display:block;
+  background:#171717;
+}
+
+.social-video iframe{
+  width:100%;
+  height:360px;
+  border:0;
   display:block;
   background:#171717;
 }
@@ -718,6 +720,34 @@ body{
   font-weight:900;
   letter-spacing:1px;
   pointer-events:none;
+}
+
+.video-sound-hint{
+  position:absolute;
+  right:10px;
+  top:10px;
+  z-index:6;
+  padding:7px 10px;
+  border-radius:20px;
+  background:rgba(0,0,0,.75);
+  color:white;
+  font-size:9px;
+  font-weight:900;
+  pointer-events:none;
+  opacity:0;
+  transition:.3s;
+}
+
+.social-video:hover .video-sound-hint{
+  opacity:1;
+}
+
+.direct-video{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  display:block;
+  background:#171717;
 }
 
 .buy-now{
@@ -1220,8 +1250,9 @@ footer p{
     min-height:540px;
   }
 
+  .social-video video,
   .social-video iframe,
-  .social-video video{
+  .direct-video{
     height:430px;
   }
 
@@ -1481,6 +1512,7 @@ footer p{
     id="detailStock">
   </div>
 
+
   <!-- =====================================================
        VIDEO SYSTEM
   ====================================================== -->
@@ -1499,6 +1531,7 @@ footer p{
     </div>
 
   </div>
+
 
   <button
     class="buy-now"
@@ -2389,7 +2422,7 @@ async function loadSingleProduct(
 
 
     /* =====================================================
-       NEW VIDEO SYSTEM
+       UPDATED VIDEO SYSTEM
     ====================================================== */
 
     loadProductVideos(
@@ -2424,7 +2457,7 @@ async function loadSingleProduct(
 
 
 /* =========================================================
-   VIDEO SYSTEM
+   VIDEO SYSTEM — NEW
 ========================================================= */
 
 function loadProductVideos(product){
@@ -2447,14 +2480,51 @@ function loadProductVideos(product){
 
 
   /*
-     GOOGLE SHEET COLUMNS:
+    GOOGLE SHEET COLUMNS:
 
-     youtube
-     instagram
-     pinterest
+    video1
+    video2
+    video3
+
+    Optional old columns are also supported:
+    youtube
+    youtube_link
+    youtube_url
+    instagram
+    instagram_link
+    instagram_url
+    pinterest
+    pinterest_link
+    pinterest_url
   */
 
-  const youtube =
+
+  const videoLinks = [
+
+    product.video1,
+    product.video2,
+    product.video3
+
+  ]
+  .map(function(video){
+
+    return String(
+      video || ""
+    ).trim();
+
+  })
+  .filter(function(video){
+
+    return video !== "";
+
+  });
+
+
+  /*
+    OLD YOUTUBE COLUMN SUPPORT
+  */
+
+  const oldYoutube =
     String(
       product.youtube ||
       product.youtube_link ||
@@ -2462,7 +2532,23 @@ function loadProductVideos(product){
       ""
     ).trim();
 
-  const instagram =
+  if(
+    oldYoutube &&
+    !videoLinks.includes(oldYoutube)
+  ){
+
+    videoLinks.push(
+      oldYoutube
+    );
+
+  }
+
+
+  /*
+    OLD INSTAGRAM SUPPORT
+  */
+
+  const oldInstagram =
     String(
       product.instagram ||
       product.instagram_link ||
@@ -2470,7 +2556,12 @@ function loadProductVideos(product){
       ""
     ).trim();
 
-  const pinterest =
+
+  /*
+    OLD PINTEREST SUPPORT
+  */
+
+  const oldPinterest =
     String(
       product.pinterest ||
       product.pinterest_link ||
@@ -2484,61 +2575,158 @@ function loadProductVideos(product){
 
 
   /* =====================================================
-     YOUTUBE
+     MAIN VIDEO LINKS
   ====================================================== */
 
-  if(youtube){
+  videoLinks.forEach(
+    function(videoUrl,index){
 
-    const youtubeId =
-      getYouTubeId(
-        youtube
-      );
-
-    if(youtubeId){
-
-      const wrapper =
-        document.createElement(
-          "div"
+      const type =
+        getVideoType(
+          videoUrl
         );
 
-      wrapper.className =
-        "social-video";
 
-      wrapper.innerHTML = `
+      /* ===================================================
+         YOUTUBE
+      =================================================== */
 
-        <div class="video-label">
-          ▶ YOUTUBE
-        </div>
+      if(type === "youtube"){
 
-        <iframe
-          src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1&loop=1&playlist=${youtubeId}&controls=1&rel=0"
-          title="BROSHIN YouTube Product Video"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+        const youtubeId =
+          getYouTubeId(
+            videoUrl
+          );
 
-      `;
+        if(!youtubeId){
 
-      videoGrid.appendChild(
-        wrapper
-      );
+          return;
 
-      videoCount++;
+        }
+
+        const wrapper =
+          document.createElement(
+            "div"
+          );
+
+        wrapper.className =
+          "social-video";
+
+        wrapper.innerHTML = `
+
+          <div class="video-label">
+            ▶ YOUTUBE
+          </div>
+
+          <div class="video-sound-hint">
+            🔊 TAP PLAYER FOR SOUND
+          </div>
+
+          <iframe
+            src="https://www.youtube.com/embed/${escapeHTML(youtubeId)}?autoplay=1&mute=1&loop=1&playlist=${escapeHTML(youtubeId)}&controls=1&rel=0&modestbranding=1"
+            title="BROSHIN Product Video ${index + 1}"
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+            allowfullscreen>
+          </iframe>
+
+        `;
+
+        videoGrid.appendChild(
+          wrapper
+        );
+
+        videoCount++;
+
+        return;
+
+      }
+
+
+      /* ===================================================
+         DIRECT VIDEO
+      =================================================== */
+
+      if(type === "direct"){
+
+        const wrapper =
+          document.createElement(
+            "div"
+          );
+
+        wrapper.className =
+          "social-video";
+
+        wrapper.innerHTML = `
+
+          <div class="video-label">
+            ▶ PRODUCT VIDEO
+          </div>
+
+          <div class="video-sound-hint">
+            🔊 SOUND AVAILABLE
+          </div>
+
+          <video
+            class="direct-video"
+            controls
+            playsinline
+            preload="metadata"
+            muted
+            loop
+          >
+
+            <source
+              src="${escapeHTML(videoUrl)}"
+              type="${getVideoMimeType(videoUrl)}"
+            >
+
+            Your browser does not support video playback.
+
+          </video>
+
+        `;
+
+        videoGrid.appendChild(
+          wrapper
+        );
+
+        videoCount++;
+
+        const videoElement =
+          wrapper.querySelector(
+            "video"
+          );
+
+        /*
+          Autoplay is attempted muted.
+          User can turn sound ON using
+          the native volume control.
+        */
+
+        videoElement.play()
+        .catch(function(){
+
+          /* Browser may block autoplay. */
+
+        });
+
+        return;
+
+      }
 
     }
-
-  }
+  );
 
 
   /* =====================================================
-     INSTAGRAM
+     OLD INSTAGRAM
   ====================================================== */
 
-  if(instagram){
+  if(oldInstagram){
 
     const instagramUrl =
       getInstagramEmbedUrl(
-        instagram
+        oldInstagram
       );
 
     if(instagramUrl){
@@ -2562,7 +2750,7 @@ function loadProductVideos(product){
           title="BROSHIN Instagram Product Video"
           scrolling="no"
           allowtransparency="true"
-          allow="autoplay; encrypted-media; picture-in-picture">
+          allow="autoplay; encrypted-media; picture-in-picture; fullscreen">
         </iframe>
 
       `;
@@ -2579,14 +2767,14 @@ function loadProductVideos(product){
 
 
   /* =====================================================
-     PINTEREST
+     OLD PINTEREST
   ====================================================== */
 
-  if(pinterest){
+  if(oldPinterest){
 
     const pinterestUrl =
       getPinterestEmbedUrl(
-        pinterest
+        oldPinterest
       );
 
     if(pinterestUrl){
@@ -2609,7 +2797,7 @@ function loadProductVideos(product){
           src="${escapeHTML(pinterestUrl)}"
           title="BROSHIN Pinterest Product Video"
           scrolling="no"
-          allow="autoplay; encrypted-media; picture-in-picture">
+          allow="autoplay; encrypted-media; picture-in-picture; fullscreen">
         </iframe>
 
       `;
@@ -2636,6 +2824,136 @@ function loadProductVideos(product){
 
 
 /* =========================================================
+   GET VIDEO TYPE
+========================================================= */
+
+function getVideoType(url){
+
+  const value =
+    String(
+      url || ""
+    )
+    .trim()
+    .toLowerCase();
+
+
+  if(!value){
+
+    return "unknown";
+
+  }
+
+
+  /*
+    YouTube
+  */
+
+  if(
+    value.includes(
+      "youtube.com"
+    ) ||
+    value.includes(
+      "youtu.be"
+    )
+  ){
+
+    return "youtube";
+
+  }
+
+
+  /*
+    Direct video files
+  */
+
+  if(
+    value.includes(".mp4") ||
+    value.includes(".webm") ||
+    value.includes(".ogg") ||
+    value.includes(".mov") ||
+    value.includes(".m4v")
+  ){
+
+    return "direct";
+
+  }
+
+
+  /*
+    If the URL has no obvious extension,
+    check common video hosting patterns.
+  */
+
+  if(
+    value.startsWith("blob:") ||
+    value.startsWith("data:video/")
+  ){
+
+    return "direct";
+
+  }
+
+
+  return "direct";
+
+}
+
+
+/* =========================================================
+   VIDEO MIME TYPE
+========================================================= */
+
+function getVideoMimeType(url){
+
+  const value =
+    String(
+      url || ""
+    )
+    .toLowerCase();
+
+
+  if(
+    value.includes(".webm")
+  ){
+
+    return "video/webm";
+
+  }
+
+
+  if(
+    value.includes(".ogg")
+  ){
+
+    return "video/ogg";
+
+  }
+
+
+  if(
+    value.includes(".mov")
+  ){
+
+    return "video/quicktime";
+
+  }
+
+
+  if(
+    value.includes(".m4v")
+  ){
+
+    return "video/x-m4v";
+
+  }
+
+
+  return "video/mp4";
+
+}
+
+
+/* =========================================================
    GET YOUTUBE ID
 ========================================================= */
 
@@ -2652,6 +2970,7 @@ function getYouTubeId(url){
 
     }
 
+
     /*
       Normal:
 
@@ -2664,7 +2983,12 @@ function getYouTubeId(url){
       Shorts:
 
       https://www.youtube.com/shorts/ABC123
+
+      Embed:
+
+      https://www.youtube.com/embed/ABC123
     */
+
 
     const watchMatch =
       value.match(
@@ -2676,9 +3000,12 @@ function getYouTubeId(url){
       watchMatch[1]
     ){
 
-      return watchMatch[1];
+      return cleanYouTubeId(
+        watchMatch[1]
+      );
 
     }
+
 
     const shortMatch =
       value.match(
@@ -2690,9 +3017,12 @@ function getYouTubeId(url){
       shortMatch[1]
     ){
 
-      return shortMatch[1];
+      return cleanYouTubeId(
+        shortMatch[1]
+      );
 
     }
+
 
     const shortsMatch =
       value.match(
@@ -2704,9 +3034,12 @@ function getYouTubeId(url){
       shortsMatch[1]
     ){
 
-      return shortsMatch[1];
+      return cleanYouTubeId(
+        shortsMatch[1]
+      );
 
     }
+
 
     const embedMatch =
       value.match(
@@ -2718,9 +3051,12 @@ function getYouTubeId(url){
       embedMatch[1]
     ){
 
-      return embedMatch[1];
+      return cleanYouTubeId(
+        embedMatch[1]
+      );
 
     }
+
 
     return "";
 
@@ -2729,6 +3065,23 @@ function getYouTubeId(url){
     return "";
 
   }
+
+}
+
+
+/* =========================================================
+   CLEAN YOUTUBE ID
+========================================================= */
+
+function cleanYouTubeId(value){
+
+  return String(
+    value || ""
+  )
+  .split("?")[0]
+  .split("&")[0]
+  .split("#")[0]
+  .trim();
 
 }
 
@@ -2751,16 +3104,6 @@ function getInstagramEmbedUrl(url){
       return "";
 
     }
-
-    /*
-      Convert:
-
-      https://www.instagram.com/reel/ABC123/
-
-      to:
-
-      https://www.instagram.com/reel/ABC123/embed/
-    */
 
     value =
       value.split("?")[0];
@@ -2830,13 +3173,6 @@ function getPinterestEmbedUrl(url){
 
     }
 
-    /*
-      Pinterest uses its embed endpoint.
-
-      The original pin URL is passed
-      into the Pinterest embed page.
-    */
-
     if(
       !value.includes(
         "pinterest."
@@ -2847,9 +3183,20 @@ function getPinterestEmbedUrl(url){
 
     }
 
+    const pinId =
+      getPinterestPinId(
+        value
+      );
+
+    if(!pinId){
+
+      return "";
+
+    }
+
     return (
       "https://www.pinterest.com/pin/" +
-      getPinterestPinId(value) +
+      pinId +
       "/"
     );
 
