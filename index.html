@@ -1,8 +1,9 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta name="theme-color" content="#171717">
 <meta name="description" content="BROSHIN — Discover trending products, smart finds and everyday essentials.">
 <title>BROSHIN — Discover. Shop. Enjoy.</title>
@@ -34,17 +35,26 @@
 
 html{
   scroll-behavior:smooth;
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
 }
 
 body{
+  width:100%;
+  max-width:100%;
+  min-height:100vh;
+  margin:0;
+  padding:0;
   font-family:Arial,Helvetica,sans-serif;
   color:var(--text);
   overflow-x:hidden;
-  min-height:100vh;
+
   background:
     radial-gradient(circle at 5% 10%,rgba(216,183,174,.55),transparent 28%),
     radial-gradient(circle at 95% 5%,rgba(212,175,55,.16),transparent 30%),
     linear-gradient(125deg,var(--ivory),var(--cream),#fffaf4,var(--rose2),var(--ivory));
+
   background-size:400% 400%;
   animation:bgMove 18s ease infinite;
 }
@@ -56,7 +66,8 @@ body{
 
 button,
 input,
-textarea{
+textarea,
+select{
   font:inherit;
 }
 
@@ -156,6 +167,7 @@ a{
 ========================================================= */
 
 .topbar{
+  width:100%;
   min-height:38px;
   display:flex;
   align-items:center;
@@ -166,6 +178,7 @@ a{
   font-weight:900;
   letter-spacing:3px;
   text-align:center;
+  line-height:1.4;
   background:linear-gradient(90deg,#171717,#51453b,#171717);
   background-size:200% 100%;
   animation:barMove 6s linear infinite;
@@ -202,6 +215,7 @@ a{
   font-size:30px;
   font-weight:1000;
   letter-spacing:7px;
+  white-space:nowrap;
 }
 
 .logo span{
@@ -242,6 +256,8 @@ a{
 }
 
 .page{
+  width:100%;
+  max-width:100%;
   position:relative;
   z-index:2;
 }
@@ -422,8 +438,14 @@ a{
 }
 
 /* =========================================================
-   PRODUCT SEARCH / FILTER
+   PRODUCTS
 ========================================================= */
+
+.trending{
+  width:92%;
+  max-width:1250px;
+  margin:70px auto 110px;
+}
 
 .product-tools{
   margin-bottom:35px;
@@ -478,16 +500,6 @@ a{
   font-weight:900;
 }
 
-/* =========================================================
-   TRENDING
-========================================================= */
-
-.trending{
-  width:92%;
-  max-width:1250px;
-  margin:70px auto 110px;
-}
-
 .cards{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -495,6 +507,7 @@ a{
 }
 
 .card{
+  min-width:0;
   min-height:430px;
   padding:22px;
   border-radius:32px;
@@ -547,6 +560,7 @@ a{
 .card h3{
   font-size:19px;
   margin:10px 0;
+  overflow-wrap:anywhere;
 }
 
 .card p{
@@ -649,6 +663,8 @@ a{
 
 #productPage{
   display:none;
+  width:100%;
+  max-width:100%;
 }
 
 .product-wrap{
@@ -668,6 +684,8 @@ a{
 }
 
 .product-detail{
+  width:100%;
+  min-width:0;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:55px;
@@ -680,7 +698,12 @@ a{
   box-shadow:0 30px 80px rgba(23,23,23,.10);
 }
 
+.product-detail > div{
+  min-width:0;
+}
+
 .detail-image-box{
+  width:100%;
   min-height:450px;
   display:flex;
   align-items:center;
@@ -693,6 +716,7 @@ a{
 
 .detail-image{
   width:100%;
+  max-width:100%;
   height:450px;
   object-fit:contain;
   transition:transform .35s;
@@ -707,11 +731,15 @@ a{
 }
 
 .image-gallery{
+  width:100%;
+  max-width:100%;
   display:flex;
   gap:10px;
   margin-top:15px;
   overflow-x:auto;
-  padding-bottom:5px;
+  overflow-y:hidden;
+  padding:3px 2px 8px;
+  scrollbar-width:thin;
 }
 
 .thumb{
@@ -732,12 +760,18 @@ a{
   transform:translateY(-2px);
 }
 
+.detail-info{
+  min-width:0;
+}
+
 .detail-info h1{
   margin-top:18px;
   font-size:clamp(42px,6vw,75px);
   line-height:.95;
   font-weight:1000;
   letter-spacing:-3px;
+  overflow-wrap:anywhere;
+  word-break:normal;
 }
 
 .detail-price-box{
@@ -779,30 +813,17 @@ a{
   line-height:1.9;
   font-size:15px;
   white-space:pre-line;
-}
-
-.stock{
-  margin-top:20px;
-  font-size:12px;
-  font-weight:900;
-  color:var(--muted);
-}
-
-.stock.available{
-  color:var(--green);
-}
-
-.stock.empty{
-  color:var(--red);
+  overflow-wrap:anywhere;
 }
 
 /* =========================================================
-   VIDEO SECTION
+   VIDEO
 ========================================================= */
 
 .video-box{
   margin-top:35px;
   display:none;
+  width:100%;
 }
 
 .video-title{
@@ -814,6 +835,7 @@ a{
 }
 
 .video-grid{
+  width:100%;
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:15px;
@@ -821,6 +843,7 @@ a{
 
 .social-video{
   width:100%;
+  min-width:0;
   border-radius:20px;
   overflow:hidden;
   background:#171717;
@@ -858,13 +881,6 @@ a{
   font-weight:900;
   letter-spacing:1px;
   pointer-events:none;
-}
-
-.video-error{
-  padding:20px;
-  color:#fff;
-  text-align:center;
-  font-size:12px;
 }
 
 /* =========================================================
@@ -931,6 +947,11 @@ a{
   font-size:13px;
 }
 
+.summary-row strong{
+  text-align:right;
+  overflow-wrap:anywhere;
+}
+
 .summary-total{
   margin-top:8px;
   padding-top:12px;
@@ -954,6 +975,7 @@ a{
 .checkout-form input,
 .checkout-form textarea{
   width:100%;
+  max-width:100%;
   padding:15px;
   border:1px solid rgba(23,23,23,.12);
   border-radius:16px;
@@ -994,6 +1016,7 @@ a{
   font-weight:900;
   margin-top:18px;
   line-height:1.6;
+  overflow-wrap:anywhere;
 }
 
 /* =========================================================
@@ -1023,6 +1046,7 @@ a{
 
 .track-input{
   width:100%;
+  max-width:100%;
   padding:16px;
   border:1px solid rgba(23,23,23,.15);
   border-radius:50px;
@@ -1048,6 +1072,7 @@ a{
   background:rgba(248,244,236,.8);
   text-align:left;
   display:none;
+  overflow-wrap:anywhere;
 }
 
 .track-status{
@@ -1062,6 +1087,7 @@ a{
   padding:15px;
   border-radius:15px;
   background:rgba(255,255,255,.8);
+  overflow-wrap:anywhere;
 }
 
 .tracking-awb strong{
@@ -1164,6 +1190,7 @@ a{
 .review-form input,
 .review-form textarea{
   width:100%;
+  max-width:100%;
   padding:14px 16px;
   margin-bottom:12px;
   border:1px solid rgba(23,23,23,.12);
@@ -1261,6 +1288,7 @@ a{
   margin-top:12px;
   font-size:13px;
   font-weight:900;
+  overflow-wrap:anywhere;
 }
 
 .reviews-list{
@@ -1270,6 +1298,7 @@ a{
 }
 
 .review-card{
+  min-width:0;
   padding:22px;
   border-radius:22px;
   background:rgba(255,255,255,.72);
@@ -1286,12 +1315,14 @@ a{
 
 .reviewer-name{
   font-weight:1000;
+  overflow-wrap:anywhere;
 }
 
 .review-stars{
   color:#d4af37;
   letter-spacing:2px;
   font-size:15px;
+  white-space:nowrap;
 }
 
 .review-date{
@@ -1305,6 +1336,7 @@ a{
   line-height:1.7;
   font-size:14px;
   white-space:pre-line;
+  overflow-wrap:anywhere;
 }
 
 .review-photo{
@@ -1316,10 +1348,6 @@ a{
   display:block;
   cursor:pointer;
   transition:.3s;
-}
-
-.review-photo:hover{
-  transform:scale(1.01);
 }
 
 .no-reviews{
@@ -1352,6 +1380,7 @@ a{
   box-shadow:0 20px 50px rgba(0,0,0,.2);
   font-size:13px;
   font-weight:700;
+  overflow-wrap:anywhere;
   animation:toastIn .3s ease;
 }
 
@@ -1456,10 +1485,11 @@ footer p{
 }
 
 /* =========================================================
-   RESPONSIVE
+   TABLET
 ========================================================= */
 
 @media(max-width:1050px){
+
   .cards{
     grid-template-columns:repeat(3,1fr);
   }
@@ -1469,7 +1499,12 @@ footer p{
   }
 }
 
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
 @media(max-width:900px){
+
   .cards{
     grid-template-columns:repeat(2,1fr);
   }
@@ -1487,15 +1522,46 @@ footer p{
   }
 }
 
+/* =========================================================
+   MOBILE — FULL FIX
+========================================================= */
+
 @media(max-width:600px){
+
+  html,
+  body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+  }
+
   .topbar{
+    width:100%;
+    min-height:42px;
+    padding:8px 12px;
     font-size:8px;
     letter-spacing:1.5px;
+    line-height:1.35;
+  }
+
+  /* IMPORTANT MOBILE WIDTH FIX */
+
+  .nav,
+  .hero,
+  .trending,
+  .product-wrap,
+  .checkout,
+  .track-box,
+  .reviews-section,
+  footer{
+    width:calc(100% - 24px);
+    max-width:none;
   }
 
   .nav{
     margin:12px auto;
     padding:13px 16px;
+    border-radius:22px;
   }
 
   .logo{
@@ -1503,31 +1569,9 @@ footer p{
     letter-spacing:4px;
   }
 
-  .cards{
-    grid-template-columns:1fr;
-  }
-
-  .product-detail{
-    padding:25px;
-    gap:30px;
-  }
-
-  .detail-image-box{
-    min-height:330px;
-  }
-
-  .detail-image{
-    height:330px;
-  }
-
-  .checkout,
-  .track-box,
-  .reviews-section{
-    padding:25px;
-  }
-
-  .reviews-list{
-    grid-template-columns:1fr;
+  .nav-home{
+    padding:10px 15px;
+    font-size:10px;
   }
 
   .hero{
@@ -1536,56 +1580,360 @@ footer p{
 
   .hero h1{
     font-size:clamp(55px,17vw,100px);
+    letter-spacing:5px;
   }
 
   .hero-description{
     font-size:15px;
+    line-height:1.65;
+    padding:0 8px;
   }
 
-  .video-grid{
-    grid-template-columns:1fr;
+  .hero-button{
+    margin-top:20px;
+    padding:14px 22px;
+    font-size:10px;
   }
 
-  .social-video iframe,
-  .social-video video{
-    height:430px;
+  .small-title{
+    font-size:8px;
+    letter-spacing:2.5px;
+    padding:8px 13px;
+  }
+
+  .orb.one{
+    width:260px;
+    height:260px;
+  }
+
+  .orb.two{
+    width:250px;
+    height:250px;
+  }
+
+  .trending{
+    margin:45px auto 70px;
+  }
+
+  .heading{
+    margin-bottom:30px;
+  }
+
+  .heading-label{
+    font-size:8px;
+    letter-spacing:2px;
+  }
+
+  .heading h2{
+    font-size:55px;
+    letter-spacing:-3px;
+  }
+
+  .heading p{
+    font-size:13px;
+    padding:0 12px;
   }
 
   .product-tools{
+    padding:13px;
+    margin-bottom:25px;
+    border-radius:20px;
     flex-direction:column;
     align-items:stretch;
   }
 
+  .search-box{
+    width:100%;
+    flex:1 1 auto;
+  }
+
+  .search-box input{
+    width:100%;
+    font-size:14px;
+  }
+
   .filter-select{
     width:100%;
+    min-width:0;
   }
 
   .product-count{
     text-align:center;
   }
 
-  .cursor{
-    display:none;
+  .cards{
+    grid-template-columns:1fr;
+    gap:18px;
   }
 
+  .card{
+    width:100%;
+    min-height:0;
+    padding:18px;
+    border-radius:25px;
+  }
+
+  .product-image,
+  .placeholder{
+    height:230px;
+  }
+
+  .card h3{
+    font-size:20px;
+  }
+
+  /* PRODUCT PAGE */
+
+  .product-wrap{
+    margin:40px auto 55px;
+  }
+
+  .back-btn{
+    margin-bottom:20px;
+    font-size:12px;
+  }
+
+  .product-detail{
+    width:100%;
+    max-width:100%;
+    display:block;
+    padding:15px;
+    border-radius:28px;
+  }
+
+  .detail-image-box{
+    width:100%;
+    max-width:100%;
+    min-height:0;
+    height:auto;
+    aspect-ratio:1 / 1;
+    border-radius:24px;
+  }
+
+  .detail-image{
+    width:100%;
+    max-width:100%;
+    height:100%;
+    object-fit:contain;
+  }
+
+  .detail-placeholder{
+    font-size:90px;
+  }
+
+  .image-gallery{
+    width:100%;
+    max-width:100%;
+    gap:8px;
+    margin-top:12px;
+    padding-bottom:6px;
+  }
+
+  .thumb{
+    flex:0 0 58px;
+    width:58px;
+    height:58px;
+    border-radius:10px;
+  }
+
+  .detail-info{
+    width:100%;
+    max-width:100%;
+    padding:0 5px 8px;
+  }
+
+  .detail-info .small-title{
+    margin-top:25px;
+  }
+
+  .detail-info h1{
+    margin-top:16px;
+    font-size:clamp(37px,11vw,58px);
+    line-height:.93;
+    letter-spacing:-2.5px;
+  }
+
+  .detail-price-box{
+    margin:22px 0;
+  }
+
+  .detail-reference{
+    font-size:16px;
+  }
+
+  .detail-price{
+    font-size:34px;
+  }
+
+  .detail-description{
+    font-size:14px;
+    line-height:1.75;
+  }
+
+  .stock{
+    font-size:11px;
+    line-height:1.5;
+  }
+
+  .buy-now{
+    margin-top:25px;
+    padding:17px;
+  }
+
+  /* VIDEOS */
+
+  .video-box{
+    width:100%;
+    max-width:100%;
+    margin-top:30px;
+  }
+
+  .video-grid{
+    width:100%;
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .social-video{
+    width:100%;
+    min-height:0;
+    border-radius:18px;
+  }
+
+  .social-video iframe,
+  .social-video video{
+    width:100%;
+    height:430px;
+  }
+
+  /* CHECKOUT */
+
+  .checkout{
+    margin-bottom:60px;
+    padding:22px 17px;
+    border-radius:26px;
+  }
+
+  .checkout h2{
+    font-size:32px;
+  }
+
+  .checkout-form input,
+  .checkout-form textarea{
+    font-size:14px;
+  }
+
+  .summary-row{
+    font-size:12px;
+  }
+
+  /* TRACKING */
+
+  .track-box{
+    margin-bottom:65px;
+    padding:24px 17px;
+    border-radius:26px;
+  }
+
+  .track-box h2{
+    font-size:30px;
+  }
+
+  /* REVIEWS */
+
+  .reviews-section{
+    padding:24px 17px;
+    border-radius:28px;
+    margin-bottom:65px;
+  }
+
+  .reviews-heading h2{
+    font-size:38px;
+  }
+
+  .reviews-list{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .review-form{
+    padding:18px;
+  }
+
+  .review-card{
+    padding:18px;
+  }
+
+  .review-top{
+    flex-direction:column;
+  }
+
+  /* TOAST */
+
   .toast-container{
-    left:15px;
-    right:15px;
-    bottom:15px;
+    left:12px;
+    right:12px;
+    bottom:12px;
   }
 
   .toast{
     max-width:none;
+  }
+
+  /* CURSOR */
+
+  .cursor{
+    display:none;
+  }
+
+  /* FOOTER */
+
+  footer{
+    padding:30px 0 25px;
+  }
+
+  .footer-logo{
+    font-size:23px;
+    letter-spacing:4px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media(max-width:380px){
+
+  .logo{
+    font-size:19px;
+    letter-spacing:3px;
+  }
+
+  .nav{
+    padding:12px;
+  }
+
+  .nav-home{
+    padding:9px 13px;
+  }
+
+  .detail-info h1{
+    font-size:36px;
+  }
+
+  .detail-price{
+    font-size:30px;
+  }
+
+  .social-video iframe,
+  .social-video video{
+    height:380px;
   }
 }
 </style>
 </head>
 
 <body>
-
-<!-- =========================================================
-     LOADER
-========================================================= -->
 
 <div class="page-loader" id="pageLoader">
   <div class="loader-inner">
@@ -1666,10 +2014,6 @@ footer p{
 </section>
 
 
-<!-- =========================================================
-     PRODUCTS
-========================================================= -->
-
 <section class="trending" id="trending">
 
   <div class="heading">
@@ -1687,7 +2031,6 @@ footer p{
 
   </div>
 
-
   <div class="product-tools">
 
     <div class="search-box">
@@ -1704,7 +2047,6 @@ footer p{
 
     </div>
 
-
     <select
       class="filter-select"
       id="categoryFilter">
@@ -1715,7 +2057,6 @@ footer p{
 
     </select>
 
-
     <div
       class="product-count"
       id="productCount">
@@ -1725,7 +2066,6 @@ footer p{
     </div>
 
   </div>
-
 
   <div
     class="cards"
@@ -1751,10 +2091,6 @@ footer p{
 
 </section>
 
-
-<!-- =========================================================
-     TRACK ORDER
-========================================================= -->
 
 <section
   class="track-box"
@@ -1811,10 +2147,7 @@ footer p{
 
 </button>
 
-
 <div class="product-detail">
-
-  <!-- PRODUCT IMAGES -->
 
   <div>
 
@@ -1828,7 +2161,6 @@ footer p{
 
     </div>
 
-
     <div
       class="image-gallery"
       id="imageGallery">
@@ -1836,8 +2168,6 @@ footer p{
 
   </div>
 
-
-  <!-- PRODUCT INFO -->
 
   <div class="detail-info">
 
@@ -1849,7 +2179,6 @@ footer p{
       Loading...
     </h1>
 
-
     <div class="detail-price-box">
 
       <div
@@ -1860,9 +2189,7 @@ footer p{
       <div
         class="detail-price"
         id="detailPrice">
-
         ₹0
-
       </div>
 
       <div
@@ -1877,22 +2204,15 @@ footer p{
 
     </div>
 
-
     <p
       class="detail-description"
       id="detailDescription">
     </p>
 
-
     <div
       class="stock"
       id="detailStock">
     </div>
-
-
-    <!-- =====================================================
-         VIDEO SYSTEM
-    ====================================================== -->
 
     <div
       class="video-box"
@@ -1908,7 +2228,6 @@ footer p{
       </div>
 
     </div>
-
 
     <button
       class="buy-now"
@@ -1940,60 +2259,28 @@ footer p{
     Complete your order below.
   </p>
 
-
   <div
     class="order-summary"
     id="orderSummary">
 
     <div class="summary-row">
-
-      <span>
-        Product
-      </span>
-
-      <strong id="summaryProduct">
-        -
-      </strong>
-
+      <span>Product</span>
+      <strong id="summaryProduct">-</strong>
     </div>
-
 
     <div class="summary-row">
-
-      <span>
-        Price
-      </span>
-
-      <strong id="summaryPrice">
-        ₹0
-      </strong>
-
+      <span>Price</span>
+      <strong id="summaryPrice">₹0</strong>
     </div>
-
 
     <div class="summary-row">
-
-      <span>
-        Quantity
-      </span>
-
-      <strong id="summaryQuantity">
-        1
-      </strong>
-
+      <span>Quantity</span>
+      <strong id="summaryQuantity">1</strong>
     </div>
-
 
     <div class="summary-row summary-total">
-
-      <span>
-        Total
-      </span>
-
-      <strong id="summaryTotal">
-        ₹0
-      </strong>
-
+      <span>Total</span>
+      <strong id="summaryTotal">₹0</strong>
     </div>
 
   </div>
@@ -2014,7 +2301,6 @@ footer p{
       maxlength="100"
       required>
 
-
     <label for="customerPhone">
       PHONE NUMBER
     </label>
@@ -2026,7 +2312,6 @@ footer p{
       maxlength="20"
       required>
 
-
     <label for="customerAddress">
       DELIVERY ADDRESS
     </label>
@@ -2036,7 +2321,6 @@ footer p{
       placeholder="Full Delivery Address"
       maxlength="1000"
       required></textarea>
-
 
     <label for="customerQuantity">
       QUANTITY
@@ -2049,7 +2333,6 @@ footer p{
       value="1"
       required>
 
-
     <button
       type="submit"
       id="placeOrderButton">
@@ -2060,10 +2343,7 @@ footer p{
 
   </form>
 
-
-  <div
-    id="checkoutMessage">
-  </div>
+  <div id="checkoutMessage"></div>
 
 </section>
 
@@ -2086,15 +2366,12 @@ footer p{
 
   </div>
 
-
   <div class="rating-summary">
 
     <div
       class="big-rating"
       id="averageRating">
-
       0.0
-
     </div>
 
     <div>
@@ -2102,17 +2379,13 @@ footer p{
       <div
         class="stars-display"
         id="averageStars">
-
         ☆☆☆☆☆
-
       </div>
 
       <div
         class="review-count"
         id="reviewCount">
-
         0 Reviews
-
       </div>
 
     </div>
@@ -2126,7 +2399,6 @@ footer p{
       Leave a Review
     </h3>
 
-
     <div
       class="star-selector"
       id="starSelector">
@@ -2139,24 +2411,20 @@ footer p{
 
     </div>
 
-
     <input
       type="text"
       id="reviewName"
       placeholder="Your Name"
       maxlength="50">
 
-
     <textarea
       id="reviewText"
       placeholder="Write your review..."
       maxlength="500"></textarea>
 
-
     <label class="photo-label">
       📸 Add a photo of your product
     </label>
-
 
     <label
       class="photo-upload"
@@ -2166,12 +2434,10 @@ footer p{
 
     </label>
 
-
     <input
       type="file"
       id="reviewPhoto"
       accept="image/jpeg,image/png,image/webp">
-
 
     <div
       class="photo-preview"
@@ -2193,7 +2459,6 @@ footer p{
 
     </div>
 
-
     <button
       type="button"
       class="review-submit"
@@ -2203,7 +2468,6 @@ footer p{
       SUBMIT REVIEW
 
     </button>
-
 
     <div
       id="reviewMessage">
@@ -2299,32 +2563,16 @@ footer p{
 
 <script>
 
-/* =========================================================
-   BROSHIN CONFIG
-========================================================= */
-
 const API_URL =
 "https://script.google.com/macros/s/AKfycbxbudEvfIdlKCs0bic5qrCCYuS8RRKTjByT6DjrgJB3MIMVWWaC1DLxI1zEH0crirD0YQ/exec";
 
-
-/* =========================================================
-   GLOBAL VARIABLES
-========================================================= */
-
 let allProducts = [];
-
 let visibleProducts = [];
-
 let currentProduct = null;
-
 let selectedRating = 0;
-
 let selectedPhotoData = "";
-
 let selectedPhotoName = "";
-
 let selectedPhotoMimeType = "";
-
 let productsLoaded = false;
 
 
@@ -2332,50 +2580,37 @@ let productsLoaded = false;
    DOM READY
 ========================================================= */
 
-document.addEventListener(
-  "DOMContentLoaded",
-  function(){
+document.addEventListener("DOMContentLoaded",function(){
 
-    setupCursor();
+  setupCursor();
+  setupSearch();
+  setupReviewStars();
+  setupPhotoUpload();
+  setupQuantity();
+  setupCheckout();
+  checkProductPage();
 
-    setupSearch();
-
-    setupReviewStars();
-
-    setupPhotoUpload();
-
-    setupQuantity();
-
-    setupCheckout();
-
-    checkProductPage();
-
-  }
-);
+});
 
 
 /* =========================================================
-   WINDOW LOAD
+   LOADER
 ========================================================= */
 
-window.addEventListener(
-  "load",
-  function(){
+window.addEventListener("load",function(){
 
-    setTimeout(
-      function(){
+  setTimeout(function(){
 
-        document
-          .getElementById("pageLoader")
-          .classList
-          .add("hidden");
+    const loader =
+      document.getElementById("pageLoader");
 
-      },
-      500
-    );
+    if(loader){
+      loader.classList.add("hidden");
+    }
 
-  }
-);
+  },500);
+
+});
 
 
 /* =========================================================
@@ -2387,22 +2622,17 @@ function setupCursor(){
   const cursor =
     document.getElementById("cursor");
 
-  if(!cursor){
-    return;
-  }
+  if(!cursor) return;
 
-  document.addEventListener(
-    "mousemove",
-    function(e){
+  document.addEventListener("mousemove",function(e){
 
-      cursor.style.left =
-        e.clientX + "px";
+    cursor.style.left =
+      e.clientX + "px";
 
-      cursor.style.top =
-        e.clientY + "px";
+    cursor.style.top =
+      e.clientY + "px";
 
-    }
-  );
+  });
 
 }
 
@@ -2414,31 +2644,17 @@ function setupCursor(){
 function setupSearch(){
 
   const search =
-    document.getElementById(
-      "productSearch"
-    );
+    document.getElementById("productSearch");
 
   const category =
-    document.getElementById(
-      "categoryFilter"
-    );
+    document.getElementById("categoryFilter");
 
   if(search){
-
-    search.addEventListener(
-      "input",
-      filterProducts
-    );
-
+    search.addEventListener("input",filterProducts);
   }
 
   if(category){
-
-    category.addEventListener(
-      "change",
-      filterProducts
-    );
-
+    category.addEventListener("change",filterProducts);
   }
 
 }
@@ -2451,13 +2667,9 @@ function setupSearch(){
 function setupQuantity(){
 
   const quantity =
-    document.getElementById(
-      "customerQuantity"
-    );
+    document.getElementById("customerQuantity");
 
-  if(!quantity){
-    return;
-  }
+  if(!quantity) return;
 
   quantity.addEventListener(
     "input",
@@ -2474,46 +2686,33 @@ function setupQuantity(){
 function setupReviewStars(){
 
   document
-    .querySelectorAll(
-      "#starSelector span"
-    )
-    .forEach(
-      function(star){
+    .querySelectorAll("#starSelector span")
+    .forEach(function(star){
 
-        star.addEventListener(
-          "click",
-          function(){
+      star.addEventListener("click",function(){
 
-            selectedRating =
-              Number(
-                this.dataset.rating
-              );
+        selectedRating =
+          Number(this.dataset.rating);
 
-            updateStars();
+        updateStars();
 
-          }
-        );
+      });
 
-      }
-    );
+    });
 
 }
 
 
 /* =========================================================
-   PHOTO UPLOAD
+   PHOTO
 ========================================================= */
 
 function setupPhotoUpload(){
 
   const input =
-    document.getElementById(
-      "reviewPhoto"
-    );
+    document.getElementById("reviewPhoto");
 
-  if(!input){
-    return;
-  }
+  if(!input) return;
 
   input.addEventListener(
     "change",
@@ -2530,13 +2729,9 @@ function setupPhotoUpload(){
 function setupCheckout(){
 
   const form =
-    document.getElementById(
-      "checkoutForm"
-    );
+    document.getElementById("checkoutForm");
 
-  if(!form){
-    return;
-  }
+  if(!form) return;
 
   form.addEventListener(
     "submit",
@@ -2553,13 +2748,9 @@ function setupCheckout(){
 async function loadProducts(){
 
   const productCards =
-    document.getElementById(
-      "productCards"
-    );
+    document.getElementById("productCards");
 
-  if(!productCards){
-    return;
-  }
+  if(!productCards) return;
 
   productCards.innerHTML = `
     <div class="card">
@@ -2581,41 +2772,29 @@ async function loadProducts(){
       );
 
     if(!response.ok){
-      throw new Error(
-        "API request failed"
-      );
+      throw new Error("API request failed");
     }
 
     const data =
       await response.json();
 
     if(!Array.isArray(data)){
-      throw new Error(
-        "Invalid products response"
-      );
+      throw new Error("Invalid products response");
     }
 
-    allProducts =
-      data;
-
-    productsLoaded =
-      true;
+    allProducts = data;
+    productsLoaded = true;
 
     buildCategoryFilter();
 
     visibleProducts =
       getActiveProducts();
 
-    renderProducts(
-      visibleProducts
-    );
+    renderProducts(visibleProducts);
 
   }catch(error){
 
-    console.error(
-      "Products error:",
-      error
-    );
+    console.error("Products error:",error);
 
     productCards.innerHTML = `
       <div class="card">
@@ -2646,111 +2825,81 @@ async function loadProducts(){
 
 function getActiveProducts(){
 
-  return allProducts.filter(
-    function(product){
+  return allProducts.filter(function(product){
 
-      return String(
-        product.status || "active"
-      )
-      .trim()
-      .toLowerCase() ===
-      "active";
+    return String(
+      product.status || "active"
+    )
+    .trim()
+    .toLowerCase() === "active";
 
-    }
-  );
+  });
 
 }
 
 
 /* =========================================================
-   CATEGORY FILTER
+   CATEGORY
 ========================================================= */
 
 function buildCategoryFilter(){
 
   const select =
-    document.getElementById(
-      "categoryFilter"
-    );
+    document.getElementById("categoryFilter");
 
-  if(!select){
-    return;
-  }
+  if(!select) return;
 
-  const categories =
-    [];
+  const categories = [];
 
-  getActiveProducts()
-    .forEach(
-      function(product){
+  getActiveProducts().forEach(function(product){
 
-        const category =
-          String(
-            product.category || "General"
-          ).trim();
+    const category =
+      String(
+        product.category || "General"
+      ).trim();
 
-        if(
-          category &&
-          !categories.includes(category)
-        ){
-
-          categories.push(category);
-
-        }
-
-      }
-    );
-
-  categories.sort(
-    function(a,b){
-      return a.localeCompare(b);
+    if(
+      category &&
+      !categories.includes(category)
+    ){
+      categories.push(category);
     }
-  );
+
+  });
+
+  categories.sort(function(a,b){
+    return a.localeCompare(b);
+  });
 
   select.innerHTML =
-    `<option value="all">
-      All Categories
-    </option>`;
+    `<option value="all">All Categories</option>`;
 
-  categories.forEach(
-    function(category){
+  categories.forEach(function(category){
 
-      const option =
-        document.createElement(
-          "option"
-        );
+    const option =
+      document.createElement("option");
 
-      option.value =
-        category;
+    option.value = category;
+    option.textContent = category;
 
-      option.textContent =
-        category;
+    select.appendChild(option);
 
-      select.appendChild(
-        option
-      );
-
-    }
-  );
+  });
 
 }
 
 
 /* =========================================================
-   FILTER PRODUCTS
+   FILTER
 ========================================================= */
 
 function filterProducts(){
 
   const searchInput =
-    document.getElementById(
-      "productSearch"
-    );
+    document.getElementById("productSearch");
 
   const categorySelect =
-    document.getElementById(
-      "categoryFilter"
-    );
+    document.getElementById("categoryFilter");
 
   const search =
     String(
@@ -2766,52 +2915,41 @@ function filterProducts(){
       ? categorySelect.value
       : "all";
 
-
   visibleProducts =
-    getActiveProducts()
-      .filter(
-        function(product){
+    getActiveProducts().filter(function(product){
 
-          const name =
-            String(
-              product.name || ""
-            ).toLowerCase();
+      const name =
+        String(
+          product.name || ""
+        ).toLowerCase();
 
-          const description =
-            String(
-              product.description || ""
-            ).toLowerCase();
+      const description =
+        String(
+          product.description || ""
+        ).toLowerCase();
 
-          const productCategory =
-            String(
-              product.category ||
-              "General"
-            ).trim();
+      const productCategory =
+        String(
+          product.category || "General"
+        ).trim();
 
+      const matchesSearch =
+        !search ||
+        name.includes(search) ||
+        description.includes(search);
 
-          const matchesSearch =
-            !search ||
-            name.includes(search) ||
-            description.includes(search);
+      const matchesCategory =
+        category === "all" ||
+        productCategory === category;
 
-
-          const matchesCategory =
-            category === "all" ||
-            productCategory === category;
-
-
-          return (
-            matchesSearch &&
-            matchesCategory
-          );
-
-        }
+      return (
+        matchesSearch &&
+        matchesCategory
       );
 
+    });
 
-  renderProducts(
-    visibleProducts
-  );
+  renderProducts(visibleProducts);
 
 }
 
@@ -2820,26 +2958,16 @@ function filterProducts(){
    RENDER PRODUCTS
 ========================================================= */
 
-function renderProducts(
-  products
-){
+function renderProducts(products){
 
   const productCards =
-    document.getElementById(
-      "productCards"
-    );
+    document.getElementById("productCards");
 
-  if(!productCards){
-    return;
-  }
+  if(!productCards) return;
 
-  productCards.innerHTML =
-    "";
+  productCards.innerHTML = "";
 
-  updateProductCount(
-    products.length
-  );
-
+  updateProductCount(products.length);
 
   if(!products.length){
 
@@ -2859,234 +2987,179 @@ function renderProducts(
     `;
 
     return;
-
   }
 
+  products.forEach(function(product,index){
 
-  products.forEach(
-    function(product,index){
+    const card =
+      document.createElement("article");
 
-      const card =
-        document.createElement(
-          "article"
-        );
+    card.className = "card";
 
-      card.className =
-        "card";
+    const image =
+      String(
+        product.image1 || ""
+      ).trim();
 
+    const referencePrice =
+      toNumber(product.reference_price);
 
-      const image =
-        String(
-          product.image1 || ""
-        ).trim();
+    const sellingPrice =
+      toNumber(product.selling_price);
 
+    const discount =
+      toNumber(product.discount);
 
-      const referencePrice =
-        toNumber(
-          product.reference_price
-        );
+    const saveAmount =
+      toNumber(product.save_amount);
 
+    const stock =
+      toNumber(product.stock);
 
-      const sellingPrice =
-        toNumber(
-          product.selling_price
-        );
+    const productId =
+      String(product.id || "");
 
+    card.innerHTML = `
 
-      const discount =
-        toNumber(
-          product.discount
-        );
+      ${
+        index < 2 && stock > 0
+        ?
+        `<div class="hot-badge">
+          ✦ TRENDING
+        </div>`
+        :
+        ""
+      }
 
+      ${
+        stock <= 0
+        ?
+        `<div class="status-badge">
+          OUT OF STOCK
+        </div>`
+        :
+        ""
+      }
 
-      const saveAmount =
-        toNumber(
-          product.save_amount
-        );
+      <div class="number">
+        PRODUCT ${escapeHTML(productId)}
+      </div>
 
+      ${
+        image
+        ?
+        `<img
+          class="product-image"
+          src="${escapeHTML(image)}"
+          alt="${escapeHTML(product.name || "BROSHIN Product")}"
+          loading="lazy"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
 
-      const stock =
-        toNumber(
-          product.stock
-        );
+        <div
+          class="placeholder"
+          style="display:none">
+          🛍️
+        </div>`
+        :
+        `<div class="placeholder">
+          🛍️
+        </div>`
+      }
 
+      <h3>
+        ${escapeHTML(
+          product.name ||
+          "BROSHIN Product"
+        )}
+      </h3>
 
-      const productId =
-        String(
-          product.id || ""
-        );
-
-
-      card.innerHTML = `
+      <div class="price-box">
 
         ${
-          index < 2 && stock > 0
+          referencePrice > sellingPrice
           ?
-          `<div class="hot-badge">
-            ✦ TRENDING
-          </div>`
+          `<span class="reference-price">
+            ₹${formatNumber(referencePrice)}
+          </span>`
           :
           ""
         }
+
+        <span class="product-price">
+          ₹${formatNumber(sellingPrice)}
+        </span>
+
+        ${
+          discount > 0
+          ?
+          `<span class="discount-badge">
+            ${formatNumber(discount)}% OFF
+          </span>`
+          :
+          ""
+        }
+
+      </div>
+
+      ${
+        saveAmount > 0
+        ?
+        `<div class="save-text">
+          Save ₹${formatNumber(saveAmount)}
+        </div>`
+        :
+        ""
+      }
+
+      <p>
+        ${escapeHTML(
+          product.description || ""
+        )}
+      </p>
+
+      <button
+        class="view-btn"
+        onclick="openProduct('${escapeJS(productId)}')"
+        ${stock <= 0 ? "disabled" : ""}>
 
         ${
           stock <= 0
-          ?
-          `<div class="status-badge">
-            OUT OF STOCK
-          </div>`
-          :
-          ""
+          ? "OUT OF STOCK"
+          : "VIEW PRODUCT"
         }
 
+      </button>
 
-        <div class="number">
-          PRODUCT ${escapeHTML(productId)}
-        </div>
+    `;
 
-
-        ${
-          image
-          ?
-          `<img
-            class="product-image"
-            src="${escapeHTML(image)}"
-            alt="${escapeHTML(product.name || "BROSHIN Product")}"
-            loading="lazy"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-          >
-          <div
-            class="placeholder"
-            style="display:none">
-            🛍️
-          </div>`
-          :
-          `<div class="placeholder">
-            🛍️
-          </div>`
-        }
-
-
-        <h3>
-          ${escapeHTML(
-            product.name ||
-            "BROSHIN Product"
-          )}
-        </h3>
-
-
-        <div class="price-box">
-
-          ${
-            referencePrice >
-            sellingPrice
-            ?
-            `<span class="reference-price">
-              ₹${formatNumber(referencePrice)}
-            </span>`
-            :
-            ""
-          }
-
-
-          <span class="product-price">
-            ₹${formatNumber(sellingPrice)}
-          </span>
-
-
-          ${
-            discount > 0
-            ?
-            `<span class="discount-badge">
-              ${formatNumber(discount)}% OFF
-            </span>`
-            :
-            ""
-          }
-
-        </div>
-
-
-        ${
-          saveAmount > 0
-          ?
-          `<div class="save-text">
-            Save ₹${formatNumber(saveAmount)}
-          </div>`
-          :
-          ""
-        }
-
-
-        <p>
-          ${escapeHTML(
-            product.description || ""
-          )}
-        </p>
-
-
-        <button
-          class="view-btn"
-          onclick="openProduct('${escapeJS(productId)}')"
-          ${stock <= 0 ? "disabled" : ""}>
-
-          ${
-            stock <= 0
-            ?
-            "OUT OF STOCK"
-            :
-            "VIEW PRODUCT"
-          }
-
-        </button>
-
-      `;
-
-
-      if(stock <= 0){
-
-        card.classList.add(
-          "out-stock"
-        );
-
-      }
-
-
-      productCards.appendChild(
-        card
-      );
-
+    if(stock <= 0){
+      card.classList.add("out-stock");
     }
-  );
+
+    productCards.appendChild(card);
+
+  });
 
 }
 
 
 /* =========================================================
-   PRODUCT COUNT
+   COUNT
 ========================================================= */
 
-function updateProductCount(
-  count
-){
+function updateProductCount(count){
 
   const element =
-    document.getElementById(
-      "productCount"
-    );
+    document.getElementById("productCount");
 
-  if(!element){
-    return;
-  }
+  if(!element) return;
 
   element.textContent =
     count +
     (
       count === 1
-      ?
-      " PRODUCT"
-      :
-      " PRODUCTS"
+      ? " PRODUCT"
+      : " PRODUCTS"
     );
 
 }
@@ -3099,31 +3172,23 @@ function updateProductCount(
 function clearProductFilters(){
 
   const search =
-    document.getElementById(
-      "productSearch"
-    );
+    document.getElementById("productSearch");
 
   const category =
-    document.getElementById(
-      "categoryFilter"
-    );
+    document.getElementById("categoryFilter");
 
   if(search){
-    search.value =
-      "";
+    search.value = "";
   }
 
   if(category){
-    category.value =
-      "all";
+    category.value = "all";
   }
 
   visibleProducts =
     getActiveProducts();
 
-  renderProducts(
-    visibleProducts
-  );
+  renderProducts(visibleProducts);
 
 }
 
@@ -3134,9 +3199,7 @@ function clearProductFilters(){
 
 function openProduct(id){
 
-  if(!id){
-    return;
-  }
+  if(!id) return;
 
   const path =
     window.location.pathname;
@@ -3150,7 +3213,7 @@ function openProduct(id){
 
 
 /* =========================================================
-   CHECK PRODUCT PAGE
+   CHECK PAGE
 ========================================================= */
 
 function checkProductPage(){
@@ -3163,100 +3226,76 @@ function checkProductPage(){
   const productId =
     params.get("product");
 
-
   if(!productId){
 
     showHomePage();
-
     loadProducts();
 
     return;
-
   }
-
 
   showProductPage();
 
-  loadSingleProduct(
-    productId
-  );
+  loadSingleProduct(productId);
 
 }
 
 
 /* =========================================================
-   SHOW HOME
+   HOME
 ========================================================= */
 
 function showHomePage(){
 
   const home =
-    document.getElementById(
-      "homePage"
-    );
+    document.getElementById("homePage");
 
   const product =
-    document.getElementById(
-      "productPage"
-    );
+    document.getElementById("productPage");
 
   const homeButton =
-    document.getElementById(
-      "navHomeButton"
-    );
+    document.getElementById("navHomeButton");
 
   if(home){
-    home.style.display =
-      "block";
+    home.style.display = "block";
   }
 
   if(product){
-    product.style.display =
-      "none";
+    product.style.display = "none";
   }
 
   if(homeButton){
-    homeButton.style.display =
-      "none";
+    homeButton.style.display = "none";
   }
 
 }
 
 
 /* =========================================================
-   SHOW PRODUCT PAGE
+   PRODUCT PAGE
 ========================================================= */
 
 function showProductPage(){
 
   const home =
-    document.getElementById(
-      "homePage"
-    );
+    document.getElementById("homePage");
 
   const product =
-    document.getElementById(
-      "productPage"
-    );
+    document.getElementById("productPage");
 
   const homeButton =
-    document.getElementById(
-      "navHomeButton"
-    );
+    document.getElementById("navHomeButton");
 
   if(home){
-    home.style.display =
-      "none";
+    home.style.display = "none";
   }
 
   if(product){
-    product.style.display =
-      "block";
+    product.style.display = "block";
   }
 
   if(homeButton){
-    homeButton.style.display =
-      "block";
+    homeButton.style.display = "block";
   }
 
   window.scrollTo({
@@ -3268,12 +3307,10 @@ function showProductPage(){
 
 
 /* =========================================================
-   LOAD SINGLE PRODUCT
+   SINGLE PRODUCT
 ========================================================= */
 
-async function loadSingleProduct(
-  productId
-){
+async function loadSingleProduct(productId){
 
   try{
 
@@ -3289,41 +3326,28 @@ async function loadSingleProduct(
         );
 
       if(!response.ok){
-        throw new Error(
-          "API request failed"
-        );
+        throw new Error("API request failed");
       }
 
       const products =
         await response.json();
 
       if(!Array.isArray(products)){
-        throw new Error(
-          "Invalid products"
-        );
+        throw new Error("Invalid products");
       }
 
-      allProducts =
-        products;
-
-      productsLoaded =
-        true;
+      allProducts = products;
+      productsLoaded = true;
 
     }
 
-
     currentProduct =
-      allProducts.find(
-        function(product){
+      allProducts.find(function(product){
 
-          return String(
-            product.id
-          ) ===
+        return String(product.id) ===
           String(productId);
 
-        }
-      );
-
+      });
 
     if(!currentProduct){
 
@@ -3338,29 +3362,17 @@ async function loadSingleProduct(
         "This product does not exist or has been removed.";
 
       return;
-
     }
 
+    displayProductDetails(currentProduct);
 
-    displayProductDetails(
-      currentProduct
-    );
-
-
-    loadProductVideos(
-      currentProduct
-    );
-
+    loadProductVideos(currentProduct);
 
     loadReviews();
 
-
   }catch(error){
 
-    console.error(
-      "Product error:",
-      error
-    );
+    console.error("Product error:",error);
 
     document.getElementById(
       "detailName"
@@ -3378,38 +3390,25 @@ async function loadSingleProduct(
 
 
 /* =========================================================
-   DISPLAY PRODUCT DETAILS
+   PRODUCT DETAILS
 ========================================================= */
 
-function displayProductDetails(
-  product
-){
+function displayProductDetails(product){
 
   const sellingPrice =
-    toNumber(
-      product.selling_price
-    );
+    toNumber(product.selling_price);
 
   const referencePrice =
-    toNumber(
-      product.reference_price
-    );
+    toNumber(product.reference_price);
 
   const discount =
-    toNumber(
-      product.discount
-    );
+    toNumber(product.discount);
 
   const saveAmount =
-    toNumber(
-      product.save_amount
-    );
+    toNumber(product.save_amount);
 
   const stock =
-    toNumber(
-      product.stock
-    );
-
+    toNumber(product.stock);
 
   document.getElementById(
     "detailName"
@@ -3417,29 +3416,21 @@ function displayProductDetails(
     product.name ||
     "BROSHIN Product";
 
-
   document.getElementById(
     "detailPrice"
   ).textContent =
     "₹" +
-    formatNumber(
-      sellingPrice
-    );
-
+    formatNumber(sellingPrice);
 
   document.getElementById(
     "detailReference"
   ).textContent =
-    referencePrice >
-    sellingPrice
+    referencePrice > sellingPrice
     ?
     "₹" +
-    formatNumber(
-      referencePrice
-    )
+    formatNumber(referencePrice)
     :
     "";
-
 
   document.getElementById(
     "detailDiscount"
@@ -3451,7 +3442,6 @@ function displayProductDetails(
     :
     "";
 
-
   document.getElementById(
     "detailSave"
   ).textContent =
@@ -3462,23 +3452,16 @@ function displayProductDetails(
     :
     "";
 
-
   document.getElementById(
     "detailDescription"
   ).textContent =
     product.description ||
     "Discover this amazing product on BROSHIN.";
 
-
   const stockElement =
-    document.getElementById(
-      "detailStock"
-    );
+    document.getElementById("detailStock");
 
-
-  stockElement.className =
-    "stock";
-
+  stockElement.className = "stock";
 
   if(stock > 0){
 
@@ -3486,46 +3469,31 @@ function displayProductDetails(
       "✓ Available Stock: " +
       formatNumber(stock);
 
-    stockElement.classList.add(
-      "available"
-    );
+    stockElement.classList.add("available");
 
   }else{
 
     stockElement.textContent =
       "✕ Currently Out of Stock";
 
-    stockElement.classList.add(
-      "empty"
-    );
+    stockElement.classList.add("empty");
 
   }
 
-
   const buyButton =
-    document.getElementById(
-      "buyNowButton"
-    );
-
+    document.getElementById("buyNowButton");
 
   if(stock <= 0){
 
-    buyButton.disabled =
-      true;
-
-    buyButton.textContent =
-      "OUT OF STOCK";
+    buyButton.disabled = true;
+    buyButton.textContent = "OUT OF STOCK";
 
   }else{
 
-    buyButton.disabled =
-      false;
-
-    buyButton.textContent =
-      "BUY NOW";
+    buyButton.disabled = false;
+    buyButton.textContent = "BUY NOW";
 
   }
-
 
   document.getElementById(
     "checkoutProduct"
@@ -3535,10 +3503,7 @@ function displayProductDetails(
       "Product"
     ) +
     " — ₹" +
-    formatNumber(
-      sellingPrice
-    );
-
+    formatNumber(sellingPrice);
 
   document.getElementById(
     "summaryProduct"
@@ -3546,15 +3511,11 @@ function displayProductDetails(
     product.name ||
     "Product";
 
-
   document.getElementById(
     "summaryPrice"
   ).textContent =
     "₹" +
-    formatNumber(
-      sellingPrice
-    );
-
+    formatNumber(sellingPrice);
 
   const quantity =
     document.getElementById(
@@ -3563,36 +3524,27 @@ function displayProductDetails(
 
   if(quantity){
 
-    quantity.value =
-      "1";
+    quantity.value = "1";
 
     quantity.max =
       stock > 0
-      ?
-      String(stock)
-      :
-      "1";
+      ? String(stock)
+      : "1";
 
   }
 
-
   updateOrderSummary();
 
-
-  loadProductImages(
-    product
-  );
+  loadProductImages(product);
 
 }
 
 
 /* =========================================================
-   PRODUCT IMAGES
+   IMAGES
 ========================================================= */
 
-function loadProductImages(
-  product
-){
+function loadProductImages(product){
 
   const imageList = [
 
@@ -3604,38 +3556,26 @@ function loadProductImages(
     product.image6
 
   ]
-  .map(
-    function(image){
+  .map(function(image){
 
-      return String(
-        image || ""
-      ).trim();
+    return String(
+      image || ""
+    ).trim();
 
-    }
-  )
-  .filter(
-    function(image){
+  })
+  .filter(function(image){
 
-      return image !== "";
+    return image !== "";
 
-    }
-  );
-
+  });
 
   const imageBox =
-    document.getElementById(
-      "detailImageBox"
-    );
+    document.getElementById("detailImageBox");
 
   const gallery =
-    document.getElementById(
-      "imageGallery"
-    );
+    document.getElementById("imageGallery");
 
-
-  gallery.innerHTML =
-    "";
-
+  gallery.innerHTML = "";
 
   if(!imageList.length){
 
@@ -3646,78 +3586,50 @@ function loadProductImages(
     `;
 
     return;
-
   }
 
+  setMainImage(imageList[0]);
 
-  setMainImage(
-    imageList[0]
-  );
+  imageList.forEach(function(image,index){
 
+    const img =
+      document.createElement("img");
 
-  imageList.forEach(
-    function(image,index){
+    img.src = image;
 
-      const img =
-        document.createElement(
-          "img"
-        );
-
-
-      img.src =
-        image;
-
-      img.className =
-        "thumb" +
-        (
-          index === 0
-          ?
-          " active"
-          :
-          ""
-        );
-
-      img.alt =
-        product.name ||
-        "BROSHIN Product";
-
-
-      img.loading =
-        "lazy";
-
-
-      img.onclick =
-        function(){
-
-          setMainImage(
-            image
-          );
-
-          document
-            .querySelectorAll(
-              ".thumb"
-            )
-            .forEach(
-              function(thumb){
-                thumb.classList.remove(
-                  "active"
-                );
-              }
-            );
-
-          img.classList.add(
-            "active"
-          );
-
-        };
-
-
-      gallery.appendChild(
-        img
+    img.className =
+      "thumb" +
+      (
+        index === 0
+        ? " active"
+        : ""
       );
 
-    }
-  );
+    img.alt =
+      product.name ||
+      "BROSHIN Product";
+
+    img.loading = "lazy";
+
+    img.onclick = function(){
+
+      setMainImage(image);
+
+      document
+        .querySelectorAll(".thumb")
+        .forEach(function(thumb){
+
+          thumb.classList.remove("active");
+
+        });
+
+      img.classList.add("active");
+
+    };
+
+    gallery.appendChild(img);
+
+  });
 
 }
 
@@ -3726,15 +3638,12 @@ function loadProductImages(
    MAIN IMAGE
 ========================================================= */
 
-function setMainImage(
-  image
-){
+function setMainImage(image){
 
   const imageBox =
     document.getElementById(
       "detailImageBox"
     );
-
 
   imageBox.innerHTML = `
 
@@ -3753,75 +3662,50 @@ function setMainImage(
    VIDEO SYSTEM
 ========================================================= */
 
-function loadProductVideos(
-  product
-){
+function loadProductVideos(product){
 
   const videoBox =
-    document.getElementById(
-      "videoBox"
-    );
+    document.getElementById("videoBox");
 
   const videoGrid =
-    document.getElementById(
-      "videoGrid"
-    );
+    document.getElementById("videoGrid");
 
+  videoGrid.innerHTML = "";
 
-  videoGrid.innerHTML =
-    "";
-
-  videoBox.style.display =
-    "none";
-
+  videoBox.style.display = "none";
 
   const youtube =
     String(
-      product.youtube_video ||
-      ""
+      product.youtube_video || ""
     ).trim();
-
 
   const instagram =
     String(
-      product.instagram_video ||
-      ""
+      product.instagram_video || ""
     ).trim();
-
 
   const pinterest =
     String(
-      product.pinterest_video ||
-      ""
+      product.pinterest_video || ""
     ).trim();
 
-
-  let videoCount =
-    0;
+  let videoCount = 0;
 
 
-  /* =======================================================
-     YOUTUBE
-  ======================================================= */
+  /* YOUTUBE */
 
   if(youtube){
 
     const youtubeId =
-      getYouTubeId(
-        youtube
-      );
-
+      getYouTubeId(youtube);
 
     if(youtubeId){
 
       const wrapper =
-        document.createElement(
-          "div"
-        );
+        document.createElement("div");
 
       wrapper.className =
         "social-video";
-
 
       wrapper.innerHTML = `
 
@@ -3839,11 +3723,7 @@ function loadProductVideos(
 
       `;
 
-
-      videoGrid.appendChild(
-        wrapper
-      );
-
+      videoGrid.appendChild(wrapper);
 
       videoCount++;
 
@@ -3852,28 +3732,20 @@ function loadProductVideos(
   }
 
 
-  /* =======================================================
-     INSTAGRAM
-  ======================================================= */
+  /* INSTAGRAM */
 
   if(instagram){
 
     const instagramUrl =
-      getInstagramEmbedUrl(
-        instagram
-      );
-
+      getInstagramEmbedUrl(instagram);
 
     if(instagramUrl){
 
       const wrapper =
-        document.createElement(
-          "div"
-        );
+        document.createElement("div");
 
       wrapper.className =
         "social-video";
-
 
       wrapper.innerHTML = `
 
@@ -3892,11 +3764,7 @@ function loadProductVideos(
 
       `;
 
-
-      videoGrid.appendChild(
-        wrapper
-      );
-
+      videoGrid.appendChild(wrapper);
 
       videoCount++;
 
@@ -3905,28 +3773,20 @@ function loadProductVideos(
   }
 
 
-  /* =======================================================
-     PINTEREST
-  ======================================================= */
+  /* PINTEREST */
 
   if(pinterest){
 
     const pinterestUrl =
-      getPinterestEmbedUrl(
-        pinterest
-      );
-
+      getPinterestEmbedUrl(pinterest);
 
     if(pinterestUrl){
 
       const wrapper =
-        document.createElement(
-          "div"
-        );
+        document.createElement("div");
 
       wrapper.className =
         "social-video";
-
 
       wrapper.innerHTML = `
 
@@ -3945,11 +3805,7 @@ function loadProductVideos(
 
       `;
 
-
-      videoGrid.appendChild(
-        wrapper
-      );
-
+      videoGrid.appendChild(wrapper);
 
       videoCount++;
 
@@ -3960,8 +3816,7 @@ function loadProductVideos(
 
   if(videoCount > 0){
 
-    videoBox.style.display =
-      "block";
+    videoBox.style.display = "block";
 
   }
 
@@ -3969,97 +3824,73 @@ function loadProductVideos(
 
 
 /* =========================================================
-   YOUTUBE ID
+   YOUTUBE
 ========================================================= */
 
-function getYouTubeId(
-  url
-){
+function getYouTubeId(url){
 
   try{
 
     const value =
-      String(
-        url || ""
-      ).trim();
+      String(url || "").trim();
 
-
-    if(!value){
-      return "";
-    }
-
+    if(!value) return "";
 
     const watchMatch =
       value.match(
         /[?&]v=([^&#]+)/i
       );
 
-
     if(
       watchMatch &&
       watchMatch[1]
     ){
-
       return cleanVideoId(
         watchMatch[1]
       );
-
     }
-
 
     const shortsMatch =
       value.match(
         /youtube\.com\/shorts\/([^?&#/]+)/i
       );
 
-
     if(
       shortsMatch &&
       shortsMatch[1]
     ){
-
       return cleanVideoId(
         shortsMatch[1]
       );
-
     }
-
 
     const embedMatch =
       value.match(
         /youtube\.com\/embed\/([^?&#/]+)/i
       );
 
-
     if(
       embedMatch &&
       embedMatch[1]
     ){
-
       return cleanVideoId(
         embedMatch[1]
       );
-
     }
-
 
     const shortMatch =
       value.match(
         /youtu\.be\/([^?&#/]+)/i
       );
 
-
     if(
       shortMatch &&
       shortMatch[1]
     ){
-
       return cleanVideoId(
         shortMatch[1]
       );
-
     }
-
 
     return "";
 
@@ -4072,87 +3903,49 @@ function getYouTubeId(
 }
 
 
-/* =========================================================
-   CLEAN YOUTUBE ID
-========================================================= */
+function cleanVideoId(id){
 
-function cleanVideoId(
-  id
-){
-
-  return String(
-    id || ""
-  )
-  .replace(
-    /[^a-zA-Z0-9_-]/g,
-    ""
-  )
-  .substring(
-    0,
-    20
-  );
+  return String(id || "")
+    .replace(/[^a-zA-Z0-9_-]/g,"")
+    .substring(0,20);
 
 }
 
 
 /* =========================================================
-   INSTAGRAM EMBED
+   INSTAGRAM
 ========================================================= */
 
-function getInstagramEmbedUrl(
-  url
-){
+function getInstagramEmbedUrl(url){
 
   try{
 
     let value =
-      String(
-        url || ""
-      ).trim();
+      String(url || "").trim();
 
-
-    if(!value){
-      return "";
-    }
-
+    if(!value) return "";
 
     value =
       value.split("?")[0];
 
-
     value =
-      value.replace(
-        /\/+$/,
-        ""
-      );
-
+      value.replace(/\/+$/,"");
 
     if(
-      !value.includes(
-        "instagram.com"
-      )
+      !value.includes("instagram.com")
     ){
-
       return "";
-
     }
-
 
     if(
       !value.includes("/reel/") &&
       !value.includes("/p/") &&
       !value.includes("/tv/")
     ){
-
       return "";
-
     }
 
-
-    return (
-      value +
-      "/embed/"
-    );
+    return value + "/embed/";
 
   }catch(error){
 
@@ -4164,51 +3957,22 @@ function getInstagramEmbedUrl(
 
 
 /* =========================================================
-   PINTEREST EMBED
+   PINTEREST
 ========================================================= */
 
-function getPinterestEmbedUrl(
-  url
-){
+function getPinterestEmbedUrl(url){
 
   try{
 
     const value =
-      String(
-        url || ""
-      ).trim();
+      String(url || "").trim();
 
-
-    if(!value){
-      return "";
-    }
-
-
-    if(
-      value.includes(
-        "pin.it/"
-      )
-    ){
-
-      return (
-        "https://www.pinterest.com/pin/" +
-        encodeURIComponent(value) +
-        "/"
-      );
-
-    }
-
+    if(!value) return "";
 
     const pinId =
-      getPinterestPinId(
-        value
-      );
+      getPinterestPinId(value);
 
-
-    if(!pinId){
-      return "";
-    }
-
+    if(!pinId) return "";
 
     return (
       "https://www.pinterest.com/pin/" +
@@ -4225,37 +3989,24 @@ function getPinterestEmbedUrl(
 }
 
 
-/* =========================================================
-   PINTEREST PIN ID
-========================================================= */
-
-function getPinterestPinId(
-  url
-){
+function getPinterestPinId(url){
 
   try{
 
     const value =
-      String(
-        url || ""
-      ).trim();
-
+      String(url || "").trim();
 
     const match =
       value.match(
         /\/pin\/(\d+)/i
       );
 
-
     if(
       match &&
       match[1]
     ){
-
       return match[1];
-
     }
-
 
     return "";
 
@@ -4274,10 +4025,7 @@ function getPinterestPinId(
 
 function showCheckout(){
 
-  if(!currentProduct){
-    return;
-  }
-
+  if(!currentProduct) return;
 
   if(
     toNumber(
@@ -4294,15 +4042,12 @@ function showCheckout(){
 
   }
 
-
   const checkout =
     document.getElementById(
       "checkoutSection"
     );
 
-
   updateOrderSummary();
-
 
   checkout.scrollIntoView({
     behavior:"smooth",
@@ -4318,28 +4063,22 @@ function showCheckout(){
 
 function updateOrderSummary(){
 
-  if(!currentProduct){
-    return;
-  }
-
+  if(!currentProduct) return;
 
   const price =
     toNumber(
       currentProduct.selling_price
     );
 
-
   const stock =
     toNumber(
       currentProduct.stock
     );
 
-
   const quantityInput =
     document.getElementById(
       "customerQuantity"
     );
-
 
   let quantity =
     Number(
@@ -4348,11 +4087,9 @@ function updateOrderSummary(){
         : 1
     );
 
-
   if(!Number.isFinite(quantity)){
     quantity = 1;
   }
-
 
   quantity =
     Math.max(
@@ -4360,26 +4097,23 @@ function updateOrderSummary(){
       Math.floor(quantity)
     );
 
-
   if(stock > 0){
+
     quantity =
       Math.min(
         quantity,
         stock
       );
+
   }
 
-
   if(quantityInput){
-    quantity.value =
+    quantityInput.value =
       quantity;
   }
 
-
   const total =
-    price *
-    quantity;
-
+    price * quantity;
 
   document.getElementById(
     "summaryProduct"
@@ -4387,19 +4121,16 @@ function updateOrderSummary(){
     currentProduct.name ||
     "Product";
 
-
   document.getElementById(
     "summaryPrice"
   ).textContent =
     "₹" +
     formatNumber(price);
 
-
   document.getElementById(
     "summaryQuantity"
   ).textContent =
     quantity;
-
 
   document.getElementById(
     "summaryTotal"
@@ -4414,12 +4145,9 @@ function updateOrderSummary(){
    PLACE ORDER
 ========================================================= */
 
-async function placeOrder(
-  e
-){
+async function placeOrder(e){
 
   e.preventDefault();
-
 
   if(!currentProduct){
 
@@ -4429,27 +4157,22 @@ async function placeOrder(
     );
 
     return;
-
   }
-
 
   const name =
     document.getElementById(
       "customerName"
     ).value.trim();
 
-
   const phone =
     document.getElementById(
       "customerPhone"
     ).value.trim();
 
-
   const address =
     document.getElementById(
       "customerAddress"
     ).value.trim();
-
 
   let quantity =
     Number(
@@ -4458,12 +4181,10 @@ async function placeOrder(
       ).value
     );
 
-
   const stock =
     toNumber(
       currentProduct.stock
     );
-
 
   if(!name){
 
@@ -4472,9 +4193,7 @@ async function placeOrder(
     );
 
     return;
-
   }
-
 
   if(!phone){
 
@@ -4483,9 +4202,7 @@ async function placeOrder(
     );
 
     return;
-
   }
-
 
   if(!address){
 
@@ -4494,9 +4211,7 @@ async function placeOrder(
     );
 
     return;
-
   }
-
 
   if(
     !Number.isFinite(quantity) ||
@@ -4508,107 +4223,76 @@ async function placeOrder(
     );
 
     return;
-
   }
-
 
   quantity =
     Math.floor(quantity);
 
-
-  if(
-    quantity >
-    stock
-  ){
+  if(quantity > stock){
 
     setCheckoutMessage(
       "❌ Not enough stock available."
     );
 
     return;
-
   }
-
 
   const sellingPrice =
     toNumber(
       currentProduct.selling_price
     );
 
-
   const costPrice =
     toNumber(
       currentProduct.cost_price
     );
 
-
   const total =
-    sellingPrice *
-    quantity;
-
+    sellingPrice * quantity;
 
   const orderId =
-    "BR" +
-    Date.now();
-
+    "BR" + Date.now();
 
   const orderData = {
 
-    action:
-      "order",
+    action:"order",
 
-    orderId:
-      orderId,
+    orderId:orderId,
 
-    name:
-      name,
+    name:name,
 
-    phone:
-      phone,
+    phone:phone,
 
-    address:
-      address,
+    address:address,
 
-    productId:
-      currentProduct.id,
+    productId:currentProduct.id,
 
-    product:
-      currentProduct.name,
+    product:currentProduct.name,
 
-    quantity:
-      quantity,
+    quantity:quantity,
 
-    sellingPrice:
-      sellingPrice,
+    sellingPrice:sellingPrice,
 
-    total:
-      total,
+    total:total,
 
-    costPrice:
-      costPrice
+    costPrice:costPrice
 
   };
-
 
   const message =
     document.getElementById(
       "checkoutMessage"
     );
 
-
   const button =
     document.getElementById(
       "placeOrderButton"
     );
 
-
   message.textContent =
     "Placing your order...";
 
-
-  button.disabled =
-    true;
-
+  button.disabled = true;
 
   try{
 
@@ -4622,12 +4306,9 @@ async function placeOrder(
             "text/plain;charset=utf-8"
         },
         body:
-          JSON.stringify(
-            orderData
-          )
+          JSON.stringify(orderData)
       }
     );
-
 
     message.innerHTML = `
       🎉 Order placed successfully!<br>
@@ -4637,28 +4318,20 @@ async function placeOrder(
       </small>
     `;
 
-
     showToast(
       "🎉 Your order has been placed!",
       "success"
     );
 
-
     document
-      .getElementById(
-        "checkoutForm"
-      )
+      .getElementById("checkoutForm")
       .reset();
-
 
     document.getElementById(
       "customerQuantity"
-    ).value =
-      "1";
-
+    ).value = "1";
 
     updateOrderSummary();
-
 
   }catch(error){
 
@@ -4667,10 +4340,8 @@ async function placeOrder(
       error
     );
 
-
     message.textContent =
       "❌ Order failed. Please try again.";
-
 
     showToast(
       "Unable to place the order.",
@@ -4679,9 +4350,7 @@ async function placeOrder(
 
   }
 
-
-  button.disabled =
-    false;
+  button.disabled = false;
 
 }
 
@@ -4690,9 +4359,7 @@ async function placeOrder(
    CHECKOUT MESSAGE
 ========================================================= */
 
-function setCheckoutMessage(
-  message
-){
+function setCheckoutMessage(message){
 
   document.getElementById(
     "checkoutMessage"
@@ -4723,35 +4390,25 @@ async function trackOrder(){
       "trackButton"
     );
 
-
   const orderId =
     input.value.trim();
 
-
   if(!orderId){
 
-    result.style.display =
-      "block";
+    result.style.display = "block";
 
     result.innerHTML =
       "❌ Please enter your Order ID.";
 
     return;
-
   }
 
-
-  result.style.display =
-    "block";
-
+  result.style.display = "block";
 
   result.innerHTML =
     "🔍 Checking your order...";
 
-
-  button.disabled =
-    true;
-
+  button.disabled = true;
 
   try{
 
@@ -4759,28 +4416,21 @@ async function trackOrder(){
       await fetch(
         API_URL +
         "?order=" +
-        encodeURIComponent(
-          orderId
-        ),
+        encodeURIComponent(orderId),
         {
           method:"GET",
           cache:"no-store"
         }
       );
 
-
     if(!response.ok){
-
       throw new Error(
         "Tracking request failed"
       );
-
     }
-
 
     const data =
       await response.json();
-
 
     if(
       !data ||
@@ -4791,17 +4441,13 @@ async function trackOrder(){
       result.innerHTML =
         "❌ Order not found.";
 
-      button.disabled =
-        false;
+      button.disabled = false;
 
       return;
-
     }
-
 
     const order =
       data.order;
-
 
     result.innerHTML = `
 
@@ -4812,7 +4458,6 @@ async function trackOrder(){
         )}
       </div>
 
-
       <p>
         <strong>Order ID:</strong>
         ${escapeHTML(
@@ -4821,33 +4466,26 @@ async function trackOrder(){
         )}
       </p>
 
-
       <p>
         <strong>Product:</strong>
         ${escapeHTML(
-          order.product ||
-          ""
+          order.product || ""
         )}
       </p>
-
 
       <p>
         <strong>Quantity:</strong>
         ${escapeHTML(
-          order.quantity ||
-          ""
+          order.quantity || ""
         )}
       </p>
-
 
       <p>
         <strong>Total:</strong>
         ₹${escapeHTML(
-          order.total ||
-          "0"
+          order.total || "0"
         )}
       </p>
-
 
       <div class="tracking-awb">
 
@@ -4869,7 +4507,6 @@ async function trackOrder(){
 
     `;
 
-
   }catch(error){
 
     console.error(
@@ -4877,21 +4514,18 @@ async function trackOrder(){
       error
     );
 
-
     result.innerHTML =
       "❌ Unable to check your order right now.";
 
   }
 
-
-  button.disabled =
-    false;
+  button.disabled = false;
 
 }
 
 
 /* =========================================================
-   REVIEW PHOTO
+   PHOTO
 ========================================================= */
 
 function handleReviewPhoto(){
@@ -4901,25 +4535,17 @@ function handleReviewPhoto(){
       "reviewPhoto"
     );
 
-
   const file =
     input.files &&
     input.files[0];
 
-
-  if(!file){
-    return;
-  }
-
+  if(!file) return;
 
   const allowedTypes = [
-
     "image/jpeg",
     "image/png",
     "image/webp"
-
   ];
-
 
   if(
     !allowedTypes.includes(
@@ -4932,13 +4558,10 @@ function handleReviewPhoto(){
       "error"
     );
 
-    input.value =
-      "";
+    input.value = "";
 
     return;
-
   }
-
 
   if(
     file.size >
@@ -4950,17 +4573,13 @@ function handleReviewPhoto(){
       "error"
     );
 
-    input.value =
-      "";
+    input.value = "";
 
     return;
-
   }
-
 
   const reader =
     new FileReader();
-
 
   reader.onload =
     function(event){
@@ -4968,20 +4587,16 @@ function handleReviewPhoto(){
       selectedPhotoData =
         event.target.result;
 
-
       selectedPhotoName =
         file.name;
 
-
       selectedPhotoMimeType =
         file.type;
-
 
       document.getElementById(
         "photoPreviewImage"
       ).src =
         selectedPhotoData;
-
 
       document.getElementById(
         "photoPreview"
@@ -4989,7 +4604,6 @@ function handleReviewPhoto(){
         "block";
 
     };
-
 
   reader.onerror =
     function(){
@@ -5001,10 +4615,7 @@ function handleReviewPhoto(){
 
     };
 
-
-  reader.readAsDataURL(
-    file
-  );
+  reader.readAsDataURL(file);
 
 }
 
@@ -5015,44 +4626,33 @@ function handleReviewPhoto(){
 
 function removeReviewPhoto(){
 
-  selectedPhotoData =
-    "";
-
-  selectedPhotoName =
-    "";
-
-  selectedPhotoMimeType =
-    "";
-
+  selectedPhotoData = "";
+  selectedPhotoName = "";
+  selectedPhotoMimeType = "";
 
   const input =
     document.getElementById(
       "reviewPhoto"
     );
 
-
   if(input){
-    input.value =
-      "";
+    input.value = "";
   }
-
 
   document.getElementById(
     "photoPreview"
   ).style.display =
     "none";
 
-
   document.getElementById(
     "photoPreviewImage"
-  ).src =
-    "";
+  ).src = "";
 
 }
 
 
 /* =========================================================
-   UPDATE STARS
+   STARS
 ========================================================= */
 
 function updateStars(){
@@ -5061,34 +4661,26 @@ function updateStars(){
     .querySelectorAll(
       "#starSelector span"
     )
-    .forEach(
-      function(star){
+    .forEach(function(star){
 
-        const rating =
-          Number(
-            star.dataset.rating
-          );
+      const rating =
+        Number(
+          star.dataset.rating
+        );
 
+      if(
+        rating <= selectedRating
+      ){
 
-        if(
-          rating <=
-          selectedRating
-        ){
+        star.classList.add("active");
 
-          star.classList.add(
-            "active"
-          );
+      }else{
 
-        }else{
-
-          star.classList.remove(
-            "active"
-          );
-
-        }
+        star.classList.remove("active");
 
       }
-    );
+
+    });
 
 }
 
@@ -5099,23 +4691,18 @@ function updateStars(){
 
 async function loadReviews(){
 
-  if(!currentProduct){
-    return;
-  }
-
+  if(!currentProduct) return;
 
   const reviewsList =
     document.getElementById(
       "reviewsList"
     );
 
-
   reviewsList.innerHTML = `
     <div class="no-reviews">
       Loading reviews...
     </div>
   `;
-
 
   try{
 
@@ -5132,57 +4719,35 @@ async function loadReviews(){
         }
       );
 
-
     if(!response.ok){
-
       throw new Error(
         "Review request failed"
       );
-
     }
-
 
     const data =
       await response.json();
-
 
     if(
       !data ||
       data.success === false
     ){
-
       throw new Error(
         "Reviews unavailable"
       );
-
     }
 
-
     const reviews =
-      Array.isArray(
-        data.reviews
-      )
-      ?
-      data.reviews
-      :
-      [];
-
+      Array.isArray(data.reviews)
+      ? data.reviews
+      : [];
 
     displayReviews(
-
       reviews,
-
-      Number(
-        data.averageRating
-      ) || 0,
-
-      Number(
-        data.totalReviews
-      ) ||
+      Number(data.averageRating) || 0,
+      Number(data.totalReviews) ||
       reviews.length
-
     );
-
 
   }catch(error){
 
@@ -5190,7 +4755,6 @@ async function loadReviews(){
       "Reviews error:",
       error
     );
-
 
     reviewsList.innerHTML = `
       <div class="no-reviews">
@@ -5208,11 +4772,9 @@ async function loadReviews(){
 ========================================================= */
 
 function displayReviews(
-
   reviews,
   averageRating,
   totalReviews
-
 ){
 
   const list =
@@ -5220,30 +4782,25 @@ function displayReviews(
       "reviewsList"
     );
 
-
   const averageElement =
     document.getElementById(
       "averageRating"
     );
-
 
   const starsElement =
     document.getElementById(
       "averageStars"
     );
 
-
   const countElement =
     document.getElementById(
       "reviewCount"
     );
 
-
   averageElement.textContent =
     Number(
       averageRating || 0
     ).toFixed(1);
-
 
   starsElement.textContent =
     getStars(
@@ -5252,17 +4809,13 @@ function displayReviews(
       )
     );
 
-
   countElement.textContent =
     totalReviews +
     (
       totalReviews === 1
-      ?
-      " Review"
-      :
-      " Reviews"
+      ? " Review"
+      : " Reviews"
     );
-
 
   if(!reviews.length){
 
@@ -5274,116 +4827,88 @@ function displayReviews(
     `;
 
     return;
-
   }
 
+  list.innerHTML = "";
 
-  list.innerHTML =
-    "";
+  reviews.forEach(function(review){
 
+    const card =
+      document.createElement("div");
 
-  reviews.forEach(
-    function(review){
+    card.className =
+      "review-card";
 
-      const card =
-        document.createElement(
-          "div"
-        );
+    const customerName =
+      review.customer_name ||
+      review.name ||
+      "Customer";
 
+    const reviewText =
+      review.review ||
+      review.text ||
+      "";
 
-      card.className =
-        "review-card";
+    const reviewDate =
+      review.date ||
+      "";
 
+    const rating =
+      Number(
+        review.rating
+      ) || 0;
 
-      const customerName =
-        review.customer_name ||
-        review.name ||
-        "Customer";
+    const photoUrl =
+      String(
+        review.photo_url ||
+        ""
+      ).trim();
 
+    card.innerHTML = `
 
-      const reviewText =
-        review.review ||
-        review.text ||
-        "";
+      <div class="review-top">
 
+        <div>
 
-      const reviewDate =
-        review.date ||
-        "";
-
-
-      const rating =
-        Number(
-          review.rating
-        ) || 0;
-
-
-      const photoUrl =
-        String(
-          review.photo_url ||
-          ""
-        ).trim();
-
-
-      card.innerHTML = `
-
-        <div class="review-top">
-
-          <div>
-
-            <div class="reviewer-name">
-              ${escapeHTML(
-                customerName
-              )}
-            </div>
-
-            <div class="review-date">
-              ${escapeHTML(
-                reviewDate
-              )}
-            </div>
-
+          <div class="reviewer-name">
+            ${escapeHTML(customerName)}
           </div>
 
-          <div class="review-stars">
-            ${getStars(
-              rating
-            )}
+          <div class="review-date">
+            ${escapeHTML(reviewDate)}
           </div>
 
         </div>
 
-
-        <div class="review-text">
-          ${escapeHTML(
-            reviewText
-          )}
+        <div class="review-stars">
+          ${getStars(rating)}
         </div>
 
+      </div>
 
-        ${
-          photoUrl
-          ?
-          `<img
-            class="review-photo"
-            src="${escapeHTML(photoUrl)}"
-            alt="Customer review photo"
-            loading="lazy"
-            onclick="openLightbox('${escapeJS(photoUrl)}')"
-          >`
-          :
-          ""
-        }
+      <div class="review-text">
+        ${escapeHTML(reviewText)}
+      </div>
 
-      `;
+      ${
+        photoUrl
+        ?
+        `<img
+          class="review-photo"
+          src="${escapeHTML(photoUrl)}"
+          alt="Customer review photo"
+          loading="lazy"
+          onclick="openLightbox('${escapeJS(photoUrl)}')"
+        >`
+        :
+        ""
+      }
 
+    `;
 
-      list.appendChild(
-        card
-      );
+    list.appendChild(card);
 
-    }
-  );
+  });
 
 }
 
@@ -5392,9 +4917,7 @@ function displayReviews(
    STAR DISPLAY
 ========================================================= */
 
-function getStars(
-  rating
-){
+function getStars(rating){
 
   rating =
     Math.max(
@@ -5405,26 +4928,16 @@ function getStars(
       )
     );
 
+  let stars = "";
 
-  let stars =
-    "";
-
-
-  for(
-    let i = 1;
-    i <= 5;
-    i++
-  ){
+  for(let i=1;i<=5;i++){
 
     stars +=
       i <= rating
-      ?
-      "★"
-      :
-      "☆";
+      ? "★"
+      : "☆";
 
   }
-
 
   return stars;
 
@@ -5445,33 +4958,27 @@ async function submitReview(){
     );
 
     return;
-
   }
-
 
   const name =
     document.getElementById(
       "reviewName"
     ).value.trim();
 
-
   const review =
     document.getElementById(
       "reviewText"
     ).value.trim();
-
 
   const message =
     document.getElementById(
       "reviewMessage"
     );
 
-
   const button =
     document.getElementById(
       "reviewSubmit"
     );
-
 
   if(!name){
 
@@ -5479,9 +4986,7 @@ async function submitReview(){
       "❌ Please enter your name.";
 
     return;
-
   }
-
 
   if(!selectedRating){
 
@@ -5489,9 +4994,7 @@ async function submitReview(){
       "❌ Please select a star rating.";
 
     return;
-
   }
-
 
   if(!review){
 
@@ -5499,14 +5002,11 @@ async function submitReview(){
       "❌ Please write your review.";
 
     return;
-
   }
-
 
   const reviewData = {
 
-    action:
-      "review",
+    action:"review",
 
     productId:
       currentProduct.id,
@@ -5534,7 +5034,6 @@ async function submitReview(){
 
   };
 
-
   message.textContent =
     selectedPhotoData
     ?
@@ -5542,10 +5041,7 @@ async function submitReview(){
     :
     "Submitting review...";
 
-
-  button.disabled =
-    true;
-
+  button.disabled = true;
 
   try{
 
@@ -5559,53 +5055,37 @@ async function submitReview(){
             "text/plain;charset=utf-8"
         },
         body:
-          JSON.stringify(
-            reviewData
-          )
+          JSON.stringify(reviewData)
       }
     );
 
-
     message.textContent =
       "🎉 Thank you! Your review has been submitted.";
-
 
     showToast(
       "🎉 Review submitted successfully!",
       "success"
     );
 
-
     document.getElementById(
       "reviewName"
-    ).value =
-      "";
-
+    ).value = "";
 
     document.getElementById(
       "reviewText"
-    ).value =
-      "";
+    ).value = "";
 
-
-    selectedRating =
-      0;
-
+    selectedRating = 0;
 
     updateStars();
 
     removeReviewPhoto();
 
+    setTimeout(function(){
 
-    setTimeout(
-      function(){
+      loadReviews();
 
-        loadReviews();
-
-      },
-      2000
-    );
-
+    },2000);
 
   }catch(error){
 
@@ -5614,10 +5094,8 @@ async function submitReview(){
       error
     );
 
-
     message.textContent =
       "❌ Review couldn't be submitted. Please try again.";
-
 
     showToast(
       "Review submission failed.",
@@ -5626,9 +5104,7 @@ async function submitReview(){
 
   }
 
-
-  button.disabled =
-    false;
+  button.disabled = false;
 
 }
 
@@ -5637,9 +5113,7 @@ async function submitReview(){
    LIGHTBOX
 ========================================================= */
 
-function openLightbox(
-  imageUrl
-){
+function openLightbox(imageUrl){
 
   const lightbox =
     document.getElementById(
@@ -5651,14 +5125,9 @@ function openLightbox(
       "lightboxImage"
     );
 
+  image.src = imageUrl;
 
-  image.src =
-    imageUrl;
-
-
-  lightbox.style.display =
-    "flex";
-
+  lightbox.style.display = "flex";
 
   document.body.style.overflow =
     "hidden";
@@ -5666,52 +5135,36 @@ function openLightbox(
 }
 
 
-/* =========================================================
-   CLOSE LIGHTBOX
-========================================================= */
-
-function closeLightbox(
-  event
-){
+function closeLightbox(event){
 
   if(event){
     event.stopPropagation();
   }
-
 
   document.getElementById(
     "imageLightbox"
   ).style.display =
     "none";
 
-
   document.getElementById(
     "lightboxImage"
-  ).src =
-    "";
+  ).src = "";
 
-
-  document.body.style.overflow =
-    "";
+  document.body.style.overflow = "";
 
 }
 
 
 /* =========================================================
-   ESC KEY
+   ESC
 ========================================================= */
 
 document.addEventListener(
   "keydown",
   function(e){
 
-    if(
-      e.key ===
-      "Escape"
-    ){
-
+    if(e.key === "Escape"){
       closeLightbox();
-
     }
 
   }
@@ -5719,7 +5172,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   GO HOME
+   HOME
 ========================================================= */
 
 function goHome(){
@@ -5731,7 +5184,7 @@ function goHome(){
 
 
 /* =========================================================
-   TRACKING SCROLL
+   TRACK SCROLL
 ========================================================= */
 
 function scrollToTracking(){
@@ -5741,15 +5194,15 @@ function scrollToTracking(){
       "tracking"
     );
 
-
   if(
     window.location.pathname !==
-    tracking?.ownerDocument?.location?.pathname
+    window.location.pathname
   ){
+
     goHome();
+
     return;
   }
-
 
   if(tracking){
 
@@ -5776,56 +5229,36 @@ function showToast(
       "toastContainer"
     );
 
-
-  if(!container){
-    return;
-  }
-
+  if(!container) return;
 
   const toast =
     document.createElement(
       "div"
     );
 
-
   toast.className =
     "toast " +
-    (
-      type ||
-      ""
-    );
-
+    (type || "");
 
   toast.textContent =
     message;
 
+  container.appendChild(toast);
 
-  container.appendChild(
-    toast
-  );
+  setTimeout(function(){
 
+    toast.style.opacity = "0";
 
-  setTimeout(
-    function(){
+    toast.style.transform =
+      "translateY(10px)";
 
-      toast.style.opacity =
-        "0";
+    setTimeout(function(){
 
-      toast.style.transform =
-        "translateY(10px)";
+      toast.remove();
 
-      setTimeout(
-        function(){
+    },300);
 
-          toast.remove();
-
-        },
-        300
-      );
-
-    },
-    3500
-  );
+  },3500);
 
 }
 
@@ -5834,68 +5267,42 @@ function showToast(
    NUMBER
 ========================================================= */
 
-function toNumber(
-  value
-){
+function toNumber(value){
 
   if(
-    value ===
-    null ||
-    value ===
-    undefined ||
-    value ===
-    ""
+    value === null ||
+    value === undefined ||
+    value === ""
   ){
-
     return 0;
-
   }
-
 
   const number =
     Number(
       String(value)
-        .replace(
-          /,/g,
-          ""
-        )
-        .replace(
-          /₹/g,
-          ""
-        )
+        .replace(/,/g,"")
+        .replace(/₹/g,"")
         .trim()
     );
 
-
-  return Number.isFinite(
-    number
-  )
-  ?
-  number
-  :
-  0;
+  return Number.isFinite(number)
+    ? number
+    : 0;
 
 }
 
 
 /* =========================================================
-   FORMAT NUMBER
+   FORMAT
 ========================================================= */
 
-function formatNumber(
-  number
-){
+function formatNumber(number){
 
   const value =
-    toNumber(
-      number
-    );
-
+    toNumber(number);
 
   if(
-    Number.isInteger(
-      value
-    )
+    Number.isInteger(value)
   ){
 
     return value.toLocaleString(
@@ -5903,7 +5310,6 @@ function formatNumber(
     );
 
   }
-
 
   return value.toLocaleString(
     "en-IN",
@@ -5916,167 +5322,37 @@ function formatNumber(
 
 
 /* =========================================================
-   SECURITY — HTML
+   SECURITY
 ========================================================= */
 
-function escapeHTML(
-  value
-){
+function escapeHTML(value){
 
   return String(
-    value ??
-    ""
+    value ?? ""
   )
 
-  .replace(
-    /&/g,
-    "&amp;"
-  )
-
-  .replace(
-    /</g,
-    "&lt;"
-  )
-
-  .replace(
-    />/g,
-    "&gt;"
-  )
-
-  .replace(
-    /"/g,
-    "&quot;"
-  )
-
-  .replace(
-    /'/g,
-    "&#039;"
-  );
+  .replace(/&/g,"&amp;")
+  .replace(/</g,"&lt;")
+  .replace(/>/g,"&gt;")
+  .replace(/"/g,"&quot;")
+  .replace(/'/g,"&#039;");
 
 }
 
 
-/* =========================================================
-   SECURITY — JS
-========================================================= */
-
-function escapeJS(
-  value
-){
+function escapeJS(value){
 
   return String(
-    value ??
-    ""
+    value ?? ""
   )
 
-  .replace(
-    /\\/g,
-    "\\\\"
-  )
-
-  .replace(
-    /'/g,
-    "\\'"
-  )
-
-  .replace(
-    /"/g,
-    '\\"'
-  )
-
-  .replace(
-    /\r/g,
-    "\\r"
-  )
-
-  .replace(
-    /\n/g,
-    "\\n"
-  );
+  .replace(/\\/g,"\\\\")
+  .replace(/'/g,"\\'")
+  .replace(/"/g,'\\"')
+  .replace(/\r/g,"\\r")
+  .replace(/\n/g,"\\n");
 
 }
-
-
-/* =========================================================
-   NETWORK ERROR HELPER
-========================================================= */
-
-function isNetworkError(
-  error
-){
-
-  return (
-    error &&
-    (
-      error.name ===
-      "TypeError" ||
-      String(
-        error.message ||
-        ""
-      )
-      .toLowerCase()
-      .includes(
-        "network"
-      )
-    )
-  );
-
-}
-
-
-/* =========================================================
-   PAGE VISIBILITY
-========================================================= */
-
-document.addEventListener(
-  "visibilitychange",
-  function(){
-
-    if(
-      document.visibilityState ===
-      "visible"
-    ){
-
-      console.log(
-        "BROSHIN page active"
-      );
-
-    }
-
-  }
-);
-
-
-/* =========================================================
-   PREVENT DOUBLE ENTER SUBMISSION
-========================================================= */
-
-document.addEventListener(
-  "keydown",
-  function(e){
-
-    if(
-      e.key !==
-      "Enter"
-    ){
-      return;
-    }
-
-
-    const target =
-      e.target;
-
-
-    if(
-      target &&
-      target.tagName ===
-      "TEXTAREA"
-    ){
-      return;
-    }
-
-  }
-);
 
 
 /* =========================================================
@@ -6089,3 +5365,4 @@ checkProductPage();
 
 </body>
 </html>
+```
