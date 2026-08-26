@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#171717">
 <title>BROSHIN — Discover. Shop. Enjoy.</title>
 
@@ -13,6 +13,7 @@
   --rose:#D8B7AE;
   --ivory:#F8F4EC;
   --cream:#EDE3D2;
+  --white:#fff;
   --text:#211e1c;
   --muted:#756d66;
   --shadow:0 25px 70px rgba(23,23,23,.10);
@@ -67,7 +68,7 @@ button,input,textarea{
   align-items:center;
   justify-content:center;
   padding:0 15px;
-  color:white;
+  color:#fff;
   font-size:10px;
   font-weight:900;
   letter-spacing:3px;
@@ -167,11 +168,15 @@ button,input,textarea{
 }
 
 @keyframes float1{
-  50%{transform:translate(100px,50px) scale(1.12)}
+  50%{
+    transform:translate(100px,50px) scale(1.12);
+  }
 }
 
 @keyframes float2{
-  50%{transform:translate(-100px,-50px) scale(1.15)}
+  50%{
+    transform:translate(-100px,-50px) scale(1.15);
+  }
 }
 
 .small-title{
@@ -216,7 +221,7 @@ button,input,textarea{
   margin-top:32px;
   padding:16px 30px;
   border-radius:50px;
-  color:white;
+  color:#fff;
   text-decoration:none;
   font-size:12px;
   font-weight:900;
@@ -235,7 +240,9 @@ button,input,textarea{
   margin-bottom:50px;
 }
 
-.heading-label{
+.heading-label,
+.video-title,
+.reviews-label{
   font-size:10px;
   font-weight:900;
   letter-spacing:4px;
@@ -284,7 +291,7 @@ button,input,textarea{
   border:1px solid rgba(255,255,255,.65);
   backdrop-filter:blur(18px);
   box-shadow:var(--shadow);
-  transition:transform .35s,box-shadow .35s;
+  transition:.35s;
 }
 
 .card:hover{
@@ -354,7 +361,7 @@ button,input,textarea{
   padding:5px 9px;
   border-radius:20px;
   background:#171717;
-  color:white;
+  color:#fff;
   font-size:9px;
   font-weight:900;
 }
@@ -372,7 +379,7 @@ button,input,textarea{
   border:0;
   border-radius:50px;
   background:var(--black);
-  color:white;
+  color:#fff;
   font-weight:900;
   cursor:pointer;
 }
@@ -393,11 +400,10 @@ button,input,textarea{
   padding:7px 11px;
   border-radius:30px;
   background:rgba(23,23,23,.9);
-  color:white;
+  color:#fff;
   font-size:8px;
   font-weight:900;
   letter-spacing:1px;
-  z-index:5;
 }
 
 .product-wrap{
@@ -462,8 +468,9 @@ button,input,textarea{
   object-fit:cover;
   border-radius:12px;
   cursor:pointer;
-  background:white;
+  background:#fff;
   border:2px solid transparent;
+  flex-shrink:0;
 }
 
 .thumb:hover{
@@ -500,7 +507,7 @@ button,input,textarea{
   padding:7px 12px;
   border-radius:30px;
   background:#171717;
-  color:white;
+  color:#fff;
   font-size:10px;
   font-weight:900;
 }
@@ -525,19 +532,14 @@ button,input,textarea{
   color:var(--muted);
 }
 
-
 /* VIDEO */
 
 .video-box{
-  margin-top:30px;
+  margin-top:35px;
   display:none;
 }
 
 .video-title{
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:3px;
-  color:#96751e;
   margin-bottom:15px;
 }
 
@@ -547,7 +549,8 @@ button,input,textarea{
   gap:15px;
 }
 
-.social-video{
+.social-video,
+.direct-video-card{
   width:100%;
   border-radius:20px;
   overflow:hidden;
@@ -564,7 +567,8 @@ button,input,textarea{
   background:#171717;
 }
 
-.social-video video{
+.social-video video,
+.direct-video-card video{
   width:100%;
   height:360px;
   object-fit:cover;
@@ -580,24 +584,11 @@ button,input,textarea{
   padding:7px 10px;
   border-radius:20px;
   background:rgba(0,0,0,.75);
-  color:white;
+  color:#fff;
   font-size:9px;
   font-weight:900;
   letter-spacing:1px;
   pointer-events:none;
-}
-
-.video-open-btn{
-  display:block;
-  width:100%;
-  padding:12px;
-  border:0;
-  background:#171717;
-  color:white;
-  text-decoration:none;
-  text-align:center;
-  font-size:11px;
-  font-weight:900;
 }
 
 .buy-now{
@@ -607,7 +598,7 @@ button,input,textarea{
   border:0;
   border-radius:50px;
   background:var(--black);
-  color:white;
+  color:#fff;
   font-size:13px;
   font-weight:900;
   letter-spacing:2px;
@@ -623,9 +614,6 @@ button,input,textarea{
   opacity:.5;
   cursor:not-allowed;
 }
-
-
-/* CHECKOUT */
 
 .checkout{
   width:92%;
@@ -654,42 +642,47 @@ button,input,textarea{
 }
 
 .checkout-form input,
-.checkout-form textarea{
+.checkout-form textarea,
+.review-form input,
+.review-form textarea{
   width:100%;
   padding:15px;
   border:1px solid rgba(23,23,23,.12);
   border-radius:16px;
+  font-family:inherit;
   font-size:14px;
   outline:none;
   background:#fff;
 }
 
-.checkout-form textarea{
+.checkout-form textarea,
+.review-form textarea{
   min-height:120px;
   resize:vertical;
 }
 
-.checkout-form button{
+.checkout-form button,
+.review-submit{
   padding:17px;
   border:0;
   border-radius:50px;
   background:var(--black);
-  color:white;
+  color:#fff;
   font-weight:900;
   cursor:pointer;
 }
 
-.checkout-form button:disabled{
+.checkout-form button:disabled,
+.review-submit:disabled{
   opacity:.6;
 }
 
-#checkoutMessage{
+#checkoutMessage,
+#reviewMessage{
   text-align:center;
   font-weight:900;
   margin-top:18px;
-  line-height:1.6;
 }
-
 
 /* REVIEWS */
 
@@ -708,13 +701,6 @@ button,input,textarea{
 .reviews-heading{
   text-align:center;
   margin-bottom:25px;
-}
-
-.reviews-label{
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:4px;
-  color:#96751e;
 }
 
 .reviews-heading h2{
@@ -738,7 +724,8 @@ button,input,textarea{
   font-weight:1000;
 }
 
-.stars-display{
+.stars-display,
+.review-stars{
   color:#D4AF37;
   font-size:25px;
   letter-spacing:3px;
@@ -783,18 +770,7 @@ button,input,textarea{
 
 .review-form input,
 .review-form textarea{
-  width:100%;
-  padding:14px 16px;
   margin-bottom:12px;
-  border:1px solid rgba(23,23,23,.12);
-  border-radius:15px;
-  outline:none;
-  font-size:14px;
-}
-
-.review-form textarea{
-  min-height:110px;
-  resize:vertical;
 }
 
 .photo-label{
@@ -807,6 +783,7 @@ button,input,textarea{
 }
 
 .photo-upload{
+  display:block;
   width:100%;
   padding:16px;
   border:1px dashed rgba(23,23,23,.25);
@@ -815,7 +792,6 @@ button,input,textarea{
   cursor:pointer;
   font-size:13px;
   margin-bottom:12px;
-  display:block;
   text-align:center;
 }
 
@@ -850,30 +826,8 @@ button,input,textarea{
   border:0;
   border-radius:50%;
   background:rgba(23,23,23,.85);
-  color:white;
+  color:#fff;
   cursor:pointer;
-  font-weight:900;
-}
-
-.review-submit{
-  width:100%;
-  padding:15px;
-  border:0;
-  border-radius:50px;
-  background:var(--black);
-  color:white;
-  font-weight:900;
-  cursor:pointer;
-}
-
-.review-submit:disabled{
-  opacity:.5;
-}
-
-#reviewMessage{
-  text-align:center;
-  margin-top:12px;
-  font-size:13px;
   font-weight:900;
 }
 
@@ -903,8 +857,6 @@ button,input,textarea{
 }
 
 .review-stars{
-  color:#D4AF37;
-  letter-spacing:2px;
   font-size:15px;
 }
 
@@ -929,11 +881,6 @@ button,input,textarea{
   margin-top:16px;
   display:block;
   cursor:pointer;
-  transition:.3s;
-}
-
-.review-photo:hover{
-  transform:scale(1.01);
 }
 
 .no-reviews{
@@ -942,7 +889,6 @@ button,input,textarea{
   padding:30px;
   color:var(--muted);
 }
-
 
 /* TRACKING */
 
@@ -982,7 +928,7 @@ button,input,textarea{
   border:0;
   border-radius:50px;
   background:var(--black);
-  color:white;
+  color:#fff;
   font-weight:900;
   cursor:pointer;
 }
@@ -994,7 +940,6 @@ button,input,textarea{
   background:rgba(248,244,236,.8);
   text-align:left;
   display:none;
-  line-height:1.8;
 }
 
 .track-status{
@@ -1016,9 +961,6 @@ button,input,textarea{
   margin-bottom:5px;
 }
 
-
-/* FOOTER */
-
 footer{
   width:92%;
   max-width:1250px;
@@ -1039,9 +981,6 @@ footer p{
   color:var(--muted);
   font-size:11px;
 }
-
-
-/* LIGHTBOX */
 
 .image-lightbox{
   position:fixed;
@@ -1069,14 +1008,11 @@ footer p{
   height:45px;
   border:0;
   border-radius:50%;
-  background:white;
+  background:#fff;
   color:#171717;
   font-size:25px;
   cursor:pointer;
 }
-
-
-/* RESPONSIVE */
 
 @media(max-width:900px){
 
@@ -1095,7 +1031,6 @@ footer p{
   .video-grid{
     grid-template-columns:1fr;
   }
-
 }
 
 @media(max-width:600px){
@@ -1141,10 +1076,10 @@ footer p{
   }
 
   .social-video iframe,
-  .social-video video{
+  .social-video video,
+  .direct-video-card video{
     height:430px;
   }
-
 }
 </style>
 </head>
@@ -1158,12 +1093,17 @@ footer p{
 </div>
 
 <header class="nav">
-  <a href="./" class="logo">BROSHIN<span>.</span></a>
-  <div class="nav-tag">DISCOVER. SHOP. ENJOY.</div>
+
+  <a href="./" class="logo">
+    BROSHIN<span>.</span>
+  </a>
+
+  <div class="nav-tag">
+    DISCOVER. SHOP. ENJOY.
+  </div>
+
 </header>
 
-
-<!-- HOME -->
 
 <main id="homePage">
 
@@ -1216,11 +1156,17 @@ footer p{
 
     <div class="card">
 
-      <div class="placeholder">🛍️</div>
+      <div class="placeholder">
+        🛍️
+      </div>
 
-      <h3>Loading Products...</h3>
+      <h3>
+        Loading Products...
+      </h3>
 
-      <p>Please wait...</p>
+      <p>
+        Please wait...
+      </p>
 
     </div>
 
@@ -1231,7 +1177,9 @@ footer p{
 
 <section class="track-box">
 
-  <h2>Track Your Order</h2>
+  <h2>
+    Track Your Order
+  </h2>
 
   <p>
     Enter your BROSHIN Order ID
@@ -1262,8 +1210,6 @@ footer p{
 
 </main>
 
-
-<!-- PRODUCT -->
 
 <main id="productPage">
 
@@ -1310,7 +1256,6 @@ footer p{
     Loading...
   </h1>
 
-
   <div class="detail-price-box">
 
     <div
@@ -1321,9 +1266,7 @@ footer p{
     <div
       class="detail-price"
       id="detailPrice">
-
       ₹0
-
     </div>
 
     <div
@@ -1338,12 +1281,10 @@ footer p{
 
   </div>
 
-
   <p
     class="detail-description"
     id="detailDescription">
   </p>
-
 
   <div
     class="stock"
@@ -1351,7 +1292,7 @@ footer p{
   </div>
 
 
-  <!-- VIDEOS -->
+  <!-- VIDEO SECTION -->
 
   <div
     class="video-box"
@@ -1383,13 +1324,13 @@ footer p{
 </div>
 
 
-<!-- CHECKOUT -->
-
 <section
   class="checkout"
   id="checkoutSection">
 
-<h2>Checkout</h2>
+<h2>
+  Checkout
+</h2>
 
 <p id="checkoutProduct">
   Complete your order below.
@@ -1441,8 +1382,6 @@ footer p{
 </section>
 
 
-<!-- REVIEWS -->
-
 <section class="reviews-section">
 
 <div class="reviews-heading">
@@ -1451,7 +1390,9 @@ footer p{
     REAL CUSTOMER FEEDBACK
   </div>
 
-  <h2>Customer Reviews</h2>
+  <h2>
+    Customer Reviews
+  </h2>
 
 </div>
 
@@ -1461,9 +1402,7 @@ footer p{
   <div
     class="big-rating"
     id="averageRating">
-
     0.0
-
   </div>
 
   <div>
@@ -1471,17 +1410,13 @@ footer p{
     <div
       class="stars-display"
       id="averageStars">
-
       ☆☆☆☆☆
-
     </div>
 
     <div
       class="review-count"
       id="reviewCount">
-
       0 Reviews
-
     </div>
 
   </div>
@@ -1491,7 +1426,9 @@ footer p{
 
 <div class="review-form">
 
-<h3>Leave a Review</h3>
+<h3>
+  Leave a Review
+</h3>
 
 
 <div
@@ -1593,8 +1530,6 @@ footer p{
 </main>
 
 
-<!-- LIGHTBOX -->
-
 <div
   class="image-lightbox"
   id="imageLightbox"
@@ -1637,16 +1572,15 @@ footer p{
 ========================================================= */
 
 const API_URL =
-"https://script.google.com/macros/s/AKfycbwebTGY5E8wMp6jHR3ugPIt3rzPRsHa-79Y6sqwq7WnFoI7Jz8RSJ_95HT-TFrUfGb1Tg/exec";
+"https://script.google.com/macros/s/AKfycbwebTGY5E8wMp6jHR3ugPIt3rzPRsHa-79Y6sqwq7wNFoI7Jz8RSJ_95HT-TFrUfGb1Tg/exec";
 
 
 /* =========================================================
-   GLOBAL
+   GLOBAL VARIABLES
 ========================================================= */
 
 let allProducts = [];
 let currentProduct = null;
-
 let selectedRating = 0;
 
 let selectedPhotoData = "";
@@ -1676,52 +1610,25 @@ document.addEventListener(
 
 
 /* =========================================================
-   API GET HELPER
-========================================================= */
-
-async function apiGet(url){
-
-  const response =
-    await fetch(url,{
-      method:"GET",
-      cache:"no-store"
-    });
-
-  if(!response.ok){
-
-    throw new Error(
-      "API request failed: " +
-      response.status
-    );
-
-  }
-
-  return await response.json();
-
-}
-
-
-/* =========================================================
    LOAD PRODUCTS
 ========================================================= */
 
 async function loadProducts(){
 
   const productCards =
-    document.getElementById(
-      "productCards"
-    );
+    document.getElementById("productCards");
 
   try{
 
+    const response =
+      await fetch(API_URL);
+
     const data =
-      await apiGet(API_URL);
+      await response.json();
 
     if(!Array.isArray(data)){
 
-      throw new Error(
-        "Products not found"
-      );
+      throw new Error("Products not found");
 
     }
 
@@ -1734,14 +1641,12 @@ async function loadProducts(){
 
         return String(
           product.status || "active"
-        )
-        .trim()
-        .toLowerCase() === "active";
+        ).trim().toLowerCase() === "active";
 
       });
 
 
-    if(!activeProducts.length){
+    if(activeProducts.length === 0){
 
       productCards.innerHTML = `
 
@@ -1768,192 +1673,148 @@ async function loadProducts(){
     }
 
 
-    activeProducts.forEach(
-      function(product){
+    activeProducts.forEach(function(product){
 
-        const card =
-          document.createElement("article");
+      const card =
+        document.createElement("article");
 
-        card.className = "card";
-
-
-        const image =
-          String(
-            product.image1 || ""
-          ).trim();
+      card.className = "card";
 
 
-        const referencePrice =
-          Number(
-            product.reference_price
-          ) || 0;
+      const image =
+        String(product.image1 || "").trim();
 
 
-        const sellingPrice =
-          Number(
-            product.selling_price
-          ) || 0;
+      const referencePrice =
+        Number(product.reference_price) || 0;
 
 
-        const discount =
-          Number(
-            product.discount
-          ) || 0;
+      const sellingPrice =
+        Number(product.selling_price) || 0;
 
 
-        const saveAmount =
-          Number(
-            product.save_amount
-          ) || 0;
+      const discount =
+        Number(product.discount) || 0;
 
 
-        const stock =
-          Number(
-            product.stock
-          ) || 0;
+      const saveAmount =
+        Number(product.save_amount) || 0;
 
 
-        card.innerHTML = `
+      const stock =
+        Number(product.stock) || 0;
+
+
+      card.innerHTML = `
+
+        ${
+          stock <= 0
+          ?
+          `<div class="status-badge">
+            OUT OF STOCK
+          </div>`
+          :
+          ``
+        }
+
+        <div class="number">
+          PRODUCT ${escapeHTML(product.id)}
+        </div>
+
+        ${
+          image
+          ?
+          `<img
+            class="product-image"
+            src="${escapeHTML(image)}"
+            alt="${escapeHTML(product.name)}"
+            loading="lazy"
+          >`
+          :
+          `<div class="placeholder">
+            🛍️
+          </div>`
+        }
+
+        <h3>
+          ${escapeHTML(product.name)}
+        </h3>
+
+        <div class="price-box">
+
+          ${
+            referencePrice > sellingPrice
+            ?
+            `<span class="reference-price">
+              ₹${referencePrice}
+            </span>`
+            :
+            ``
+          }
+
+          <span class="product-price">
+            ₹${sellingPrice}
+          </span>
+
+          ${
+            discount > 0
+            ?
+            `<span class="discount-badge">
+              ${discount}% OFF
+            </span>`
+            :
+            ``
+          }
+
+        </div>
+
+        ${
+          saveAmount > 0
+          ?
+          `<div class="save-text">
+            Save ₹${saveAmount}
+          </div>`
+          :
+          ``
+        }
+
+        <p>
+          ${escapeHTML(product.description || "")}
+        </p>
+
+        <button
+          class="view-btn"
+          onclick="openProduct('${escapeJS(product.id)}')"
+          ${stock <= 0 ? "disabled" : ""}>
 
           ${
             stock <= 0
             ?
-            `
-              <div class="status-badge">
-                OUT OF STOCK
-              </div>
-            `
+            "OUT OF STOCK"
             :
-            ""
+            "VIEW PRODUCT"
           }
 
+        </button>
 
-          <div class="number">
-
-            PRODUCT
-            ${escapeHTML(product.id)}
-
-          </div>
+      `;
 
 
-          ${
-            image
-            ?
-            `
-              <img
-                class="product-image"
-                src="${escapeHTML(image)}"
-                alt="${escapeHTML(product.name)}"
-                loading="lazy"
-                onerror="this.style.display='none'"
-              >
-            `
-            :
-            `
-              <div class="placeholder">
-                🛍️
-              </div>
-            `
-          }
+      if(stock <= 0){
 
-
-          <h3>
-            ${escapeHTML(product.name)}
-          </h3>
-
-
-          <div class="price-box">
-
-            ${
-              referencePrice > sellingPrice
-              ?
-              `
-                <span class="reference-price">
-                  ₹${referencePrice}
-                </span>
-              `
-              :
-              ""
-            }
-
-
-            <span class="product-price">
-              ₹${sellingPrice}
-            </span>
-
-
-            ${
-              discount > 0
-              ?
-              `
-                <span class="discount-badge">
-                  ${discount}% OFF
-                </span>
-              `
-              :
-              ""
-            }
-
-          </div>
-
-
-          ${
-            saveAmount > 0
-            ?
-            `
-              <div class="save-text">
-                Save ₹${saveAmount}
-              </div>
-            `
-            :
-            ""
-          }
-
-
-          <p>
-            ${escapeHTML(product.description || "")}
-          </p>
-
-
-          <button
-            class="view-btn"
-            onclick="openProduct('${escapeJS(product.id)}')"
-            ${stock <= 0 ? "disabled" : ""}>
-
-            ${
-              stock <= 0
-              ?
-              "OUT OF STOCK"
-              :
-              "VIEW PRODUCT"
-            }
-
-          </button>
-
-        `;
-
-
-        if(stock <= 0){
-
-          card.classList.add(
-            "out-stock"
-          );
-
-        }
-
-
-        productCards.appendChild(card);
+        card.classList.add("out-stock");
 
       }
-    );
+
+
+      productCards.appendChild(card);
+
+    });
 
 
   }catch(error){
 
-    console.error(
-      "Products error:",
-      error
-    );
+    console.error("Products error:",error);
 
     productCards.innerHTML = `
 
@@ -2011,13 +1872,11 @@ function checkProductPage(){
 
   if(!productId){
 
-    document.getElementById(
-      "homePage"
-    ).style.display = "block";
+    document.getElementById("homePage").style.display =
+      "block";
 
-    document.getElementById(
-      "productPage"
-    ).style.display = "none";
+    document.getElementById("productPage").style.display =
+      "none";
 
     loadProducts();
 
@@ -2026,13 +1885,11 @@ function checkProductPage(){
   }
 
 
-  document.getElementById(
-    "homePage"
-  ).style.display = "none";
+  document.getElementById("homePage").style.display =
+    "none";
 
-  document.getElementById(
-    "productPage"
-  ).style.display = "block";
+  document.getElementById("productPage").style.display =
+    "block";
 
 
   loadSingleProduct(productId);
@@ -2048,39 +1905,34 @@ async function loadSingleProduct(productId){
 
   try{
 
+    const response =
+      await fetch(API_URL);
+
     const products =
-      await apiGet(API_URL);
+      await response.json();
 
 
     if(!Array.isArray(products)){
 
-      throw new Error(
-        "Products not found"
-      );
+      throw new Error("Products not found");
 
     }
 
 
-    allProducts =
-      products;
+    allProducts = products;
 
 
     currentProduct =
-      products.find(
-        function(product){
+      products.find(function(product){
 
-          return String(product.id) ===
-                 String(productId);
+        return String(product.id) === String(productId);
 
-        }
-      );
+      });
 
 
     if(!currentProduct){
 
-      document.getElementById(
-        "detailName"
-      ).textContent =
+      document.getElementById("detailName").textContent =
         "Product Not Found";
 
       return;
@@ -2089,99 +1941,64 @@ async function loadSingleProduct(productId){
 
 
     const sellingPrice =
-      Number(
-        currentProduct.selling_price
-      ) || 0;
+      Number(currentProduct.selling_price) || 0;
 
 
     const referencePrice =
-      Number(
-        currentProduct.reference_price
-      ) || 0;
+      Number(currentProduct.reference_price) || 0;
 
 
     const discount =
-      Number(
-        currentProduct.discount
-      ) || 0;
+      Number(currentProduct.discount) || 0;
 
 
     const saveAmount =
-      Number(
-        currentProduct.save_amount
-      ) || 0;
+      Number(currentProduct.save_amount) || 0;
 
 
     const stock =
-      Number(
-        currentProduct.stock
-      ) || 0;
+      Number(currentProduct.stock) || 0;
 
 
-    document.getElementById(
-      "detailName"
-    ).textContent =
-      currentProduct.name ||
-      "Product";
+    document.getElementById("detailName").textContent =
+      currentProduct.name || "Product";
 
 
-    document.getElementById(
-      "detailPrice"
-    ).textContent =
+    document.getElementById("detailPrice").textContent =
       "₹" + sellingPrice;
 
 
-    document.getElementById(
-      "detailReference"
-    ).textContent =
+    document.getElementById("detailReference").textContent =
       referencePrice > sellingPrice
-      ?
-      "₹" + referencePrice
-      :
-      "";
+      ? "₹" + referencePrice
+      : "";
 
 
-    document.getElementById(
-      "detailDiscount"
-    ).textContent =
+    document.getElementById("detailDiscount").textContent =
       discount > 0
-      ?
-      discount + "% OFF"
-      :
-      "";
+      ? discount + "% OFF"
+      : "";
 
 
-    document.getElementById(
-      "detailSave"
-    ).textContent =
+    document.getElementById("detailSave").textContent =
       saveAmount > 0
-      ?
-      "You save ₹" + saveAmount
-      :
-      "";
+      ? "You save ₹" + saveAmount
+      : "";
 
 
-    document.getElementById(
-      "detailDescription"
-    ).textContent =
+    document.getElementById("detailDescription").textContent =
       currentProduct.description ||
       "Discover this amazing product on BROSHIN.";
 
 
-    document.getElementById(
-      "detailStock"
-    ).textContent =
+    document.getElementById("detailStock").textContent =
       stock > 0
-      ?
-      "Available Stock: " + stock
-      :
-      "Currently Out of Stock";
+      ? "Available Stock: " + stock
+      : "Currently Out of Stock";
 
 
     const buyButton =
-      document.getElementById(
-        "buyNowButton"
-      );
+      document.getElementById("buyNowButton");
 
 
     if(stock <= 0){
@@ -2197,7 +2014,9 @@ async function loadSingleProduct(productId){
     }
 
 
-    /* IMAGES */
+    /* =====================================================
+       PRODUCT IMAGES
+    ===================================================== */
 
     const imageList = [
 
@@ -2211,71 +2030,50 @@ async function loadSingleProduct(productId){
     ]
     .map(function(image){
 
-      return String(
-        image || ""
-      ).trim();
+      return String(image || "").trim();
 
     })
-    .filter(Boolean);
+    .filter(function(image){
+
+      return image !== "";
+
+    });
 
 
     const imageBox =
-      document.getElementById(
-        "detailImageBox"
-      );
+      document.getElementById("detailImageBox");
 
 
     const gallery =
-      document.getElementById(
-        "imageGallery"
-      );
+      document.getElementById("imageGallery");
 
 
     gallery.innerHTML = "";
 
 
-    if(imageList.length){
+    if(imageList.length > 0){
 
-      setMainImage(
-        imageList[0]
-      );
+      setMainImage(imageList[0]);
 
 
-      imageList.forEach(
-        function(image){
+      imageList.forEach(function(image){
 
-          const img =
-            document.createElement("img");
+        const img =
+          document.createElement("img");
 
+        img.src = image;
+        img.className = "thumb";
+        img.alt = currentProduct.name || "Product";
 
-          img.src = image;
-          img.className = "thumb";
-          img.alt =
-            currentProduct.name ||
-            "Product";
+        img.onclick = function(){
 
+          setMainImage(image);
 
-          img.onerror =
-            function(){
+        };
 
-              this.style.display =
-                "none";
+        gallery.appendChild(img);
 
-            };
-
-
-          img.onclick =
-            function(){
-
-              setMainImage(image);
-
-            };
-
-
-          gallery.appendChild(img);
-
-        }
-      );
+      });
 
 
     }else{
@@ -2291,16 +2089,14 @@ async function loadSingleProduct(productId){
     }
 
 
-    /* VIDEOS */
+    /* =====================================================
+       VIDEO
+    ===================================================== */
 
-    loadProductVideos(
-      currentProduct
-    );
+    loadProductVideos(currentProduct);
 
 
-    document.getElementById(
-      "checkoutProduct"
-    ).textContent =
+    document.getElementById("checkoutProduct").textContent =
       currentProduct.name +
       " — ₹" +
       sellingPrice;
@@ -2311,15 +2107,9 @@ async function loadSingleProduct(productId){
 
   }catch(error){
 
-    console.error(
-      "Product error:",
-      error
-    );
+    console.error("Product error:",error);
 
-
-    document.getElementById(
-      "detailName"
-    ).textContent =
+    document.getElementById("detailName").textContent =
       "Something went wrong";
 
   }
@@ -2334,15 +2124,10 @@ async function loadSingleProduct(productId){
 function loadProductVideos(product){
 
   const videoBox =
-    document.getElementById(
-      "videoBox"
-    );
-
+    document.getElementById("videoBox");
 
   const videoGrid =
-    document.getElementById(
-      "videoGrid"
-    );
+    document.getElementById("videoGrid");
 
 
   videoGrid.innerHTML = "";
@@ -2351,27 +2136,23 @@ function loadProductVideos(product){
 
 
   const youtube =
-    String(
-      product.youtube_video || ""
-    ).trim();
+    String(product.youtube_video || "").trim();
 
 
   const instagram =
-    String(
-      product.instagram_video || ""
-    ).trim();
+    String(product.instagram_video || "").trim();
 
 
   const pinterest =
-    String(
-      product.pinterest_video || ""
-    ).trim();
+    String(product.pinterest_video || "").trim();
 
 
   let videoCount = 0;
 
 
-  /* YOUTUBE */
+  /* =====================================================
+     YOUTUBE
+  ===================================================== */
 
   if(youtube){
 
@@ -2384,9 +2165,7 @@ function loadProductVideos(product){
       const wrapper =
         document.createElement("div");
 
-
-      wrapper.className =
-        "social-video";
+      wrapper.className = "social-video";
 
 
       wrapper.innerHTML = `
@@ -2396,7 +2175,7 @@ function loadProductVideos(product){
         </div>
 
         <iframe
-          src="https://www.youtube.com/embed/${encodeURIComponent(youtubeId)}?autoplay=0&mute=0&loop=1&playlist=${encodeURIComponent(youtubeId)}&controls=1&rel=0"
+          src="https://www.youtube.com/embed/${youtubeId}?autoplay=0&mute=0&loop=1&playlist=${youtubeId}&controls=1&rel=0"
           title="BROSHIN YouTube Product Video"
           allow="autoplay; encrypted-media; picture-in-picture"
           allowfullscreen>
@@ -2414,22 +2193,22 @@ function loadProductVideos(product){
   }
 
 
-  /* INSTAGRAM */
+  /* =====================================================
+     INSTAGRAM
+  ===================================================== */
 
   if(instagram){
 
-    const instagramId =
-      getInstagramId(instagram);
+    const instagramEmbed =
+      getInstagramEmbedUrl(instagram);
 
 
-    if(instagramId){
+    if(instagramEmbed){
 
       const wrapper =
         document.createElement("div");
 
-
-      wrapper.className =
-        "social-video";
+      wrapper.className = "social-video";
 
 
       wrapper.innerHTML = `
@@ -2439,71 +2218,13 @@ function loadProductVideos(product){
         </div>
 
         <iframe
-          src="https://www.instagram.com/reel/${encodeURIComponent(instagramId)}/embed/"
-          title="BROSHIN Instagram Reel"
+          src="${escapeHTML(instagramEmbed)}"
+          title="BROSHIN Instagram Product Video"
           scrolling="no"
-          allow="autoplay; encrypted-media; picture-in-picture">
+          allowtransparency="true"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen>
         </iframe>
-
-      `;
-
-
-      videoGrid.appendChild(wrapper);
-
-      videoCount++;
-
-    }else{
-
-      const wrapper =
-        document.createElement("div");
-
-
-      wrapper.className =
-        "social-video";
-
-
-      wrapper.innerHTML = `
-
-        <div class="video-label">
-          ◎ INSTAGRAM
-        </div>
-
-        <div style="
-          height:360px;
-          display:flex;
-          flex-direction:column;
-          align-items:center;
-          justify-content:center;
-          padding:20px;
-          text-align:center;
-          color:white;
-        ">
-
-          <div style="
-            font-size:40px;
-            margin-bottom:15px;
-          ">
-            ◎
-          </div>
-
-          <div style="
-            font-weight:900;
-            margin-bottom:15px;
-          ">
-            Instagram Video
-          </div>
-
-          <a
-            class="video-open-btn"
-            href="${escapeHTML(instagram)}"
-            target="_blank"
-            rel="noopener noreferrer">
-
-            OPEN INSTAGRAM
-
-          </a>
-
-        </div>
 
       `;
 
@@ -2517,25 +2238,23 @@ function loadProductVideos(product){
   }
 
 
-  /* PINTEREST */
+  /* =====================================================
+     PINTEREST
+  ===================================================== */
 
   if(pinterest){
 
-    const pinterestPinId =
-      getPinterestPinId(
-        pinterest
-      );
+    const pinterestEmbed =
+      getPinterestEmbedUrl(pinterest);
 
 
-    const wrapper =
-      document.createElement("div");
+    if(pinterestEmbed){
 
+      const wrapper =
+        document.createElement("div");
 
-    wrapper.className =
-      "social-video";
+      wrapper.className = "social-video";
 
-
-    if(pinterestPinId){
 
       wrapper.innerHTML = `
 
@@ -2544,75 +2263,29 @@ function loadProductVideos(product){
         </div>
 
         <iframe
-          src="https://assets.pinterest.com/ext/embed.html?id=${encodeURIComponent(pinterestPinId)}"
-          title="BROSHIN Pinterest Product Video"
+          src="${escapeHTML(pinterestEmbed)}"
+          title="BROSHIN Pinterest Product"
           scrolling="no"
-          allow="autoplay; encrypted-media; picture-in-picture">
+          allowtransparency="true"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen>
         </iframe>
 
       `;
 
-    }else{
 
-      wrapper.innerHTML = `
+      videoGrid.appendChild(wrapper);
 
-        <div class="video-label">
-          📌 PINTEREST
-        </div>
-
-        <div style="
-          height:360px;
-          display:flex;
-          flex-direction:column;
-          align-items:center;
-          justify-content:center;
-          padding:20px;
-          text-align:center;
-          color:white;
-        ">
-
-          <div style="
-            font-size:40px;
-            margin-bottom:15px;
-          ">
-            📌
-          </div>
-
-          <div style="
-            font-weight:900;
-            margin-bottom:15px;
-          ">
-            Pinterest Video
-          </div>
-
-          <a
-            class="video-open-btn"
-            href="${escapeHTML(pinterest)}"
-            target="_blank"
-            rel="noopener noreferrer">
-
-            OPEN PINTEREST
-
-          </a>
-
-        </div>
-
-      `;
+      videoCount++;
 
     }
-
-
-    videoGrid.appendChild(wrapper);
-
-    videoCount++;
 
   }
 
 
   if(videoCount > 0){
 
-    videoBox.style.display =
-      "block";
+    videoBox.style.display = "block";
 
   }
 
@@ -2636,36 +2309,47 @@ function getYouTubeId(url){
     }
 
 
-    const patterns = [
-
-      /[?&]v=([^&#]+)/i,
-
-      /youtu\.be\/([^?&#/]+)/i,
-
-      /youtube\.com\/shorts\/([^?&#/]+)/i,
-
-      /youtube\.com\/embed\/([^?&#/]+)/i
-
-    ];
+    let match =
+      value.match(
+        /[?&]v=([^&#]+)/i
+      );
 
 
-    for(
-      const pattern of patterns
-    ){
-
-      const match =
-        value.match(pattern);
+    if(match && match[1]){
+      return match[1];
+    }
 
 
-      if(
-        match &&
-        match[1]
-      ){
+    match =
+      value.match(
+        /youtu\.be\/([^?&#/]+)/i
+      );
 
-        return match[1];
 
-      }
+    if(match && match[1]){
+      return match[1];
+    }
 
+
+    match =
+      value.match(
+        /youtube\.com\/shorts\/([^?&#/]+)/i
+      );
+
+
+    if(match && match[1]){
+      return match[1];
+    }
+
+
+    match =
+      value.match(
+        /youtube\.com\/embed\/([^?&#/]+)/i
+      );
+
+
+    if(match && match[1]){
+      return match[1];
     }
 
 
@@ -2681,32 +2365,112 @@ function getYouTubeId(url){
 
 
 /* =========================================================
-   INSTAGRAM ID
+   INSTAGRAM EMBED
 ========================================================= */
 
-function getInstagramId(url){
+function getInstagramEmbedUrl(url){
+
+  try{
+
+    let value =
+      String(url || "").trim();
+
+
+    if(!value){
+      return "";
+    }
+
+
+    value =
+      value.split("?")[0];
+
+
+    value =
+      value.replace(/\/+$/,"");
+
+
+    if(!value.includes("instagram.com")){
+      return "";
+    }
+
+
+    if(
+      !value.includes("/reel/") &&
+      !value.includes("/p/") &&
+      !value.includes("/tv/")
+    ){
+
+      return "";
+
+    }
+
+
+    return value + "/embed/";
+
+  }catch(error){
+
+    return "";
+
+  }
+
+}
+
+
+/* =========================================================
+   PINTEREST EMBED
+========================================================= */
+
+function getPinterestEmbedUrl(url){
 
   try{
 
     const value =
-      String(url || "")
-      .trim()
-      .split("?")[0]
-      .replace(/\/+$/,"");
+      String(url || "").trim();
 
 
-    const match =
-      value.match(
-        /instagram\.com\/(?:reel|reels|p|tv)\/([^/?#]+)/i
+    if(!value){
+      return "";
+    }
+
+
+    /*
+      Pinterest normal pin URL:
+      https://www.pinterest.com/pin/123456789/
+
+      Pinterest short URL:
+      https://pin.it/XXXXXXXX
+    */
+
+
+    const pinId =
+      getPinterestPinId(value);
+
+
+    if(pinId){
+
+      return (
+        "https://www.pinterest.com/pin/" +
+        pinId +
+        "/"
       );
 
+    }
 
-    return match &&
-           match[1]
-           ?
-           match[1]
-           :
-           "";
+
+    /*
+      pin.it short URLs cannot reliably
+      expose the final pin ID directly
+      from browser JavaScript.
+    */
+
+    if(value.includes("pin.it/")){
+
+      return "";
+
+    }
+
+
+    return "";
 
   }catch(error){
 
@@ -2731,14 +2495,11 @@ function getPinterestPinId(url){
 
     const match =
       value.match(
-        /pinterest\.[^/]+\/pin\/(\d+)/i
+        /\/pin\/(\d+)/i
       );
 
 
-    if(
-      match &&
-      match[1]
-    ){
+    if(match && match[1]){
 
       return match[1];
 
@@ -2763,9 +2524,7 @@ function getPinterestPinId(url){
 function setMainImage(image){
 
   const imageBox =
-    document.getElementById(
-      "detailImageBox"
-    );
+    document.getElementById("detailImageBox");
 
 
   imageBox.innerHTML = `
@@ -2773,8 +2532,7 @@ function setMainImage(image){
     <img
       src="${escapeHTML(image)}"
       class="detail-image"
-      alt="BROSHIN Product"
-      onerror="this.parentElement.innerHTML='<div class=&quot;detail-placeholder&quot;>🛍️</div>'">
+      alt="BROSHIN Product">
 
   `;
 
@@ -2792,18 +2550,15 @@ function showCheckout(){
   }
 
 
-  if(
-    Number(currentProduct.stock) <= 0
-  ){
+  if(Number(currentProduct.stock) <= 0){
     return;
   }
 
 
-  document.getElementById(
-    "checkoutSection"
-  ).scrollIntoView({
-    behavior:"smooth"
-  });
+  document.getElementById("checkoutSection")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
 
 }
 
@@ -2824,9 +2579,8 @@ function goHome(){
    PLACE ORDER
 ========================================================= */
 
-document.getElementById(
-  "checkoutForm"
-).addEventListener(
+document.getElementById("checkoutForm")
+.addEventListener(
   "submit",
   async function(e){
 
@@ -2840,35 +2594,23 @@ document.getElementById(
 
     const quantity =
       Number(
-        document.getElementById(
-          "customerQuantity"
-        ).value
+        document.getElementById("customerQuantity").value
       );
 
 
     if(quantity < 1){
-
-      document.getElementById(
-        "checkoutMessage"
-      ).textContent =
-        "❌ Quantity must be at least 1.";
-
       return;
-
     }
 
 
     const stock =
-      Number(
-        currentProduct.stock
-      ) || 0;
+      Number(currentProduct.stock) || 0;
 
 
     if(quantity > stock){
 
-      document.getElementById(
-        "checkoutMessage"
-      ).textContent =
+      document.getElementById("checkoutMessage")
+        .textContent =
         "❌ Not enough stock available.";
 
       return;
@@ -2877,15 +2619,11 @@ document.getElementById(
 
 
     const sellingPrice =
-      Number(
-        currentProduct.selling_price
-      ) || 0;
+      Number(currentProduct.selling_price) || 0;
 
 
     const costPrice =
-      Number(
-        currentProduct.cost_price
-      ) || 0;
+      Number(currentProduct.cost_price) || 0;
 
 
     const total =
@@ -2894,25 +2632,20 @@ document.getElementById(
 
     const orderData = {
 
-      action:"order",
-
       orderId:
         "BR" + Date.now(),
 
       name:
-        document.getElementById(
-          "customerName"
-        ).value.trim(),
+        document.getElementById("customerName")
+        .value.trim(),
 
       phone:
-        document.getElementById(
-          "customerPhone"
-        ).value.trim(),
+        document.getElementById("customerPhone")
+        .value.trim(),
 
       address:
-        document.getElementById(
-          "customerAddress"
-        ).value.trim(),
+        document.getElementById("customerAddress")
+        .value.trim(),
 
       productId:
         currentProduct.id,
@@ -2936,15 +2669,11 @@ document.getElementById(
 
 
     const message =
-      document.getElementById(
-        "checkoutMessage"
-      );
+      document.getElementById("checkoutMessage");
 
 
     const button =
-      document.getElementById(
-        "placeOrderButton"
-      );
+      document.getElementById("placeOrderButton");
 
 
     message.textContent =
@@ -2956,30 +2685,32 @@ document.getElementById(
 
     try{
 
-      await sendPost(
-        orderData
+      await fetch(
+        API_URL,
+        {
+          method:"POST",
+          mode:"no-cors",
+          headers:{
+            "Content-Type":
+              "text/plain;charset=utf-8"
+          },
+          body:
+            JSON.stringify(orderData)
+        }
       );
 
 
-      message.innerHTML = `
-        🎉 <strong>Order placed successfully!</strong><br>
-        Your Order ID is:
-        <strong>${escapeHTML(orderData.orderId)}</strong>
-      `;
+      message.textContent =
+        "🎉 Order placed successfully! Order ID: " +
+        orderData.orderId;
 
 
-      document.getElementById(
-        "checkoutForm"
-      ).reset();
+      document.getElementById("checkoutForm").reset();
 
 
     }catch(error){
 
-      console.error(
-        "Order error:",
-        error
-      );
-
+      console.error(error);
 
       message.textContent =
         "❌ Order failed. Please try again.";
@@ -2994,49 +2725,18 @@ document.getElementById(
 
 
 /* =========================================================
-   POST API
-========================================================= */
-
-async function sendPost(data){
-
-  /*
-    Google Apps Script web apps commonly work
-    reliably with text/plain + no-cors.
-  */
-
-  await fetch(
-    API_URL,
-    {
-      method:"POST",
-      mode:"no-cors",
-      headers:{
-        "Content-Type":
-          "text/plain;charset=utf-8"
-      },
-      body:
-        JSON.stringify(data)
-    }
-  );
-
-}
-
-
-/* =========================================================
    TRACK ORDER
 ========================================================= */
 
 async function trackOrder(){
 
   const orderId =
-    document.getElementById(
-      "trackOrderId"
-    ).value.trim();
+    document.getElementById("trackOrderId")
+    .value.trim();
 
 
   const result =
-    document.getElementById(
-      "trackResult"
-    );
+    document.getElementById("trackResult");
 
 
   if(!orderId){
@@ -3059,12 +2759,16 @@ async function trackOrder(){
 
   try{
 
-    const data =
-      await apiGet(
+    const response =
+      await fetch(
         API_URL +
         "?order=" +
         encodeURIComponent(orderId)
       );
+
+
+    const data =
+      await response.json();
 
 
     if(
@@ -3088,50 +2792,38 @@ async function trackOrder(){
     result.innerHTML = `
 
       <div class="track-status">
-
         📦 ${escapeHTML(
-          order.status ||
-          "Pending"
+          order.status || "Pending"
         )}
-
       </div>
-
 
       <p>
         <strong>Order ID:</strong>
         ${escapeHTML(
-          order.order_id ||
-          orderId
+          order.order_id || orderId
         )}
       </p>
-
 
       <p>
         <strong>Product:</strong>
         ${escapeHTML(
-          order.product ||
-          ""
+          order.product || ""
         )}
       </p>
-
 
       <p>
         <strong>Quantity:</strong>
         ${escapeHTML(
-          order.quantity ||
-          ""
+          order.quantity || ""
         )}
       </p>
-
 
       <p>
         <strong>Total:</strong>
         ₹${escapeHTML(
-          order.total ||
-          "0"
+          order.total || "0"
         )}
       </p>
-
 
       <div class="tracking-awb">
 
@@ -3156,11 +2848,7 @@ async function trackOrder(){
 
   }catch(error){
 
-    console.error(
-      "Tracking error:",
-      error
-    );
-
+    console.error(error);
 
     result.innerHTML =
       "❌ Unable to check order right now.";
@@ -3175,9 +2863,7 @@ async function trackOrder(){
 ========================================================= */
 
 document
-.querySelectorAll(
-  "#starSelector span"
-)
+.querySelectorAll("#starSelector span")
 .forEach(function(star){
 
   star.addEventListener(
@@ -3185,9 +2871,7 @@ document
     function(){
 
       selectedRating =
-        Number(
-          this.dataset.rating
-        );
+        Number(this.dataset.rating);
 
       updateStars();
 
@@ -3200,20 +2884,14 @@ document
 function updateStars(){
 
   document
-  .querySelectorAll(
-    "#starSelector span"
-  )
+  .querySelectorAll("#starSelector span")
   .forEach(function(star){
 
     const rating =
-      Number(
-        star.dataset.rating
-      );
+      Number(star.dataset.rating);
 
 
-    if(
-      rating <= selectedRating
-    ){
+    if(rating <= selectedRating){
 
       star.classList.add("active");
 
@@ -3232,25 +2910,26 @@ function updateStars(){
    PHOTO SELECT
 ========================================================= */
 
-document.getElementById(
-  "reviewPhoto"
-).addEventListener(
+document
+.getElementById("reviewPhoto")
+.addEventListener(
   "change",
   handleReviewPhoto
 );
 
 
+/* =========================================================
+   HANDLE REVIEW PHOTO
+========================================================= */
+
 function handleReviewPhoto(){
 
   const input =
-    document.getElementById(
-      "reviewPhoto"
-    );
+    document.getElementById("reviewPhoto");
 
 
   const file =
-    input.files &&
-    input.files[0];
+    input.files && input.files[0];
 
 
   if(!file){
@@ -3259,19 +2938,13 @@ function handleReviewPhoto(){
 
 
   const allowedTypes = [
-
     "image/jpeg",
     "image/png",
     "image/webp"
-
   ];
 
 
-  if(
-    !allowedTypes.includes(
-      file.type
-    )
-  ){
+  if(!allowedTypes.includes(file.type)){
 
     alert(
       "Please select a JPG, PNG or WEBP image."
@@ -3284,10 +2957,7 @@ function handleReviewPhoto(){
   }
 
 
-  if(
-    file.size >
-    4 * 1024 * 1024
-  ){
+  if(file.size > 4 * 1024 * 1024){
 
     alert(
       "Photo must be smaller than 4 MB."
@@ -3349,7 +3019,7 @@ function handleReviewPhoto(){
 
 
 /* =========================================================
-   REMOVE REVIEW PHOTO
+   REMOVE PHOTO
 ========================================================= */
 
 function removeReviewPhoto(){
@@ -3359,20 +3029,16 @@ function removeReviewPhoto(){
   selectedPhotoMimeType = "";
 
 
-  document.getElementById(
-    "reviewPhoto"
-  ).value = "";
+  document.getElementById("reviewPhoto").value = "";
 
 
-  document.getElementById(
-    "photoPreview"
-  ).style.display =
+  document.getElementById("photoPreview")
+    .style.display =
     "none";
 
 
-  document.getElementById(
-    "photoPreviewImage"
-  ).src = "";
+  document.getElementById("photoPreviewImage")
+    .src = "";
 
 }
 
@@ -3389,9 +3055,7 @@ async function loadReviews(){
 
 
   const reviewsList =
-    document.getElementById(
-      "reviewsList"
-    );
+    document.getElementById("reviewsList");
 
 
   reviewsList.innerHTML = `
@@ -3405,14 +3069,18 @@ async function loadReviews(){
 
   try{
 
-    const data =
-      await apiGet(
+    const response =
+      await fetch(
         API_URL +
         "?reviews=" +
         encodeURIComponent(
           currentProduct.id
         )
       );
+
+
+    const data =
+      await response.json();
 
 
     if(
@@ -3428,28 +3096,16 @@ async function loadReviews(){
 
 
     const reviews =
-      Array.isArray(
-        data.reviews
-      )
-      ?
-      data.reviews
-      :
-      [];
+      Array.isArray(data.reviews)
+      ? data.reviews
+      : [];
 
 
     displayReviews(
-
       reviews,
-
-      Number(
-        data.averageRating
-      ) || 0,
-
-      Number(
-        data.totalReviews
-      ) ||
+      Number(data.averageRating) || 0,
+      Number(data.totalReviews) ||
       reviews.length
-
     );
 
 
@@ -3464,9 +3120,7 @@ async function loadReviews(){
     reviewsList.innerHTML = `
 
       <div class="no-reviews">
-
         Reviews couldn't load right now.
-
       </div>
 
     `;
@@ -3487,33 +3141,23 @@ function displayReviews(
 ){
 
   const list =
-    document.getElementById(
-      "reviewsList"
-    );
+    document.getElementById("reviewsList");
 
 
   const averageElement =
-    document.getElementById(
-      "averageRating"
-    );
+    document.getElementById("averageRating");
 
 
   const starsElement =
-    document.getElementById(
-      "averageStars"
-    );
+    document.getElementById("averageStars");
 
 
   const countElement =
-    document.getElementById(
-      "reviewCount"
-    );
+    document.getElementById("reviewCount");
 
 
   averageElement.textContent =
-    Number(
-      averageRating || 0
-    ).toFixed(1);
+    Number(averageRating || 0).toFixed(1);
 
 
   starsElement.textContent =
@@ -3528,10 +3172,8 @@ function displayReviews(
     totalReviews +
     (
       totalReviews === 1
-      ?
-      " Review"
-      :
-      " Reviews"
+      ? " Review"
+      : " Reviews"
     );
 
 
@@ -3556,119 +3198,107 @@ function displayReviews(
   list.innerHTML = "";
 
 
-  reviews.forEach(
-    function(review){
+  reviews.forEach(function(review){
 
-      const card =
-        document.createElement(
-          "div"
-        );
+    const card =
+      document.createElement("div");
 
 
-      card.className =
-        "review-card";
+    card.className =
+      "review-card";
 
 
-      const customerName =
-        review.customer_name ||
-        review.name ||
-        "Customer";
+    const customerName =
+      review.customer_name ||
+      review.name ||
+      "Customer";
 
 
-      const reviewText =
-        review.review ||
-        review.text ||
-        "";
+    const reviewText =
+      review.review ||
+      review.text ||
+      "";
 
 
-      const reviewDate =
-        review.date ||
-        "";
+    const reviewDate =
+      review.date ||
+      "";
 
 
-      const rating =
-        Number(
-          review.rating
-        ) || 0;
+    const rating =
+      Number(review.rating) || 0;
 
 
-      const photoUrl =
-        String(
-          review.photo_url ||
-          ""
-        ).trim();
+    const photoUrl =
+      String(
+        review.photo_url || ""
+      ).trim();
 
 
-      card.innerHTML = `
+    card.innerHTML = `
 
-        <div class="review-top">
+      <div class="review-top">
 
-          <div>
+        <div>
 
-            <div class="reviewer-name">
+          <div class="reviewer-name">
 
-              ${escapeHTML(
-                customerName
-              )}
-
-            </div>
-
-            <div class="review-date">
-
-              ${escapeHTML(
-                reviewDate
-              )}
-
-            </div>
+            ${escapeHTML(
+              customerName
+            )}
 
           </div>
 
+          <div class="review-date">
 
-          <div class="review-stars">
-
-            ${getStars(rating)}
+            ${escapeHTML(
+              reviewDate
+            )}
 
           </div>
 
         </div>
 
+        <div class="review-stars">
 
-        <div class="review-text">
-
-          ${escapeHTML(reviewText)}
+          ${getStars(rating)}
 
         </div>
 
+      </div>
 
-        ${
-          photoUrl
-          ?
-          `
-            <img
-              class="review-photo"
-              src="${escapeHTML(photoUrl)}"
-              alt="Customer review photo"
-              loading="lazy"
-              onclick="openLightbox('${escapeJS(photoUrl)}')"
-            >
-          `
-          :
-          ""
-        }
+      <div class="review-text">
 
-      `;
+        ${escapeHTML(reviewText)}
+
+      </div>
+
+      ${
+        photoUrl
+        ?
+        `<img
+          class="review-photo"
+          src="${escapeHTML(photoUrl)}"
+          alt="Customer review photo"
+          loading="lazy"
+          onclick="openLightbox('${escapeJS(photoUrl)}')"
+        >`
+        :
+        ``
+      }
+
+    `;
 
 
-      list.appendChild(card);
+    list.appendChild(card);
 
-    }
-  );
+  });
 
 }
 
 
 /* =========================================================
-   STARS
+   STAR DISPLAY
 ========================================================= */
 
 function getStars(rating){
@@ -3694,10 +3324,8 @@ function getStars(rating){
 
     stars +=
       i <= rating
-      ?
-      "★"
-      :
-      "☆";
+      ? "★"
+      : "☆";
 
   }
 
@@ -3719,27 +3347,21 @@ async function submitReview(){
 
 
   const name =
-    document.getElementById(
-      "reviewName"
-    ).value.trim();
+    document.getElementById("reviewName")
+    .value.trim();
 
 
   const review =
-    document.getElementById(
-      "reviewText"
-    ).value.trim();
+    document.getElementById("reviewText")
+    .value.trim();
 
 
   const message =
-    document.getElementById(
-      "reviewMessage"
-    );
+    document.getElementById("reviewMessage");
 
 
   const button =
-    document.getElementById(
-      "reviewSubmit"
-    );
+    document.getElementById("reviewSubmit");
 
 
   if(!name){
@@ -3816,8 +3438,18 @@ async function submitReview(){
 
   try{
 
-    await sendPost(
-      reviewData
+    await fetch(
+      API_URL,
+      {
+        method:"POST",
+        mode:"no-cors",
+        headers:{
+          "Content-Type":
+            "text/plain;charset=utf-8"
+        },
+        body:
+          JSON.stringify(reviewData)
+      }
     );
 
 
@@ -3825,14 +3457,8 @@ async function submitReview(){
       "🎉 Thank you! Your review has been submitted.";
 
 
-    document.getElementById(
-      "reviewName"
-    ).value = "";
-
-
-    document.getElementById(
-      "reviewText"
-    ).value = "";
+    document.getElementById("reviewName").value = "";
+    document.getElementById("reviewText").value = "";
 
 
     selectedRating = 0;
@@ -3844,9 +3470,7 @@ async function submitReview(){
 
     setTimeout(
       function(){
-
         loadReviews();
-
       },
       2000
     );
@@ -3878,15 +3502,11 @@ async function submitReview(){
 function openLightbox(imageUrl){
 
   const lightbox =
-    document.getElementById(
-      "imageLightbox"
-    );
+    document.getElementById("imageLightbox");
 
 
   const image =
-    document.getElementById(
-      "lightboxImage"
-    );
+    document.getElementById("lightboxImage");
 
 
   image.src =
@@ -3906,15 +3526,13 @@ function closeLightbox(event){
   }
 
 
-  document.getElementById(
-    "imageLightbox"
-  ).style.display =
+  document.getElementById("imageLightbox")
+    .style.display =
     "none";
 
 
-  document.getElementById(
-    "lightboxImage"
-  ).src = "";
+  document.getElementById("lightboxImage")
+    .src = "";
 
 }
 
