@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#171717">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<meta name="theme-color"
+content="#171717">
+
 <title>BROSHIN — Discover. Shop. Enjoy.</title>
 
 <style>
+
 :root{
   --black:#171717;
+  --black2:#29231f;
   --gold:#D4AF37;
+  --gold2:#9b7921;
   --rose:#D8B7AE;
+  --rose2:#ead5ce;
   --ivory:#F8F4EC;
   --cream:#EDE3D2;
-  --white:#fff;
+  --white:#ffffff;
   --text:#211e1c;
   --muted:#756d66;
   --shadow:0 25px 70px rgba(23,23,23,.10);
@@ -34,21 +45,39 @@ body{
   color:var(--text);
   overflow-x:hidden;
   min-height:100vh;
+
   background:
-    radial-gradient(circle at 5% 10%,rgba(216,183,174,.55),transparent 28%),
-    radial-gradient(circle at 95% 5%,rgba(212,175,55,.16),transparent 30%),
-    linear-gradient(125deg,var(--ivory),var(--cream),#fffaf4,#ead5ce,var(--ivory));
+    radial-gradient(
+      circle at 5% 10%,
+      rgba(216,183,174,.55),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 95% 5%,
+      rgba(212,175,55,.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      125deg,
+      var(--ivory),
+      var(--cream),
+      #fffaf4,
+      var(--rose2),
+      var(--ivory)
+    );
+
   background-size:400% 400%;
   animation:bgMove 18s ease infinite;
 }
 
 @keyframes bgMove{
-  0%,100%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-}
+  0%,100%{
+    background-position:0% 50%;
+  }
 
-button,input,textarea{
-  font-family:inherit;
+  50%{
+    background-position:100% 50%;
+  }
 }
 
 .cursor{
@@ -58,7 +87,14 @@ button,input,textarea{
   border-radius:50%;
   pointer-events:none;
   transform:translate(-50%,-50%);
-  background:radial-gradient(circle,rgba(212,175,55,.12),transparent 70%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(212,175,55,.12),
+      transparent 70%
+    );
+
   z-index:0;
 }
 
@@ -68,18 +104,29 @@ button,input,textarea{
   align-items:center;
   justify-content:center;
   padding:0 15px;
-  color:#fff;
+
+  color:white;
   font-size:10px;
   font-weight:900;
   letter-spacing:3px;
   text-align:center;
-  background:linear-gradient(90deg,#171717,#51453b,#171717);
+
+  background:
+    linear-gradient(
+      90deg,
+      #171717,
+      #51453b,
+      #171717
+    );
+
   background-size:200% 100%;
   animation:barMove 6s linear infinite;
 }
 
 @keyframes barMove{
-  to{background-position:200% 0}
+  to{
+    background-position:200% 0;
+  }
 }
 
 .nav{
@@ -87,21 +134,30 @@ button,input,textarea{
   max-width:1250px;
   margin:20px auto;
   padding:16px 25px;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
+
   position:relative;
   z-index:20;
+
   border:1px solid rgba(255,255,255,.65);
   border-radius:24px;
+
   background:rgba(255,255,255,.48);
+
   backdrop-filter:blur(20px);
-  box-shadow:0 20px 50px rgba(23,23,23,.08);
+
+  box-shadow:
+    0 20px 50px
+    rgba(23,23,23,.08);
 }
 
 .logo{
   color:var(--black);
   text-decoration:none;
+
   font-size:30px;
   font-weight:1000;
   letter-spacing:7px;
@@ -131,9 +187,11 @@ button,input,textarea{
   max-width:1250px;
   min-height:620px;
   margin:auto;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   text-align:center;
   position:relative;
 }
@@ -152,82 +210,167 @@ button,input,textarea{
 .orb.one{
   width:430px;
   height:430px;
+
   left:0;
   top:60px;
-  background:radial-gradient(circle,rgba(216,183,174,.55),transparent 68%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(216,183,174,.55),
+      transparent 68%
+    );
+
   animation:float1 9s ease-in-out infinite;
 }
 
 .orb.two{
   width:390px;
   height:390px;
+
   right:0;
   bottom:20px;
-  background:radial-gradient(circle,rgba(212,175,55,.20),transparent 68%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(212,175,55,.20),
+      transparent 68%
+    );
+
   animation:float2 11s ease-in-out infinite;
 }
 
 @keyframes float1{
+
   50%{
-    transform:translate(100px,50px) scale(1.12);
+    transform:
+      translate(100px,50px)
+      scale(1.12);
   }
+
 }
 
 @keyframes float2{
+
   50%{
-    transform:translate(-100px,-50px) scale(1.15);
+    transform:
+      translate(-100px,-50px)
+      scale(1.15);
   }
+
 }
 
 .small-title{
   display:inline-block;
+
   padding:9px 18px;
+
   border-radius:50px;
+
   font-size:10px;
   letter-spacing:4px;
   font-weight:900;
-  background:linear-gradient(100deg,rgba(232,211,185,.75),rgba(216,183,174,.55));
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(232,211,185,.75),
+      rgba(216,183,174,.55)
+    );
+
   border:1px solid rgba(212,175,55,.35);
 }
 
 .hero h1{
   margin-top:25px;
-  font-size:clamp(65px,15vw,175px);
+
+  font-size:
+    clamp(
+      65px,
+      15vw,
+      175px
+    );
+
   line-height:.82;
+
   font-weight:1000;
-  letter-spacing:clamp(5px,1.7vw,18px);
-  background:linear-gradient(100deg,#171717,#6a594c,#D4AF37,#9b7921,#171717);
+
+  letter-spacing:
+    clamp(
+      5px,
+      1.7vw,
+      18px
+    );
+
+  background:
+    linear-gradient(
+      100deg,
+      #171717,
+      #6a594c,
+      #D4AF37,
+      #9b7921,
+      #171717
+    );
+
   background-size:300% auto;
+
   -webkit-background-clip:text;
   background-clip:text;
+
   color:transparent;
+
   animation:goldMove 7s linear infinite;
 }
 
 @keyframes goldMove{
-  to{background-position:300% center}
+
+  to{
+    background-position:300% center;
+  }
+
 }
 
 .hero-description{
   max-width:650px;
-  margin:35px auto 0;
+
+  margin:
+    35px auto 0;
+
   color:var(--muted);
+
   font-size:17px;
   line-height:1.8;
 }
 
 .hero-button{
   display:inline-block;
+
   margin-top:32px;
+
   padding:16px 30px;
+
   border-radius:50px;
-  color:#fff;
+
+  color:white;
   text-decoration:none;
+
   font-size:12px;
   font-weight:900;
   letter-spacing:1px;
-  background:linear-gradient(100deg,#171717,#51443a,#171717);
-  box-shadow:0 18px 40px rgba(23,23,23,.18);
+
+  background:
+    linear-gradient(
+      100deg,
+      #171717,
+      #51443a,
+      #171717
+    );
+
+  box-shadow:
+    0 18px 40px
+    rgba(23,23,23,.18);
+
   transition:.3s;
 }
 
@@ -240,9 +383,7 @@ button,input,textarea{
   margin-bottom:50px;
 }
 
-.heading-label,
-.video-title,
-.reviews-label{
+.heading-label{
   font-size:10px;
   font-weight:900;
   letter-spacing:4px;
@@ -251,72 +392,131 @@ button,input,textarea{
 
 .heading h2{
   margin-top:12px;
-  font-size:clamp(48px,8vw,95px);
+
+  font-size:
+    clamp(
+      48px,
+      8vw,
+      95px
+    );
+
   line-height:.9;
+
   font-weight:1000;
+
   letter-spacing:-4px;
-  background:linear-gradient(90deg,#171717,#D4AF37,#D8B7AE,#171717);
+
+  background:
+    linear-gradient(
+      90deg,
+      #171717,
+      #D4AF37,
+      #D8B7AE,
+      #171717
+    );
+
   background-size:250% auto;
+
   -webkit-background-clip:text;
   background-clip:text;
+
   color:transparent;
 }
 
 .heading p{
   margin:22px auto 0;
+
   max-width:600px;
+
   color:var(--muted);
+
   line-height:1.7;
 }
 
 .trending{
   width:92%;
   max-width:1250px;
-  margin:70px auto 110px;
+
+  margin:
+    70px auto 110px;
 }
 
 .cards{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+
+  grid-template-columns:
+    repeat(4,1fr);
+
   gap:22px;
 }
 
 .card{
   min-height:430px;
+
   padding:22px;
+
   border-radius:32px;
+
   position:relative;
   overflow:hidden;
-  background:linear-gradient(145deg,rgba(255,255,255,.78),rgba(255,255,255,.30));
-  border:1px solid rgba(255,255,255,.65);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.78),
+      rgba(255,255,255,.30)
+    );
+
+  border:
+    1px solid
+    rgba(255,255,255,.65);
+
   backdrop-filter:blur(18px);
+
   box-shadow:var(--shadow);
-  transition:.35s;
+
+  transition:
+    transform .35s,
+    box-shadow .35s;
 }
 
 .card:hover{
   transform:translateY(-10px);
-  box-shadow:0 35px 85px rgba(23,23,23,.17);
+
+  box-shadow:
+    0 35px 85px
+    rgba(23,23,23,.17);
 }
 
 .product-image{
   width:100%;
   height:210px;
+
   object-fit:contain;
+
   border-radius:22px;
-  background:rgba(255,255,255,.55);
+
+  background:
+    rgba(255,255,255,.55);
+
   margin:15px 0;
 }
 
 .placeholder{
   height:210px;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   font-size:70px;
+
   margin:15px 0;
+
   border-radius:22px;
-  background:rgba(255,255,255,.55);
+
+  background:
+    rgba(255,255,255,.55);
 }
 
 .number{
@@ -333,54 +533,77 @@ button,input,textarea{
 
 .card p{
   font-size:13px;
+
   color:var(--muted);
+
   line-height:1.6;
-  white-space:pre-line;
 }
 
 .price-box{
   display:flex;
+
   align-items:center;
+
   gap:9px;
+
   flex-wrap:wrap;
+
   margin:12px 0;
 }
 
 .reference-price{
   font-size:14px;
+
   color:#8a817a;
+
   text-decoration:line-through;
 }
 
 .product-price{
   font-size:23px;
+
   font-weight:1000;
 }
 
 .discount-badge{
   padding:5px 9px;
+
   border-radius:20px;
+
   background:#171717;
-  color:#fff;
+
+  color:white;
+
   font-size:9px;
+
   font-weight:900;
 }
 
 .save-text{
   font-size:11px;
+
   color:#96751e;
+
   font-weight:900;
 }
 
 .view-btn{
   width:100%;
+
   padding:14px;
+
   margin-top:17px;
+
   border:0;
+
   border-radius:50px;
+
   background:var(--black);
-  color:#fff;
+
+  color:white;
+
   font-weight:900;
+
   cursor:pointer;
 }
 
@@ -395,59 +618,103 @@ button,input,textarea{
 
 .status-badge{
   position:absolute;
+
   top:18px;
   right:18px;
+
   padding:7px 11px;
+
   border-radius:30px;
-  background:rgba(23,23,23,.9);
-  color:#fff;
+
+  background:
+    rgba(23,23,23,.9);
+
+  color:white;
+
   font-size:8px;
+
   font-weight:900;
+
   letter-spacing:1px;
 }
 
 .product-wrap{
   width:92%;
   max-width:1150px;
-  margin:60px auto 70px;
+
+  margin:
+    60px auto 70px;
 }
 
 .back-btn{
   border:0;
+
   background:none;
+
   cursor:pointer;
+
   font-weight:900;
+
   color:var(--muted);
+
   margin-bottom:25px;
+
   font-size:13px;
 }
 
 .product-detail{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap:55px;
+
   align-items:center;
+
   padding:45px;
+
   border-radius:40px;
-  background:rgba(255,255,255,.50);
+
+  background:
+    rgba(255,255,255,.50);
+
   backdrop-filter:blur(20px);
-  border:1px solid rgba(255,255,255,.75);
-  box-shadow:0 30px 80px rgba(23,23,23,.10);
+
+  border:
+    1px solid
+    rgba(255,255,255,.75);
+
+  box-shadow:
+    0 30px 80px
+    rgba(23,23,23,.10);
 }
 
 .detail-image-box{
   min-height:450px;
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
   border-radius:30px;
-  background:linear-gradient(135deg,rgba(216,183,174,.35),rgba(232,211,185,.70));
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(216,183,174,.35),
+      rgba(232,211,185,.70)
+    );
+
   overflow:hidden;
 }
 
 .detail-image{
   width:100%;
   height:450px;
+
   object-fit:contain;
 }
 
@@ -457,20 +724,27 @@ button,input,textarea{
 
 .image-gallery{
   display:flex;
+
   gap:10px;
+
   margin-top:15px;
+
   overflow-x:auto;
 }
 
 .thumb{
   width:65px;
   height:65px;
+
   object-fit:cover;
+
   border-radius:12px;
+
   cursor:pointer;
-  background:#fff;
+
+  background:white;
+
   border:2px solid transparent;
-  flex-shrink:0;
 }
 
 .thumb:hover{
@@ -478,9 +752,17 @@ button,input,textarea{
 }
 
 .detail-info h1{
-  font-size:clamp(42px,6vw,75px);
+  font-size:
+    clamp(
+      42px,
+      6vw,
+      75px
+    );
+
   line-height:.95;
+
   font-weight:1000;
+
   letter-spacing:-3px;
 }
 
@@ -490,119 +772,220 @@ button,input,textarea{
 
 .detail-reference{
   color:#8a817a;
+
   text-decoration:line-through;
+
   font-size:18px;
 }
 
 .detail-price{
   margin-top:5px;
+
   font-size:38px;
+
   font-weight:1000;
+
   color:#96751e;
 }
 
 .detail-discount{
   display:inline-block;
+
   margin-top:10px;
+
   padding:7px 12px;
+
   border-radius:30px;
+
   background:#171717;
-  color:#fff;
+
+  color:white;
+
   font-size:10px;
+
   font-weight:900;
 }
 
 .detail-save{
   margin-top:10px;
+
   color:#96751e;
+
   font-weight:900;
 }
 
 .detail-description{
   color:var(--muted);
+
   line-height:1.9;
+
   font-size:15px;
+
   white-space:pre-line;
 }
 
 .stock{
   margin-top:20px;
+
   font-size:12px;
+
   font-weight:900;
+
   color:var(--muted);
 }
 
-/* VIDEO */
+
+/* =========================================================
+   VIDEO SYSTEM
+========================================================= */
 
 .video-box{
-  margin-top:35px;
+  margin-top:30px;
+
   display:none;
 }
 
 .video-title{
+  font-size:11px;
+
+  font-weight:900;
+
+  letter-spacing:3px;
+
+  color:#96751e;
+
   margin-bottom:15px;
 }
 
 .video-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+
+  grid-template-columns:
+    repeat(3,1fr);
+
   gap:15px;
 }
 
-.social-video,
-.direct-video-card{
+.social-video{
   width:100%;
+
   border-radius:20px;
+
   overflow:hidden;
+
   background:#171717;
+
   min-height:240px;
+
   position:relative;
+
+  box-shadow:
+    0 15px 35px
+    rgba(23,23,23,.12);
 }
 
 .social-video iframe{
   width:100%;
+
   height:360px;
+
   border:0;
+
   display:block;
+
   background:#171717;
 }
 
-.social-video video,
-.direct-video-card video{
+.social-video video{
   width:100%;
+
   height:360px;
+
   object-fit:cover;
+
   display:block;
+
   background:#171717;
 }
 
 .video-label{
   position:absolute;
+
   left:10px;
   top:10px;
+
   z-index:5;
+
   padding:7px 10px;
+
   border-radius:20px;
-  background:rgba(0,0,0,.75);
-  color:#fff;
+
+  background:
+    rgba(0,0,0,.75);
+
+  color:white;
+
   font-size:9px;
+
   font-weight:900;
+
   letter-spacing:1px;
+
   pointer-events:none;
 }
 
+.video-open{
+  position:absolute;
+
+  bottom:12px;
+  right:12px;
+
+  z-index:10;
+
+  padding:8px 12px;
+
+  border-radius:30px;
+
+  background:
+    rgba(0,0,0,.75);
+
+  color:white;
+
+  text-decoration:none;
+
+  font-size:9px;
+
+  font-weight:900;
+}
+
+
+/* =========================================================
+   BUY
+========================================================= */
+
 .buy-now{
   width:100%;
+
   margin-top:30px;
+
   padding:18px;
+
   border:0;
+
   border-radius:50px;
+
   background:var(--black);
-  color:#fff;
+
+  color:white;
+
   font-size:13px;
+
   font-weight:900;
+
   letter-spacing:2px;
+
   cursor:pointer;
+
   transition:.3s;
 }
 
@@ -612,187 +995,319 @@ button,input,textarea{
 
 .buy-now:disabled{
   opacity:.5;
+
   cursor:not-allowed;
 }
+
+
+/* =========================================================
+   CHECKOUT
+========================================================= */
 
 .checkout{
   width:92%;
   max-width:700px;
-  margin:0 auto 80px;
+
+  margin:
+    0 auto 80px;
+
   padding:40px;
+
   border-radius:35px;
-  background:rgba(255,255,255,.76);
-  box-shadow:0 30px 80px rgba(23,23,23,.12);
+
+  background:
+    rgba(255,255,255,.76);
+
+  box-shadow:
+    0 30px 80px
+    rgba(23,23,23,.12);
 }
 
 .checkout h2{
   font-size:38px;
+
   margin-bottom:10px;
 }
 
 .checkout p{
   color:var(--muted);
+
   margin-bottom:25px;
 }
 
 .checkout-form{
   display:flex;
+
   flex-direction:column;
+
   gap:14px;
 }
 
 .checkout-form input,
-.checkout-form textarea,
-.review-form input,
-.review-form textarea{
+.checkout-form textarea{
   width:100%;
+
   padding:15px;
-  border:1px solid rgba(23,23,23,.12);
+
+  border:
+    1px solid
+    rgba(23,23,23,.12);
+
   border-radius:16px;
+
   font-family:inherit;
+
   font-size:14px;
+
   outline:none;
+
   background:#fff;
 }
 
-.checkout-form textarea,
-.review-form textarea{
+.checkout-form textarea{
   min-height:120px;
+
   resize:vertical;
 }
 
-.checkout-form button,
-.review-submit{
+.checkout-form button{
   padding:17px;
+
   border:0;
+
   border-radius:50px;
+
   background:var(--black);
-  color:#fff;
+
+  color:white;
+
   font-weight:900;
+
   cursor:pointer;
 }
 
-.checkout-form button:disabled,
-.review-submit:disabled{
+.checkout-form button:disabled{
   opacity:.6;
 }
 
-#checkoutMessage,
-#reviewMessage{
+#checkoutMessage{
   text-align:center;
+
   font-weight:900;
+
   margin-top:18px;
 }
 
-/* REVIEWS */
+
+/* =========================================================
+   REVIEWS
+========================================================= */
 
 .reviews-section{
   width:92%;
   max-width:1150px;
-  margin:0 auto 90px;
+
+  margin:
+    0 auto 90px;
+
   padding:45px;
+
   border-radius:40px;
-  background:rgba(255,255,255,.55);
+
+  background:
+    rgba(255,255,255,.55);
+
   backdrop-filter:blur(20px);
-  border:1px solid rgba(255,255,255,.75);
-  box-shadow:0 30px 80px rgba(23,23,23,.10);
+
+  border:
+    1px solid
+    rgba(255,255,255,.75);
+
+  box-shadow:
+    0 30px 80px
+    rgba(23,23,23,.10);
 }
 
 .reviews-heading{
   text-align:center;
+
   margin-bottom:25px;
+}
+
+.reviews-label{
+  font-size:10px;
+
+  font-weight:900;
+
+  letter-spacing:4px;
+
+  color:#96751e;
 }
 
 .reviews-heading h2{
   margin-top:10px;
-  font-size:clamp(38px,6vw,65px);
+
+  font-size:
+    clamp(
+      38px,
+      6vw,
+      65px
+    );
+
   line-height:1;
+
   font-weight:1000;
 }
 
 .rating-summary{
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
   gap:18px;
-  margin:25px 0 35px;
+
+  margin:
+    25px 0 35px;
+
   flex-wrap:wrap;
 }
 
 .big-rating{
   font-size:45px;
+
   font-weight:1000;
 }
 
-.stars-display,
-.review-stars{
+.stars-display{
   color:#D4AF37;
+
   font-size:25px;
+
   letter-spacing:3px;
 }
 
 .review-count{
   color:var(--muted);
+
   font-size:13px;
 }
 
 .review-form{
   max-width:700px;
-  margin:0 auto 45px;
+
+  margin:
+    0 auto 45px;
+
   padding:25px;
+
   border-radius:25px;
-  background:rgba(255,255,255,.68);
+
+  background:
+    rgba(255,255,255,.68);
 }
 
 .review-form h3{
   margin-bottom:18px;
+
   font-size:22px;
 }
 
 .star-selector{
   display:flex;
+
   gap:5px;
+
   margin-bottom:15px;
 }
 
 .star-selector span{
   font-size:32px;
+
   color:#c9c0b7;
+
   cursor:pointer;
+
   transition:.2s;
 }
 
 .star-selector span.active,
 .star-selector span:hover{
   color:var(--gold);
+
   transform:scale(1.1);
 }
 
 .review-form input,
 .review-form textarea{
+  width:100%;
+
+  padding:14px 16px;
+
   margin-bottom:12px;
+
+  border:
+    1px solid
+    rgba(23,23,23,.12);
+
+  border-radius:15px;
+
+  outline:none;
+
+  font-family:inherit;
+
+  font-size:14px;
+}
+
+.review-form textarea{
+  min-height:110px;
+
+  resize:vertical;
 }
 
 .photo-label{
   display:block;
+
   margin-top:4px;
+
   margin-bottom:8px;
+
   font-size:12px;
+
   font-weight:900;
+
   color:var(--muted);
 }
 
 .photo-upload{
-  display:block;
   width:100%;
+
   padding:16px;
-  border:1px dashed rgba(23,23,23,.25);
+
+  border:
+    1px dashed
+    rgba(23,23,23,.25);
+
   border-radius:16px;
-  background:rgba(255,255,255,.70);
+
+  background:
+    rgba(255,255,255,.70);
+
   cursor:pointer;
+
   font-size:13px;
+
   margin-bottom:12px;
-  text-align:center;
+
+  display:block;
+}
+
+.photo-upload:hover{
+  border-color:var(--gold);
+
+  background:
+    rgba(255,255,255,.9);
 }
 
 #reviewPhoto{
@@ -801,54 +1316,119 @@ button,input,textarea{
 
 .photo-preview{
   display:none;
+
   position:relative;
+
   width:140px;
   height:140px;
-  margin:5px auto 15px;
+
+  margin:
+    5px auto 15px;
+
   border-radius:20px;
+
   overflow:hidden;
+
   background:#fff;
-  box-shadow:0 10px 30px rgba(23,23,23,.12);
+
+  box-shadow:
+    0 10px 30px
+    rgba(23,23,23,.12);
 }
 
 .photo-preview img{
   width:100%;
   height:100%;
+
   object-fit:cover;
 }
 
 .remove-photo{
   position:absolute;
+
   top:7px;
   right:7px;
+
   width:28px;
   height:28px;
+
   border:0;
+
   border-radius:50%;
-  background:rgba(23,23,23,.85);
-  color:#fff;
+
+  background:
+    rgba(23,23,23,.85);
+
+  color:white;
+
   cursor:pointer;
+
+  font-weight:900;
+}
+
+.review-submit{
+  width:100%;
+
+  padding:15px;
+
+  border:0;
+
+  border-radius:50px;
+
+  background:var(--black);
+
+  color:white;
+
+  font-weight:900;
+
+  cursor:pointer;
+}
+
+.review-submit:disabled{
+  opacity:.5;
+}
+
+#reviewMessage{
+  text-align:center;
+
+  margin-top:12px;
+
+  font-size:13px;
+
   font-weight:900;
 }
 
 .reviews-list{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+
+  grid-template-columns:
+    repeat(2,1fr);
+
   gap:18px;
 }
 
 .review-card{
   padding:22px;
+
   border-radius:22px;
-  background:rgba(255,255,255,.72);
-  border:1px solid rgba(255,255,255,.85);
+
+  background:
+    rgba(255,255,255,.72);
+
+  border:
+    1px solid
+    rgba(255,255,255,.85);
 }
 
 .review-top{
   display:flex;
+
   justify-content:space-between;
+
   align-items:flex-start;
+
   gap:10px;
+
   margin-bottom:12px;
 }
 
@@ -857,167 +1437,278 @@ button,input,textarea{
 }
 
 .review-stars{
+  color:#D4AF37;
+
+  letter-spacing:2px;
+
   font-size:15px;
 }
 
 .review-date{
   color:#999;
+
   font-size:10px;
+
   margin-top:3px;
 }
 
 .review-text{
   color:var(--muted);
+
   line-height:1.7;
+
   font-size:14px;
-  white-space:pre-line;
 }
 
 .review-photo{
   width:100%;
+
   max-height:320px;
+
   object-fit:cover;
+
   border-radius:18px;
+
   margin-top:16px;
+
   display:block;
+
   cursor:pointer;
+
+  transition:.3s;
+}
+
+.review-photo:hover{
+  transform:scale(1.01);
 }
 
 .no-reviews{
   grid-column:1/-1;
+
   text-align:center;
+
   padding:30px;
+
   color:var(--muted);
 }
 
-/* TRACKING */
+
+/* =========================================================
+   TRACKING
+========================================================= */
 
 .track-box{
   width:92%;
   max-width:700px;
-  margin:0 auto 100px;
+
+  margin:
+    0 auto 100px;
+
   padding:40px;
+
   border-radius:35px;
-  background:rgba(255,255,255,.76);
-  box-shadow:0 30px 80px rgba(23,23,23,.12);
+
+  background:
+    rgba(255,255,255,.76);
+
+  box-shadow:
+    0 30px 80px
+    rgba(23,23,23,.12);
+
   text-align:center;
 }
 
 .track-box h2{
   font-size:35px;
+
   margin-bottom:10px;
 }
 
 .track-box p{
   color:var(--muted);
+
   margin-bottom:20px;
 }
 
 .track-input{
   width:100%;
+
   padding:16px;
-  border:1px solid rgba(23,23,23,.15);
+
+  border:
+    1px solid
+    rgba(23,23,23,.15);
+
   border-radius:50px;
+
   outline:none;
+
   margin-bottom:12px;
 }
 
 .track-button{
   width:100%;
+
   padding:16px;
+
   border:0;
+
   border-radius:50px;
+
   background:var(--black);
-  color:#fff;
+
+  color:white;
+
   font-weight:900;
+
   cursor:pointer;
 }
 
 .track-result{
   margin-top:25px;
+
   padding:20px;
+
   border-radius:20px;
-  background:rgba(248,244,236,.8);
+
+  background:
+    rgba(248,244,236,.8);
+
   text-align:left;
+
   display:none;
 }
 
 .track-status{
   font-size:22px;
+
   font-weight:1000;
+
   color:#96751e;
+
   margin-bottom:12px;
 }
 
 .tracking-awb{
   margin-top:15px;
+
   padding:15px;
+
   border-radius:15px;
-  background:rgba(255,255,255,.8);
+
+  background:
+    rgba(255,255,255,.8);
 }
 
 .tracking-awb strong{
   display:block;
+
   margin-bottom:5px;
 }
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
   width:92%;
   max-width:1250px;
+
   margin:auto;
-  padding:40px 0 30px;
-  border-top:1px solid rgba(23,23,23,.12);
+
+  padding:
+    40px 0 30px;
+
+  border-top:
+    1px solid
+    rgba(23,23,23,.12);
+
   text-align:center;
 }
 
 .footer-logo{
   font-size:27px;
+
   font-weight:1000;
+
   letter-spacing:6px;
 }
 
 footer p{
   margin-top:12px;
+
   color:var(--muted);
+
   font-size:11px;
 }
 
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
 .image-lightbox{
   position:fixed;
+
   inset:0;
+
   z-index:9999;
+
   display:none;
+
   align-items:center;
+
   justify-content:center;
+
   padding:20px;
-  background:rgba(0,0,0,.85);
+
+  background:
+    rgba(0,0,0,.85);
 }
 
 .image-lightbox img{
   max-width:95%;
+
   max-height:90vh;
+
   border-radius:20px;
+
   object-fit:contain;
 }
 
 .close-lightbox{
   position:absolute;
+
   top:20px;
   right:25px;
+
   width:45px;
   height:45px;
+
   border:0;
+
   border-radius:50%;
-  background:#fff;
+
+  background:white;
+
   color:#171717;
+
   font-size:25px;
+
   cursor:pointer;
 }
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media(max-width:900px){
 
   .cards{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:
+      repeat(2,1fr);
   }
 
   .product-detail{
@@ -1031,12 +1722,14 @@ footer p{
   .video-grid{
     grid-template-columns:1fr;
   }
+
 }
 
 @media(max-width:600px){
 
   .topbar{
     font-size:8px;
+
     letter-spacing:1.5px;
   }
 
@@ -1064,6 +1757,7 @@ footer p{
 
   .logo{
     font-size:22px;
+
     letter-spacing:4px;
   }
 
@@ -1076,58 +1770,97 @@ footer p{
   }
 
   .social-video iframe,
-  .social-video video,
-  .direct-video-card video{
+  .social-video video{
     height:430px;
   }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
-<div class="cursor" id="cursor"></div>
+
+<div
+  class="cursor"
+  id="cursor">
+</div>
+
 
 <div class="topbar">
+
   ✦ BROSHIN • TRENDING PRODUCTS • SMART FINDS • EVERYDAY ESSENTIALS ✦
+
 </div>
+
 
 <header class="nav">
 
-  <a href="./" class="logo">
+  <a
+    href="./"
+    class="logo">
+
     BROSHIN<span>.</span>
+
   </a>
 
   <div class="nav-tag">
+
     DISCOVER. SHOP. ENJOY.
+
   </div>
 
 </header>
 
 
+<!-- =========================================================
+     HOME PAGE
+========================================================= -->
+
 <main id="homePage">
+
 
 <section class="hero">
 
   <div class="orb one"></div>
+
   <div class="orb two"></div>
+
 
   <div class="hero-content">
 
     <div class="small-title">
+
       WELCOME TO BROSHIN
+
     </div>
 
-    <h1>BROSHIN</h1>
+
+    <h1>
+
+      BROSHIN
+
+    </h1>
+
 
     <p class="hero-description">
+
       Discover what's trending.
       Find something new.
       Shop products worth talking about.
+
     </p>
 
-    <a href="#trending" class="hero-button">
+
+    <a
+      href="#trending"
+      class="hero-button">
+
       EXPLORE TRENDING ↓
+
     </a>
 
   </div>
@@ -1135,56 +1868,92 @@ footer p{
 </section>
 
 
-<section class="trending" id="trending">
+
+<section
+  class="trending"
+  id="trending">
+
 
   <div class="heading">
 
     <div class="heading-label">
+
       BROSHIN'S HOT LIST
+
     </div>
 
-    <h2>TRENDING</h2>
+
+    <h2>
+
+      TRENDING
+
+    </h2>
+
 
     <p>
+
       The latest products and smart finds
       making waves right now.
+
     </p>
 
   </div>
 
-  <div class="cards" id="productCards">
+
+  <div
+    class="cards"
+    id="productCards">
+
 
     <div class="card">
 
       <div class="placeholder">
+
         🛍️
+
       </div>
 
+
       <h3>
+
         Loading Products...
+
       </h3>
 
+
       <p>
+
         Please wait...
+
       </p>
 
     </div>
 
+
   </div>
+
 
 </section>
 
 
+
 <section class="track-box">
 
+
   <h2>
+
     Track Your Order
+
   </h2>
 
+
   <p>
+
     Enter your BROSHIN Order ID
     to see your latest order status.
+
   </p>
+
 
   <input
     type="text"
@@ -1192,6 +1961,7 @@ footer p{
     class="track-input"
     placeholder="Example: BR123456789"
   >
+
 
   <button
     class="track-button"
@@ -1201,19 +1971,30 @@ footer p{
 
   </button>
 
+
   <div
     class="track-result"
     id="trackResult">
+
   </div>
 
+
 </section>
+
 
 </main>
 
 
+
+<!-- =========================================================
+     PRODUCT PAGE
+========================================================= -->
+
 <main id="productPage">
 
+
 <section class="product-wrap">
+
 
 <button
   class="back-btn"
@@ -1224,90 +2005,135 @@ footer p{
 </button>
 
 
+
 <div class="product-detail">
 
+
 <div>
+
 
   <div
     class="detail-image-box"
     id="detailImageBox">
 
+
     <div class="detail-placeholder">
+
       🛍️
+
     </div>
 
+
   </div>
+
 
   <div
     class="image-gallery"
     id="imageGallery">
+
   </div>
+
 
 </div>
 
 
+
 <div class="detail-info">
 
+
   <div class="small-title">
+
     BROSHIN PRODUCT
+
   </div>
 
+
   <h1 id="detailName">
+
     Loading...
+
   </h1>
 
+
+
   <div class="detail-price-box">
+
 
     <div
       class="detail-reference"
       id="detailReference">
+
     </div>
+
 
     <div
       class="detail-price"
       id="detailPrice">
+
       ₹0
+
     </div>
+
 
     <div
       class="detail-discount"
       id="detailDiscount">
+
     </div>
+
 
     <div
       class="detail-save"
       id="detailSave">
+
     </div>
 
+
   </div>
+
+
 
   <p
     class="detail-description"
     id="detailDescription">
+
   </p>
+
+
 
   <div
     class="stock"
     id="detailStock">
+
   </div>
 
 
-  <!-- VIDEO SECTION -->
+
+  <!-- =====================================================
+       VIDEO SECTION
+  ====================================================== -->
 
   <div
     class="video-box"
     id="videoBox">
 
+
     <div class="video-title">
+
       WATCH PRODUCT VIDEOS
+
     </div>
+
 
     <div
       class="video-grid"
       id="videoGrid">
+
     </div>
 
+
   </div>
+
 
 
   <button
@@ -1319,26 +2145,42 @@ footer p{
 
   </button>
 
-</div>
 
 </div>
 
+
+</div>
+
+
+
+<!-- =========================================================
+     CHECKOUT
+========================================================= -->
 
 <section
   class="checkout"
   id="checkoutSection">
 
+
 <h2>
+
   Checkout
+
 </h2>
 
+
 <p id="checkoutProduct">
+
   Complete your order below.
+
 </p>
+
+
 
 <form
   class="checkout-form"
   id="checkoutForm">
+
 
 <input
   type="text"
@@ -1347,6 +2189,7 @@ footer p{
   required
 >
 
+
 <input
   type="tel"
   id="customerPhone"
@@ -1354,10 +2197,12 @@ footer p{
   required
 >
 
+
 <textarea
   id="customerAddress"
   placeholder="Full Delivery Address"
   required></textarea>
+
 
 <input
   type="number"
@@ -1367,6 +2212,7 @@ footer p{
   required
 >
 
+
 <button
   type="submit"
   id="placeOrderButton">
@@ -1375,73 +2221,141 @@ footer p{
 
 </button>
 
+
 </form>
 
-<div id="checkoutMessage"></div>
+
+<div
+  id="checkoutMessage">
+
+</div>
+
 
 </section>
 
 
+
+<!-- =========================================================
+     REVIEWS
+========================================================= -->
+
 <section class="reviews-section">
+
 
 <div class="reviews-heading">
 
+
   <div class="reviews-label">
+
     REAL CUSTOMER FEEDBACK
+
   </div>
 
+
   <h2>
+
     Customer Reviews
+
   </h2>
 
+
 </div>
+
 
 
 <div class="rating-summary">
 
+
   <div
     class="big-rating"
     id="averageRating">
+
     0.0
+
   </div>
 
+
   <div>
+
 
     <div
       class="stars-display"
       id="averageStars">
+
       ☆☆☆☆☆
+
     </div>
+
 
     <div
       class="review-count"
       id="reviewCount">
+
       0 Reviews
+
     </div>
 
+
   </div>
+
 
 </div>
 
 
+
 <div class="review-form">
 
+
 <h3>
+
   Leave a Review
+
 </h3>
+
 
 
 <div
   class="star-selector"
   id="starSelector">
 
-  <span data-rating="1">★</span>
-  <span data-rating="2">★</span>
-  <span data-rating="3">★</span>
-  <span data-rating="4">★</span>
-  <span data-rating="5">★</span>
+
+  <span data-rating="1">
+
+    ★
+
+  </span>
+
+
+  <span data-rating="2">
+
+    ★
+
+  </span>
+
+
+  <span data-rating="3">
+
+    ★
+
+  </span>
+
+
+  <span data-rating="4">
+
+    ★
+
+  </span>
+
+
+  <span data-rating="5">
+
+    ★
+
+  </span>
+
 
 </div>
+
 
 
 <input
@@ -1451,14 +2365,18 @@ footer p{
   maxlength="50"
 >
 
+
 <textarea
   id="reviewText"
   placeholder="Write your review..."
   maxlength="500"></textarea>
 
 
+
 <label class="photo-label">
+
   📸 Add a photo of your product
+
 </label>
 
 
@@ -1478,15 +2396,18 @@ footer p{
 >
 
 
+
 <div
   class="photo-preview"
   id="photoPreview">
+
 
   <img
     id="photoPreviewImage"
     src=""
     alt="Review photo preview"
   >
+
 
   <button
     type="button"
@@ -1497,7 +2418,9 @@ footer p{
 
   </button>
 
+
 </div>
+
 
 
 <button
@@ -1510,30 +2433,47 @@ footer p{
 </button>
 
 
-<div id="reviewMessage"></div>
+<div
+  id="reviewMessage">
 
 </div>
+
+
+</div>
+
 
 
 <div
   class="reviews-list"
   id="reviewsList">
 
+
   <div class="no-reviews">
+
     Loading reviews...
+
   </div>
+
 
 </div>
 
+
 </section>
+
 
 </main>
 
+
+
+<!-- =========================================================
+     LIGHTBOX
+========================================================= -->
 
 <div
   class="image-lightbox"
   id="imageLightbox"
   onclick="closeLightbox()">
+
 
   <button
     class="close-lightbox"
@@ -1543,36 +2483,48 @@ footer p{
 
   </button>
 
+
   <img
     id="lightboxImage"
     src=""
     alt="Customer review photo"
   >
 
+
 </div>
+
 
 
 <footer>
 
+
 <div class="footer-logo">
+
   BROSHIN
+
 </div>
 
+
 <p>
+
   © 2026 BROSHIN — Discover. Shop. Enjoy.
+
 </p>
+
 
 </footer>
 
 
+
 <script>
+
 
 /* =========================================================
    GOOGLE APPS SCRIPT API
 ========================================================= */
 
 const API_URL =
-"https://script.google.com/macros/s/AKfycbwebTGY5E8wMp6jHR3ugPIt3rzPRsHa-79Y6sqwq7wNFoI7Jz8RSJ_95HT-TFrUfGb1Tg/exec";
+"https://script.google.com/macros/s/AKfycbwebTGY5E8wMp6jHR3ugPIt3rzPRsHa-79Y6sqwq7WnFoI7Jz8RSJ_95HT-TFrUfGb1Tg/exec";
 
 
 /* =========================================================
@@ -1580,11 +2532,15 @@ const API_URL =
 ========================================================= */
 
 let allProducts = [];
+
 let currentProduct = null;
+
 let selectedRating = 0;
 
 let selectedPhotoData = "";
+
 let selectedPhotoName = "";
+
 let selectedPhotoMimeType = "";
 
 
@@ -1594,6 +2550,7 @@ let selectedPhotoMimeType = "";
 
 const cursor =
 document.getElementById("cursor");
+
 
 document.addEventListener(
   "mousemove",
@@ -1616,52 +2573,84 @@ document.addEventListener(
 async function loadProducts(){
 
   const productCards =
-    document.getElementById("productCards");
+    document.getElementById(
+      "productCards"
+    );
+
 
   try{
 
     const response =
-      await fetch(API_URL);
+      await fetch(
+        API_URL,
+        {
+          method:"GET",
+          cache:"no-store"
+        }
+      );
+
 
     const data =
       await response.json();
 
+
     if(!Array.isArray(data)){
 
-      throw new Error("Products not found");
+      throw new Error(
+        "Products not found"
+      );
 
     }
 
-    allProducts = data;
 
-    productCards.innerHTML = "";
+    allProducts =
+      data;
+
+
+    productCards.innerHTML =
+      "";
+
 
     const activeProducts =
-      data.filter(function(product){
+      data.filter(
+        function(product){
 
-        return String(
-          product.status || "active"
-        ).trim().toLowerCase() === "active";
+          return String(
+            product.status ||
+            "active"
+          )
+          .trim()
+          .toLowerCase() ===
+          "active";
 
-      });
+        }
+      );
 
 
-    if(activeProducts.length === 0){
+    if(
+      activeProducts.length === 0
+    ){
 
       productCards.innerHTML = `
 
         <div class="card">
 
           <div class="placeholder">
+
             🛍️
+
           </div>
 
           <h3>
+
             No Products Yet
+
           </h3>
 
           <p>
+
             New products coming soon.
+
           </p>
 
         </div>
@@ -1673,163 +2662,250 @@ async function loadProducts(){
     }
 
 
-    activeProducts.forEach(function(product){
+    activeProducts.forEach(
+      function(product){
 
-      const card =
-        document.createElement("article");
-
-      card.className = "card";
-
-
-      const image =
-        String(product.image1 || "").trim();
+        const card =
+          document.createElement(
+            "article"
+          );
 
 
-      const referencePrice =
-        Number(product.reference_price) || 0;
+        card.className =
+          "card";
 
 
-      const sellingPrice =
-        Number(product.selling_price) || 0;
+        const image =
+          String(
+            product.image1 ||
+            ""
+          ).trim();
 
 
-      const discount =
-        Number(product.discount) || 0;
+        const referencePrice =
+          Number(
+            product.reference_price
+          ) || 0;
 
 
-      const saveAmount =
-        Number(product.save_amount) || 0;
+        const sellingPrice =
+          Number(
+            product.selling_price
+          ) || 0;
 
 
-      const stock =
-        Number(product.stock) || 0;
+        const discount =
+          Number(
+            product.discount
+          ) || 0;
 
 
-      card.innerHTML = `
+        const saveAmount =
+          Number(
+            product.save_amount
+          ) || 0;
 
-        ${
-          stock <= 0
-          ?
-          `<div class="status-badge">
-            OUT OF STOCK
-          </div>`
-          :
-          ``
-        }
 
-        <div class="number">
-          PRODUCT ${escapeHTML(product.id)}
-        </div>
+        const stock =
+          Number(
+            product.stock
+          ) || 0;
 
-        ${
-          image
-          ?
-          `<img
-            class="product-image"
-            src="${escapeHTML(image)}"
-            alt="${escapeHTML(product.name)}"
-            loading="lazy"
-          >`
-          :
-          `<div class="placeholder">
-            🛍️
-          </div>`
-        }
 
-        <h3>
-          ${escapeHTML(product.name)}
-        </h3>
-
-        <div class="price-box">
-
-          ${
-            referencePrice > sellingPrice
-            ?
-            `<span class="reference-price">
-              ₹${referencePrice}
-            </span>`
-            :
-            ``
-          }
-
-          <span class="product-price">
-            ₹${sellingPrice}
-          </span>
-
-          ${
-            discount > 0
-            ?
-            `<span class="discount-badge">
-              ${discount}% OFF
-            </span>`
-            :
-            ``
-          }
-
-        </div>
-
-        ${
-          saveAmount > 0
-          ?
-          `<div class="save-text">
-            Save ₹${saveAmount}
-          </div>`
-          :
-          ``
-        }
-
-        <p>
-          ${escapeHTML(product.description || "")}
-        </p>
-
-        <button
-          class="view-btn"
-          onclick="openProduct('${escapeJS(product.id)}')"
-          ${stock <= 0 ? "disabled" : ""}>
+        card.innerHTML = `
 
           ${
             stock <= 0
             ?
-            "OUT OF STOCK"
+            `
+              <div class="status-badge">
+
+                OUT OF STOCK
+
+              </div>
+            `
             :
-            "VIEW PRODUCT"
+            ""
           }
 
-        </button>
 
-      `;
+          <div class="number">
+
+            PRODUCT
+            ${escapeHTML(
+              product.id
+            )}
+
+          </div>
 
 
-      if(stock <= 0){
+          ${
+            image
+            ?
+            `
+              <img
+                class="product-image"
+                src="${escapeHTML(image)}"
+                alt="${escapeHTML(product.name || "BROSHIN Product")}"
+                loading="lazy"
+                onerror="this.style.display='none'"
+              >
+            `
+            :
+            `
+              <div class="placeholder">
 
-        card.classList.add("out-stock");
+                🛍️
+
+              </div>
+            `
+          }
+
+
+          <h3>
+
+            ${escapeHTML(
+              product.name ||
+              "BROSHIN Product"
+            )}
+
+          </h3>
+
+
+          <div class="price-box">
+
+
+            ${
+              referencePrice >
+              sellingPrice
+              ?
+              `
+                <span class="reference-price">
+
+                  ₹${referencePrice}
+
+                </span>
+              `
+              :
+              ""
+            }
+
+
+            <span class="product-price">
+
+              ₹${sellingPrice}
+
+            </span>
+
+
+            ${
+              discount > 0
+              ?
+              `
+                <span class="discount-badge">
+
+                  ${discount}% OFF
+
+                </span>
+              `
+              :
+              ""
+            }
+
+
+          </div>
+
+
+          ${
+            saveAmount > 0
+            ?
+            `
+              <div class="save-text">
+
+                Save ₹${saveAmount}
+
+              </div>
+            `
+            :
+            ""
+          }
+
+
+          <p>
+
+            ${escapeHTML(
+              product.description ||
+              ""
+            )}
+
+          </p>
+
+
+          <button
+            class="view-btn"
+            onclick="openProduct('${escapeJS(product.id)}')"
+            ${stock <= 0 ? "disabled" : ""}>
+
+            ${
+              stock <= 0
+              ?
+              "OUT OF STOCK"
+              :
+              "VIEW PRODUCT"
+            }
+
+          </button>
+
+        `;
+
+
+        if(stock <= 0){
+
+          card.classList.add(
+            "out-stock"
+          );
+
+        }
+
+
+        productCards.appendChild(
+          card
+        );
 
       }
-
-
-      productCards.appendChild(card);
-
-    });
+    );
 
 
   }catch(error){
 
-    console.error("Products error:",error);
+    console.error(
+      "Products error:",
+      error
+    );
+
 
     productCards.innerHTML = `
 
       <div class="card">
 
         <div class="placeholder">
+
           ⚠️
+
         </div>
 
+
         <h3>
+
           Products Couldn't Load
+
         </h3>
 
+
         <p>
+
           Please refresh and try again.
+
         </p>
 
       </div>
@@ -1866,17 +2942,24 @@ function checkProductPage(){
       window.location.search
     );
 
+
   const productId =
     params.get("product");
 
 
   if(!productId){
 
-    document.getElementById("homePage").style.display =
+    document.getElementById(
+      "homePage"
+    ).style.display =
       "block";
 
-    document.getElementById("productPage").style.display =
+
+    document.getElementById(
+      "productPage"
+    ).style.display =
       "none";
+
 
     loadProducts();
 
@@ -1885,14 +2968,21 @@ function checkProductPage(){
   }
 
 
-  document.getElementById("homePage").style.display =
+  document.getElementById(
+    "homePage"
+  ).style.display =
     "none";
 
-  document.getElementById("productPage").style.display =
+
+  document.getElementById(
+    "productPage"
+  ).style.display =
     "block";
 
 
-  loadSingleProduct(productId);
+  loadSingleProduct(
+    productId
+  );
 
 }
 
@@ -1901,12 +2991,21 @@ function checkProductPage(){
    LOAD SINGLE PRODUCT
 ========================================================= */
 
-async function loadSingleProduct(productId){
+async function loadSingleProduct(
+  productId
+){
 
   try{
 
     const response =
-      await fetch(API_URL);
+      await fetch(
+        API_URL,
+        {
+          method:"GET",
+          cache:"no-store"
+        }
+      );
+
 
     const products =
       await response.json();
@@ -1914,25 +3013,35 @@ async function loadSingleProduct(productId){
 
     if(!Array.isArray(products)){
 
-      throw new Error("Products not found");
+      throw new Error(
+        "Products not found"
+      );
 
     }
 
 
-    allProducts = products;
+    allProducts =
+      products;
 
 
     currentProduct =
-      products.find(function(product){
+      products.find(
+        function(product){
 
-        return String(product.id) === String(productId);
+          return String(
+            product.id
+          ) ===
+          String(productId);
 
-      });
+        }
+      );
 
 
     if(!currentProduct){
 
-      document.getElementById("detailName").textContent =
+      document.getElementById(
+        "detailName"
+      ).textContent =
         "Product Not Found";
 
       return;
@@ -1941,82 +3050,129 @@ async function loadSingleProduct(productId){
 
 
     const sellingPrice =
-      Number(currentProduct.selling_price) || 0;
+      Number(
+        currentProduct.selling_price
+      ) || 0;
 
 
     const referencePrice =
-      Number(currentProduct.reference_price) || 0;
+      Number(
+        currentProduct.reference_price
+      ) || 0;
 
 
     const discount =
-      Number(currentProduct.discount) || 0;
+      Number(
+        currentProduct.discount
+      ) || 0;
 
 
     const saveAmount =
-      Number(currentProduct.save_amount) || 0;
+      Number(
+        currentProduct.save_amount
+      ) || 0;
 
 
     const stock =
-      Number(currentProduct.stock) || 0;
+      Number(
+        currentProduct.stock
+      ) || 0;
 
 
-    document.getElementById("detailName").textContent =
-      currentProduct.name || "Product";
+    document.getElementById(
+      "detailName"
+    ).textContent =
+      currentProduct.name ||
+      "Product";
 
 
-    document.getElementById("detailPrice").textContent =
-      "₹" + sellingPrice;
+    document.getElementById(
+      "detailPrice"
+    ).textContent =
+      "₹" +
+      sellingPrice;
 
 
-    document.getElementById("detailReference").textContent =
-      referencePrice > sellingPrice
-      ? "₹" + referencePrice
-      : "";
+    document.getElementById(
+      "detailReference"
+    ).textContent =
+      referencePrice >
+      sellingPrice
+      ?
+      "₹" +
+      referencePrice
+      :
+      "";
 
 
-    document.getElementById("detailDiscount").textContent =
+    document.getElementById(
+      "detailDiscount"
+    ).textContent =
       discount > 0
-      ? discount + "% OFF"
-      : "";
+      ?
+      discount +
+      "% OFF"
+      :
+      "";
 
 
-    document.getElementById("detailSave").textContent =
+    document.getElementById(
+      "detailSave"
+    ).textContent =
       saveAmount > 0
-      ? "You save ₹" + saveAmount
-      : "";
+      ?
+      "You save ₹" +
+      saveAmount
+      :
+      "";
 
 
-    document.getElementById("detailDescription").textContent =
+    document.getElementById(
+      "detailDescription"
+    ).textContent =
       currentProduct.description ||
       "Discover this amazing product on BROSHIN.";
 
 
-    document.getElementById("detailStock").textContent =
+    document.getElementById(
+      "detailStock"
+    ).textContent =
       stock > 0
-      ? "Available Stock: " + stock
-      : "Currently Out of Stock";
+      ?
+      "Available Stock: " +
+      stock
+      :
+      "Currently Out of Stock";
 
 
     const buyButton =
-      document.getElementById("buyNowButton");
+      document.getElementById(
+        "buyNowButton"
+      );
 
 
     if(stock <= 0){
 
-      buyButton.disabled = true;
-      buyButton.textContent = "OUT OF STOCK";
+      buyButton.disabled =
+        true;
+
+      buyButton.textContent =
+        "OUT OF STOCK";
 
     }else{
 
-      buyButton.disabled = false;
-      buyButton.textContent = "BUY NOW";
+      buyButton.disabled =
+        false;
+
+      buyButton.textContent =
+        "BUY NOW";
 
     }
 
 
     /* =====================================================
        PRODUCT IMAGES
-    ===================================================== */
+    ====================================================== */
 
     const imageList = [
 
@@ -2028,52 +3184,87 @@ async function loadSingleProduct(productId){
       currentProduct.image6
 
     ]
-    .map(function(image){
+    .map(
+      function(image){
 
-      return String(image || "").trim();
+        return String(
+          image || ""
+        ).trim();
 
-    })
-    .filter(function(image){
+      }
+    )
+    .filter(
+      function(image){
 
-      return image !== "";
+        return image !== "";
 
-    });
+      }
+    );
 
 
     const imageBox =
-      document.getElementById("detailImageBox");
+      document.getElementById(
+        "detailImageBox"
+      );
 
 
     const gallery =
-      document.getElementById("imageGallery");
+      document.getElementById(
+        "imageGallery"
+      );
 
 
-    gallery.innerHTML = "";
+    gallery.innerHTML =
+      "";
 
 
-    if(imageList.length > 0){
+    if(
+      imageList.length > 0
+    ){
 
-      setMainImage(imageList[0]);
+      setMainImage(
+        imageList[0]
+      );
 
 
-      imageList.forEach(function(image){
+      imageList.forEach(
+        function(image){
 
-        const img =
-          document.createElement("img");
+          const img =
+            document.createElement(
+              "img"
+            );
 
-        img.src = image;
-        img.className = "thumb";
-        img.alt = currentProduct.name || "Product";
 
-        img.onclick = function(){
+          img.src =
+            image;
 
-          setMainImage(image);
 
-        };
+          img.className =
+            "thumb";
 
-        gallery.appendChild(img);
 
-      });
+          img.alt =
+            currentProduct.name ||
+            "Product";
+
+
+          img.onclick =
+            function(){
+
+              setMainImage(
+                image
+              );
+
+            };
+
+
+          gallery.appendChild(
+            img
+          );
+
+        }
+      );
 
 
     }else{
@@ -2081,7 +3272,9 @@ async function loadSingleProduct(productId){
       imageBox.innerHTML = `
 
         <div class="detail-placeholder">
+
           🛍️
+
         </div>
 
       `;
@@ -2091,13 +3284,20 @@ async function loadSingleProduct(productId){
 
     /* =====================================================
        VIDEO
-    ===================================================== */
+    ====================================================== */
 
-    loadProductVideos(currentProduct);
+    loadProductVideos(
+      currentProduct
+    );
 
 
-    document.getElementById("checkoutProduct").textContent =
-      currentProduct.name +
+    document.getElementById(
+      "checkoutProduct"
+    ).textContent =
+      (
+        currentProduct.name ||
+        "Product"
+      ) +
       " — ₹" +
       sellingPrice;
 
@@ -2107,9 +3307,15 @@ async function loadSingleProduct(productId){
 
   }catch(error){
 
-    console.error("Product error:",error);
+    console.error(
+      "Product error:",
+      error
+    );
 
-    document.getElementById("detailName").textContent =
+
+    document.getElementById(
+      "detailName"
+    ).textContent =
       "Something went wrong";
 
   }
@@ -2124,67 +3330,108 @@ async function loadSingleProduct(productId){
 function loadProductVideos(product){
 
   const videoBox =
-    document.getElementById("videoBox");
+    document.getElementById(
+      "videoBox"
+    );
+
 
   const videoGrid =
-    document.getElementById("videoGrid");
+    document.getElementById(
+      "videoGrid"
+    );
 
 
-  videoGrid.innerHTML = "";
+  videoGrid.innerHTML =
+    "";
 
-  videoBox.style.display = "none";
+
+  videoBox.style.display =
+    "none";
 
 
   const youtube =
-    String(product.youtube_video || "").trim();
+    String(
+      product.youtube_video ||
+      ""
+    ).trim();
 
 
   const instagram =
-    String(product.instagram_video || "").trim();
+    String(
+      product.instagram_video ||
+      ""
+    ).trim();
 
 
   const pinterest =
-    String(product.pinterest_video || "").trim();
+    String(
+      product.pinterest_video ||
+      ""
+    ).trim();
 
 
-  let videoCount = 0;
+  let videoCount =
+    0;
 
 
   /* =====================================================
      YOUTUBE
-  ===================================================== */
+  ====================================================== */
 
   if(youtube){
 
     const youtubeId =
-      getYouTubeId(youtube);
+      getYouTubeId(
+        youtube
+      );
 
 
     if(youtubeId){
 
       const wrapper =
-        document.createElement("div");
+        document.createElement(
+          "div"
+        );
 
-      wrapper.className = "social-video";
+
+      wrapper.className =
+        "social-video";
 
 
       wrapper.innerHTML = `
 
         <div class="video-label">
+
           ▶ YOUTUBE
+
         </div>
 
+
         <iframe
-          src="https://www.youtube.com/embed/${youtubeId}?autoplay=0&mute=0&loop=1&playlist=${youtubeId}&controls=1&rel=0"
+          src="https://www.youtube.com/embed/${encodeURIComponent(youtubeId)}?autoplay=0&mute=0&loop=1&playlist=${encodeURIComponent(youtubeId)}&controls=1&rel=0"
           title="BROSHIN YouTube Product Video"
           allow="autoplay; encrypted-media; picture-in-picture"
           allowfullscreen>
         </iframe>
 
+
+        <a
+          class="video-open"
+          href="${escapeHTML(youtube)}"
+          target="_blank"
+          rel="noopener">
+
+          OPEN VIDEO ↗
+
+        </a>
+
       `;
 
 
-      videoGrid.appendChild(wrapper);
+      videoGrid.appendChild(
+        wrapper
+      );
+
 
       videoCount++;
 
@@ -2195,43 +3442,87 @@ function loadProductVideos(product){
 
   /* =====================================================
      INSTAGRAM
-  ===================================================== */
+  ====================================================== */
 
   if(instagram){
 
-    const instagramEmbed =
-      getInstagramEmbedUrl(instagram);
+    const directInstagramVideo =
+      isDirectVideoUrl(
+        instagram
+      );
 
 
-    if(instagramEmbed){
+    if(directInstagramVideo){
 
-      const wrapper =
-        document.createElement("div");
+      addDirectVideo(
+        videoGrid,
+        instagram,
+        "◎ INSTAGRAM"
+      );
 
-      wrapper.className = "social-video";
-
-
-      wrapper.innerHTML = `
-
-        <div class="video-label">
-          ◎ INSTAGRAM
-        </div>
-
-        <iframe
-          src="${escapeHTML(instagramEmbed)}"
-          title="BROSHIN Instagram Product Video"
-          scrolling="no"
-          allowtransparency="true"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-
-      `;
-
-
-      videoGrid.appendChild(wrapper);
 
       videoCount++;
+
+    }else{
+
+      const instagramUrl =
+        getInstagramEmbedUrl(
+          instagram
+        );
+
+
+      if(instagramUrl){
+
+        const wrapper =
+          document.createElement(
+            "div"
+          );
+
+
+        wrapper.className =
+          "social-video";
+
+
+        wrapper.innerHTML = `
+
+          <div class="video-label">
+
+            ◎ INSTAGRAM
+
+          </div>
+
+
+          <iframe
+            src="${escapeHTML(instagramUrl)}"
+            title="BROSHIN Instagram Product Video"
+            scrolling="no"
+            allowtransparency="true"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+
+
+          <a
+            class="video-open"
+            href="${escapeHTML(instagram)}"
+            target="_blank"
+            rel="noopener">
+
+            OPEN INSTAGRAM ↗
+
+          </a>
+
+        `;
+
+
+        videoGrid.appendChild(
+          wrapper
+        );
+
+
+        videoCount++;
+
+      }
 
     }
 
@@ -2240,43 +3531,198 @@ function loadProductVideos(product){
 
   /* =====================================================
      PINTEREST
-  ===================================================== */
+  ====================================================== */
 
   if(pinterest){
 
-    const pinterestEmbed =
-      getPinterestEmbedUrl(pinterest);
+    const directPinterestVideo =
+      isDirectVideoUrl(
+        pinterest
+      );
 
 
-    if(pinterestEmbed){
+    if(directPinterestVideo){
 
-      const wrapper =
-        document.createElement("div");
+      addDirectVideo(
+        videoGrid,
+        pinterest,
+        "📌 PINTEREST"
+      );
 
-      wrapper.className = "social-video";
-
-
-      wrapper.innerHTML = `
-
-        <div class="video-label">
-          📌 PINTEREST
-        </div>
-
-        <iframe
-          src="${escapeHTML(pinterestEmbed)}"
-          title="BROSHIN Pinterest Product"
-          scrolling="no"
-          allowtransparency="true"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-
-      `;
-
-
-      videoGrid.appendChild(wrapper);
 
       videoCount++;
+
+    }else{
+
+      const pinId =
+        getPinterestPinId(
+          pinterest
+        );
+
+
+      if(pinId){
+
+        const wrapper =
+          document.createElement(
+            "div"
+          );
+
+
+        wrapper.className =
+          "social-video";
+
+
+        wrapper.innerHTML = `
+
+          <div class="video-label">
+
+            📌 PINTEREST
+
+          </div>
+
+
+          <iframe
+            src="https://assets.pinterest.com/ext/embed.html?id=${encodeURIComponent(pinId)}"
+            title="BROSHIN Pinterest Product Video"
+            scrolling="no"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+
+
+          <a
+            class="video-open"
+            href="${escapeHTML(pinterest)}"
+            target="_blank"
+            rel="noopener">
+
+            OPEN PIN ↗
+
+          </a>
+
+        `;
+
+
+        videoGrid.appendChild(
+          wrapper
+        );
+
+
+        videoCount++;
+
+      }else if(
+        pinterest.includes(
+          "pin.it/"
+        )
+      ){
+
+        /*
+          pin.it short links cannot reliably
+          expose the Pinterest Pin ID directly
+          inside browser JavaScript.
+
+          We still show the link so the customer
+          can open the actual Pinterest video.
+        */
+
+        const wrapper =
+          document.createElement(
+            "div"
+          );
+
+
+        wrapper.className =
+          "social-video";
+
+
+        wrapper.innerHTML = `
+
+          <div class="video-label">
+
+            📌 PINTEREST
+
+          </div>
+
+
+          <div
+            style="
+              height:360px;
+              display:flex;
+              flex-direction:column;
+              align-items:center;
+              justify-content:center;
+              color:white;
+              text-align:center;
+              padding:25px;
+            ">
+
+            <div
+              style="
+                font-size:55px;
+                margin-bottom:15px;
+              ">
+
+              📌
+
+            </div>
+
+
+            <strong
+              style="
+                font-size:16px;
+                margin-bottom:8px;
+              ">
+
+              Pinterest Video
+
+            </strong>
+
+
+            <span
+              style="
+                color:#bbb;
+                font-size:12px;
+                line-height:1.5;
+              ">
+
+              Tap below to watch the
+              product video on Pinterest.
+
+            </span>
+
+
+            <a
+              href="${escapeHTML(pinterest)}"
+              target="_blank"
+              rel="noopener"
+              style="
+                margin-top:18px;
+                padding:12px 20px;
+                border-radius:30px;
+                background:#fff;
+                color:#171717;
+                text-decoration:none;
+                font-size:11px;
+                font-weight:900;
+              ">
+
+              WATCH PINTEREST VIDEO ↗
+
+            </a>
+
+          </div>
+
+        `;
+
+
+        videoGrid.appendChild(
+          wrapper
+        );
+
+
+        videoCount++;
+
+      }
 
     }
 
@@ -2285,9 +3731,91 @@ function loadProductVideos(product){
 
   if(videoCount > 0){
 
-    videoBox.style.display = "block";
+    videoBox.style.display =
+      "block";
 
   }
+
+}
+
+
+/* =========================================================
+   DIRECT VIDEO
+========================================================= */
+
+function addDirectVideo(
+  container,
+  url,
+  label
+){
+
+  const wrapper =
+    document.createElement(
+      "div"
+    );
+
+
+  wrapper.className =
+    "social-video";
+
+
+  wrapper.innerHTML = `
+
+    <div class="video-label">
+
+      ${escapeHTML(label)}
+
+    </div>
+
+
+    <video
+      src="${escapeHTML(url)}"
+      controls
+      playsinline
+      preload="metadata">
+    </video>
+
+
+    <a
+      class="video-open"
+      href="${escapeHTML(url)}"
+      target="_blank"
+      rel="noopener">
+
+      OPEN VIDEO ↗
+
+    </a>
+
+  `;
+
+
+  container.appendChild(
+    wrapper
+  );
+
+}
+
+
+/* =========================================================
+   DIRECT VIDEO URL CHECK
+========================================================= */
+
+function isDirectVideoUrl(url){
+
+  const value =
+    String(
+      url || ""
+    )
+    .toLowerCase()
+    .split("?")[0];
+
+
+  return (
+    value.endsWith(".mp4") ||
+    value.endsWith(".webm") ||
+    value.endsWith(".mov") ||
+    value.endsWith(".m4v")
+  );
 
 }
 
@@ -2301,55 +3829,95 @@ function getYouTubeId(url){
   try{
 
     const value =
-      String(url || "").trim();
+      String(
+        url || ""
+      ).trim();
 
 
     if(!value){
+
       return "";
+
     }
 
 
-    let match =
+    const watchMatch =
       value.match(
         /[?&]v=([^&#]+)/i
       );
 
 
-    if(match && match[1]){
-      return match[1];
+    if(
+      watchMatch &&
+      watchMatch[1]
+    ){
+
+      return watchMatch[1];
+
     }
 
 
-    match =
+    const shortMatch =
       value.match(
         /youtu\.be\/([^?&#/]+)/i
       );
 
 
-    if(match && match[1]){
-      return match[1];
+    if(
+      shortMatch &&
+      shortMatch[1]
+    ){
+
+      return shortMatch[1];
+
     }
 
 
-    match =
+    const shortsMatch =
       value.match(
         /youtube\.com\/shorts\/([^?&#/]+)/i
       );
 
 
-    if(match && match[1]){
-      return match[1];
+    if(
+      shortsMatch &&
+      shortsMatch[1]
+    ){
+
+      return shortsMatch[1];
+
     }
 
 
-    match =
+    const embedMatch =
       value.match(
         /youtube\.com\/embed\/([^?&#/]+)/i
       );
 
 
-    if(match && match[1]){
-      return match[1];
+    if(
+      embedMatch &&
+      embedMatch[1]
+    ){
+
+      return embedMatch[1];
+
+    }
+
+
+    const liveMatch =
+      value.match(
+        /youtube\.com\/live\/([^?&#/]+)/i
+      );
+
+
+    if(
+      liveMatch &&
+      liveMatch[1]
+    ){
+
+      return liveMatch[1];
+
     }
 
 
@@ -2365,7 +3933,7 @@ function getYouTubeId(url){
 
 
 /* =========================================================
-   INSTAGRAM EMBED
+   INSTAGRAM EMBED URL
 ========================================================= */
 
 function getInstagramEmbedUrl(url){
@@ -2373,11 +3941,15 @@ function getInstagramEmbedUrl(url){
   try{
 
     let value =
-      String(url || "").trim();
+      String(
+        url || ""
+      ).trim();
 
 
     if(!value){
+
       return "";
+
     }
 
 
@@ -2386,11 +3958,20 @@ function getInstagramEmbedUrl(url){
 
 
     value =
-      value.replace(/\/+$/,"");
+      value.replace(
+        /\/+$/,
+        ""
+      );
 
 
-    if(!value.includes("instagram.com")){
+    if(
+      !value.includes(
+        "instagram.com"
+      )
+    ){
+
       return "";
+
     }
 
 
@@ -2405,72 +3986,11 @@ function getInstagramEmbedUrl(url){
     }
 
 
-    return value + "/embed/";
+    return (
+      value +
+      "/embed/"
+    );
 
-  }catch(error){
-
-    return "";
-
-  }
-
-}
-
-
-/* =========================================================
-   PINTEREST EMBED
-========================================================= */
-
-function getPinterestEmbedUrl(url){
-
-  try{
-
-    const value =
-      String(url || "").trim();
-
-
-    if(!value){
-      return "";
-    }
-
-
-    /*
-      Pinterest normal pin URL:
-      https://www.pinterest.com/pin/123456789/
-
-      Pinterest short URL:
-      https://pin.it/XXXXXXXX
-    */
-
-
-    const pinId =
-      getPinterestPinId(value);
-
-
-    if(pinId){
-
-      return (
-        "https://www.pinterest.com/pin/" +
-        pinId +
-        "/"
-      );
-
-    }
-
-
-    /*
-      pin.it short URLs cannot reliably
-      expose the final pin ID directly
-      from browser JavaScript.
-    */
-
-    if(value.includes("pin.it/")){
-
-      return "";
-
-    }
-
-
-    return "";
 
   }catch(error){
 
@@ -2490,18 +4010,38 @@ function getPinterestPinId(url){
   try{
 
     const value =
-      String(url || "").trim();
+      String(
+        url || ""
+      ).trim();
 
 
-    const match =
-      value.match(
-        /\/pin\/(\d+)/i
-      );
+    const patterns = [
+
+      /\/pin\/(\d+)/i,
+
+      /pinterest\.com\/pin\/(\d+)/i
+
+    ];
 
 
-    if(match && match[1]){
+    for(
+      const pattern of patterns
+    ){
 
-      return match[1];
+      const match =
+        value.match(
+          pattern
+        );
+
+
+      if(
+        match &&
+        match[1]
+      ){
+
+        return match[1];
+
+      }
 
     }
 
@@ -2524,7 +4064,9 @@ function getPinterestPinId(url){
 function setMainImage(image){
 
   const imageBox =
-    document.getElementById("detailImageBox");
+    document.getElementById(
+      "detailImageBox"
+    );
 
 
   imageBox.innerHTML = `
@@ -2532,7 +4074,12 @@ function setMainImage(image){
     <img
       src="${escapeHTML(image)}"
       class="detail-image"
-      alt="BROSHIN Product">
+      alt="BROSHIN Product"
+      onerror="
+        this.parentElement.innerHTML =
+        '<div class=&quot;detail-placeholder&quot;>🛍️</div>';
+      "
+    >
 
   `;
 
@@ -2546,19 +4093,30 @@ function setMainImage(image){
 function showCheckout(){
 
   if(!currentProduct){
+
     return;
+
   }
 
 
-  if(Number(currentProduct.stock) <= 0){
+  if(
+    Number(
+      currentProduct.stock
+    ) <= 0
+  ){
+
     return;
+
   }
 
 
-  document.getElementById("checkoutSection")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
+  document.getElementById(
+    "checkoutSection"
+  ).scrollIntoView({
+
+    behavior:"smooth"
+
+  });
 
 }
 
@@ -2579,8 +4137,9 @@ function goHome(){
    PLACE ORDER
 ========================================================= */
 
-document.getElementById("checkoutForm")
-.addEventListener(
+document.getElementById(
+  "checkoutForm"
+).addEventListener(
   "submit",
   async function(e){
 
@@ -2588,29 +4147,38 @@ document.getElementById("checkoutForm")
 
 
     if(!currentProduct){
+
       return;
+
     }
 
 
     const quantity =
       Number(
-        document.getElementById("customerQuantity").value
+        document.getElementById(
+          "customerQuantity"
+        ).value
       );
 
 
     if(quantity < 1){
+
       return;
+
     }
 
 
     const stock =
-      Number(currentProduct.stock) || 0;
+      Number(
+        currentProduct.stock
+      ) || 0;
 
 
     if(quantity > stock){
 
-      document.getElementById("checkoutMessage")
-        .textContent =
+      document.getElementById(
+        "checkoutMessage"
+      ).textContent =
         "❌ Not enough stock available.";
 
       return;
@@ -2619,48 +4187,66 @@ document.getElementById("checkoutForm")
 
 
     const sellingPrice =
-      Number(currentProduct.selling_price) || 0;
+      Number(
+        currentProduct.selling_price
+      ) || 0;
 
 
     const costPrice =
-      Number(currentProduct.cost_price) || 0;
+      Number(
+        currentProduct.cost_price
+      ) || 0;
 
 
     const total =
-      sellingPrice * quantity;
+      sellingPrice *
+      quantity;
 
 
     const orderData = {
 
       orderId:
-        "BR" + Date.now(),
+        "BR" +
+        Date.now(),
+
 
       name:
-        document.getElementById("customerName")
-        .value.trim(),
+        document.getElementById(
+          "customerName"
+        ).value.trim(),
+
 
       phone:
-        document.getElementById("customerPhone")
-        .value.trim(),
+        document.getElementById(
+          "customerPhone"
+        ).value.trim(),
+
 
       address:
-        document.getElementById("customerAddress")
-        .value.trim(),
+        document.getElementById(
+          "customerAddress"
+        ).value.trim(),
+
 
       productId:
         currentProduct.id,
 
+
       product:
         currentProduct.name,
+
 
       quantity:
         quantity,
 
+
       sellingPrice:
         sellingPrice,
 
+
       total:
         total,
+
 
       costPrice:
         costPrice
@@ -2669,34 +4255,51 @@ document.getElementById("checkoutForm")
 
 
     const message =
-      document.getElementById("checkoutMessage");
+      document.getElementById(
+        "checkoutMessage"
+      );
 
 
     const button =
-      document.getElementById("placeOrderButton");
+      document.getElementById(
+        "placeOrderButton"
+      );
 
 
     message.textContent =
       "Placing your order...";
 
 
-    button.disabled = true;
+    button.disabled =
+      true;
 
 
     try{
 
       await fetch(
+
         API_URL,
+
         {
+
           method:"POST",
+
           mode:"no-cors",
+
           headers:{
+
             "Content-Type":
               "text/plain;charset=utf-8"
+
           },
+
           body:
-            JSON.stringify(orderData)
+            JSON.stringify(
+              orderData
+            )
+
         }
+
       );
 
 
@@ -2705,12 +4308,18 @@ document.getElementById("checkoutForm")
         orderData.orderId;
 
 
-      document.getElementById("checkoutForm").reset();
+      document.getElementById(
+        "checkoutForm"
+      ).reset();
 
 
     }catch(error){
 
-      console.error(error);
+      console.error(
+        "Order error:",
+        error
+      );
+
 
       message.textContent =
         "❌ Order failed. Please try again.";
@@ -2718,7 +4327,8 @@ document.getElementById("checkoutForm")
     }
 
 
-    button.disabled = false;
+    button.disabled =
+      false;
 
   }
 );
@@ -2731,27 +4341,35 @@ document.getElementById("checkoutForm")
 async function trackOrder(){
 
   const orderId =
-    document.getElementById("trackOrderId")
-    .value.trim();
+    document.getElementById(
+      "trackOrderId"
+    ).value.trim();
 
 
   const result =
-    document.getElementById("trackResult");
+    document.getElementById(
+      "trackResult"
+    );
 
 
   if(!orderId){
 
-    result.style.display = "block";
+    result.style.display =
+      "block";
+
 
     result.innerHTML =
       "❌ Please enter your Order ID.";
+
 
     return;
 
   }
 
 
-  result.style.display = "block";
+  result.style.display =
+    "block";
+
 
   result.innerHTML =
     "🔍 Checking your order...";
@@ -2761,9 +4379,18 @@ async function trackOrder(){
 
     const response =
       await fetch(
+
         API_URL +
         "?order=" +
-        encodeURIComponent(orderId)
+        encodeURIComponent(
+          orderId
+        ),
+
+        {
+          method:"GET",
+          cache:"no-store"
+        }
+
       );
 
 
@@ -2780,6 +4407,7 @@ async function trackOrder(){
       result.innerHTML =
         "❌ Order not found.";
 
+
       return;
 
     }
@@ -2792,44 +4420,71 @@ async function trackOrder(){
     result.innerHTML = `
 
       <div class="track-status">
+
         📦 ${escapeHTML(
-          order.status || "Pending"
+          order.status ||
+          "Pending"
         )}
+
       </div>
 
+
       <p>
+
         <strong>Order ID:</strong>
+
         ${escapeHTML(
-          order.order_id || orderId
+          order.order_id ||
+          orderId
         )}
+
       </p>
 
+
       <p>
+
         <strong>Product:</strong>
+
         ${escapeHTML(
-          order.product || ""
+          order.product ||
+          ""
         )}
+
       </p>
 
+
       <p>
+
         <strong>Quantity:</strong>
+
         ${escapeHTML(
-          order.quantity || ""
+          order.quantity ||
+          ""
         )}
+
       </p>
 
+
       <p>
+
         <strong>Total:</strong>
+
         ₹${escapeHTML(
-          order.total || "0"
+          order.total ||
+          "0"
         )}
+
       </p>
+
 
       <div class="tracking-awb">
 
         <strong>
+
           📦 Tracking / AWB
+
         </strong>
+
 
         ${
           order.tracking_number
@@ -2848,7 +4503,11 @@ async function trackOrder(){
 
   }catch(error){
 
-    console.error(error);
+    console.error(
+      "Tracking error:",
+      error
+    );
+
 
     result.innerHTML =
       "❌ Unable to check order right now.";
@@ -2863,45 +4522,65 @@ async function trackOrder(){
 ========================================================= */
 
 document
-.querySelectorAll("#starSelector span")
-.forEach(function(star){
+.querySelectorAll(
+  "#starSelector span"
+)
+.forEach(
+  function(star){
 
-  star.addEventListener(
-    "click",
-    function(){
+    star.addEventListener(
+      "click",
+      function(){
 
-      selectedRating =
-        Number(this.dataset.rating);
+        selectedRating =
+          Number(
+            this.dataset.rating
+          );
 
-      updateStars();
 
-    }
-  );
+        updateStars();
 
-});
+      }
+    );
+
+  }
+);
 
 
 function updateStars(){
 
   document
-  .querySelectorAll("#starSelector span")
-  .forEach(function(star){
+  .querySelectorAll(
+    "#starSelector span"
+  )
+  .forEach(
+    function(star){
 
-    const rating =
-      Number(star.dataset.rating);
+      const rating =
+        Number(
+          star.dataset.rating
+        );
 
 
-    if(rating <= selectedRating){
+      if(
+        rating <=
+        selectedRating
+      ){
 
-      star.classList.add("active");
+        star.classList.add(
+          "active"
+        );
 
-    }else{
+      }else{
 
-      star.classList.remove("active");
+        star.classList.remove(
+          "active"
+        );
+
+      }
 
     }
-
-  });
+  );
 
 }
 
@@ -2911,7 +4590,9 @@ function updateStars(){
 ========================================================= */
 
 document
-.getElementById("reviewPhoto")
+.getElementById(
+  "reviewPhoto"
+)
 .addEventListener(
   "change",
   handleReviewPhoto
@@ -2925,45 +4606,65 @@ document
 function handleReviewPhoto(){
 
   const input =
-    document.getElementById("reviewPhoto");
+    document.getElementById(
+      "reviewPhoto"
+    );
 
 
   const file =
-    input.files && input.files[0];
+    input.files &&
+    input.files[0];
 
 
   if(!file){
+
     return;
+
   }
 
 
   const allowedTypes = [
+
     "image/jpeg",
     "image/png",
     "image/webp"
+
   ];
 
 
-  if(!allowedTypes.includes(file.type)){
+  if(
+    !allowedTypes.includes(
+      file.type
+    )
+  ){
 
     alert(
       "Please select a JPG, PNG or WEBP image."
     );
 
-    input.value = "";
+
+    input.value =
+      "";
+
 
     return;
 
   }
 
 
-  if(file.size > 4 * 1024 * 1024){
+  if(
+    file.size >
+    4 * 1024 * 1024
+  ){
 
     alert(
       "Photo must be smaller than 4 MB."
     );
 
-    input.value = "";
+
+    input.value =
+      "";
+
 
     return;
 
@@ -3013,32 +4714,47 @@ function handleReviewPhoto(){
     };
 
 
-  reader.readAsDataURL(file);
+  reader.readAsDataURL(
+    file
+  );
 
 }
 
 
 /* =========================================================
-   REMOVE PHOTO
+   REMOVE REVIEW PHOTO
 ========================================================= */
 
 function removeReviewPhoto(){
 
-  selectedPhotoData = "";
-  selectedPhotoName = "";
-  selectedPhotoMimeType = "";
+  selectedPhotoData =
+    "";
 
 
-  document.getElementById("reviewPhoto").value = "";
+  selectedPhotoName =
+    "";
 
 
-  document.getElementById("photoPreview")
-    .style.display =
+  selectedPhotoMimeType =
+    "";
+
+
+  document.getElementById(
+    "reviewPhoto"
+  ).value =
+    "";
+
+
+  document.getElementById(
+    "photoPreview"
+  ).style.display =
     "none";
 
 
-  document.getElementById("photoPreviewImage")
-    .src = "";
+  document.getElementById(
+    "photoPreviewImage"
+  ).src =
+    "";
 
 }
 
@@ -3050,18 +4766,24 @@ function removeReviewPhoto(){
 async function loadReviews(){
 
   if(!currentProduct){
+
     return;
+
   }
 
 
   const reviewsList =
-    document.getElementById("reviewsList");
+    document.getElementById(
+      "reviewsList"
+    );
 
 
   reviewsList.innerHTML = `
 
     <div class="no-reviews">
+
       Loading reviews...
+
     </div>
 
   `;
@@ -3071,11 +4793,18 @@ async function loadReviews(){
 
     const response =
       await fetch(
+
         API_URL +
         "?reviews=" +
         encodeURIComponent(
           currentProduct.id
-        )
+        ),
+
+        {
+          method:"GET",
+          cache:"no-store"
+        }
+
       );
 
 
@@ -3096,16 +4825,28 @@ async function loadReviews(){
 
 
     const reviews =
-      Array.isArray(data.reviews)
-      ? data.reviews
-      : [];
+      Array.isArray(
+        data.reviews
+      )
+      ?
+      data.reviews
+      :
+      [];
 
 
     displayReviews(
+
       reviews,
-      Number(data.averageRating) || 0,
-      Number(data.totalReviews) ||
+
+      Number(
+        data.averageRating
+      ) || 0,
+
+      Number(
+        data.totalReviews
+      ) ||
       reviews.length
+
     );
 
 
@@ -3120,7 +4861,9 @@ async function loadReviews(){
     reviewsList.innerHTML = `
 
       <div class="no-reviews">
+
         Reviews couldn't load right now.
+
       </div>
 
     `;
@@ -3135,29 +4878,41 @@ async function loadReviews(){
 ========================================================= */
 
 function displayReviews(
+
   reviews,
   averageRating,
   totalReviews
+
 ){
 
   const list =
-    document.getElementById("reviewsList");
+    document.getElementById(
+      "reviewsList"
+    );
 
 
   const averageElement =
-    document.getElementById("averageRating");
+    document.getElementById(
+      "averageRating"
+    );
 
 
   const starsElement =
-    document.getElementById("averageStars");
+    document.getElementById(
+      "averageStars"
+    );
 
 
   const countElement =
-    document.getElementById("reviewCount");
+    document.getElementById(
+      "reviewCount"
+    );
 
 
   averageElement.textContent =
-    Number(averageRating || 0).toFixed(1);
+    Number(
+      averageRating || 0
+    ).toFixed(1);
 
 
   starsElement.textContent =
@@ -3172,8 +4927,10 @@ function displayReviews(
     totalReviews +
     (
       totalReviews === 1
-      ? " Review"
-      : " Reviews"
+      ?
+      " Review"
+      :
+      " Reviews"
     );
 
 
@@ -3190,109 +4947,134 @@ function displayReviews(
 
     `;
 
+
     return;
 
   }
 
 
-  list.innerHTML = "";
+  list.innerHTML =
+    "";
 
 
-  reviews.forEach(function(review){
+  reviews.forEach(
+    function(review){
 
-    const card =
-      document.createElement("div");
-
-
-    card.className =
-      "review-card";
-
-
-    const customerName =
-      review.customer_name ||
-      review.name ||
-      "Customer";
+      const card =
+        document.createElement(
+          "div"
+        );
 
 
-    const reviewText =
-      review.review ||
-      review.text ||
-      "";
+      card.className =
+        "review-card";
 
 
-    const reviewDate =
-      review.date ||
-      "";
+      const customerName =
+        review.customer_name ||
+        review.name ||
+        "Customer";
 
 
-    const rating =
-      Number(review.rating) || 0;
+      const reviewText =
+        review.review ||
+        review.text ||
+        "";
 
 
-    const photoUrl =
-      String(
-        review.photo_url || ""
-      ).trim();
+      const reviewDate =
+        review.date ||
+        "";
 
 
-    card.innerHTML = `
+      const rating =
+        Number(
+          review.rating
+        ) || 0;
 
-      <div class="review-top">
 
-        <div>
+      const photoUrl =
+        String(
+          review.photo_url ||
+          ""
+        ).trim();
 
-          <div class="reviewer-name">
 
-            ${escapeHTML(
-              customerName
+      card.innerHTML = `
+
+        <div class="review-top">
+
+
+          <div>
+
+
+            <div class="reviewer-name">
+
+              ${escapeHTML(
+                customerName
+              )}
+
+            </div>
+
+
+            <div class="review-date">
+
+              ${escapeHTML(
+                reviewDate
+              )}
+
+            </div>
+
+
+          </div>
+
+
+          <div class="review-stars">
+
+            ${getStars(
+              rating
             )}
 
           </div>
 
-          <div class="review-date">
-
-            ${escapeHTML(
-              reviewDate
-            )}
-
-          </div>
 
         </div>
 
-        <div class="review-stars">
 
-          ${getStars(rating)}
+        <div class="review-text">
+
+          ${escapeHTML(
+            reviewText
+          )}
 
         </div>
 
-      </div>
 
-      <div class="review-text">
+        ${
+          photoUrl
+          ?
+          `
+            <img
+              class="review-photo"
+              src="${escapeHTML(photoUrl)}"
+              alt="Customer review photo"
+              loading="lazy"
+              onclick="openLightbox('${escapeJS(photoUrl)}')"
+            >
+          `
+          :
+          ""
+        }
 
-        ${escapeHTML(reviewText)}
-
-      </div>
-
-      ${
-        photoUrl
-        ?
-        `<img
-          class="review-photo"
-          src="${escapeHTML(photoUrl)}"
-          alt="Customer review photo"
-          loading="lazy"
-          onclick="openLightbox('${escapeJS(photoUrl)}')"
-        >`
-        :
-        ``
-      }
-
-    `;
+      `;
 
 
-    list.appendChild(card);
+      list.appendChild(
+        card
+      );
 
-  });
+    }
+  );
 
 }
 
@@ -3313,7 +5095,8 @@ function getStars(rating){
     );
 
 
-  let stars = "";
+  let stars =
+    "";
 
 
   for(
@@ -3324,8 +5107,10 @@ function getStars(rating){
 
     stars +=
       i <= rating
-      ? "★"
-      : "☆";
+      ?
+      "★"
+      :
+      "☆";
 
   }
 
@@ -3342,26 +5127,34 @@ function getStars(rating){
 async function submitReview(){
 
   if(!currentProduct){
+
     return;
+
   }
 
 
   const name =
-    document.getElementById("reviewName")
-    .value.trim();
+    document.getElementById(
+      "reviewName"
+    ).value.trim();
 
 
   const review =
-    document.getElementById("reviewText")
-    .value.trim();
+    document.getElementById(
+      "reviewText"
+    ).value.trim();
 
 
   const message =
-    document.getElementById("reviewMessage");
+    document.getElementById(
+      "reviewMessage"
+    );
 
 
   const button =
-    document.getElementById("reviewSubmit");
+    document.getElementById(
+      "reviewSubmit"
+    );
 
 
   if(!name){
@@ -3396,28 +5189,37 @@ async function submitReview(){
 
   const reviewData = {
 
-    action:"review",
+    action:
+      "review",
+
 
     productId:
       currentProduct.id,
 
+
     productName:
       currentProduct.name,
+
 
     customerName:
       name,
 
+
     rating:
       selectedRating,
+
 
     review:
       review,
 
+
     photoData:
       selectedPhotoData,
 
+
     photoName:
       selectedPhotoName,
+
 
     photoMimeType:
       selectedPhotoMimeType
@@ -3433,23 +5235,36 @@ async function submitReview(){
     "Submitting review...";
 
 
-  button.disabled = true;
+  button.disabled =
+    true;
 
 
   try{
 
     await fetch(
+
       API_URL,
+
       {
+
         method:"POST",
+
         mode:"no-cors",
+
         headers:{
+
           "Content-Type":
             "text/plain;charset=utf-8"
+
         },
+
         body:
-          JSON.stringify(reviewData)
+          JSON.stringify(
+            reviewData
+          )
+
       }
+
     );
 
 
@@ -3457,20 +5272,33 @@ async function submitReview(){
       "🎉 Thank you! Your review has been submitted.";
 
 
-    document.getElementById("reviewName").value = "";
-    document.getElementById("reviewText").value = "";
+    document.getElementById(
+      "reviewName"
+    ).value =
+      "";
 
 
-    selectedRating = 0;
+    document.getElementById(
+      "reviewText"
+    ).value =
+      "";
+
+
+    selectedRating =
+      0;
+
 
     updateStars();
+
 
     removeReviewPhoto();
 
 
     setTimeout(
       function(){
+
         loadReviews();
+
       },
       2000
     );
@@ -3490,23 +5318,30 @@ async function submitReview(){
   }
 
 
-  button.disabled = false;
+  button.disabled =
+    false;
 
 }
 
 
 /* =========================================================
-   LIGHTBOX
+   IMAGE LIGHTBOX
 ========================================================= */
 
-function openLightbox(imageUrl){
+function openLightbox(
+  imageUrl
+){
 
   const lightbox =
-    document.getElementById("imageLightbox");
+    document.getElementById(
+      "imageLightbox"
+    );
 
 
   const image =
-    document.getElementById("lightboxImage");
+    document.getElementById(
+      "lightboxImage"
+    );
 
 
   image.src =
@@ -3519,20 +5354,27 @@ function openLightbox(imageUrl){
 }
 
 
-function closeLightbox(event){
+function closeLightbox(
+  event
+){
 
   if(event){
+
     event.stopPropagation();
+
   }
 
 
-  document.getElementById("imageLightbox")
-    .style.display =
+  document.getElementById(
+    "imageLightbox"
+  ).style.display =
     "none";
 
 
-  document.getElementById("lightboxImage")
-    .src = "";
+  document.getElementById(
+    "lightboxImage"
+  ).src =
+    "";
 
 }
 
@@ -3545,15 +5387,30 @@ function escapeHTML(value){
 
   return String(value)
 
-    .replace(/&/g,"&amp;")
+    .replace(
+      /&/g,
+      "&amp;"
+    )
 
-    .replace(/</g,"&lt;")
+    .replace(
+      /</g,
+      "&lt;"
+    )
 
-    .replace(/>/g,"&gt;")
+    .replace(
+      />/g,
+      "&gt;"
+    )
 
-    .replace(/"/g,"&quot;")
+    .replace(
+      /"/g,
+      "&quot;"
+    )
 
-    .replace(/'/g,"&#039;");
+    .replace(
+      /'/g,
+      "&#039;"
+    );
 
 }
 
@@ -3562,11 +5419,30 @@ function escapeJS(value){
 
   return String(value)
 
-    .replace(/\\/g,"\\\\")
+    .replace(
+      /\\/g,
+      "\\\\"
+    )
 
-    .replace(/'/g,"\\'")
+    .replace(
+      /'/g,
+      "\\'"
+    )
 
-    .replace(/"/g,'\\"');
+    .replace(
+      /"/g,
+      '\\"'
+    )
+
+    .replace(
+      /\r/g,
+      "\\r"
+    )
+
+    .replace(
+      /\n/g,
+      "\\n"
+    );
 
 }
 
@@ -3577,7 +5453,10 @@ function escapeJS(value){
 
 checkProductPage();
 
+
 </script>
 
+
 </body>
+
 </html>
