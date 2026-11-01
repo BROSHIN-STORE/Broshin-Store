@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1930,6 +1929,660 @@ footer p{
     height:380px;
   }
 }
+
+/* =========================================================
+   CART + BUNDLES
+========================================================= */
+
+.nav-cart{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:11px 18px;
+  border:0;
+  border-radius:30px;
+  background:var(--black);
+  color:#fff;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.nav-cart:hover{
+  transform:translateY(-2px);
+}
+
+.nav-cart.bump{
+  animation:cartBump .45s ease;
+}
+
+@keyframes cartBump{
+  40%{transform:scale(1.14)}
+}
+
+.cart-count{
+  min-width:20px;
+  height:20px;
+  padding:0 6px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:20px;
+  background:var(--gold);
+  color:#171717;
+  font-size:10px;
+  font-weight:1000;
+}
+
+/* ---------- Bundle offers on product page ---------- */
+
+.bundle-box{
+  margin-top:30px;
+  padding:20px;
+  border-radius:24px;
+  background:rgba(255,255,255,.62);
+  border:1px solid rgba(212,175,55,.35);
+}
+
+.bundle-title{
+  margin-bottom:14px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:3px;
+  color:#96751e;
+}
+
+.bundle-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:10px;
+  margin-bottom:18px;
+}
+
+.bundle-card{
+  position:relative;
+  padding:20px 10px 14px;
+  border:2px solid rgba(23,23,23,.10);
+  border-radius:18px;
+  background:rgba(255,255,255,.85);
+  text-align:center;
+  cursor:pointer;
+  transition:.2s;
+  -webkit-user-select:none;
+  user-select:none;
+}
+
+.bundle-card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(212,175,55,.6);
+}
+
+.bundle-card.active{
+  border-color:var(--gold);
+  background:#fffaf0;
+  box-shadow:0 0 0 4px rgba(212,175,55,.16);
+}
+
+.bundle-tag{
+  position:absolute;
+  top:-10px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:4px 10px;
+  border-radius:20px;
+  background:linear-gradient(90deg,#d4af37,#9b7921);
+  color:#fff;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:1px;
+  white-space:nowrap;
+}
+
+.bundle-qty{
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1.5px;
+  color:var(--muted);
+}
+
+.bundle-price{
+  margin:6px 0 2px;
+  font-size:22px;
+  font-weight:1000;
+}
+
+.bundle-each{
+  font-size:11px;
+  color:var(--muted);
+}
+
+.bundle-save{
+  display:inline-block;
+  margin-top:8px;
+  padding:4px 9px;
+  border-radius:20px;
+  background:var(--black);
+  color:#fff;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.5px;
+}
+
+.qty-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.qty-label{
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:2px;
+  color:var(--muted);
+}
+
+.qty-stepper{
+  display:inline-flex;
+  align-items:center;
+  border:1px solid rgba(23,23,23,.15);
+  border-radius:50px;
+  background:#fff;
+  overflow:hidden;
+}
+
+.qty-stepper button{
+  width:44px;
+  height:44px;
+  border:0;
+  background:none;
+  font-size:20px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.qty-stepper button:hover{
+  background:rgba(212,175,55,.15);
+}
+
+.qty-stepper input{
+  width:52px;
+  height:44px;
+  border:0;
+  outline:none;
+  text-align:center;
+  font-size:16px;
+  font-weight:900;
+  background:none;
+  -moz-appearance:textfield;
+  appearance:textfield;
+}
+
+.qty-stepper input::-webkit-outer-spin-button,
+.qty-stepper input::-webkit-inner-spin-button{
+  -webkit-appearance:none;
+  margin:0;
+}
+
+.live-total{
+  margin-top:18px;
+  padding-top:16px;
+  border-top:1px dashed rgba(23,23,23,.18);
+}
+
+.live-line{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:12px;
+  font-size:13px;
+  font-weight:900;
+  color:var(--muted);
+}
+
+.live-line strong{
+  font-size:30px;
+  color:var(--text);
+}
+
+.live-save{
+  margin-top:6px;
+  font-size:12px;
+  font-weight:900;
+  color:#96751e;
+}
+
+.live-save s{
+  margin-left:6px;
+  color:#8a817a;
+  font-weight:400;
+}
+
+.live-note{
+  margin-top:6px;
+  font-size:11px;
+  color:var(--muted);
+}
+
+.action-row{
+  display:flex;
+  gap:12px;
+  margin-top:24px;
+}
+
+.action-row .buy-now,
+.action-row .add-cart{
+  flex:1;
+  margin-top:0;
+  padding:18px 10px;
+  border-radius:50px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1.5px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.add-cart{
+  border:2px solid var(--black);
+  background:transparent;
+  color:var(--black);
+}
+
+.add-cart:hover{
+  transform:translateY(-5px);
+  background:var(--black);
+  color:#fff;
+}
+
+.add-cart:disabled{
+  opacity:.5;
+  cursor:not-allowed;
+  transform:none;
+}
+
+/* ---------- Cart drawer ---------- */
+
+.cart-overlay{
+  position:fixed;
+  inset:0;
+  z-index:99990;
+  background:rgba(0,0,0,.5);
+  opacity:0;
+  visibility:hidden;
+  transition:.3s;
+}
+
+.cart-overlay.open{
+  opacity:1;
+  visibility:visible;
+}
+
+.cart-drawer{
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  width:min(450px,100%);
+  z-index:99991;
+  display:flex;
+  flex-direction:column;
+  background:linear-gradient(160deg,#fffaf4,#f1e6d5);
+  box-shadow:-30px 0 80px rgba(23,23,23,.25);
+  transform:translateX(105%);
+  transition:transform .35s ease;
+}
+
+.cart-drawer.open{
+  transform:none;
+}
+
+.cart-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:22px 22px 16px;
+  border-bottom:1px solid rgba(23,23,23,.1);
+}
+
+.cart-head h3{
+  margin-top:4px;
+  font-size:26px;
+}
+
+.cart-close{
+  width:42px;
+  height:42px;
+  border:0;
+  border-radius:50%;
+  background:var(--black);
+  color:#fff;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.cart-body{
+  flex:1;
+  overflow-y:auto;
+  padding:18px 22px;
+  -webkit-overflow-scrolling:touch;
+}
+
+.cart-foot{
+  padding:16px 22px calc(18px + env(safe-area-inset-bottom));
+  border-top:1px solid rgba(23,23,23,.1);
+  background:rgba(255,255,255,.55);
+}
+
+.cart-empty{
+  padding:60px 10px;
+  text-align:center;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.cart-empty .big{
+  font-size:60px;
+  margin-bottom:10px;
+}
+
+.cart-item{
+  display:grid;
+  grid-template-columns:76px 1fr;
+  gap:14px;
+  margin-bottom:14px;
+  padding:14px;
+  border-radius:22px;
+  background:rgba(255,255,255,.78);
+  border:1px solid rgba(255,255,255,.9);
+}
+
+.cart-item-img{
+  width:76px;
+  height:76px;
+  object-fit:contain;
+  border-radius:16px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+}
+
+.cart-item-info{
+  min-width:0;
+}
+
+.cart-item-name{
+  font-size:15px;
+  font-weight:900;
+  overflow-wrap:anywhere;
+  line-height:1.3;
+}
+
+.cart-item-unit{
+  margin-top:3px;
+  font-size:11px;
+  color:var(--muted);
+}
+
+.cart-item-price{
+  margin-top:8px;
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.cart-item-price strong{
+  font-size:19px;
+}
+
+.cart-item-price s{
+  font-size:12px;
+  color:#8a817a;
+}
+
+.cart-item-save{
+  margin-top:3px;
+  font-size:11px;
+  font-weight:900;
+  color:#96751e;
+}
+
+.cart-item-actions{
+  margin-top:10px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.cart-item .qty-stepper button{
+  width:36px;
+  height:36px;
+  font-size:17px;
+}
+
+.cart-item .qty-stepper input{
+  width:40px;
+  height:36px;
+  font-size:14px;
+}
+
+.cart-remove{
+  border:0;
+  background:none;
+  color:var(--red);
+  font-size:11px;
+  font-weight:900;
+  cursor:pointer;
+  padding:8px 4px;
+}
+
+.cart-summary{
+  margin-bottom:14px;
+}
+
+.cart-row{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:5px 0;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.cart-row.save{
+  color:#96751e;
+  font-weight:900;
+}
+
+.cart-row.total{
+  margin-top:6px;
+  padding-top:12px;
+  border-top:1px solid rgba(23,23,23,.12);
+  font-size:20px;
+  font-weight:1000;
+  color:var(--text);
+}
+
+.cart-primary{
+  width:100%;
+  padding:17px;
+  border:0;
+  border-radius:50px;
+  background:var(--black);
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:2px;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.cart-primary:hover{
+  transform:translateY(-3px);
+}
+
+.cart-primary:disabled{
+  opacity:.6;
+  cursor:not-allowed;
+  transform:none;
+}
+
+.cart-link{
+  display:block;
+  width:100%;
+  margin-top:10px;
+  padding:8px;
+  border:0;
+  background:none;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.cart-form{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.cart-form label{
+  font-size:11px;
+  font-weight:900;
+  color:var(--muted);
+}
+
+.cart-form input,
+.cart-form textarea{
+  width:100%;
+  padding:14px;
+  border:1px solid rgba(23,23,23,.12);
+  border-radius:16px;
+  font-size:16px;
+  outline:none;
+  background:#fff;
+}
+
+.cart-form input:focus,
+.cart-form textarea:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(212,175,55,.1);
+}
+
+.cart-form textarea{
+  min-height:100px;
+  resize:vertical;
+}
+
+.cart-msg{
+  margin-top:10px;
+  text-align:center;
+  font-size:13px;
+  font-weight:900;
+  line-height:1.5;
+  overflow-wrap:anywhere;
+}
+
+.cart-done{
+  padding:30px 6px;
+  text-align:center;
+  line-height:1.7;
+}
+
+.cart-done .big{
+  font-size:60px;
+}
+
+.cart-done h4{
+  margin:8px 0 12px;
+  font-size:26px;
+}
+
+.cart-done .ids{
+  margin:16px 0;
+  padding:14px;
+  border-radius:16px;
+  background:rgba(255,255,255,.8);
+  font-weight:900;
+  overflow-wrap:anywhere;
+}
+
+@media(max-width:600px){
+
+  .nav-cart{
+    padding:10px 13px;
+    gap:6px;
+  }
+
+  .nav-cart-text{
+    display:none;
+  }
+
+  .bundle-box{
+    padding:16px 14px;
+    border-radius:20px;
+  }
+
+  .bundle-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .bundle-price{
+    font-size:20px;
+  }
+
+  .live-line strong{
+    font-size:26px;
+  }
+
+  .action-row{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .action-row .buy-now,
+  .action-row .add-cart{
+    width:100%;
+    padding:17px;
+  }
+
+  .cart-drawer{
+    width:100%;
+  }
+
+  .cart-head,
+  .cart-body,
+  .cart-foot{
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+  .cart-item{
+    grid-template-columns:64px 1fr;
+    gap:12px;
+    padding:12px;
+  }
+
+  .cart-item-img{
+    width:64px;
+    height:64px;
+  }
+}
+
+@media(max-width:380px){
+
+  .nav-cart{
+    padding:9px 11px;
+  }
+}
+
 </style>
 </head>
 
@@ -1959,6 +2612,10 @@ footer p{
     <div class="nav-tag">
       DISCOVER. SHOP. ENJOY.
     </div>
+
+    <button class="nav-cart" onclick="openCart()" aria-label="Open cart">
+      🛒 <span class="nav-cart-text">CART</span> <span class="cart-count" id="cartCount">0</span>
+    </button>
 
     <button
       class="nav-home"
@@ -2229,14 +2886,54 @@ footer p{
 
     </div>
 
-    <button
-      class="buy-now"
-      id="buyNowButton"
-      onclick="showCheckout()">
+    <div class="bundle-box" id="bundleBox">
 
-      BUY NOW
+      <div class="bundle-title">
+        CHOOSE YOUR QUANTITY
+      </div>
 
-    </button>
+      <div class="bundle-grid" id="bundleGrid"></div>
+
+      <div class="qty-row">
+
+        <span class="qty-label">QUANTITY</span>
+
+        <div class="qty-stepper">
+          <button type="button" aria-label="Decrease quantity" onclick="changeQty(-1)">−</button>
+          <input
+            type="number"
+            id="detailQty"
+            min="1"
+            value="1"
+            inputmode="numeric"
+            onchange="setQty(this.value)">
+          <button type="button" aria-label="Increase quantity" onclick="changeQty(1)">+</button>
+        </div>
+
+      </div>
+
+      <div class="live-total" id="liveTotal"></div>
+
+    </div>
+
+    <div class="action-row">
+
+      <button
+        type="button"
+        class="add-cart"
+        id="addCartButton"
+        onclick="addToCart()">
+        ADD TO CART
+      </button>
+
+      <button
+        class="buy-now"
+        id="buyNowButton"
+        onclick="showCheckout()">
+        BUY NOW
+      </button>
+
+    </div>
 
   </div>
 
@@ -2276,6 +2973,11 @@ footer p{
     <div class="summary-row">
       <span>Quantity</span>
       <strong id="summaryQuantity">1</strong>
+    </div>
+
+    <div class="summary-row hidden" id="summarySaveRow">
+      <span>You Save</span>
+      <strong id="summarySave">₹0</strong>
     </div>
 
     <div class="summary-row summary-total">
@@ -2522,6 +3224,32 @@ footer p{
      TOAST
 ========================================================= -->
 
+<!-- =========================================================
+     CART DRAWER
+========================================================= -->
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Shopping cart">
+
+  <div class="cart-head">
+
+    <div>
+      <div class="reviews-label">YOUR BAG</div>
+      <h3 id="cartTitle">Shopping Cart</h3>
+    </div>
+
+    <button class="cart-close" onclick="closeCart()" aria-label="Close cart">×</button>
+
+  </div>
+
+  <div class="cart-body" id="cartBody"></div>
+
+  <div class="cart-foot" id="cartFoot"></div>
+
+</aside>
+
+
 <div
   class="toast-container"
   id="toastContainer">
@@ -2564,7 +3292,7 @@ footer p{
 <script>
 
 const API_URL =
-"https://script.google.com/macros/s/AKfycbxbudEvfIdlKCs0bic5qrCCYuS8RRKTjByT6DjrgJB3MIMVWWaC1DLxI1zEH0crirD0YQ/exec";
+"https://script.google.com/macros/s/AKfycbwebTGY5E8wMp6jHR3ugPIt3rzPRsHa-79Y6sqwq7WnFoI7Jz8RSJ_95HT-TFrUfGb1Tg/exec";
 
 let allProducts = [];
 let visibleProducts = [];
@@ -2784,6 +3512,7 @@ async function loadProducts(){
 
     allProducts = data;
     productsLoaded = true;
+    syncCartWithProducts();
 
     buildCategoryFilter();
 
@@ -3338,6 +4067,7 @@ async function loadSingleProduct(productId){
 
       allProducts = products;
       productsLoaded = true;
+    syncCartWithProducts();
 
     }
 
@@ -3534,6 +4264,9 @@ function displayProductDetails(product){
   }
 
   updateOrderSummary();
+
+  renderBundleCards(product);
+  setQty(1);
 
   loadProductImages(product);
 
@@ -4112,8 +4845,9 @@ function updateOrderSummary(){
       quantity;
   }
 
-  const total =
-    price * quantity;
+  const pricing = calcPricing(currentProduct, quantity);
+  const total = pricing.total;
+  refreshOfferUI(quantity, pricing);
 
   document.getElementById(
     "summaryProduct"
@@ -4247,8 +4981,8 @@ async function placeOrder(e){
       currentProduct.cost_price
     );
 
-  const total =
-    sellingPrice * quantity;
+  const pricing = calcPricing(currentProduct, quantity);
+  const total = pricing.total;
 
   const orderId =
     "BR" + Date.now();
@@ -4271,7 +5005,7 @@ async function placeOrder(e){
 
     quantity:quantity,
 
-    sellingPrice:sellingPrice,
+    sellingPrice:pricing.unitEffective,
 
     total:total,
 
@@ -5359,10 +6093,1040 @@ function escapeJS(value){
    START
 ========================================================= */
 
-checkProductPage();
+
+/* =========================================================
+   BUNDLE PRICING
+   Sheet columns (per product):  bundle_2 , bundle_3 , bundle_5 ...
+   Each value = TOTAL price for that many items.
+   (Also accepted: a text column "bundles" like  2=799, 3=1099 )
+========================================================= */
+
+function el(id){
+  return document.getElementById(id);
+}
+
+function round2(n){
+  return Math.round((Number(n) + Number.EPSILON) * 100) / 100;
+}
+
+function parseBundles(product){
+
+  const map = {};
+
+  if(!product) return [];
+
+  const raw = String(
+    product.bundles ||
+    product.bundle_prices ||
+    ""
+  ).trim();
+
+  raw.split(/[,;\n|]+/).forEach(function(part){
+
+    const m = part.match(
+      /^\s*(\d+)\s*[:=@x-]\s*₹?\s*([\d.,]+)\s*$/i
+    );
+
+    if(m){
+
+      const q = parseInt(m[1],10);
+      const p = toNumber(m[2]);
+
+      if(q > 1 && p > 0) map[q] = p;
+
+    }
+
+  });
+
+  Object.keys(product).forEach(function(key){
+
+    const m = key.match(/^bundle_?(\d+)(?:_price)?$/i);
+
+    if(m){
+
+      const q = parseInt(m[1],10);
+      const p = toNumber(product[key]);
+
+      if(q > 1 && p > 0) map[q] = p;
+
+    }
+
+  });
+
+  return Object.keys(map)
+    .map(Number)
+    .sort(function(a,b){ return a - b; })
+    .map(function(q){
+      return { qty:q, price:map[q] };
+    });
+
+}
+
+/* Cheapest way to buy `qty` items using bundles + single items */
+
+function calcPricing(product,qty){
+
+  qty = Math.max(1,Math.floor(Number(qty)) || 1);
+
+  const unit = toNumber(product.selling_price);
+  const ref  = Math.max(toNumber(product.reference_price),unit);
+  const bundles = parseBundles(product);
+
+  const best = [0];
+  const choice = [0];
+
+  for(let i = 1; i <= qty; i++){
+
+    best[i] = best[i-1] + unit;
+    choice[i] = 1;
+
+    bundles.forEach(function(b){
+
+      if(b.qty <= i){
+
+        const cost = best[i - b.qty] + b.price;
+
+        if(cost < best[i] - 0.0001){
+          best[i] = cost;
+          choice[i] = b.qty;
+        }
+
+      }
+
+    });
+
+  }
+
+  const parts = {};
+  let left = qty;
+
+  while(left > 0){
+
+    const q = choice[left];
+
+    parts[q] = (parts[q] || 0) + 1;
+    left -= q;
+
+  }
+
+  const total = round2(best[qty]);
+  const reference = round2(ref * qty);
+
+  return {
+    qty:qty,
+    total:total,
+    reference:reference,
+    saved:Math.max(0,round2(reference - total)),
+    parts:parts,
+    unitEffective:round2(total / qty)
+  };
+
+}
+
+function hasBundle(p){
+
+  return Object.keys(p.parts).some(function(q){
+    return Number(q) > 1;
+  });
+
+}
+
+function describeParts(p){
+
+  return Object.keys(p.parts)
+    .map(Number)
+    .sort(function(a,b){ return b - a; })
+    .map(function(q){
+
+      const n = p.parts[q];
+
+      return q === 1
+        ? n + " × single"
+        : n + " × bundle of " + q;
+
+    })
+    .join(" + ");
+
+}
+
+
+/* =========================================================
+   PRODUCT PAGE — QUANTITY + BUNDLE TILES
+========================================================= */
+
+function renderBundleCards(product){
+
+  const box  = el("bundleBox");
+  const grid = el("bundleGrid");
+  const add  = el("addCartButton");
+
+  if(!box || !grid) return;
+
+  const stock = toNumber(product.stock);
+
+  if(add) add.disabled = stock <= 0;
+
+  if(stock <= 0){
+    box.style.display = "none";
+    return;
+  }
+
+  box.style.display = "block";
+
+  const bundles = parseBundles(product).filter(function(b){
+    return b.qty <= stock;
+  });
+
+  if(!bundles.length){
+    grid.style.display = "none";
+    grid.innerHTML = "";
+    return;
+  }
+
+  grid.style.display = "grid";
+
+  const tiles = [1].concat(
+    bundles.map(function(b){ return b.qty; })
+  ).map(function(q){
+
+    const p = calcPricing(product,q);
+
+    return {
+      qty:q,
+      total:p.total,
+      each:p.unitEffective,
+      saved:p.saved
+    };
+
+  });
+
+  let bestQty = 0;
+  let bestEach = Infinity;
+
+  tiles.forEach(function(t){
+
+    if(t.qty > 1 && t.each < bestEach){
+      bestEach = t.each;
+      bestQty = t.qty;
+    }
+
+  });
+
+  grid.innerHTML = tiles.map(function(t){
+
+    return `
+      <div
+        class="bundle-card"
+        data-qty="${t.qty}"
+        role="button"
+        tabindex="0"
+        onclick="setQty(${t.qty})"
+        onkeydown="if(event.key==='Enter'){setQty(${t.qty})}">
+
+        ${t.qty === bestQty ? `<span class="bundle-tag">BEST VALUE</span>` : ""}
+
+        <div class="bundle-qty">
+          ${t.qty === 1 ? "1 ITEM" : "BUY " + t.qty}
+        </div>
+
+        <div class="bundle-price">
+          ₹${formatNumber(t.total)}
+        </div>
+
+        <div class="bundle-each">
+          ₹${formatNumber(t.each)} / item
+        </div>
+
+        ${t.saved > 0
+          ? `<div class="bundle-save">SAVE ₹${formatNumber(t.saved)}</div>`
+          : ""}
+
+      </div>
+    `;
+
+  }).join("");
+
+}
+
+function setQty(q){
+
+  if(!currentProduct) return;
+
+  const stock = toNumber(currentProduct.stock);
+
+  q = Math.floor(Number(q));
+
+  if(!Number.isFinite(q) || q < 1) q = 1;
+
+  if(stock > 0 && q > stock){
+
+    q = stock;
+
+    showToast("Only " + stock + " in stock.","error");
+
+  }
+
+  const checkoutQty = el("customerQuantity");
+
+  if(checkoutQty) checkoutQty.value = q;
+
+  updateOrderSummary();
+
+}
+
+function changeQty(delta){
+
+  const d = el("detailQty");
+
+  setQty((Number(d ? d.value : 1) || 1) + delta);
+
+}
+
+function refreshOfferUI(qty,p){
+
+  const d = el("detailQty");
+
+  if(d && String(d.value) !== String(qty)) d.value = qty;
+
+  document
+    .querySelectorAll("#bundleGrid .bundle-card")
+    .forEach(function(card){
+
+      card.classList.toggle(
+        "active",
+        Number(card.dataset.qty) === qty
+      );
+
+    });
+
+  const live = el("liveTotal");
+
+  if(live){
+
+    live.innerHTML =
+
+      `<div class="live-line">
+        <span>Total for ${qty} ${qty === 1 ? "item" : "items"}</span>
+        <strong>₹${formatNumber(p.total)}</strong>
+      </div>` +
+
+      (p.saved > 0
+        ? `<div class="live-save">
+            You save ₹${formatNumber(p.saved)}
+            <s>₹${formatNumber(p.reference)}</s>
+          </div>`
+        : "") +
+
+      (hasBundle(p)
+        ? `<div class="live-note">
+            Bundle pricing applied: ${escapeHTML(describeParts(p))}
+          </div>`
+        : "");
+
+  }
+
+  const row = el("summarySaveRow");
+
+  if(row){
+
+    row.classList.toggle("hidden",!(p.saved > 0));
+
+    const s = el("summarySave");
+
+    if(s) s.textContent = "₹" + formatNumber(p.saved);
+
+  }
+
+}
+
+
+/* =========================================================
+   CART STATE
+========================================================= */
+
+const CART_KEY = "broshin_cart_v1";
+
+let cart = loadCart();
+let cartView = "cart";
+let lastOrderIds = [];
+
+function loadCart(){
+
+  try{
+
+    const data = JSON.parse(
+      localStorage.getItem(CART_KEY) || "[]"
+    );
+
+    return Array.isArray(data)
+      ? data.filter(function(i){
+          return i && i.id && Number(i.qty) > 0;
+        })
+      : [];
+
+  }catch(error){
+
+    return [];
+
+  }
+
+}
+
+function persistCart(){
+
+  try{
+    localStorage.setItem(CART_KEY,JSON.stringify(cart));
+  }catch(error){}
+
+  updateCartBadge();
+
+}
+
+function saveCart(){
+
+  persistCart();
+
+  const drawer = el("cartDrawer");
+
+  if(drawer && drawer.classList.contains("open")){
+    renderCart();
+  }
+
+}
+
+function snapshotProduct(p){
+
+  const s = {};
+
+  [
+    "id","name","image1","selling_price","reference_price",
+    "cost_price","stock","bundles","bundle_prices"
+  ].forEach(function(k){
+
+    if(p[k] !== undefined) s[k] = p[k];
+
+  });
+
+  Object.keys(p).forEach(function(k){
+
+    if(/^bundle_?\d+(_price)?$/i.test(k)) s[k] = p[k];
+
+  });
+
+  return s;
+
+}
+
+/* Keep cart prices / stock in sync with the latest sheet data */
+
+function syncCartWithProducts(){
+
+  if(!cart.length || !allProducts.length) return;
+
+  cart = cart.map(function(item){
+
+    const p = allProducts.find(function(x){
+      return String(x.id) === String(item.id);
+    });
+
+    if(!p) return item;
+
+    const active = String(p.status || "active")
+      .trim().toLowerCase() === "active";
+
+    const stock = toNumber(p.stock);
+
+    if(!active || stock <= 0) return null;
+
+    return Object.assign(
+      snapshotProduct(p),
+      { qty:Math.min(Number(item.qty),stock) }
+    );
+
+  }).filter(Boolean);
+
+  saveCart();
+
+}
+
+function updateCartBadge(){
+
+  const badge = el("cartCount");
+
+  if(!badge) return;
+
+  badge.textContent = cart.reduce(function(sum,i){
+    return sum + Number(i.qty || 0);
+  },0);
+
+}
+
+function bumpCartButton(){
+
+  const btn = document.querySelector(".nav-cart");
+
+  if(!btn) return;
+
+  btn.classList.remove("bump");
+  void btn.offsetWidth;
+  btn.classList.add("bump");
+
+}
+
+function findCartItem(id){
+
+  return cart.find(function(i){
+    return String(i.id) === String(id);
+  });
+
+}
+
+
+/* =========================================================
+   CART ACTIONS
+========================================================= */
+
+function addToCart(){
+
+  if(!currentProduct) return;
+
+  const stock = toNumber(currentProduct.stock);
+
+  if(stock <= 0){
+    showToast("This product is out of stock.","error");
+    return;
+  }
+
+  const d = el("detailQty");
+
+  const qty = Math.max(
+    1,
+    Math.floor(Number(d ? d.value : 1)) || 1
+  );
+
+  const existing = findCartItem(currentProduct.id);
+
+  let total = (existing ? Number(existing.qty) : 0) + qty;
+
+  if(total > stock){
+
+    total = stock;
+
+    showToast(
+      "Only " + stock + " available — cart set to the maximum.",
+      "error"
+    );
+
+  }
+
+  if(existing){
+
+    Object.assign(
+      existing,
+      snapshotProduct(currentProduct),
+      { qty:total }
+    );
+
+  }else{
+
+    cart.push(
+      Object.assign(
+        snapshotProduct(currentProduct),
+        { qty:total }
+      )
+    );
+
+  }
+
+  persistCart();
+  bumpCartButton();
+  openCart();
+
+}
+
+function cartSetQty(id,q){
+
+  const item = findCartItem(id);
+
+  if(!item) return;
+
+  q = Math.floor(Number(q));
+
+  if(!Number.isFinite(q) || q < 1) q = 1;
+
+  const stock = toNumber(item.stock);
+
+  if(stock > 0 && q > stock){
+
+    q = stock;
+
+    showToast("Only " + stock + " in stock.","error");
+
+  }
+
+  item.qty = q;
+
+  saveCart();
+
+}
+
+function cartChange(id,delta){
+
+  const item = findCartItem(id);
+
+  if(item) cartSetQty(id,Number(item.qty) + delta);
+
+}
+
+function cartRemove(id){
+
+  cart = cart.filter(function(i){
+    return String(i.id) !== String(id);
+  });
+
+  saveCart();
+
+}
+
+function cartTotals(){
+
+  const t = { count:0, total:0, reference:0, saved:0 };
+
+  cart.forEach(function(item){
+
+    const p = calcPricing(item,item.qty);
+
+    t.count += Number(item.qty);
+    t.total += p.total;
+    t.reference += p.reference;
+    t.saved += p.saved;
+
+  });
+
+  t.total = round2(t.total);
+  t.reference = round2(t.reference);
+  t.saved = round2(t.saved);
+
+  return t;
+
+}
+
+
+/* =========================================================
+   CART DRAWER
+========================================================= */
+
+function openCart(){
+
+  cartView = "cart";
+
+  renderCart();
+
+  el("cartOverlay").classList.add("open");
+  el("cartDrawer").classList.add("open");
+  el("cartDrawer").setAttribute("aria-hidden","false");
+
+  document.body.style.overflow = "hidden";
+
+}
+
+function closeCart(){
+
+  const overlay = el("cartOverlay");
+  const drawer = el("cartDrawer");
+
+  if(overlay) overlay.classList.remove("open");
+
+  if(drawer){
+    drawer.classList.remove("open");
+    drawer.setAttribute("aria-hidden","true");
+  }
+
+  document.body.style.overflow = "";
+
+}
+
+document.addEventListener("keydown",function(e){
+
+  if(e.key === "Escape") closeCart();
+
+});
+
+function cartGoCheckout(){
+
+  cartView = "checkout";
+
+  renderCart();
+
+}
+
+function cartBackToCart(){
+
+  cartView = "cart";
+
+  renderCart();
+
+}
+
+function cartSummaryHTML(t){
+
+  return `
+    <div class="cart-summary">
+
+      <div class="cart-row">
+        <span>Items (${t.count})</span>
+        <span>₹${formatNumber(t.reference)}</span>
+      </div>
+
+      ${t.saved > 0
+        ? `<div class="cart-row save">
+            <span>Bundle &amp; discount savings</span>
+            <span>− ₹${formatNumber(t.saved)}</span>
+          </div>`
+        : ""}
+
+      <div class="cart-row total">
+        <span>Total</span>
+        <span>₹${formatNumber(t.total)}</span>
+      </div>
+
+    </div>
+  `;
+
+}
+
+function cartItemHTML(item){
+
+  const p = calcPricing(item,item.qty);
+  const id = escapeHTML(escapeJS(item.id));
+  const img = String(item.image1 || "").trim();
+
+  return `
+    <div class="cart-item">
+
+      ${img
+        ? `<img class="cart-item-img" src="${escapeHTML(img)}" alt="${escapeHTML(item.name || "Product")}" loading="lazy">`
+        : `<div class="cart-item-img">🛍️</div>`}
+
+      <div class="cart-item-info">
+
+        <div class="cart-item-name">
+          ${escapeHTML(item.name || "BROSHIN Product")}
+        </div>
+
+        <div class="cart-item-unit">
+          ₹${formatNumber(item.selling_price)} each
+        </div>
+
+        <div class="cart-item-price">
+          <strong>₹${formatNumber(p.total)}</strong>
+          ${p.saved > 0 ? `<s>₹${formatNumber(p.reference)}</s>` : ""}
+        </div>
+
+        ${p.saved > 0
+          ? `<div class="cart-item-save">You save ₹${formatNumber(p.saved)}</div>`
+          : ""}
+
+        ${hasBundle(p)
+          ? `<div class="live-note">Bundle pricing: ${escapeHTML(describeParts(p))}</div>`
+          : ""}
+
+        <div class="cart-item-actions">
+
+          <div class="qty-stepper">
+            <button type="button" aria-label="Decrease" onclick="cartChange('${id}',-1)">−</button>
+            <input
+              type="number"
+              min="1"
+              value="${Number(item.qty)}"
+              inputmode="numeric"
+              onchange="cartSetQty('${id}',this.value)">
+            <button type="button" aria-label="Increase" onclick="cartChange('${id}',1)">+</button>
+          </div>
+
+          <button class="cart-remove" onclick="cartRemove('${id}')">
+            REMOVE
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+  `;
+
+}
+
+function renderCart(){
+
+  const body = el("cartBody");
+  const foot = el("cartFoot");
+  const title = el("cartTitle");
+
+  if(!body || !foot || !title) return;
+
+  if(cartView === "done"){
+
+    title.textContent = "Order Placed";
+
+    body.innerHTML = `
+      <div class="cart-done">
+        <div class="big">🎉</div>
+        <h4>Thank you!</h4>
+        <p>Your order has been placed successfully.</p>
+        <div class="ids">
+          ${lastOrderIds.map(escapeHTML).join("<br>")}
+        </div>
+        <p style="font-size:12px;color:var(--muted)">
+          Please save ${lastOrderIds.length > 1 ? "these Order IDs" : "this Order ID"} to track your order.
+        </p>
+      </div>
+    `;
+
+    foot.innerHTML = `
+      <button class="cart-primary" onclick="closeCart()">
+        CONTINUE SHOPPING
+      </button>
+    `;
+
+    return;
+
+  }
+
+  if(!cart.length){
+
+    title.textContent = "Shopping Cart";
+
+    body.innerHTML = `
+      <div class="cart-empty">
+        <div class="big">🛍️</div>
+        <strong>Your cart is empty</strong><br>
+        Add something you love and it will show up here.
+      </div>
+    `;
+
+    foot.innerHTML = `
+      <button class="cart-primary" onclick="closeCart()">
+        START SHOPPING
+      </button>
+    `;
+
+    return;
+
+  }
+
+  if(cartView === "checkout"){
+
+    renderCartCheckout();
+
+    return;
+
+  }
+
+  const t = cartTotals();
+
+  title.textContent = "Shopping Cart";
+
+  body.innerHTML = cart.map(cartItemHTML).join("");
+
+  foot.innerHTML =
+    cartSummaryHTML(t) +
+    `<button class="cart-primary" onclick="cartGoCheckout()">
+      CHECKOUT • ₹${formatNumber(t.total)}
+    </button>
+    <button class="cart-link" onclick="closeCart()">
+      Continue shopping
+    </button>`;
+
+}
+
+function renderCartCheckout(){
+
+  const body = el("cartBody");
+  const foot = el("cartFoot");
+
+  el("cartTitle").textContent = "Checkout";
+
+  const t = cartTotals();
+
+  body.innerHTML = `
+
+    <div class="order-summary">
+
+      ${cart.map(function(item){
+
+        const p = calcPricing(item,item.qty);
+
+        return `
+          <div class="summary-row">
+            <span>${escapeHTML(item.name || "Product")} × ${Number(item.qty)}</span>
+            <strong>₹${formatNumber(p.total)}</strong>
+          </div>
+        `;
+
+      }).join("")}
+
+      ${t.saved > 0
+        ? `<div class="summary-row">
+            <span>You Save</span>
+            <strong>₹${formatNumber(t.saved)}</strong>
+          </div>`
+        : ""}
+
+      <div class="summary-row summary-total">
+        <span>Total</span>
+        <strong>₹${formatNumber(t.total)}</strong>
+      </div>
+
+    </div>
+
+    <form class="cart-form" id="cartForm" onsubmit="placeCartOrder(event)">
+
+      <label for="cartName">FULL NAME</label>
+      <input type="text" id="cartName" placeholder="Your Full Name" maxlength="100" autocomplete="name" required>
+
+      <label for="cartPhone">PHONE NUMBER</label>
+      <input type="tel" id="cartPhone" placeholder="Phone Number" maxlength="20" autocomplete="tel" required>
+
+      <label for="cartAddress">DELIVERY ADDRESS</label>
+      <textarea id="cartAddress" placeholder="Full Delivery Address" maxlength="1000" autocomplete="street-address" required></textarea>
+
+    </form>
+
+    <div class="cart-msg" id="cartMsg"></div>
+
+  `;
+
+  foot.innerHTML = `
+    <button class="cart-primary" id="cartPlaceBtn" type="submit" form="cartForm">
+      PLACE ORDER • ₹${formatNumber(t.total)}
+    </button>
+    <button class="cart-link" onclick="cartBackToCart()">
+      ← Back to cart
+    </button>
+  `;
+
+}
+
+async function placeCartOrder(e){
+
+  e.preventDefault();
+
+  const msg = el("cartMsg");
+  const btn = el("cartPlaceBtn");
+
+  const name = el("cartName").value.trim();
+  const phone = el("cartPhone").value.trim();
+  const address = el("cartAddress").value.trim();
+
+  if(!cart.length) return;
+
+  if(!name || !phone || !address){
+
+    msg.textContent = "❌ Please fill in all the details.";
+
+    return;
+
+  }
+
+  for(const item of cart){
+
+    const stock = toNumber(item.stock);
+
+    if(stock > 0 && Number(item.qty) > stock){
+
+      msg.textContent =
+        "❌ Not enough stock for " + (item.name || "a product") + ".";
+
+      return;
+
+    }
+
+  }
+
+  const base = "BR" + Date.now();
+  const items = cart.slice();
+  const ids = [];
+
+  btn.disabled = true;
+
+  msg.textContent = "Placing your order...";
+
+  try{
+
+    for(let i = 0; i < items.length; i++){
+
+      const item = items[i];
+      const p = calcPricing(item,item.qty);
+
+      const orderId = items.length === 1
+        ? base
+        : base + "-" + (i + 1);
+
+      await fetch(
+        API_URL,
+        {
+          method:"POST",
+          mode:"no-cors",
+          headers:{
+            "Content-Type":"text/plain;charset=utf-8"
+          },
+          body:JSON.stringify({
+            action:"order",
+            orderId:orderId,
+            name:name,
+            phone:phone,
+            address:address,
+            productId:item.id,
+            product:item.name,
+            quantity:Number(item.qty),
+            sellingPrice:p.unitEffective,
+            total:p.total,
+            costPrice:toNumber(item.cost_price)
+          })
+        }
+      );
+
+      ids.push(orderId);
+
+      cart = cart.filter(function(c){
+        return c !== item;
+      });
+
+      persistCart();
+
+    }
+
+    lastOrderIds = ids;
+    cartView = "done";
+
+    renderCart();
+
+    showToast("🎉 Your order has been placed!","success");
+
+  }catch(error){
+
+    console.error("Cart order error:",error);
+
+    msg.textContent =
+      "❌ Order failed. Please try again.";
+
+    showToast("Unable to place the order.","error");
+
+    if(btn) btn.disabled = false;
+
+    if(ids.length){
+      saveCart();
+    }
+
+  }
+
+}
+
+updateCartBadge();
+
 
 </script>
 
 </body>
 </html>
-```
